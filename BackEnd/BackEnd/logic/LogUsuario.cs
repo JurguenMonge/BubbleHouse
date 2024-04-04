@@ -40,9 +40,9 @@ namespace BackEnd.logic
                         int? idReturn = 0;
                         int? idError = 0;
                         String errorBD = "";
-                        linq.SP_CREAR_USUARIO(req.Usuario.Rol.Id, req.Usuario.Nombre, req.Usuario.PrimerApellido,
+                        linq.SP_CREAR_USUARIO(req.Usuario.Nombre, req.Usuario.PrimerApellido,
                             req.Usuario.SegundoApellido, req.Usuario.CorreoElectronico, EncriptarPassword(req.Usuario.Password),
-                            req.Usuario.NumeroTelefono, ref idReturn, ref idError, ref errorBD);
+                            req.Usuario.NumeroTelefono,1, ref idReturn, ref idError, ref errorBD);
                         if (idError == 0)
                         {
                             res.Resultado = true;
@@ -51,7 +51,7 @@ namespace BackEnd.logic
                         else
                         {
                             res.Resultado = false;
-                            res.ListaDeErrores.Add(errorBD);
+                            res.ListaDeErrores.Add("Ocurrió un error en la base de datos, intentalo más tarde");
                             tipoRegistro = 2;
                         }
                     }

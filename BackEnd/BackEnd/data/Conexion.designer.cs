@@ -62,20 +62,20 @@ namespace BackEnd.data
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_INSERTAR_ROL")]
-		public int SP_INSERTAR_ROL([global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_TIPO_ROL", DbType="NVarChar(50)")] string dSC_TIPO_ROL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_CREAR_ROL")]
+		public int SP_CREAR_ROL([global::System.Data.Linq.Mapping.ParameterAttribute(Name="TIPO_ROL", DbType="NVarChar(50)")] string tIPO_ROL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_PERMISOS", DbType="NVarChar(MAX)")] string dSC_PERMISOS, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dSC_TIPO_ROL, iDRETURN, eRRORID, eRRORDESCRIPCION);
-			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(1)));
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(2)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(3)));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tIPO_ROL, dSC_PERMISOS, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(4)));
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_CREAR_USUARIO")]
-		public int SP_CREAR_USUARIO([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ROL", DbType="Int")] System.Nullable<int> iD_ROL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_NOMBRE", DbType="NVarChar(50)")] string dSC_NOMBRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_PRIMER_APELLIDO", DbType="NVarChar(50)")] string dSC_PRIMER_APELLIDO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_SEGUNDO_APELLIDO", DbType="NVarChar(50)")] string dSC_SEGUNDO_APELLIDO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_CORREO", DbType="NVarChar(50)")] string dSC_CORREO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_PASSWORD", DbType="NVarChar(50)")] string dSC_PASSWORD, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_TELEFONO", DbType="NVarChar(50)")] string dSC_TELEFONO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		public int SP_CREAR_USUARIO([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE", DbType="NVarChar(50)")] string nOMBRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PRIMER_APELLIDO", DbType="NVarChar(50)")] string pRIMER_APELLIDO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEGUNDO_APELLIDO", DbType="NVarChar(50)")] string sEGUNDO_APELLIDO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CORREO_ELECTRONICO", DbType="NVarChar(MAX)")] string cORREO_ELECTRONICO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PASSWORD", DbType="NVarChar(MAX)")] string pASSWORD, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NUMERO_TELEFONO", DbType="NVarChar(50)")] string nUMERO_TELEFONO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ROL", DbType="Int")] System.Nullable<int> iD_ROL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_ROL, dSC_NOMBRE, dSC_PRIMER_APELLIDO, dSC_SEGUNDO_APELLIDO, dSC_CORREO, dSC_PASSWORD, dSC_TELEFONO, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nOMBRE, pRIMER_APELLIDO, sEGUNDO_APELLIDO, cORREO_ELECTRONICO, pASSWORD, nUMERO_TELEFONO, iD_ROL, iDRETURN, eRRORID, eRRORDESCRIPCION);
 			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(7)));
 			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(8)));
 			eRRORDESCRIPCION = ((string)(result.GetParameterValue(9)));
