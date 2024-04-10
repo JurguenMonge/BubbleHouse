@@ -18,7 +18,7 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-ALTER PROCEDURE Insertar_Producto
+CREATE PROCEDURE Insertar_Producto
     @Id_SubCategoria_Producto int, 
     @Dsc_Nombre_Producto nvarchar(100),
     @Dsc_Descripcion nvarchar(max),
