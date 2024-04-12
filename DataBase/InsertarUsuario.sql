@@ -18,12 +18,15 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE Insertar_Producto
-    @Id_SubCategoria_Producto int, 
-    @Dsc_Nombre_Producto nvarchar(100),
-    @Dsc_Descripcion nvarchar(max),
-    @Dsc_Url_Imagen nvarchar(max),
-    @Num_Precio float,
+CREATE PROCEDURE Insertar_Usuario
+    @Dsc_Nombre nvarchar(50),
+    @Dsc_Primer_Apellido nvarchar(50),
+    @Dsc_Segundo_Apellido nvarchar(50),
+    @Dsc_Correo nvarchar(50),
+    @Dsc_Password nvarchar(max),
+    @Fec_Registro datetime,
+    @Dsc_Telefono nvarchar(50),
+    @Estado tinyint,
     @IDRETURN int OUTPUT,
     @ERRORID int OUTPUT,
     @ERRORDESCRIPCION nvarchar(max) OUTPUT
@@ -32,48 +35,48 @@ BEGIN
     BEGIN TRY
         BEGIN TRANSACTION 
 
-        IF NOT EXISTS (SELECT * FROM TB_SUBCATEGORIA_PRODUCTO WHERE ID_SUBCATE_PRODUCTO = @Id_SubCategoria_Producto)
+        IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Nombre) > 0 OR LEN(@Dsc_Nombre) = 0
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 1;
-            SET @ERRORDESCRIPCION = 'La subcategoría especificada no existe.';
+            SET @ERRORDESCRIPCION = 'El nombre contiene caracteres especiales o está vacío.';
             RETURN; -- Salir del procedimiento almacenado
         END
 
-        IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Nombre_Producto) > 0 OR LEN(@Dsc_Nombre_Producto) = 0
+        IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Primer_Apellido) > 0 OR LEN(@Dsc_Primer_Apellido) = 0
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 2;
-            SET @ERRORDESCRIPCION = 'El nombre del producto contiene caracteres especiales o está vacío.';
+            SET @ERRORDESCRIPCION = 'El primer apellido contiene caracteres especiales o está vacío.';
             RETURN; -- Salir del procedimiento almacenado
         END
 
-        IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Descripcion) > 0 OR LEN(@Dsc_Descripcion) = 0
+        IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Segundo_Apellido) > 0 OR LEN(@Dsc_Segundo_Apellido) = 0
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 3;
-            SET @ERRORDESCRIPCION = 'La descripción del producto contiene caracteres especiales o está vacía.';
+            SET @ERRORDESCRIPCION = 'El segundo apellido contiene caracteres especiales o está vacío.';
             RETURN; -- Salir del procedimiento almacenado
         END
 
-        IF PATINDEX('%[^a-zA-Z0-9:/. ]%', @Dsc_Url_Imagen) > 0 OR LEN(@Dsc_Url_Imagen) = 0
+        IF LEN(@Dsc_Correo) = 0
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 4;
-            SET @ERRORDESCRIPCION = 'La URL de la imagen contiene caracteres no válidos o está vacía.';
+            SET @ERRORDESCRIPCION = 'El correo está vacío.';
             RETURN; -- Salir del procedimiento almacenado
         END
 
-        IF ISNUMERIC(@Num_Precio) <> 1
+        IF LEN(@Dsc_Password) = 0
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 5;
-            SET @ERRORDESCRIPCION = 'El precio del producto debe ser un valor numérico.';
+            SET @ERRORDESCRIPCION = 'La contraseña está vacía.';
             RETURN; -- Salir del procedimiento almacenado
         END
 
-        INSERT INTO TB_PRODUCTO (ID_SUBCATE_PRODUCTO, DSC_NOMBRE_PRODUCTO, DSC_DESCRIPCION, DSC_URL_IMAGEN, NUM_PRECIO, ESTADO)
-        VALUES (@Id_SubCategoria_Producto, @Dsc_Nombre_Producto, @Dsc_Descripcion, @Dsc_Url_Imagen, @Num_Precio, 1);
+        INSERT INTO TB_USUARIO (DSC_NOMBRE, DSC_PRIMER_APELLIDO, DSC_SEGUNDO_APELLIDO, DSC_CORREO, DSC_PASSWORD, FEC_REGISTRO, DSC_TELEFONO, ESTADO)
+        VALUES (@Dsc_Nombre, @Dsc_Primer_Apellido, @Dsc_Segundo_Apellido, @Dsc_Correo, @Dsc_Password, @Fec_Registro, @Dsc_Telefono, @Estado);
 
         SET @IDRETURN = SCOPE_IDENTITY();
 
@@ -88,4 +91,3 @@ BEGIN
     END CATCH
 END
 GO
-

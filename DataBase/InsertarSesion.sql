@@ -18,31 +18,37 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE Eliminar_Producto
-    @Id_Producto int,
-    @IDRETURN int OUTPUT,
-    @ERRORID int OUTPUT,
-    @ERRORDESCRIPCION nvarchar(max) OUTPUT
+CREATE PROCEDURE Insertar_Sesion
+	@Id_Sesion NVARCHAR(100),
+    @Id_Usuario INT,
+    @Dsc_Sesion NVARCHAR(MAX),
+    @Dsc_Origen NVARCHAR(MAX),
+    @Dsc_Cierre NVARCHAR(MAX),
+    @Fec_Inicio DATETIME,
+    @Fec_Cierre DATETIME,
+    @Estado TINYINT,
+    @IDRETURN INT OUTPUT,
+    @ERRORID INT OUTPUT,
+    @ERRORDESCRIPCION NVARCHAR(MAX) OUTPUT
 AS
 BEGIN
     BEGIN TRY
         BEGIN TRANSACTION 
 
-        -- Verificar si el producto existe
-        IF NOT EXISTS (SELECT * FROM TB_PRODUCTO WHERE ID_PRODUCTO = @Id_Producto)
+        -- Verificar si el usuario existe
+        IF NOT EXISTS (SELECT * FROM TB_USUARIO WHERE ID_USUARIO = @Id_Usuario)
         BEGIN
             SET @IDRETURN = -1;
-            SET @ERRORID = 12;
-            SET @ERRORDESCRIPCION = 'El producto especificado no existe.';
+            SET @ERRORID = 1;
+            SET @ERRORDESCRIPCION = 'El usuario especificado no existe.';
             RETURN; -- Salir del procedimiento almacenado
         END
 
-        -- Cambiar el estado del producto a 0 (desactivado)
-        UPDATE TB_PRODUCTO
-        SET ESTADO = 0
-        WHERE ID_PRODUCTO = @Id_Producto;
+        -- Insertar la sesión
+        INSERT INTO TB_SESION (ID_SESION, ID_USUARIO, DSC_SESION, DSC_ORIGEN, DSC_CIERRE, FEC_INICIO, FEC_CIERRE, ESTADO)
+        VALUES (@Id_Sesion, @Id_Usuario, @Dsc_Sesion, @Dsc_Origen, @Dsc_Cierre, @Fec_Inicio, @Fec_Cierre, @Estado);
 
-        SET @IDRETURN = 1; -- Éxito
+        SET @IDRETURN = SCOPE_IDENTITY();
 
         COMMIT TRANSACTION 
     END TRY
@@ -56,3 +62,4 @@ BEGIN
 END
 GO
 
+GO

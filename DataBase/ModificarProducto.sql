@@ -24,7 +24,10 @@ CREATE PROCEDURE Modificar_Producto
     @Dsc_Nombre_Producto nvarchar(100),
     @Dsc_Descripcion nvarchar(max),
     @Dsc_Url_Imagen nvarchar(max),
-    @Num_Precio float
+    @Num_Precio float,
+    @IDRETURN int OUTPUT,
+    @ERRORID int OUTPUT,
+    @ERRORDESCRIPCION nvarchar(max) OUTPUT
 AS
 BEGIN
     BEGIN TRY
@@ -33,39 +36,51 @@ BEGIN
         -- Verificar si el producto existe
         IF NOT EXISTS (SELECT * FROM TB_PRODUCTO WHERE ID_PRODUCTO = @Id_Producto)
         BEGIN
-            PRINT 'El producto especificado no existe.';
+            SET @IDRETURN = -1;
+            SET @ERRORID = 6;
+            SET @ERRORDESCRIPCION = 'El producto especificado no existe.';
             RETURN; -- Salir del procedimiento almacenado
         END
 
         -- Verificar si la subcategoría especificada existe
         IF NOT EXISTS (SELECT * FROM TB_SUBCATEGORIA_PRODUCTO WHERE ID_SUBCATE_PRODUCTO = @Id_SubCategoria_Producto)
         BEGIN
-            PRINT 'La subcategoría especificada no existe.';
+            SET @IDRETURN = -1;
+            SET @ERRORID = 7;
+            SET @ERRORDESCRIPCION = 'La subcategoría especificada no existe.';
             RETURN; -- Salir del procedimiento almacenado
         END
 
         -- Validaciones de datos
         IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Nombre_Producto) > 0 OR LEN(@Dsc_Nombre_Producto) = 0
         BEGIN
-            PRINT 'El nombre del producto contiene caracteres especiales o está vacío.';
+            SET @IDRETURN = -1;
+            SET @ERRORID = 8;
+            SET @ERRORDESCRIPCION = 'El nombre del producto contiene caracteres especiales o está vacío.';
             RETURN; -- Salir del procedimiento almacenado
         END
 
         IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Descripcion) > 0 OR LEN(@Dsc_Descripcion) = 0
         BEGIN
-            PRINT 'La descripción del producto contiene caracteres especiales o está vacía.';
+            SET @IDRETURN = -1;
+            SET @ERRORID = 9;
+            SET @ERRORDESCRIPCION = 'La descripción del producto contiene caracteres especiales o está vacía.';
             RETURN; -- Salir del procedimiento almacenado
         END
 
         IF PATINDEX('%[^a-zA-Z0-9:/. ]%', @Dsc_Url_Imagen) > 0 OR LEN(@Dsc_Url_Imagen) = 0
         BEGIN
-            PRINT 'La URL de la imagen contiene caracteres no válidos o está vacía.';
+            SET @IDRETURN = -1;
+            SET @ERRORID = 10;
+            SET @ERRORDESCRIPCION = 'La URL de la imagen contiene caracteres no válidos o está vacía.';
             RETURN; -- Salir del procedimiento almacenado
         END
 
         IF ISNUMERIC(@Num_Precio) <> 1
         BEGIN
-            PRINT 'El precio del producto debe ser un valor numérico.';
+            SET @IDRETURN = -1;
+            SET @ERRORID = 11;
+            SET @ERRORDESCRIPCION = 'El precio del producto debe ser un valor numérico.';
             RETURN; -- Salir del procedimiento almacenado
         END
 
@@ -78,10 +93,14 @@ BEGIN
             NUM_PRECIO = @Num_Precio
         WHERE ID_PRODUCTO = @Id_Producto;
 
+        SET @IDRETURN = @Id_Producto;
+
         COMMIT TRANSACTION 
     END TRY
     BEGIN CATCH
-        -- Si ocurre algún error durante la transacción, se deshace la transacción
+        SET @IDRETURN = -1;
+        SET @ERRORID = ERROR_NUMBER();
+        SET @ERRORDESCRIPCION = ERROR_MESSAGE();
         ROLLBACK TRANSACTION 
         -- Aquí puedes manejar el error como prefieras, por ejemplo, lanzar una excepción o registrar el error en una tabla de registro de errores.
     END CATCH

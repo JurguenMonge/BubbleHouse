@@ -18,8 +18,8 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE Eliminar_Producto
-    @Id_Producto int,
+CREATE PROCEDURE Eliminar_Usuario
+    @Id_Usuario int,
     @IDRETURN int OUTPUT,
     @ERRORID int OUTPUT,
     @ERRORDESCRIPCION nvarchar(max) OUTPUT
@@ -28,19 +28,18 @@ BEGIN
     BEGIN TRY
         BEGIN TRANSACTION 
 
-        -- Verificar si el producto existe
-        IF NOT EXISTS (SELECT * FROM TB_PRODUCTO WHERE ID_PRODUCTO = @Id_Producto)
+        -- Verificar si el usuario existe
+        IF NOT EXISTS (SELECT * FROM TB_USUARIO WHERE ID_USUARIO = @Id_Usuario)
         BEGIN
             SET @IDRETURN = -1;
-            SET @ERRORID = 12;
-            SET @ERRORDESCRIPCION = 'El producto especificado no existe.';
+            SET @ERRORID = 1;
+            SET @ERRORDESCRIPCION = 'El usuario especificado no existe.';
             RETURN; -- Salir del procedimiento almacenado
         END
 
-        -- Cambiar el estado del producto a 0 (desactivado)
-        UPDATE TB_PRODUCTO
-        SET ESTADO = 0
-        WHERE ID_PRODUCTO = @Id_Producto;
+        -- Eliminar el usuario
+        DELETE FROM TB_USUARIO
+        WHERE ID_USUARIO = @Id_Usuario;
 
         SET @IDRETURN = 1; -- Éxito
 
@@ -55,4 +54,3 @@ BEGIN
     END CATCH
 END
 GO
-
