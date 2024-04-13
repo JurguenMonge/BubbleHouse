@@ -1,0 +1,17 @@
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE Obtener_Roles_Por_Id_Usuario
+@Id_Usuario INT
+AS
+BEGIN
+    -- Seleccionar todos los roles de un usuario cuyo estado sea diferente de 0
+    SELECT R.ID_ROL, R.DSC_TIPO_ROL, R.DSC_PERMISOS, R.ESTADO
+    FROM TB_ROL AS R
+	INNER JOIN TB_R_ROL_USUARIO AS RE ON RE.ID_ROL = R.ID_ROL
+	INNER JOIN TB_USUARIO AS U ON U.ID_USUARIO = RE.ID_USUARIO
+    WHERE R.ESTADO <> 0 AND U.ID_USUARIO=@Id_Usuario;
+END
