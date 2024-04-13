@@ -20,7 +20,6 @@ GO
 -- =============================================
 CREATE PROCEDURE Insertar_Categoria_Ingrediente
     @Dsc_Nombre_Categoria nvarchar(100),
-    @ESTADO tinyint,
     @IDRETURN int OUTPUT,
     @ERRORID int OUTPUT,
     @ERRORDESCRIPCION nvarchar(max) OUTPUT
@@ -39,7 +38,7 @@ BEGIN
 
         -- Insertar la nueva categoría de ingrediente
         INSERT INTO TB_CATE_INGREDIENTE (DSC_NOMBRE_CATEGORIA, ESTADO)
-        VALUES (@Dsc_Nombre_Categoria, @ESTADO);
+        VALUES (@Dsc_Nombre_Categoria, 1);
 
         SET @IDRETURN = SCOPE_IDENTITY();
 
