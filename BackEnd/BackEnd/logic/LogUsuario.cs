@@ -2,7 +2,6 @@
 using BackEnd.domain;
 using System;
 using System.Linq;
-using BCrypt.Net;
 using Newtonsoft.Json;
 using System.Reflection;
 
@@ -10,17 +9,17 @@ namespace BackEnd.logic
 {
     public class LogUsuario
     {
-
+        //Encriptacion de contrasena
         private string EncriptarPassword(string password)
         {
             return BCrypt.Net.BCrypt.HashPassword(password, 12);
         }
-
+        //Verificar la contrasena
         private bool VerificarPassword(string password, string hashedPassword)
         {
             return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
-
+        //Insertar usuario
         public ResUsuario ingresarUsuario(ReqIngresarUsuario req)
         {
             ResUsuario res = new ResUsuario();
@@ -78,7 +77,7 @@ namespace BackEnd.logic
             }
             return res;
         }
-
+        //Obtener la lista de usuarios
         public ResObtenerUsuario obtenerUsuarios()
         {
             ResObtenerUsuario res = new ResObtenerUsuario();
@@ -121,7 +120,7 @@ namespace BackEnd.logic
             }
             return res;
         }
-
+        //Modificar un usuario
         public ResUsuario modificarUsuario(ReqIngresarUsuario req)
         {
             ResUsuario res = new ResUsuario();
@@ -179,7 +178,7 @@ namespace BackEnd.logic
             }
             return res;
         }
-
+        //Eliminar un usuario
         public ResUsuario eliminarUsuario(int id)
         {
             ResUsuario res = new ResUsuario();
@@ -227,7 +226,7 @@ namespace BackEnd.logic
             }
             return res;
         }
-
+        //Armar el usuario para obtener la lista
         private Usuario factoryArmarUsuario(Obtener_Usuarios_ActivosResult usuarioLinq)
         {
             Usuario usuario = new Usuario();
