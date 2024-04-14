@@ -33,7 +33,7 @@ namespace BackEnd.data
     #endregion
 		
 		public ConexionDataContext() : 
-				base(global::BackEnd.Properties.Settings.Default.BDBubbleHouseConnectionString, mappingSource)
+				base(global::BackEnd.Properties.Settings.Default.BDBubbleHouseConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -73,9 +73,12 @@ namespace BackEnd.data
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Desactivar_Producto")]
-		public int Desactivar_Producto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Producto", DbType="Int")] System.Nullable<int> id_Producto)
+		public int Desactivar_Producto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Producto", DbType="Int")] System.Nullable<int> id_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Producto);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Producto, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(3)));
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -216,6 +219,16 @@ namespace BackEnd.data
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Receta")]
+		public int Insertar_Receta([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_RECETA", DbType="Int")] System.Nullable<int> iD_RECETA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_PRODUCTO", DbType="Int")] System.Nullable<int> iD_PRODUCTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_LACTEO", DbType="Int")] System.Nullable<int> iD_ING_LACTEO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_SABOR", DbType="Int")] System.Nullable<int> iD_ING_SABOR, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_AZUCAR", DbType="Int")] System.Nullable<int> iD_ING_AZUCAR, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_TOPPING", DbType="Int")] System.Nullable<int> iD_ING_TOPPING, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_BORDEADO", DbType="Int")] System.Nullable<int> iD_ING_BORDEADO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_BUBBLES", DbType="Int")] System.Nullable<int> iD_ING_BUBBLES, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_NOMBRE", DbType="VarChar(MAX)")] string dSC_NOMBRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_TAMANO", DbType="VarChar(50)")] string dSC_TAMANO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_RECETA, iD_PRODUCTO, iD_ING_LACTEO, iD_ING_SABOR, iD_ING_AZUCAR, iD_ING_TOPPING, iD_ING_BORDEADO, iD_ING_BUBBLES, dSC_NOMBRE, dSC_TAMANO, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(10)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(11)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(12)));
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Sesion")]
 		public int Insertar_Sesion([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Sesion", DbType="NVarChar(100)")] string id_Sesion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Usuario", DbType="Int")] System.Nullable<int> id_Usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Sesion", DbType="NVarChar(MAX)")] string dsc_Sesion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Origen", DbType="NVarChar(MAX)")] string dsc_Origen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Cierre", DbType="NVarChar(MAX)")] string dsc_Cierre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fec_Inicio", DbType="DateTime")] System.Nullable<System.DateTime> fec_Inicio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fec_Cierre", DbType="DateTime")] System.Nullable<System.DateTime> fec_Cierre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="TinyInt")] System.Nullable<byte> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
@@ -233,6 +246,16 @@ namespace BackEnd.data
 			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(2)));
 			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(3)));
 			eRRORDESCRIPCION = ((string)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Usuario")]
+		public int Insertar_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Nombre", DbType="NVarChar(50)")] string dsc_Nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Primer_Apellido", DbType="NVarChar(50)")] string dsc_Primer_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Segundo_Apellido", DbType="NVarChar(50)")] string dsc_Segundo_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Correo", DbType="NVarChar(50)")] string dsc_Correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Password", DbType="NVarChar(MAX)")] string dsc_Password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Telefono", DbType="NVarChar(50)")] string dsc_Telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ROL", DbType="Int")] System.Nullable<int> iD_ROL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dsc_Nombre, dsc_Primer_Apellido, dsc_Segundo_Apellido, dsc_Correo, dsc_Password, dsc_Telefono, iD_ROL, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(9)));
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -306,6 +329,16 @@ namespace BackEnd.data
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Modificar_Usuario")]
+		public int Modificar_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Usuario", DbType="Int")] System.Nullable<int> id_Usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Nombre", DbType="NVarChar(50)")] string dsc_Nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Primer_Apellido", DbType="NVarChar(50)")] string dsc_Primer_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Segundo_Apellido", DbType="NVarChar(50)")] string dsc_Segundo_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Correo", DbType="NVarChar(50)")] string dsc_Correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Password", DbType="NVarChar(MAX)")] string dsc_Password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Telefono", DbType="NVarChar(50)")] string dsc_Telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Usuario, dsc_Nombre, dsc_Primer_Apellido, dsc_Segundo_Apellido, dsc_Correo, dsc_Password, dsc_Telefono, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(9)));
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Cate_Ingredientes_Activos")]
 		public ISingleResult<Obtener_Cate_Ingredientes_ActivosResult> Obtener_Cate_Ingredientes_Activos()
 		{
@@ -355,6 +388,22 @@ namespace BackEnd.data
 			return ((ISingleResult<Obtener_Productos_ActivosResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Receta")]
+		public ISingleResult<Obtener_RecetaResult> Obtener_Receta()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<Obtener_RecetaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Roles")]
+		public ISingleResult<Obtener_RolesResult> Obtener_Roles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), eRRORID, eRRORDESCRIPCION);
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(1)));
+			return ((ISingleResult<Obtener_RolesResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Roles_Por_Id_Usuario")]
 		public ISingleResult<Obtener_Roles_Por_Id_UsuarioResult> Obtener_Roles_Por_Id_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Usuario", DbType="Int")] System.Nullable<int> id_Usuario)
 		{
@@ -390,32 +439,6 @@ namespace BackEnd.data
 			return ((ISingleResult<Obtener_UsuarioResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obterner_Sesion")]
-		public ISingleResult<Obterner_SesionResult> Obterner_Sesion([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Sesion", DbType="NVarChar(100)")] string id_Sesion)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Sesion);
-			return ((ISingleResult<Obterner_SesionResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Roles")]
-		public ISingleResult<Obtener_RolesResult> Obtener_Roles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), eRRORID, eRRORDESCRIPCION);
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(0)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(1)));
-			return ((ISingleResult<Obtener_RolesResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Usuario")]
-		public int Insertar_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Nombre", DbType="NVarChar(50)")] string dsc_Nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Primer_Apellido", DbType="NVarChar(50)")] string dsc_Primer_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Segundo_Apellido", DbType="NVarChar(50)")] string dsc_Segundo_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Correo", DbType="NVarChar(50)")] string dsc_Correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Password", DbType="NVarChar(MAX)")] string dsc_Password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Telefono", DbType="NVarChar(50)")] string dsc_Telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ROL", DbType="Int")] System.Nullable<int> iD_ROL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dsc_Nombre, dsc_Primer_Apellido, dsc_Segundo_Apellido, dsc_Correo, dsc_Password, dsc_Telefono, iD_ROL, iDRETURN, eRRORID, eRRORDESCRIPCION);
-			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(7)));
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(8)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(9)));
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Usuarios_Activos")]
 		public ISingleResult<Obtener_Usuarios_ActivosResult> Obtener_Usuarios_Activos([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
@@ -425,14 +448,11 @@ namespace BackEnd.data
 			return ((ISingleResult<Obtener_Usuarios_ActivosResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Modificar_Usuario")]
-		public int Modificar_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Usuario", DbType="Int")] System.Nullable<int> id_Usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Nombre", DbType="NVarChar(50)")] string dsc_Nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Primer_Apellido", DbType="NVarChar(50)")] string dsc_Primer_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Segundo_Apellido", DbType="NVarChar(50)")] string dsc_Segundo_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Correo", DbType="NVarChar(50)")] string dsc_Correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Password", DbType="NVarChar(MAX)")] string dsc_Password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Telefono", DbType="NVarChar(50)")] string dsc_Telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obterner_Sesion")]
+		public ISingleResult<Obterner_SesionResult> Obterner_Sesion([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Sesion", DbType="NVarChar(100)")] string id_Sesion)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Usuario, dsc_Nombre, dsc_Primer_Apellido, dsc_Segundo_Apellido, dsc_Correo, dsc_Password, dsc_Telefono, iDRETURN, eRRORID, eRRORDESCRIPCION);
-			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(7)));
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(8)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(9)));
-			return ((int)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Sesion);
+			return ((ISingleResult<Obterner_SesionResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1284,6 +1304,1192 @@ namespace BackEnd.data
 		}
 	}
 	
+	public partial class Obtener_RecetaResult
+	{
+		
+		private int _ID_RECETA;
+		
+		private System.Nullable<int> _ID_PRODUCTO;
+		
+		private System.Nullable<int> _ID_ING_LACTEO;
+		
+		private System.Nullable<int> _ID_ING_SABOR;
+		
+		private System.Nullable<int> _ID_ING_AZUCAR;
+		
+		private System.Nullable<int> _ID_ING_TOPPING;
+		
+		private System.Nullable<int> _ID_ING_BORDEADO;
+		
+		private System.Nullable<int> _ID_ING_BUBBLES;
+		
+		private string _DSC_NOMBRE;
+		
+		private string _DSC_TAMANO;
+		
+		private System.Nullable<System.DateTime> _FECHA;
+		
+		private System.Nullable<byte> _ESTADO;
+		
+		private int _ID_PRODUCTO1;
+		
+		private System.Nullable<int> _ID_SUBCATE_PRODUCTO;
+		
+		private string _DSC_NOMBRE_PRODUCTO;
+		
+		private string _DSC_DESCRIPCION;
+		
+		private string _DSC_URL_IMAGEN;
+		
+		private System.Nullable<decimal> _NUM_PRECIO;
+		
+		private System.Nullable<byte> _ESTADO1;
+		
+		private int _ID_INGREDIENTE;
+		
+		private System.Nullable<int> _ID_CATE_INGREDIENTE;
+		
+		private string _DSC_NOMBRE_INGREDIENTE;
+		
+		private string _DSC_DESCRIPCION1;
+		
+		private string _DSC_URL_IMAGEN1;
+		
+		private System.Nullable<decimal> _NUM_PRECIO1;
+		
+		private System.Nullable<byte> _ESTADO2;
+		
+		private int _ID_INGREDIENTE1;
+		
+		private System.Nullable<int> _ID_CATE_INGREDIENTE1;
+		
+		private string _DSC_NOMBRE_INGREDIENTE1;
+		
+		private string _DSC_DESCRIPCION2;
+		
+		private string _DSC_URL_IMAGEN2;
+		
+		private System.Nullable<decimal> _NUM_PRECIO2;
+		
+		private System.Nullable<byte> _ESTADO3;
+		
+		private int _ID_INGREDIENTE2;
+		
+		private System.Nullable<int> _ID_CATE_INGREDIENTE2;
+		
+		private string _DSC_NOMBRE_INGREDIENTE2;
+		
+		private string _DSC_DESCRIPCION3;
+		
+		private string _DSC_URL_IMAGEN3;
+		
+		private System.Nullable<decimal> _NUM_PRECIO3;
+		
+		private System.Nullable<byte> _ESTADO4;
+		
+		private int _ID_INGREDIENTE3;
+		
+		private System.Nullable<int> _ID_CATE_INGREDIENTE3;
+		
+		private string _DSC_NOMBRE_INGREDIENTE3;
+		
+		private string _DSC_DESCRIPCION4;
+		
+		private string _DSC_URL_IMAGEN4;
+		
+		private System.Nullable<decimal> _NUM_PRECIO4;
+		
+		private System.Nullable<byte> _ESTADO5;
+		
+		private int _ID_INGREDIENTE4;
+		
+		private System.Nullable<int> _ID_CATE_INGREDIENTE4;
+		
+		private string _DSC_NOMBRE_INGREDIENTE4;
+		
+		private string _DSC_DESCRIPCION5;
+		
+		private string _DSC_URL_IMAGEN5;
+		
+		private System.Nullable<decimal> _NUM_PRECIO5;
+		
+		private System.Nullable<byte> _ESTADO6;
+		
+		private int _ID_INGREDIENTE5;
+		
+		private System.Nullable<int> _ID_CATE_INGREDIENTE5;
+		
+		private string _DSC_NOMBRE_INGREDIENTE5;
+		
+		private string _DSC_DESCRIPCION6;
+		
+		private string _DSC_URL_IMAGEN6;
+		
+		private System.Nullable<decimal> _NUM_PRECIO6;
+		
+		private System.Nullable<byte> _ESTADO7;
+		
+		public Obtener_RecetaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_RECETA", DbType="Int NOT NULL")]
+		public int ID_RECETA
+		{
+			get
+			{
+				return this._ID_RECETA;
+			}
+			set
+			{
+				if ((this._ID_RECETA != value))
+				{
+					this._ID_RECETA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_PRODUCTO", DbType="Int")]
+		public System.Nullable<int> ID_PRODUCTO
+		{
+			get
+			{
+				return this._ID_PRODUCTO;
+			}
+			set
+			{
+				if ((this._ID_PRODUCTO != value))
+				{
+					this._ID_PRODUCTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ING_LACTEO", DbType="Int")]
+		public System.Nullable<int> ID_ING_LACTEO
+		{
+			get
+			{
+				return this._ID_ING_LACTEO;
+			}
+			set
+			{
+				if ((this._ID_ING_LACTEO != value))
+				{
+					this._ID_ING_LACTEO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ING_SABOR", DbType="Int")]
+		public System.Nullable<int> ID_ING_SABOR
+		{
+			get
+			{
+				return this._ID_ING_SABOR;
+			}
+			set
+			{
+				if ((this._ID_ING_SABOR != value))
+				{
+					this._ID_ING_SABOR = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ING_AZUCAR", DbType="Int")]
+		public System.Nullable<int> ID_ING_AZUCAR
+		{
+			get
+			{
+				return this._ID_ING_AZUCAR;
+			}
+			set
+			{
+				if ((this._ID_ING_AZUCAR != value))
+				{
+					this._ID_ING_AZUCAR = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ING_TOPPING", DbType="Int")]
+		public System.Nullable<int> ID_ING_TOPPING
+		{
+			get
+			{
+				return this._ID_ING_TOPPING;
+			}
+			set
+			{
+				if ((this._ID_ING_TOPPING != value))
+				{
+					this._ID_ING_TOPPING = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ING_BORDEADO", DbType="Int")]
+		public System.Nullable<int> ID_ING_BORDEADO
+		{
+			get
+			{
+				return this._ID_ING_BORDEADO;
+			}
+			set
+			{
+				if ((this._ID_ING_BORDEADO != value))
+				{
+					this._ID_ING_BORDEADO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ING_BUBBLES", DbType="Int")]
+		public System.Nullable<int> ID_ING_BUBBLES
+		{
+			get
+			{
+				return this._ID_ING_BUBBLES;
+			}
+			set
+			{
+				if ((this._ID_ING_BUBBLES != value))
+				{
+					this._ID_ING_BUBBLES = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE", DbType="NVarChar(MAX)")]
+		public string DSC_NOMBRE
+		{
+			get
+			{
+				return this._DSC_NOMBRE;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE != value))
+				{
+					this._DSC_NOMBRE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_TAMANO", DbType="NVarChar(50)")]
+		public string DSC_TAMANO
+		{
+			get
+			{
+				return this._DSC_TAMANO;
+			}
+			set
+			{
+				if ((this._DSC_TAMANO != value))
+				{
+					this._DSC_TAMANO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FECHA
+		{
+			get
+			{
+				return this._FECHA;
+			}
+			set
+			{
+				if ((this._FECHA != value))
+				{
+					this._FECHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="TinyInt")]
+		public System.Nullable<byte> ESTADO
+		{
+			get
+			{
+				return this._ESTADO;
+			}
+			set
+			{
+				if ((this._ESTADO != value))
+				{
+					this._ESTADO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_PRODUCTO1", DbType="Int NOT NULL")]
+		public int ID_PRODUCTO1
+		{
+			get
+			{
+				return this._ID_PRODUCTO1;
+			}
+			set
+			{
+				if ((this._ID_PRODUCTO1 != value))
+				{
+					this._ID_PRODUCTO1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SUBCATE_PRODUCTO", DbType="Int")]
+		public System.Nullable<int> ID_SUBCATE_PRODUCTO
+		{
+			get
+			{
+				return this._ID_SUBCATE_PRODUCTO;
+			}
+			set
+			{
+				if ((this._ID_SUBCATE_PRODUCTO != value))
+				{
+					this._ID_SUBCATE_PRODUCTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_PRODUCTO", DbType="NVarChar(100)")]
+		public string DSC_NOMBRE_PRODUCTO
+		{
+			get
+			{
+				return this._DSC_NOMBRE_PRODUCTO;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE_PRODUCTO != value))
+				{
+					this._DSC_NOMBRE_PRODUCTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_DESCRIPCION", DbType="NVarChar(MAX)")]
+		public string DSC_DESCRIPCION
+		{
+			get
+			{
+				return this._DSC_DESCRIPCION;
+			}
+			set
+			{
+				if ((this._DSC_DESCRIPCION != value))
+				{
+					this._DSC_DESCRIPCION = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_URL_IMAGEN", DbType="NVarChar(MAX)")]
+		public string DSC_URL_IMAGEN
+		{
+			get
+			{
+				return this._DSC_URL_IMAGEN;
+			}
+			set
+			{
+				if ((this._DSC_URL_IMAGEN != value))
+				{
+					this._DSC_URL_IMAGEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_PRECIO", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> NUM_PRECIO
+		{
+			get
+			{
+				return this._NUM_PRECIO;
+			}
+			set
+			{
+				if ((this._NUM_PRECIO != value))
+				{
+					this._NUM_PRECIO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO1", DbType="TinyInt")]
+		public System.Nullable<byte> ESTADO1
+		{
+			get
+			{
+				return this._ESTADO1;
+			}
+			set
+			{
+				if ((this._ESTADO1 != value))
+				{
+					this._ESTADO1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_INGREDIENTE", DbType="Int NOT NULL")]
+		public int ID_INGREDIENTE
+		{
+			get
+			{
+				return this._ID_INGREDIENTE;
+			}
+			set
+			{
+				if ((this._ID_INGREDIENTE != value))
+				{
+					this._ID_INGREDIENTE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_CATE_INGREDIENTE", DbType="Int")]
+		public System.Nullable<int> ID_CATE_INGREDIENTE
+		{
+			get
+			{
+				return this._ID_CATE_INGREDIENTE;
+			}
+			set
+			{
+				if ((this._ID_CATE_INGREDIENTE != value))
+				{
+					this._ID_CATE_INGREDIENTE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_INGREDIENTE", DbType="NVarChar(100)")]
+		public string DSC_NOMBRE_INGREDIENTE
+		{
+			get
+			{
+				return this._DSC_NOMBRE_INGREDIENTE;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE_INGREDIENTE != value))
+				{
+					this._DSC_NOMBRE_INGREDIENTE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_DESCRIPCION1", DbType="NVarChar(MAX)")]
+		public string DSC_DESCRIPCION1
+		{
+			get
+			{
+				return this._DSC_DESCRIPCION1;
+			}
+			set
+			{
+				if ((this._DSC_DESCRIPCION1 != value))
+				{
+					this._DSC_DESCRIPCION1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_URL_IMAGEN1", DbType="NVarChar(MAX)")]
+		public string DSC_URL_IMAGEN1
+		{
+			get
+			{
+				return this._DSC_URL_IMAGEN1;
+			}
+			set
+			{
+				if ((this._DSC_URL_IMAGEN1 != value))
+				{
+					this._DSC_URL_IMAGEN1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_PRECIO1", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> NUM_PRECIO1
+		{
+			get
+			{
+				return this._NUM_PRECIO1;
+			}
+			set
+			{
+				if ((this._NUM_PRECIO1 != value))
+				{
+					this._NUM_PRECIO1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO2", DbType="TinyInt")]
+		public System.Nullable<byte> ESTADO2
+		{
+			get
+			{
+				return this._ESTADO2;
+			}
+			set
+			{
+				if ((this._ESTADO2 != value))
+				{
+					this._ESTADO2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_INGREDIENTE1", DbType="Int NOT NULL")]
+		public int ID_INGREDIENTE1
+		{
+			get
+			{
+				return this._ID_INGREDIENTE1;
+			}
+			set
+			{
+				if ((this._ID_INGREDIENTE1 != value))
+				{
+					this._ID_INGREDIENTE1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_CATE_INGREDIENTE1", DbType="Int")]
+		public System.Nullable<int> ID_CATE_INGREDIENTE1
+		{
+			get
+			{
+				return this._ID_CATE_INGREDIENTE1;
+			}
+			set
+			{
+				if ((this._ID_CATE_INGREDIENTE1 != value))
+				{
+					this._ID_CATE_INGREDIENTE1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_INGREDIENTE1", DbType="NVarChar(100)")]
+		public string DSC_NOMBRE_INGREDIENTE1
+		{
+			get
+			{
+				return this._DSC_NOMBRE_INGREDIENTE1;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE_INGREDIENTE1 != value))
+				{
+					this._DSC_NOMBRE_INGREDIENTE1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_DESCRIPCION2", DbType="NVarChar(MAX)")]
+		public string DSC_DESCRIPCION2
+		{
+			get
+			{
+				return this._DSC_DESCRIPCION2;
+			}
+			set
+			{
+				if ((this._DSC_DESCRIPCION2 != value))
+				{
+					this._DSC_DESCRIPCION2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_URL_IMAGEN2", DbType="NVarChar(MAX)")]
+		public string DSC_URL_IMAGEN2
+		{
+			get
+			{
+				return this._DSC_URL_IMAGEN2;
+			}
+			set
+			{
+				if ((this._DSC_URL_IMAGEN2 != value))
+				{
+					this._DSC_URL_IMAGEN2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_PRECIO2", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> NUM_PRECIO2
+		{
+			get
+			{
+				return this._NUM_PRECIO2;
+			}
+			set
+			{
+				if ((this._NUM_PRECIO2 != value))
+				{
+					this._NUM_PRECIO2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO3", DbType="TinyInt")]
+		public System.Nullable<byte> ESTADO3
+		{
+			get
+			{
+				return this._ESTADO3;
+			}
+			set
+			{
+				if ((this._ESTADO3 != value))
+				{
+					this._ESTADO3 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_INGREDIENTE2", DbType="Int NOT NULL")]
+		public int ID_INGREDIENTE2
+		{
+			get
+			{
+				return this._ID_INGREDIENTE2;
+			}
+			set
+			{
+				if ((this._ID_INGREDIENTE2 != value))
+				{
+					this._ID_INGREDIENTE2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_CATE_INGREDIENTE2", DbType="Int")]
+		public System.Nullable<int> ID_CATE_INGREDIENTE2
+		{
+			get
+			{
+				return this._ID_CATE_INGREDIENTE2;
+			}
+			set
+			{
+				if ((this._ID_CATE_INGREDIENTE2 != value))
+				{
+					this._ID_CATE_INGREDIENTE2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_INGREDIENTE2", DbType="NVarChar(100)")]
+		public string DSC_NOMBRE_INGREDIENTE2
+		{
+			get
+			{
+				return this._DSC_NOMBRE_INGREDIENTE2;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE_INGREDIENTE2 != value))
+				{
+					this._DSC_NOMBRE_INGREDIENTE2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_DESCRIPCION3", DbType="NVarChar(MAX)")]
+		public string DSC_DESCRIPCION3
+		{
+			get
+			{
+				return this._DSC_DESCRIPCION3;
+			}
+			set
+			{
+				if ((this._DSC_DESCRIPCION3 != value))
+				{
+					this._DSC_DESCRIPCION3 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_URL_IMAGEN3", DbType="NVarChar(MAX)")]
+		public string DSC_URL_IMAGEN3
+		{
+			get
+			{
+				return this._DSC_URL_IMAGEN3;
+			}
+			set
+			{
+				if ((this._DSC_URL_IMAGEN3 != value))
+				{
+					this._DSC_URL_IMAGEN3 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_PRECIO3", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> NUM_PRECIO3
+		{
+			get
+			{
+				return this._NUM_PRECIO3;
+			}
+			set
+			{
+				if ((this._NUM_PRECIO3 != value))
+				{
+					this._NUM_PRECIO3 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO4", DbType="TinyInt")]
+		public System.Nullable<byte> ESTADO4
+		{
+			get
+			{
+				return this._ESTADO4;
+			}
+			set
+			{
+				if ((this._ESTADO4 != value))
+				{
+					this._ESTADO4 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_INGREDIENTE3", DbType="Int NOT NULL")]
+		public int ID_INGREDIENTE3
+		{
+			get
+			{
+				return this._ID_INGREDIENTE3;
+			}
+			set
+			{
+				if ((this._ID_INGREDIENTE3 != value))
+				{
+					this._ID_INGREDIENTE3 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_CATE_INGREDIENTE3", DbType="Int")]
+		public System.Nullable<int> ID_CATE_INGREDIENTE3
+		{
+			get
+			{
+				return this._ID_CATE_INGREDIENTE3;
+			}
+			set
+			{
+				if ((this._ID_CATE_INGREDIENTE3 != value))
+				{
+					this._ID_CATE_INGREDIENTE3 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_INGREDIENTE3", DbType="NVarChar(100)")]
+		public string DSC_NOMBRE_INGREDIENTE3
+		{
+			get
+			{
+				return this._DSC_NOMBRE_INGREDIENTE3;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE_INGREDIENTE3 != value))
+				{
+					this._DSC_NOMBRE_INGREDIENTE3 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_DESCRIPCION4", DbType="NVarChar(MAX)")]
+		public string DSC_DESCRIPCION4
+		{
+			get
+			{
+				return this._DSC_DESCRIPCION4;
+			}
+			set
+			{
+				if ((this._DSC_DESCRIPCION4 != value))
+				{
+					this._DSC_DESCRIPCION4 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_URL_IMAGEN4", DbType="NVarChar(MAX)")]
+		public string DSC_URL_IMAGEN4
+		{
+			get
+			{
+				return this._DSC_URL_IMAGEN4;
+			}
+			set
+			{
+				if ((this._DSC_URL_IMAGEN4 != value))
+				{
+					this._DSC_URL_IMAGEN4 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_PRECIO4", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> NUM_PRECIO4
+		{
+			get
+			{
+				return this._NUM_PRECIO4;
+			}
+			set
+			{
+				if ((this._NUM_PRECIO4 != value))
+				{
+					this._NUM_PRECIO4 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO5", DbType="TinyInt")]
+		public System.Nullable<byte> ESTADO5
+		{
+			get
+			{
+				return this._ESTADO5;
+			}
+			set
+			{
+				if ((this._ESTADO5 != value))
+				{
+					this._ESTADO5 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_INGREDIENTE4", DbType="Int NOT NULL")]
+		public int ID_INGREDIENTE4
+		{
+			get
+			{
+				return this._ID_INGREDIENTE4;
+			}
+			set
+			{
+				if ((this._ID_INGREDIENTE4 != value))
+				{
+					this._ID_INGREDIENTE4 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_CATE_INGREDIENTE4", DbType="Int")]
+		public System.Nullable<int> ID_CATE_INGREDIENTE4
+		{
+			get
+			{
+				return this._ID_CATE_INGREDIENTE4;
+			}
+			set
+			{
+				if ((this._ID_CATE_INGREDIENTE4 != value))
+				{
+					this._ID_CATE_INGREDIENTE4 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_INGREDIENTE4", DbType="NVarChar(100)")]
+		public string DSC_NOMBRE_INGREDIENTE4
+		{
+			get
+			{
+				return this._DSC_NOMBRE_INGREDIENTE4;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE_INGREDIENTE4 != value))
+				{
+					this._DSC_NOMBRE_INGREDIENTE4 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_DESCRIPCION5", DbType="NVarChar(MAX)")]
+		public string DSC_DESCRIPCION5
+		{
+			get
+			{
+				return this._DSC_DESCRIPCION5;
+			}
+			set
+			{
+				if ((this._DSC_DESCRIPCION5 != value))
+				{
+					this._DSC_DESCRIPCION5 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_URL_IMAGEN5", DbType="NVarChar(MAX)")]
+		public string DSC_URL_IMAGEN5
+		{
+			get
+			{
+				return this._DSC_URL_IMAGEN5;
+			}
+			set
+			{
+				if ((this._DSC_URL_IMAGEN5 != value))
+				{
+					this._DSC_URL_IMAGEN5 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_PRECIO5", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> NUM_PRECIO5
+		{
+			get
+			{
+				return this._NUM_PRECIO5;
+			}
+			set
+			{
+				if ((this._NUM_PRECIO5 != value))
+				{
+					this._NUM_PRECIO5 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO6", DbType="TinyInt")]
+		public System.Nullable<byte> ESTADO6
+		{
+			get
+			{
+				return this._ESTADO6;
+			}
+			set
+			{
+				if ((this._ESTADO6 != value))
+				{
+					this._ESTADO6 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_INGREDIENTE5", DbType="Int NOT NULL")]
+		public int ID_INGREDIENTE5
+		{
+			get
+			{
+				return this._ID_INGREDIENTE5;
+			}
+			set
+			{
+				if ((this._ID_INGREDIENTE5 != value))
+				{
+					this._ID_INGREDIENTE5 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_CATE_INGREDIENTE5", DbType="Int")]
+		public System.Nullable<int> ID_CATE_INGREDIENTE5
+		{
+			get
+			{
+				return this._ID_CATE_INGREDIENTE5;
+			}
+			set
+			{
+				if ((this._ID_CATE_INGREDIENTE5 != value))
+				{
+					this._ID_CATE_INGREDIENTE5 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_INGREDIENTE5", DbType="NVarChar(100)")]
+		public string DSC_NOMBRE_INGREDIENTE5
+		{
+			get
+			{
+				return this._DSC_NOMBRE_INGREDIENTE5;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE_INGREDIENTE5 != value))
+				{
+					this._DSC_NOMBRE_INGREDIENTE5 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_DESCRIPCION6", DbType="NVarChar(MAX)")]
+		public string DSC_DESCRIPCION6
+		{
+			get
+			{
+				return this._DSC_DESCRIPCION6;
+			}
+			set
+			{
+				if ((this._DSC_DESCRIPCION6 != value))
+				{
+					this._DSC_DESCRIPCION6 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_URL_IMAGEN6", DbType="NVarChar(MAX)")]
+		public string DSC_URL_IMAGEN6
+		{
+			get
+			{
+				return this._DSC_URL_IMAGEN6;
+			}
+			set
+			{
+				if ((this._DSC_URL_IMAGEN6 != value))
+				{
+					this._DSC_URL_IMAGEN6 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_PRECIO6", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> NUM_PRECIO6
+		{
+			get
+			{
+				return this._NUM_PRECIO6;
+			}
+			set
+			{
+				if ((this._NUM_PRECIO6 != value))
+				{
+					this._NUM_PRECIO6 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO7", DbType="TinyInt")]
+		public System.Nullable<byte> ESTADO7
+		{
+			get
+			{
+				return this._ESTADO7;
+			}
+			set
+			{
+				if ((this._ESTADO7 != value))
+				{
+					this._ESTADO7 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Obtener_RolesResult
+	{
+		
+		private int _ID_ROL;
+		
+		private string _DSC_TIPO_ROL;
+		
+		private string _DSC_PERMISOS;
+		
+		private System.Nullable<byte> _ESTADO;
+		
+		public Obtener_RolesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ROL", DbType="Int NOT NULL")]
+		public int ID_ROL
+		{
+			get
+			{
+				return this._ID_ROL;
+			}
+			set
+			{
+				if ((this._ID_ROL != value))
+				{
+					this._ID_ROL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_TIPO_ROL", DbType="NVarChar(50)")]
+		public string DSC_TIPO_ROL
+		{
+			get
+			{
+				return this._DSC_TIPO_ROL;
+			}
+			set
+			{
+				if ((this._DSC_TIPO_ROL != value))
+				{
+					this._DSC_TIPO_ROL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_PERMISOS", DbType="NVarChar(MAX)")]
+		public string DSC_PERMISOS
+		{
+			get
+			{
+				return this._DSC_PERMISOS;
+			}
+			set
+			{
+				if ((this._DSC_PERMISOS != value))
+				{
+					this._DSC_PERMISOS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="TinyInt")]
+		public System.Nullable<byte> ESTADO
+		{
+			get
+			{
+				return this._ESTADO;
+			}
+			set
+			{
+				if ((this._ESTADO != value))
+				{
+					this._ESTADO = value;
+				}
+			}
+		}
+	}
+	
 	public partial class Obtener_Roles_Por_Id_UsuarioResult
 	{
 		
@@ -1918,6 +3124,158 @@ namespace BackEnd.data
 		}
 	}
 	
+	public partial class Obtener_Usuarios_ActivosResult
+	{
+		
+		private string _DSC_NOMBRE;
+		
+		private string _DSC_PRIMER_APELLIDO;
+		
+		private string _DSC_SEGUNDO_APELLIDO;
+		
+		private string _DSC_PASSWORD;
+		
+		private string _DSC_TELEFONO;
+		
+		private string _DSC_TIPO_ROL;
+		
+		private string _DSC_PERMISOS;
+		
+		private System.Nullable<byte> _ESTADO;
+		
+		public Obtener_Usuarios_ActivosResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE", DbType="NVarChar(50)")]
+		public string DSC_NOMBRE
+		{
+			get
+			{
+				return this._DSC_NOMBRE;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE != value))
+				{
+					this._DSC_NOMBRE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_PRIMER_APELLIDO", DbType="NVarChar(50)")]
+		public string DSC_PRIMER_APELLIDO
+		{
+			get
+			{
+				return this._DSC_PRIMER_APELLIDO;
+			}
+			set
+			{
+				if ((this._DSC_PRIMER_APELLIDO != value))
+				{
+					this._DSC_PRIMER_APELLIDO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_SEGUNDO_APELLIDO", DbType="NVarChar(50)")]
+		public string DSC_SEGUNDO_APELLIDO
+		{
+			get
+			{
+				return this._DSC_SEGUNDO_APELLIDO;
+			}
+			set
+			{
+				if ((this._DSC_SEGUNDO_APELLIDO != value))
+				{
+					this._DSC_SEGUNDO_APELLIDO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_PASSWORD", DbType="NVarChar(MAX)")]
+		public string DSC_PASSWORD
+		{
+			get
+			{
+				return this._DSC_PASSWORD;
+			}
+			set
+			{
+				if ((this._DSC_PASSWORD != value))
+				{
+					this._DSC_PASSWORD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_TELEFONO", DbType="NVarChar(50)")]
+		public string DSC_TELEFONO
+		{
+			get
+			{
+				return this._DSC_TELEFONO;
+			}
+			set
+			{
+				if ((this._DSC_TELEFONO != value))
+				{
+					this._DSC_TELEFONO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_TIPO_ROL", DbType="NVarChar(50)")]
+		public string DSC_TIPO_ROL
+		{
+			get
+			{
+				return this._DSC_TIPO_ROL;
+			}
+			set
+			{
+				if ((this._DSC_TIPO_ROL != value))
+				{
+					this._DSC_TIPO_ROL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_PERMISOS", DbType="NVarChar(MAX)")]
+		public string DSC_PERMISOS
+		{
+			get
+			{
+				return this._DSC_PERMISOS;
+			}
+			set
+			{
+				if ((this._DSC_PERMISOS != value))
+				{
+					this._DSC_PERMISOS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="TinyInt")]
+		public System.Nullable<byte> ESTADO
+		{
+			get
+			{
+				return this._ESTADO;
+			}
+			set
+			{
+				if ((this._ESTADO != value))
+				{
+					this._ESTADO = value;
+				}
+			}
+		}
+	}
+	
 	public partial class Obterner_SesionResult
 	{
 		
@@ -2173,238 +3531,6 @@ namespace BackEnd.data
 				if ((this._DSC_TIPO_ROL != value))
 				{
 					this._DSC_TIPO_ROL = value;
-				}
-			}
-		}
-	}
-	
-	public partial class Obtener_RolesResult
-	{
-		
-		private int _ID_ROL;
-		
-		private string _DSC_TIPO_ROL;
-		
-		private string _DSC_PERMISOS;
-		
-		private System.Nullable<byte> _ESTADO;
-		
-		public Obtener_RolesResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ROL", DbType="Int NOT NULL")]
-		public int ID_ROL
-		{
-			get
-			{
-				return this._ID_ROL;
-			}
-			set
-			{
-				if ((this._ID_ROL != value))
-				{
-					this._ID_ROL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_TIPO_ROL", DbType="NVarChar(50)")]
-		public string DSC_TIPO_ROL
-		{
-			get
-			{
-				return this._DSC_TIPO_ROL;
-			}
-			set
-			{
-				if ((this._DSC_TIPO_ROL != value))
-				{
-					this._DSC_TIPO_ROL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_PERMISOS", DbType="NVarChar(MAX)")]
-		public string DSC_PERMISOS
-		{
-			get
-			{
-				return this._DSC_PERMISOS;
-			}
-			set
-			{
-				if ((this._DSC_PERMISOS != value))
-				{
-					this._DSC_PERMISOS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="TinyInt")]
-		public System.Nullable<byte> ESTADO
-		{
-			get
-			{
-				return this._ESTADO;
-			}
-			set
-			{
-				if ((this._ESTADO != value))
-				{
-					this._ESTADO = value;
-				}
-			}
-		}
-	}
-	
-	public partial class Obtener_Usuarios_ActivosResult
-	{
-		
-		private string _DSC_NOMBRE;
-		
-		private string _DSC_PRIMER_APELLIDO;
-		
-		private string _DSC_SEGUNDO_APELLIDO;
-		
-		private string _DSC_PASSWORD;
-		
-		private string _DSC_TELEFONO;
-		
-		private string _DSC_TIPO_ROL;
-		
-		private string _DSC_PERMISOS;
-		
-		private System.Nullable<byte> _ESTADO;
-		
-		public Obtener_Usuarios_ActivosResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE", DbType="NVarChar(50)")]
-		public string DSC_NOMBRE
-		{
-			get
-			{
-				return this._DSC_NOMBRE;
-			}
-			set
-			{
-				if ((this._DSC_NOMBRE != value))
-				{
-					this._DSC_NOMBRE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_PRIMER_APELLIDO", DbType="NVarChar(50)")]
-		public string DSC_PRIMER_APELLIDO
-		{
-			get
-			{
-				return this._DSC_PRIMER_APELLIDO;
-			}
-			set
-			{
-				if ((this._DSC_PRIMER_APELLIDO != value))
-				{
-					this._DSC_PRIMER_APELLIDO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_SEGUNDO_APELLIDO", DbType="NVarChar(50)")]
-		public string DSC_SEGUNDO_APELLIDO
-		{
-			get
-			{
-				return this._DSC_SEGUNDO_APELLIDO;
-			}
-			set
-			{
-				if ((this._DSC_SEGUNDO_APELLIDO != value))
-				{
-					this._DSC_SEGUNDO_APELLIDO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_PASSWORD", DbType="NVarChar(MAX)")]
-		public string DSC_PASSWORD
-		{
-			get
-			{
-				return this._DSC_PASSWORD;
-			}
-			set
-			{
-				if ((this._DSC_PASSWORD != value))
-				{
-					this._DSC_PASSWORD = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_TELEFONO", DbType="NVarChar(50)")]
-		public string DSC_TELEFONO
-		{
-			get
-			{
-				return this._DSC_TELEFONO;
-			}
-			set
-			{
-				if ((this._DSC_TELEFONO != value))
-				{
-					this._DSC_TELEFONO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_TIPO_ROL", DbType="NVarChar(50)")]
-		public string DSC_TIPO_ROL
-		{
-			get
-			{
-				return this._DSC_TIPO_ROL;
-			}
-			set
-			{
-				if ((this._DSC_TIPO_ROL != value))
-				{
-					this._DSC_TIPO_ROL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_PERMISOS", DbType="NVarChar(MAX)")]
-		public string DSC_PERMISOS
-		{
-			get
-			{
-				return this._DSC_PERMISOS;
-			}
-			set
-			{
-				if ((this._DSC_PERMISOS != value))
-				{
-					this._DSC_PERMISOS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="TinyInt")]
-		public System.Nullable<byte> ESTADO
-		{
-			get
-			{
-				return this._ESTADO;
-			}
-			set
-			{
-				if ((this._ESTADO != value))
-				{
-					this._ESTADO = value;
 				}
 			}
 		}
