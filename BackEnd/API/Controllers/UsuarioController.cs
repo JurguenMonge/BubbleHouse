@@ -17,5 +17,19 @@ namespace API.Controllers
         {
             return new LogUsuario().ingresarUsuario(req);
         }
+
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("api/usuario/obtener")]
+        public ResObtenerUsuario obtenerUsuarios()
+        {
+            return new LogUsuario().obtenerUsuarios();
+        }
+
+        [System.Web.Http.HttpPut]
+        [System.Web.Http.Route("api/usuario/modificar")]
+        public ResIngresarUsuario modificarUsuario(ReqIngresarUsuario req)
+        {
+            return new LogUsuario().modificarUsuario(req);
+        }
     }
 }
