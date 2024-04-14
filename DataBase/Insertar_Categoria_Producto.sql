@@ -1,10 +1,9 @@
-
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE Insertar_Categoria_Producto
+CREATE PROCEDURE [dbo].[Insertar_Categoria_Producto]
     @Dsc_Nombre_Categoria nvarchar(100),
     @IDRETURN int OUTPUT,
     @ERRORID int OUTPUT,
@@ -12,29 +11,41 @@ CREATE PROCEDURE Insertar_Categoria_Producto
 AS
 BEGIN
     BEGIN TRY
-        BEGIN TRANSACTION 
 
         IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Nombre_Categoria) > 0 OR LEN(@Dsc_Nombre_Categoria) = 0
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 1;
             SET @ERRORDESCRIPCION = 'El nombre de la categoría contiene caracteres especiales o está vacío.';
-            RETURN; -- Salir del procedimiento almacenado
         END
-
+		ELSE
+		BEGIN
         -- Insertar la nueva categoría de producto
         INSERT INTO TB_CATE_PRODUCTO(DSC_NOMBRE_CATEGORIA, ESTADO)
         VALUES (@Dsc_Nombre_Categoria, 1);
 
         SET @IDRETURN = SCOPE_IDENTITY();
-
-        COMMIT TRANSACTION 
+		END
     END TRY
     BEGIN CATCH
         SET @IDRETURN = -1;
         SET @ERRORID = ERROR_NUMBER();
         SET @ERRORDESCRIPCION = ERROR_MESSAGE();
-        ROLLBACK TRANSACTION 
+        --Bitacorear error en BD.
+		INSERT INTO TB_ERROR_EN_BASE_DATOS 
+			(
+				NUM_SEVERIVDAD,
+				STORE_PROCEDURE,
+				NUM_ERROR,
+				DSC_DESCRIPCION,
+				NUM_LINEA,
+				FEC_ERROR
+			) 
+			SELECT ERROR_SEVERITY(),
+				   ERROR_PROCEDURE(),
+				   ERROR_NUMBER(),
+				   ERROR_MESSAGE(),
+				   ERROR_LINE(),
+				   GETUTCDATE();
     END CATCH
 END
-GO
