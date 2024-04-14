@@ -2,7 +2,6 @@
 using BackEnd.domain;
 using System;
 using System.Linq;
-using BCrypt.Net;
 using Newtonsoft.Json;
 using System.Reflection;
 
