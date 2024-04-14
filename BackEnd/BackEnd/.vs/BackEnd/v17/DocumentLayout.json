@@ -1,7 +1,53 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{165CEF5D-4ED2-4F91-9BAB-42B821BE4E2D}|..\\API\\API.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\backend\\api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\backend\\backend\\logic\\logsesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|solutionrelative:logic\\logsesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{165CEF5D-4ED2-4F91-9BAB-42B821BE4E2D}|..\\API\\API.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\backend\\api\\controllers\\sesioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\backend\\backend\\logic\\logusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|solutionrelative:logic\\logusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{165CEF5D-4ED2-4F91-9BAB-42B821BE4E2D}|..\\API\\API.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\backend\\api\\controllers\\rolcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\backend\\backend\\utils\\jwtmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|solutionrelative:utils\\jwtmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\backend\\backend\\data\\conexion.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
+      "RelativeMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|solutionrelative:data\\conexion.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\backend\\backend\\domain\\request\\reqingresarsesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|solutionrelative:domain\\request\\reqingresarsesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\backend\\backend\\domain\\domain\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|solutionrelative:domain\\domain\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\backend\\backend\\domain\\domain\\sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|solutionrelative:domain\\domain\\sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\backend\\backend\\domain\\response\\resingresarsesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|solutionrelative:domain\\response\\resingresarsesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\backend\\backend\\logic\\validacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ABE7B3E-497C-4FB3-94E3-956B1A4C1838}|BackEnd.csproj|solutionrelative:logic\\validacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +55,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 235,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +64,182 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RolController.cs",
+              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\API\\Controllers\\RolController.cs",
+              "RelativeDocumentMoniker": "..\\API\\Controllers\\RolController.cs",
+              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\API\\Controllers\\RolController.cs",
+              "RelativeToolTip": "..\\API\\Controllers\\RolController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T22:59:59.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\API\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "..\\API\\Controllers\\UsuarioController.cs",
+              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\API\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "..\\API\\Controllers\\UsuarioController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T22:59:25.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SesionController.cs",
+              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\API\\Controllers\\SesionController.cs",
+              "RelativeDocumentMoniker": "..\\API\\Controllers\\SesionController.cs",
+              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\API\\Controllers\\SesionController.cs",
+              "RelativeToolTip": "..\\API\\Controllers\\SesionController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwA4AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T22:59:21.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Conexion.dbml",
+              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\data\\Conexion.dbml",
+              "RelativeDocumentMoniker": "data\\Conexion.dbml",
+              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\data\\Conexion.dbml",
+              "RelativeToolTip": "data\\Conexion.dbml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
+              "WhenOpened": "2024-04-14T22:23:57.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "JwtManager.cs",
+              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\utils\\JwtManager.cs",
+              "RelativeDocumentMoniker": "utils\\JwtManager.cs",
+              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\utils\\JwtManager.cs",
+              "RelativeToolTip": "utils\\JwtManager.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwB8AAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T22:15:14.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Validacion.cs",
+              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\logic\\Validacion.cs",
+              "RelativeDocumentMoniker": "logic\\Validacion.cs",
+              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\logic\\Validacion.cs",
+              "RelativeToolTip": "logic\\Validacion.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAwwDMAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T22:04:00.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LogUsuario.cs",
+              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\logic\\LogUsuario.cs",
+              "RelativeDocumentMoniker": "logic\\LogUsuario.cs",
+              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\logic\\LogUsuario.cs",
+              "RelativeToolTip": "logic\\LogUsuario.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACcAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T21:45:39.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LogSesion.cs",
+              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\logic\\LogSesion.cs",
+              "RelativeDocumentMoniker": "logic\\LogSesion.cs",
+              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\logic\\LogSesion.cs",
+              "RelativeToolTip": "logic\\LogSesion.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAcwEMAAABYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T21:44:57.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ResIngresarSesion.cs",
+              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\domain\\response\\ResIngresarSesion.cs",
+              "RelativeDocumentMoniker": "domain\\response\\ResIngresarSesion.cs",
+              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\domain\\response\\ResIngresarSesion.cs",
+              "RelativeToolTip": "domain\\response\\ResIngresarSesion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T21:26:24.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReqIngresarSesion.cs",
+              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\domain\\request\\ReqIngresarSesion.cs",
+              "RelativeDocumentMoniker": "domain\\request\\ReqIngresarSesion.cs",
+              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\domain\\request\\ReqIngresarSesion.cs",
+              "RelativeToolTip": "domain\\request\\ReqIngresarSesion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T21:26:04.122Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "a0eb0af1-2051-4193-b89b-bd4228047cb1",
+        "Display": 1,
+        "X": 312,
+        "Y": 136,
+        "Width": 875,
+        "Height": 450,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Sesion.cs",
+              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\domain\\domain\\Sesion.cs",
+              "RelativeDocumentMoniker": "domain\\domain\\Sesion.cs",
+              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\domain\\domain\\Sesion.cs",
+              "RelativeToolTip": "domain\\domain\\Sesion.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAiwAkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T21:11:43.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\domain\\domain\\Usuario.cs",
+              "RelativeDocumentMoniker": "domain\\domain\\Usuario.cs",
+              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\BackEnd\\BackEnd\\domain\\domain\\Usuario.cs",
+              "RelativeToolTip": "domain\\domain\\Usuario.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T22:35:39.063Z",
+              "EditorCaption": ""
             }
           ]
         }
