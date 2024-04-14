@@ -9,7 +9,7 @@ namespace BackEnd.logic
 {
     public static class Validaciones
     {
-        public static void ValidarNombre(Usuario usuario, ResIngresarUsuario res, ref short tipoRegistro)
+        public static void ValidarNombre(Usuario usuario, ResUsuario res, ref short tipoRegistro)
         {
             if (String.IsNullOrEmpty(usuario.Nombre))
             {
@@ -19,7 +19,7 @@ namespace BackEnd.logic
             }
         }
 
-        public static void ValidarPrimerApellido(Usuario usuario, ResIngresarUsuario res, ref short tipoRegistro)
+        public static void ValidarPrimerApellido(Usuario usuario, ResUsuario res, ref short tipoRegistro)
         {
             if (String.IsNullOrEmpty(usuario.PrimerApellido))
             {
@@ -29,7 +29,7 @@ namespace BackEnd.logic
             }
         }
 
-        public static void ValidarSegundoApellido(Usuario usuario, ResIngresarUsuario res, ref short tipoRegistro)
+        public static void ValidarSegundoApellido(Usuario usuario, ResUsuario res, ref short tipoRegistro)
         {
             if (String.IsNullOrEmpty(usuario.SegundoApellido))
             {
@@ -38,7 +38,7 @@ namespace BackEnd.logic
                 tipoRegistro = 2;
             }
         }
-        public static void ValidarCorreo(Usuario usuario, ResIngresarUsuario res, ref short tipoRegistro)
+        public static void ValidarCorreo(Usuario usuario, ResUsuario res, ref short tipoRegistro)
         {
             if (String.IsNullOrEmpty(usuario.CorreoElectronico))
             {
@@ -47,7 +47,7 @@ namespace BackEnd.logic
                 tipoRegistro = 2;
             }
         }
-        public static void ValidarPassword(Usuario usuario, ResIngresarUsuario res, ref short tipoRegistro)
+        public static void ValidarPassword(Usuario usuario, ResUsuario res, ref short tipoRegistro)
         {
             if (String.IsNullOrEmpty(usuario.Password))
             {
@@ -57,7 +57,7 @@ namespace BackEnd.logic
             }
         }
 
-        public static void ValidarTelefono(Usuario usuario, ResIngresarUsuario res, ref short tipoRegistro)
+        public static void ValidarTelefono(Usuario usuario, ResUsuario res, ref short tipoRegistro)
         {
             if (String.IsNullOrEmpty(usuario.NumeroTelefono))
             {

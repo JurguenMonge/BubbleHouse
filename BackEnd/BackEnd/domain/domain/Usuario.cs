@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace BackEnd.domain
 {
-    public class Usuario
+    public class Usuario : Rol
     {
-        public int Id { get; set; }
+        public int IdUsuario { get; set; }
         public string Nombre { get; set; }
         public string PrimerApellido { get; set; }
         public string SegundoApellido { get; set; }

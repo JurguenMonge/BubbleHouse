@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BackEnd.domain
 {
-    public class ResIngresarUsuario : ResBase
+    public class ResObtenerUsuario : ResBase
     {
+        public List<Usuario> listaUsuarios = new List<Usuario>();
     }
 }

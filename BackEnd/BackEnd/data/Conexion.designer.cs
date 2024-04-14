@@ -33,7 +33,7 @@ namespace BackEnd.data
     #endregion
 		
 		public ConexionDataContext() : 
-				base(global::BackEnd.Properties.Settings.Default.BDBubbleHouseConnectionString1, mappingSource)
+				base(global::BackEnd.Properties.Settings.Default.BDBubbleHouseConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -216,6 +216,16 @@ namespace BackEnd.data
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Sesion")]
+		public int Insertar_Sesion([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Sesion", DbType="NVarChar(100)")] string id_Sesion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Usuario", DbType="Int")] System.Nullable<int> id_Usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Sesion", DbType="NVarChar(MAX)")] string dsc_Sesion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Origen", DbType="NVarChar(MAX)")] string dsc_Origen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Cierre", DbType="NVarChar(MAX)")] string dsc_Cierre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fec_Inicio", DbType="DateTime")] System.Nullable<System.DateTime> fec_Inicio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fec_Cierre", DbType="DateTime")] System.Nullable<System.DateTime> fec_Cierre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="TinyInt")] System.Nullable<byte> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Sesion, id_Usuario, dsc_Sesion, dsc_Origen, dsc_Cierre, fec_Inicio, fec_Cierre, estado, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(9)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(10)));
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_SubCategoria_Producto")]
 		public int Insertar_SubCategoria_Producto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Categoria_Producto", DbType="Int")] System.Nullable<int> id_Categoria_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Nombre_SubCategoria", DbType="NVarChar(100)")] string dsc_Nombre_SubCategoria, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
@@ -296,16 +306,6 @@ namespace BackEnd.data
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Modificar_Usuario")]
-		public int Modificar_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Usuario", DbType="Int")] System.Nullable<int> id_Usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Nombre", DbType="NVarChar(50)")] string dsc_Nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Primer_Apellido", DbType="NVarChar(50)")] string dsc_Primer_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Segundo_Apellido", DbType="NVarChar(50)")] string dsc_Segundo_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Correo", DbType="NVarChar(50)")] string dsc_Correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Password", DbType="NVarChar(MAX)")] string dsc_Password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fec_Registro", DbType="DateTime")] System.Nullable<System.DateTime> fec_Registro, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Telefono", DbType="NVarChar(50)")] string dsc_Telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="TinyInt")] System.Nullable<byte> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Usuario, dsc_Nombre, dsc_Primer_Apellido, dsc_Segundo_Apellido, dsc_Correo, dsc_Password, fec_Registro, dsc_Telefono, estado, iDRETURN, eRRORID, eRRORDESCRIPCION);
-			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(9)));
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(10)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(11)));
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Cate_Ingredientes_Activos")]
 		public ISingleResult<Obtener_Cate_Ingredientes_ActivosResult> Obtener_Cate_Ingredientes_Activos()
 		{
@@ -362,6 +362,13 @@ namespace BackEnd.data
 			return ((ISingleResult<Obtener_Roles_Por_Id_UsuarioResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Sesion_Activa_By_IdUsuario")]
+		public ISingleResult<Obtener_Sesion_Activa_By_IdUsuarioResult> Obtener_Sesion_Activa_By_IdUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Usuario", DbType="Int")] System.Nullable<int> id_Usuario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Usuario);
+			return ((ISingleResult<Obtener_Sesion_Activa_By_IdUsuarioResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_SubCate_Productos_Activos")]
 		public ISingleResult<Obtener_SubCate_Productos_ActivosResult> Obtener_SubCate_Productos_Activos()
 		{
@@ -383,13 +390,6 @@ namespace BackEnd.data
 			return ((ISingleResult<Obtener_UsuarioResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Usuarios_Activos")]
-		public ISingleResult<Obtener_Usuarios_ActivosResult> Obtener_Usuarios_Activos()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<Obtener_Usuarios_ActivosResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obterner_Sesion")]
 		public ISingleResult<Obterner_SesionResult> Obterner_Sesion([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Sesion", DbType="NVarChar(100)")] string id_Sesion)
 		{
@@ -407,59 +407,31 @@ namespace BackEnd.data
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Usuario")]
-		public int Insertar_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Nombre", DbType="NVarChar(50)")] string dsc_Nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Primer_Apellido", DbType="NVarChar(50)")] string dsc_Primer_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Segundo_Apellido", DbType="NVarChar(50)")] string dsc_Segundo_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Correo", DbType="NVarChar(50)")] string dsc_Correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Password", DbType="NVarChar(MAX)")] string dsc_Password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Telefono", DbType="NVarChar(50)")] string dsc_Telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		public int Insertar_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Nombre", DbType="NVarChar(50)")] string dsc_Nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Primer_Apellido", DbType="NVarChar(50)")] string dsc_Primer_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Segundo_Apellido", DbType="NVarChar(50)")] string dsc_Segundo_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Correo", DbType="NVarChar(50)")] string dsc_Correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Password", DbType="NVarChar(MAX)")] string dsc_Password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Telefono", DbType="NVarChar(50)")] string dsc_Telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ROL", DbType="Int")] System.Nullable<int> iD_ROL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dsc_Nombre, dsc_Primer_Apellido, dsc_Segundo_Apellido, dsc_Correo, dsc_Password, dsc_Telefono, iDRETURN, eRRORID, eRRORDESCRIPCION);
-			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(6)));
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(7)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(8)));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dsc_Nombre, dsc_Primer_Apellido, dsc_Segundo_Apellido, dsc_Correo, dsc_Password, dsc_Telefono, iD_ROL, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(9)));
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Solicitar_Login")]
-		public ISingleResult<Solicitar_LoginResult> Solicitar_Login([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Correo", DbType="NVarChar(50)")] string dsc_Correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Usuarios_Activos")]
+		public ISingleResult<Obtener_Usuarios_ActivosResult> Obtener_Usuarios_Activos([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dsc_Correo, iDRETURN, eRRORID, eRRORDESCRIPCION);
-			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(1)));
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(2)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(3)));
-			return ((ISingleResult<Solicitar_LoginResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), eRRORID, eRRORDESCRIPCION);
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(1)));
+			return ((ISingleResult<Obtener_Usuarios_ActivosResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Recuperacion_Password")]
-		public int Insertar_Recuperacion_Password([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Token", DbType="NVarChar(100)")] string dsc_Token, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Correo", DbType="NVarChar(50)")] string dsc_Correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Modificar_Usuario")]
+		public int Modificar_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Usuario", DbType="Int")] System.Nullable<int> id_Usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Nombre", DbType="NVarChar(50)")] string dsc_Nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Primer_Apellido", DbType="NVarChar(50)")] string dsc_Primer_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Segundo_Apellido", DbType="NVarChar(50)")] string dsc_Segundo_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Correo", DbType="NVarChar(50)")] string dsc_Correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Password", DbType="NVarChar(MAX)")] string dsc_Password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Telefono", DbType="NVarChar(50)")] string dsc_Telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dsc_Token, dsc_Correo, iDRETURN, eRRORID, eRRORDESCRIPCION);
-			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(2)));
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(3)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(4)));
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Modificar_Password")]
-		public int Modificar_Password([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Token", DbType="NVarChar(100)")] string dsc_Token, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="New_Password", DbType="NVarChar(MAX)")] string new_Password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dsc_Token, new_Password, iDRETURN, eRRORID, eRRORDESCRIPCION);
-			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(2)));
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(3)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(4)));
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Sesion_Activa_By_IdUsuario")]
-		public ISingleResult<Obtener_Sesion_Activa_By_IdUsuarioResult> Obtener_Sesion_Activa_By_IdUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Usuario", DbType="Int")] System.Nullable<int> id_Usuario)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Usuario);
-			return ((ISingleResult<Obtener_Sesion_Activa_By_IdUsuarioResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Sesion")]
-		public int Insertar_Sesion([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Sesion", DbType="NVarChar(100)")] string id_Sesion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Usuario", DbType="Int")] System.Nullable<int> id_Usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Sesion", DbType="NVarChar(MAX)")] string dsc_Sesion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Origen", DbType="NVarChar(MAX)")] string dsc_Origen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Sesion, id_Usuario, dsc_Sesion, dsc_Origen, iDRETURN, eRRORID, eRRORDESCRIPCION);
-			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(4)));
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(5)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(6)));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Usuario, dsc_Nombre, dsc_Primer_Apellido, dsc_Segundo_Apellido, dsc_Correo, dsc_Password, dsc_Telefono, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(9)));
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -1392,6 +1364,266 @@ namespace BackEnd.data
 		}
 	}
 	
+	public partial class Obtener_Sesion_Activa_By_IdUsuarioResult
+	{
+		
+		private string _ID_SESION;
+		
+		private System.Nullable<int> _ID_USUARIO;
+		
+		private string _DSC_SESION;
+		
+		private System.Nullable<System.DateTime> _FEC_INICIO;
+		
+		private System.Nullable<byte> _ESTADO;
+		
+		private int _ID_USUARIO1;
+		
+		private string _DSC_CORREO;
+		
+		private string _DSC_NOMBRE;
+		
+		private string _DSC_PRIMER_APELLIDO;
+		
+		private string _DSC_SEGUNDO_APELLIDO;
+		
+		private string _DSC_TELEFONO;
+		
+		private System.Nullable<byte> _ESTADO1;
+		
+		private string _DSC_PERMISOS;
+		
+		private string _DSC_TIPO_ROL;
+		
+		public Obtener_Sesion_Activa_By_IdUsuarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SESION", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string ID_SESION
+		{
+			get
+			{
+				return this._ID_SESION;
+			}
+			set
+			{
+				if ((this._ID_SESION != value))
+				{
+					this._ID_SESION = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USUARIO", DbType="Int")]
+		public System.Nullable<int> ID_USUARIO
+		{
+			get
+			{
+				return this._ID_USUARIO;
+			}
+			set
+			{
+				if ((this._ID_USUARIO != value))
+				{
+					this._ID_USUARIO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_SESION", DbType="NVarChar(MAX)")]
+		public string DSC_SESION
+		{
+			get
+			{
+				return this._DSC_SESION;
+			}
+			set
+			{
+				if ((this._DSC_SESION != value))
+				{
+					this._DSC_SESION = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FEC_INICIO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FEC_INICIO
+		{
+			get
+			{
+				return this._FEC_INICIO;
+			}
+			set
+			{
+				if ((this._FEC_INICIO != value))
+				{
+					this._FEC_INICIO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="TinyInt")]
+		public System.Nullable<byte> ESTADO
+		{
+			get
+			{
+				return this._ESTADO;
+			}
+			set
+			{
+				if ((this._ESTADO != value))
+				{
+					this._ESTADO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USUARIO1", DbType="Int NOT NULL")]
+		public int ID_USUARIO1
+		{
+			get
+			{
+				return this._ID_USUARIO1;
+			}
+			set
+			{
+				if ((this._ID_USUARIO1 != value))
+				{
+					this._ID_USUARIO1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_CORREO", DbType="NVarChar(50)")]
+		public string DSC_CORREO
+		{
+			get
+			{
+				return this._DSC_CORREO;
+			}
+			set
+			{
+				if ((this._DSC_CORREO != value))
+				{
+					this._DSC_CORREO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE", DbType="NVarChar(50)")]
+		public string DSC_NOMBRE
+		{
+			get
+			{
+				return this._DSC_NOMBRE;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE != value))
+				{
+					this._DSC_NOMBRE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_PRIMER_APELLIDO", DbType="NVarChar(50)")]
+		public string DSC_PRIMER_APELLIDO
+		{
+			get
+			{
+				return this._DSC_PRIMER_APELLIDO;
+			}
+			set
+			{
+				if ((this._DSC_PRIMER_APELLIDO != value))
+				{
+					this._DSC_PRIMER_APELLIDO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_SEGUNDO_APELLIDO", DbType="NVarChar(50)")]
+		public string DSC_SEGUNDO_APELLIDO
+		{
+			get
+			{
+				return this._DSC_SEGUNDO_APELLIDO;
+			}
+			set
+			{
+				if ((this._DSC_SEGUNDO_APELLIDO != value))
+				{
+					this._DSC_SEGUNDO_APELLIDO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_TELEFONO", DbType="NVarChar(50)")]
+		public string DSC_TELEFONO
+		{
+			get
+			{
+				return this._DSC_TELEFONO;
+			}
+			set
+			{
+				if ((this._DSC_TELEFONO != value))
+				{
+					this._DSC_TELEFONO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO1", DbType="TinyInt")]
+		public System.Nullable<byte> ESTADO1
+		{
+			get
+			{
+				return this._ESTADO1;
+			}
+			set
+			{
+				if ((this._ESTADO1 != value))
+				{
+					this._ESTADO1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_PERMISOS", DbType="NVarChar(MAX)")]
+		public string DSC_PERMISOS
+		{
+			get
+			{
+				return this._DSC_PERMISOS;
+			}
+			set
+			{
+				if ((this._DSC_PERMISOS != value))
+				{
+					this._DSC_PERMISOS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_TIPO_ROL", DbType="NVarChar(50)")]
+		public string DSC_TIPO_ROL
+		{
+			get
+			{
+				return this._DSC_TIPO_ROL;
+			}
+			set
+			{
+				if ((this._DSC_TIPO_ROL != value))
+				{
+					this._DSC_TIPO_ROL = value;
+				}
+			}
+		}
+	}
+	
 	public partial class Obtener_SubCate_Productos_ActivosResult
 	{
 		
@@ -1681,176 +1913,6 @@ namespace BackEnd.data
 				if ((this._ESTADO != value))
 				{
 					this._ESTADO = value;
-				}
-			}
-		}
-	}
-	
-	public partial class Obtener_Usuarios_ActivosResult
-	{
-		
-		private string _DSC_NOMBRE_PRODUCTO;
-		
-		private string _DSC_DESCRIPCION;
-		
-		private string _DSC_URL_IMAGEN;
-		
-		private System.Nullable<decimal> _NUM_PRECIO;
-		
-		private System.Nullable<byte> _ESTADO;
-		
-		private int _ID_SUBCATE_PRODUCTO;
-		
-		private string _DSC_NOMBRE_SUBCATEGORIA;
-		
-		private int _ID_CATE_PRODUCTO;
-		
-		private string _DSC_NOMBRE_CATEGORIA;
-		
-		public Obtener_Usuarios_ActivosResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_PRODUCTO", DbType="NVarChar(100)")]
-		public string DSC_NOMBRE_PRODUCTO
-		{
-			get
-			{
-				return this._DSC_NOMBRE_PRODUCTO;
-			}
-			set
-			{
-				if ((this._DSC_NOMBRE_PRODUCTO != value))
-				{
-					this._DSC_NOMBRE_PRODUCTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_DESCRIPCION", DbType="NVarChar(MAX)")]
-		public string DSC_DESCRIPCION
-		{
-			get
-			{
-				return this._DSC_DESCRIPCION;
-			}
-			set
-			{
-				if ((this._DSC_DESCRIPCION != value))
-				{
-					this._DSC_DESCRIPCION = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_URL_IMAGEN", DbType="NVarChar(MAX)")]
-		public string DSC_URL_IMAGEN
-		{
-			get
-			{
-				return this._DSC_URL_IMAGEN;
-			}
-			set
-			{
-				if ((this._DSC_URL_IMAGEN != value))
-				{
-					this._DSC_URL_IMAGEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_PRECIO", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> NUM_PRECIO
-		{
-			get
-			{
-				return this._NUM_PRECIO;
-			}
-			set
-			{
-				if ((this._NUM_PRECIO != value))
-				{
-					this._NUM_PRECIO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="TinyInt")]
-		public System.Nullable<byte> ESTADO
-		{
-			get
-			{
-				return this._ESTADO;
-			}
-			set
-			{
-				if ((this._ESTADO != value))
-				{
-					this._ESTADO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SUBCATE_PRODUCTO", DbType="Int NOT NULL")]
-		public int ID_SUBCATE_PRODUCTO
-		{
-			get
-			{
-				return this._ID_SUBCATE_PRODUCTO;
-			}
-			set
-			{
-				if ((this._ID_SUBCATE_PRODUCTO != value))
-				{
-					this._ID_SUBCATE_PRODUCTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_SUBCATEGORIA", DbType="NVarChar(100)")]
-		public string DSC_NOMBRE_SUBCATEGORIA
-		{
-			get
-			{
-				return this._DSC_NOMBRE_SUBCATEGORIA;
-			}
-			set
-			{
-				if ((this._DSC_NOMBRE_SUBCATEGORIA != value))
-				{
-					this._DSC_NOMBRE_SUBCATEGORIA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_CATE_PRODUCTO", DbType="Int NOT NULL")]
-		public int ID_CATE_PRODUCTO
-		{
-			get
-			{
-				return this._ID_CATE_PRODUCTO;
-			}
-			set
-			{
-				if ((this._ID_CATE_PRODUCTO != value))
-				{
-					this._ID_CATE_PRODUCTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_CATEGORIA", DbType="NVarChar(100)")]
-		public string DSC_NOMBRE_CATEGORIA
-		{
-			get
-			{
-				return this._DSC_NOMBRE_CATEGORIA;
-			}
-			set
-			{
-				if ((this._DSC_NOMBRE_CATEGORIA != value))
-				{
-					this._DSC_NOMBRE_CATEGORIA = value;
 				}
 			}
 		}
@@ -2196,10 +2258,8 @@ namespace BackEnd.data
 		}
 	}
 	
-	public partial class Solicitar_LoginResult
+	public partial class Obtener_Usuarios_ActivosResult
 	{
-		
-		private int _ID_USUARIO;
 		
 		private string _DSC_NOMBRE;
 		
@@ -2207,34 +2267,18 @@ namespace BackEnd.data
 		
 		private string _DSC_SEGUNDO_APELLIDO;
 		
-		private string _DSC_CORREO;
-		
 		private string _DSC_PASSWORD;
-		
-		private System.Nullable<System.DateTime> _FEC_REGISTRO;
 		
 		private string _DSC_TELEFONO;
 		
+		private string _DSC_TIPO_ROL;
+		
+		private string _DSC_PERMISOS;
+		
 		private System.Nullable<byte> _ESTADO;
 		
-		public Solicitar_LoginResult()
+		public Obtener_Usuarios_ActivosResult()
 		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USUARIO", DbType="Int NOT NULL")]
-		public int ID_USUARIO
-		{
-			get
-			{
-				return this._ID_USUARIO;
-			}
-			set
-			{
-				if ((this._ID_USUARIO != value))
-				{
-					this._ID_USUARIO = value;
-				}
-			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE", DbType="NVarChar(50)")]
@@ -2281,22 +2325,6 @@ namespace BackEnd.data
 				if ((this._DSC_SEGUNDO_APELLIDO != value))
 				{
 					this._DSC_SEGUNDO_APELLIDO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_CORREO", DbType="NVarChar(50)")]
-		public string DSC_CORREO
-		{
-			get
-			{
-				return this._DSC_CORREO;
-			}
-			set
-			{
-				if ((this._DSC_CORREO != value))
-				{
-					this._DSC_CORREO = value;
 				}
 			}
 		}
@@ -2317,22 +2345,6 @@ namespace BackEnd.data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FEC_REGISTRO", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FEC_REGISTRO
-		{
-			get
-			{
-				return this._FEC_REGISTRO;
-			}
-			set
-			{
-				if ((this._FEC_REGISTRO != value))
-				{
-					this._FEC_REGISTRO = value;
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_TELEFONO", DbType="NVarChar(50)")]
 		public string DSC_TELEFONO
 		{
@@ -2349,246 +2361,18 @@ namespace BackEnd.data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="TinyInt")]
-		public System.Nullable<byte> ESTADO
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_TIPO_ROL", DbType="NVarChar(50)")]
+		public string DSC_TIPO_ROL
 		{
 			get
 			{
-				return this._ESTADO;
+				return this._DSC_TIPO_ROL;
 			}
 			set
 			{
-				if ((this._ESTADO != value))
+				if ((this._DSC_TIPO_ROL != value))
 				{
-					this._ESTADO = value;
-				}
-			}
-		}
-	}
-	
-	public partial class Obtener_Sesion_Activa_By_IdUsuarioResult
-	{
-		
-		private string _ID_SESION;
-		
-		private System.Nullable<int> _ID_USUARIO;
-		
-		private string _DSC_SESION;
-		
-		private System.Nullable<System.DateTime> _FEC_INICIO;
-		
-		private System.Nullable<byte> _ESTADO;
-		
-		private int _ID_USUARIO1;
-		
-		private string _DSC_CORREO;
-		
-		private string _DSC_NOMBRE;
-		
-		private string _DSC_PRIMER_APELLIDO;
-		
-		private string _DSC_SEGUNDO_APELLIDO;
-		
-		private string _DSC_TELEFONO;
-		
-		private System.Nullable<byte> _ESTADO1;
-		
-		private string _DSC_PERMISOS;
-		
-		private string _DSC_TIPO_ROL;
-		
-		public Obtener_Sesion_Activa_By_IdUsuarioResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SESION", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string ID_SESION
-		{
-			get
-			{
-				return this._ID_SESION;
-			}
-			set
-			{
-				if ((this._ID_SESION != value))
-				{
-					this._ID_SESION = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USUARIO", DbType="Int")]
-		public System.Nullable<int> ID_USUARIO
-		{
-			get
-			{
-				return this._ID_USUARIO;
-			}
-			set
-			{
-				if ((this._ID_USUARIO != value))
-				{
-					this._ID_USUARIO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_SESION", DbType="NVarChar(MAX)")]
-		public string DSC_SESION
-		{
-			get
-			{
-				return this._DSC_SESION;
-			}
-			set
-			{
-				if ((this._DSC_SESION != value))
-				{
-					this._DSC_SESION = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FEC_INICIO", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FEC_INICIO
-		{
-			get
-			{
-				return this._FEC_INICIO;
-			}
-			set
-			{
-				if ((this._FEC_INICIO != value))
-				{
-					this._FEC_INICIO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="TinyInt")]
-		public System.Nullable<byte> ESTADO
-		{
-			get
-			{
-				return this._ESTADO;
-			}
-			set
-			{
-				if ((this._ESTADO != value))
-				{
-					this._ESTADO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USUARIO1", DbType="Int NOT NULL")]
-		public int ID_USUARIO1
-		{
-			get
-			{
-				return this._ID_USUARIO1;
-			}
-			set
-			{
-				if ((this._ID_USUARIO1 != value))
-				{
-					this._ID_USUARIO1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_CORREO", DbType="NVarChar(50)")]
-		public string DSC_CORREO
-		{
-			get
-			{
-				return this._DSC_CORREO;
-			}
-			set
-			{
-				if ((this._DSC_CORREO != value))
-				{
-					this._DSC_CORREO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE", DbType="NVarChar(50)")]
-		public string DSC_NOMBRE
-		{
-			get
-			{
-				return this._DSC_NOMBRE;
-			}
-			set
-			{
-				if ((this._DSC_NOMBRE != value))
-				{
-					this._DSC_NOMBRE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_PRIMER_APELLIDO", DbType="NVarChar(50)")]
-		public string DSC_PRIMER_APELLIDO
-		{
-			get
-			{
-				return this._DSC_PRIMER_APELLIDO;
-			}
-			set
-			{
-				if ((this._DSC_PRIMER_APELLIDO != value))
-				{
-					this._DSC_PRIMER_APELLIDO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_SEGUNDO_APELLIDO", DbType="NVarChar(50)")]
-		public string DSC_SEGUNDO_APELLIDO
-		{
-			get
-			{
-				return this._DSC_SEGUNDO_APELLIDO;
-			}
-			set
-			{
-				if ((this._DSC_SEGUNDO_APELLIDO != value))
-				{
-					this._DSC_SEGUNDO_APELLIDO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_TELEFONO", DbType="NVarChar(50)")]
-		public string DSC_TELEFONO
-		{
-			get
-			{
-				return this._DSC_TELEFONO;
-			}
-			set
-			{
-				if ((this._DSC_TELEFONO != value))
-				{
-					this._DSC_TELEFONO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO1", DbType="TinyInt")]
-		public System.Nullable<byte> ESTADO1
-		{
-			get
-			{
-				return this._ESTADO1;
-			}
-			set
-			{
-				if ((this._ESTADO1 != value))
-				{
-					this._ESTADO1 = value;
+					this._DSC_TIPO_ROL = value;
 				}
 			}
 		}
@@ -2609,18 +2393,18 @@ namespace BackEnd.data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_TIPO_ROL", DbType="NVarChar(50)")]
-		public string DSC_TIPO_ROL
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="TinyInt")]
+		public System.Nullable<byte> ESTADO
 		{
 			get
 			{
-				return this._DSC_TIPO_ROL;
+				return this._ESTADO;
 			}
 			set
 			{
-				if ((this._DSC_TIPO_ROL != value))
+				if ((this._ESTADO != value))
 				{
-					this._DSC_TIPO_ROL = value;
+					this._ESTADO = value;
 				}
 			}
 		}
