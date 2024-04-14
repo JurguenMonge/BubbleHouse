@@ -19,30 +19,50 @@ GO
 -- Description:	<Description,,>
 -- =============================================
 CREATE PROCEDURE Desactivar_Producto
-    @Id_Producto int
+    @Id_Producto int,
+	@IDRETURN int OUTPUT,
+    @ERRORID int OUTPUT,
+    @ERRORDESCRIPCION nvarchar(max) OUTPUT
 AS
 BEGIN
     BEGIN TRY
-        BEGIN TRANSACTION 
 
         -- Verificar si el producto existe
         IF NOT EXISTS (SELECT * FROM TB_PRODUCTO WHERE ID_PRODUCTO = @Id_Producto)
         BEGIN
-            PRINT 'El producto especificado no existe.';
-            RETURN; -- Salir del procedimiento almacenado
+            SET @IDRETURN = -1;
+            SET @ERRORID = 12;
+            SET @ERRORDESCRIPCION = 'El producto especificado no existe.';
         END
-
-        -- Cambiar el estado del producto a 0 (desactivado)
-        UPDATE TB_PRODUCTO
-        SET ESTADO = 2
-        WHERE ID_PRODUCTO = @Id_Producto;
-
-        COMMIT TRANSACTION 
+		ELSE
+		BEGIN
+			-- Cambiar el estado del producto a 0 (desactivado)
+			UPDATE TB_PRODUCTO
+			SET ESTADO = 2
+			WHERE ID_PRODUCTO = @Id_Producto;
+			SET @IDRETURN = 1; -- Ã‰xito
+        END 
     END TRY
     BEGIN CATCH
-        -- Si ocurre algún error durante la transacción, se deshace la transacción
-        ROLLBACK TRANSACTION 
-        -- Aquí puedes manejar el error como prefieras, por ejemplo, lanzar una excepción o registrar el error en una tabla de registro de errores.
+        SET @IDRETURN = -1;
+        SET @ERRORID = ERROR_NUMBER();
+        SET @ERRORDESCRIPCION = ERROR_MESSAGE();
+        --Bitacorear error en BD.
+		INSERT INTO TB_ERROR_EN_BASE_DATOS 
+			(
+				NUM_SEVERIVDAD,
+				STORE_PROCEDURE,
+				NUM_ERROR,
+				DSC_DESCRIPCION,
+				NUM_LINEA,
+				FEC_ERROR
+			) 
+			SELECT ERROR_SEVERITY(),
+				   ERROR_PROCEDURE(),
+				   ERROR_NUMBER(),
+				   ERROR_MESSAGE(),
+				   ERROR_LINE(),
+				   GETUTCDATE(); 
     END CATCH
 END
 GO
