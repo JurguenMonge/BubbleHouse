@@ -57,7 +57,7 @@
     <Compile Include="domain\domain\Usuario.cs" />
     <Compile Include="domain\request\ReqIngresarUsuario.cs" />
     <Compile Include="domain\response\ResBase.cs" />
-    <Compile Include="domain\response\ResIngresarUsuario.cs" />
+    <Compile Include="domain\response\ResUsuario.cs" />
     <Compile Include="domain\response\ResObtenerRol.cs" />
     <Compile Include="domain\response\ResObtenerUsuario.cs" />
     <Compile Include="logic\LogRol.cs" />

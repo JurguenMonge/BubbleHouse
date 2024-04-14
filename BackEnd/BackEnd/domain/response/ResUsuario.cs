@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BackEnd.domain
 {
-    public class ResIngresarUsuario : ResBase
+    public class ResUsuario : ResBase
     {
     }
 }
