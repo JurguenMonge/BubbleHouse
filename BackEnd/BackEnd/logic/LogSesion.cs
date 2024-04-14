@@ -37,7 +37,7 @@ namespace BackEnd.logic
             return hexId;
         }
 
-        public ResIngresarSesion Login(ReqIngresarSesion req) 
+        public ResIngresarSesion Login(ReqIngresarSesion req)
         {
             ResIngresarSesion res = new ResIngresarSesion();
             short tipoRegistro = 0;
@@ -63,7 +63,7 @@ namespace BackEnd.logic
                     int? idError = 0;
                     String errorBD = "";
                     var result = linq.Solicitar_Login(req.correo, ref idReturn, ref idError, ref errorBD);
-                    if(result != null)
+                    if (result != null)
                     {
                         res.Sesion.Usuario.Nombre = result.FirstOrDefault()?.DSC_NOMBRE;
                         res.Sesion.Usuario.PrimerApellido = result.FirstOrDefault()?.DSC_PRIMER_APELLIDO;
@@ -130,7 +130,7 @@ namespace BackEnd.logic
                 utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, JsonConvert.SerializeObject(req), JsonConvert.SerializeObject(res));
             }
             return res;
-            
+
         }
     }
 }
