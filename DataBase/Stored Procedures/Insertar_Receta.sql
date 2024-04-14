@@ -10,7 +10,7 @@ GO
 -- Create date: 13-04-2024
 -- Description:	SP Insertar Receta
 -- =============================================
-ALTER PROCEDURE [dbo].[Insertar_Receta]
+CREATE PROCEDURE Insertar_Receta
 
 	@ID_RECETA INT,
 	@ID_PRODUCTO INT,
