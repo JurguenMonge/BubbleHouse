@@ -1,14 +1,3 @@
--- ================================================
--- Template generated from Template Explorer using:
--- Create Procedure (New Menu).SQL
---
--- Use the Specify Values for Template Parameters 
--- command (Ctrl-Shift-M) to fill in the parameter 
--- values below.
---
--- This block of comments will not be included in
--- the definition of the procedure.
--- ================================================
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -30,62 +19,66 @@ CREATE PROCEDURE Insertar_Producto
 AS
 BEGIN
     BEGIN TRY
-        BEGIN TRANSACTION 
 
         IF NOT EXISTS (SELECT * FROM TB_SUBCATEGORIA_PRODUCTO WHERE ID_SUBCATE_PRODUCTO = @Id_SubCategoria_Producto)
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 1;
-            SET @ERRORDESCRIPCION = 'La subcategoría especificada no existe.';
-            RETURN; -- Salir del procedimiento almacenado
+            SET @ERRORDESCRIPCION = 'La subcategorÃ­a especificada no existe.';
         END
-
-        IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Nombre_Producto) > 0 OR LEN(@Dsc_Nombre_Producto) = 0
+		ELSE IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Nombre_Producto) > 0 OR LEN(@Dsc_Nombre_Producto) = 0
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 2;
-            SET @ERRORDESCRIPCION = 'El nombre del producto contiene caracteres especiales o está vacío.';
-            RETURN; -- Salir del procedimiento almacenado
+            SET @ERRORDESCRIPCION = 'El nombre del producto contiene caracteres especiales o estÃ¡ vacÃ­o.';
         END
-
-        IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Descripcion) > 0 OR LEN(@Dsc_Descripcion) = 0
+		ELSE IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Descripcion) > 0 OR LEN(@Dsc_Descripcion) = 0
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 3;
-            SET @ERRORDESCRIPCION = 'La descripción del producto contiene caracteres especiales o está vacía.';
-            RETURN; -- Salir del procedimiento almacenado
+            SET @ERRORDESCRIPCION = 'La descripciÃ³n del producto contiene caracteres especiales o estÃ¡ vacÃ­a.';
         END
-
-        IF PATINDEX('%[^a-zA-Z0-9:/. ]%', @Dsc_Url_Imagen) > 0 OR LEN(@Dsc_Url_Imagen) = 0
+		ELSE IF PATINDEX('%[^a-zA-Z0-9:/. ]%', @Dsc_Url_Imagen) > 0 OR LEN(@Dsc_Url_Imagen) = 0
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 4;
-            SET @ERRORDESCRIPCION = 'La URL de la imagen contiene caracteres no válidos o está vacía.';
-            RETURN; -- Salir del procedimiento almacenado
+            SET @ERRORDESCRIPCION = 'La URL de la imagen contiene caracteres no vÃ¡lidos o estÃ¡ vacÃ­a.';
         END
-
-        IF ISNUMERIC(@Num_Precio) <> 1
+		ELSE IF ISNUMERIC(@Num_Precio) <> 1
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 5;
-            SET @ERRORDESCRIPCION = 'El precio del producto debe ser un valor numérico.';
-            RETURN; -- Salir del procedimiento almacenado
+            SET @ERRORDESCRIPCION = 'El precio del producto debe ser un valor numÃ©rico.';
         END
+		ELSE
+		BEGIN
+			INSERT INTO TB_PRODUCTO (ID_SUBCATE_PRODUCTO, DSC_NOMBRE_PRODUCTO, DSC_DESCRIPCION, DSC_URL_IMAGEN, NUM_PRECIO, ESTADO)
+			VALUES (@Id_SubCategoria_Producto, @Dsc_Nombre_Producto, @Dsc_Descripcion, @Dsc_Url_Imagen, @Num_Precio, 1);
 
-        INSERT INTO TB_PRODUCTO (ID_SUBCATE_PRODUCTO, DSC_NOMBRE_PRODUCTO, DSC_DESCRIPCION, DSC_URL_IMAGEN, NUM_PRECIO, ESTADO)
-        VALUES (@Id_SubCategoria_Producto, @Dsc_Nombre_Producto, @Dsc_Descripcion, @Dsc_Url_Imagen, @Num_Precio, 1);
+			SET @IDRETURN = SCOPE_IDENTITY();
 
-        SET @IDRETURN = SCOPE_IDENTITY();
-
-        COMMIT TRANSACTION 
+        END 
     END TRY
     BEGIN CATCH
         SET @IDRETURN = -1;
         SET @ERRORID = ERROR_NUMBER();
         SET @ERRORDESCRIPCION = ERROR_MESSAGE();
-        ROLLBACK TRANSACTION 
-        -- Aquí puedes manejar el error como prefieras, por ejemplo, lanzar una excepción o registrar el error en una tabla de registro de errores.
+        --Bitacorear error en BD.
+		INSERT INTO TB_ERROR_EN_BASE_DATOS 
+			(
+				NUM_SEVERIVDAD,
+				STORE_PROCEDURE,
+				NUM_ERROR,
+				DSC_DESCRIPCION,
+				NUM_LINEA,
+				FEC_ERROR
+			) 
+			SELECT ERROR_SEVERITY(),
+				   ERROR_PROCEDURE(),
+				   ERROR_NUMBER(),
+				   ERROR_MESSAGE(),
+				   ERROR_LINE(),
+				   GETUTCDATE(); 
     END CATCH
 END
 GO
-
