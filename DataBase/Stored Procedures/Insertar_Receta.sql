@@ -1,4 +1,6 @@
-
+USE [BDBubbleHouse]
+GO
+/****** Object:  StoredProcedure [dbo].[Insertar_Receta]    Script Date: 14/4/2024 15:10:28 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8,7 +10,7 @@ GO
 -- Create date: 13-04-2024
 -- Description:	SP Insertar Receta
 -- =============================================
-CREATE PROCEDURE Insertar_Receta
+ALTER PROCEDURE [dbo].[Insertar_Receta]
 
 	@ID_RECETA INT,
 	@ID_PRODUCTO INT,
@@ -28,87 +30,115 @@ BEGIN
     BEGIN TRY
         BEGIN TRANSACTION
 
-        IF NOT EXISTS (SELECT ID_PRODUCTO FROM TB_PRODUCTO WHERE ID_PRODUCTO = @ID_PRODUCTO)
+    IF NOT EXISTS (SELECT ID_PRODUCTO FROM TB_PRODUCTO WHERE ID_PRODUCTO = @ID_PRODUCTO)
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 1;
             SET @ERRORDESCRIPCION = 'El producto especificado no existe.';
-            RETURN; -- Salir del procedimiento almacenado
         END
-
+	ELSE
 		IF NOT EXISTS (SELECT ID_INGREDIENTE FROM TB_INGREDIENTE WHERE ID_INGREDIENTE = @ID_ING_LACTEO)
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 1;
             SET @ERRORDESCRIPCION = 'El Lacteo especificado no existe.';
-            RETURN; -- Salir del procedimiento almacenado
+            
         END
-
+    ELSE
 	    IF NOT EXISTS (SELECT ID_INGREDIENTE FROM TB_INGREDIENTE WHERE ID_INGREDIENTE = @ID_ING_SABOR)
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 1;
             SET @ERRORDESCRIPCION = 'El Sabor especificado no existe.';
-            RETURN; -- Salir del procedimiento almacenado
+            
         END
-
+   ELSE
 		IF NOT EXISTS (SELECT ID_INGREDIENTE FROM TB_INGREDIENTE WHERE ID_INGREDIENTE = @ID_ING_AZUCAR)
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 1;
             SET @ERRORDESCRIPCION = 'El azucar especificado no existe.';
-            RETURN; -- Salir del procedimiento almacenado
+            
         END
-
+   ELSE
 	    IF NOT EXISTS (SELECT ID_INGREDIENTE FROM TB_INGREDIENTE WHERE ID_INGREDIENTE = @ID_ING_TOPPING)
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 1;
             SET @ERRORDESCRIPCION = 'El Topping especificado no existe.';
-            RETURN; -- Salir del procedimiento almacenado
+            
         END
-
+   ELSE
 		IF NOT EXISTS (SELECT ID_INGREDIENTE FROM TB_INGREDIENTE WHERE ID_INGREDIENTE = @ID_ING_BORDEADO)
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 1;
             SET @ERRORDESCRIPCION = 'El Bordeado especificado no existe.';
-            RETURN; -- Salir del procedimiento almacenado
+            
         END
-
+   ELSE
 		IF NOT EXISTS (SELECT ID_INGREDIENTE FROM TB_INGREDIENTE WHERE ID_INGREDIENTE = @ID_ING_BUBBLES)
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 1;
             SET @ERRORDESCRIPCION = 'El Bubbles especificado no existe.';
-            RETURN; -- Salir del procedimiento almacenado
+            
         END
-
+   ELSE
 	    IF PATINDEX('%[^a-zA-Z0-9 ]%', @DSC_NOMBRE) > 0 OR LEN(@DSC_NOMBRE) = 0
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 2;
             SET @ERRORDESCRIPCION = 'El nombre del producto contiene caracteres especiales o está vacío.';
-            RETURN; -- Salir del procedimiento almacenado
+           
         END
-
+   ELSE
 		IF PATINDEX('%[^a-zA-Z0-9 ]%', @DSC_TAMANO) > 0 OR LEN(@DSC_TAMANO) = 0
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 2;
             SET @ERRORDESCRIPCION = 'El tamaño del producto contiene caracteres especiales o está vacío.';
-            RETURN; -- Salir del procedimiento almacenado
+            
         END
+   ELSE
+      BEGIN
+	     BEGIN TRANSACTION
 
-		INSERT INTO TB_RECETA(ID_RECETA, ID_PRODUCTO, ID_ING_TOPPING, ID_ING_SABOR, ID_ING_LACTEO, ID_ING_BUBBLES, ID_ING_BORDEADO, ID_ING_AZUCAR, DSC_NOMBRE, DSC_TAMANO, FECHA, ESTADO)
-        VALUES (@ID_RECETA, @ID_PRODUCTO, @ID_ING_TOPPING, @ID_ING_SABOR, @ID_ING_LACTEO, @ID_ING_BUBBLES,@ID_ING_BORDEADO, @ID_ING_AZUCAR,@DSC_NOMBRE, @DSC_TAMANO, GETUTCDATE(), 1);
+         INSERT INTO TB_RECETA(
+		      ID_RECETA, 
+			  ID_PRODUCTO, 
+			  ID_ING_TOPPING, 
+			  ID_ING_SABOR, 
+			  ID_ING_LACTEO, 
+			  ID_ING_BUBBLES, 
+			  ID_ING_BORDEADO, 
+			  ID_ING_AZUCAR, 
+			  DSC_NOMBRE, 
+			  DSC_TAMANO, 
+			  FECHA, 
+			  ESTADO
+			  )VALUES(
+			  @ID_RECETA, 
+			  @ID_PRODUCTO, 
+			  @ID_ING_TOPPING, 
+			  @ID_ING_SABOR, 
+			  @ID_ING_LACTEO, 
+			  @ID_ING_BUBBLES,
+			  @ID_ING_BORDEADO, 
+			  @ID_ING_AZUCAR,
+			  @DSC_NOMBRE, 
+			  @DSC_TAMANO, 
+			  GETUTCDATE(), 
+			  1
+			  );
+              SET @IDRETURN = SCOPE_IDENTITY();
 
-        SET @IDRETURN = SCOPE_IDENTITY();
-
-      COMMIT TRANSACTION 
-    END TRY
+        COMMIT TRANSACTION
+	  END
+END TRY
 
 	BEGIN CATCH
+	   ROLLBACK TRANSACTION 
         SET @IDRETURN = -1;
         SET @ERRORID = ERROR_NUMBER();
         SET @ERRORDESCRIPCION = ERROR_MESSAGE();
@@ -130,7 +160,6 @@ BEGIN
 					ERROR_LINE(),
 					GETUTCDATE()
 
-        ROLLBACK TRANSACTION 
+        
     END CATCH
 END
-GO
