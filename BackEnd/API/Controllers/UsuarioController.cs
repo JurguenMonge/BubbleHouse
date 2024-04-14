@@ -13,7 +13,7 @@ namespace API.Controllers
     {
         [System.Web.Http.HttpPost]
         [System.Web.Http.Route("api/usuario/ingresar")]
-        public ResIngresarUsuario ingresarPublicacion(ReqIngresarUsuario req)
+        public ResUsuario ingresarPublicacion(ReqIngresarUsuario req)
         {
             return new LogUsuario().ingresarUsuario(req);
         }
@@ -27,9 +27,17 @@ namespace API.Controllers
 
         [System.Web.Http.HttpPut]
         [System.Web.Http.Route("api/usuario/modificar")]
-        public ResIngresarUsuario modificarUsuario(ReqIngresarUsuario req)
+        public ResUsuario modificarUsuario(ReqIngresarUsuario req)
         {
             return new LogUsuario().modificarUsuario(req);
         }
+
+        [System.Web.Http.HttpDelete]
+        [System.Web.Http.Route("api/usuario/eliminar/{id}")]
+        public ResUsuario eliminarUsuario(int id)
+        {
+            return new LogUsuario().eliminarUsuario(id);
+        }
+
     }
 }
