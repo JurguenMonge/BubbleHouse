@@ -3,6 +3,8 @@ using BackEnd.domain;
 using System;
 using System.Linq;
 using BCrypt.Net;
+using Newtonsoft.Json;
+using System.Reflection;
 
 namespace BackEnd.logic
 {
@@ -19,7 +21,6 @@ namespace BackEnd.logic
             return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
 
-
         public  ResIngresarUsuario ingresarUsuario(ReqIngresarUsuario req)
         {
             ResIngresarUsuario res = new ResIngresarUsuario();
@@ -28,10 +29,12 @@ namespace BackEnd.logic
             {
                 if (req != null)
                 {
+                    
                     Validaciones.ValidarNombre(req.Usuario, res, ref tipoRegistro);
                     Validaciones.ValidarPrimerApellido(req.Usuario, res, ref tipoRegistro);
                     Validaciones.ValidarSegundoApellido(req.Usuario, res, ref tipoRegistro);
                     Validaciones.ValidarPassword(req.Usuario, res, ref tipoRegistro);
+                    req.Usuario.Password = EncriptarPassword(req.Usuario.Password);
                     Validaciones.ValidarTelefono(req.Usuario, res, ref tipoRegistro);
                     Validaciones.ValidarCorreo(req.Usuario, res, ref tipoRegistro);
                     if (!res.ListaDeErrores.Any())
@@ -40,9 +43,9 @@ namespace BackEnd.logic
                         int? idReturn = 0;
                         int? idError = 0;
                         String errorBD = "";
-                        linq.SP_CREAR_USUARIO(req.Usuario.Nombre, req.Usuario.PrimerApellido,
-                            req.Usuario.SegundoApellido, req.Usuario.CorreoElectronico, EncriptarPassword(req.Usuario.Password),
-                            req.Usuario.NumeroTelefono,1, ref idReturn, ref idError, ref errorBD);
+                        linq.Insertar_Usuario(req.Usuario.Nombre, req.Usuario.PrimerApellido,
+                            req.Usuario.SegundoApellido, req.Usuario.CorreoElectronico, req.Usuario.Password,
+                            req.Usuario.NumeroTelefono, ref idReturn, ref idError, ref errorBD);
                         if (idError == 0)
                         {
                             res.Resultado = true;
@@ -51,28 +54,27 @@ namespace BackEnd.logic
                         else
                         {
                             res.Resultado = false;
-                            res.ListaDeErrores.Add("Ocurrió un error en la base de datos, intentalo más tarde");
+                            res.ListaDeErrores.Add(errorBD);
                             tipoRegistro = 2;
                         }
                     }
-
                 }
                 else
                 {
                     res.Resultado = false;
-                    res.ListaDeErrores.Add("El request viene null");
+                    res.ListaDeErrores.Add("No se enviaron los datos correctamente");
                     tipoRegistro = 2;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 res.Resultado = false;
-                res.ListaDeErrores.Add("Error interno" + ex.Message);
+                res.ListaDeErrores.Add("Ocurrió un error al insertar el usuario");
                 tipoRegistro = 3;
             }
             finally
             {
-                //Hacer una bitacora
+                utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, JsonConvert.SerializeObject(req), JsonConvert.SerializeObject(res));
             }
             return res;
         }

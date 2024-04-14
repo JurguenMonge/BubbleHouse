@@ -28,3 +28,5 @@ C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\obj\Debug\BackEnd.c
 C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\obj\Debug\BackEnd.csproj.Up2Date
 C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\obj\Debug\BackEnd.dll
 C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\obj\Debug\BackEnd.pdb
+C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\Newtonsoft.Json.xml

@@ -34,6 +34,9 @@
     <Reference Include="BCrypt.Net-Core, Version=1.6.0.0, Culture=neutral, PublicKeyToken=4d63bfbfdfd3c6e4, processorArchitecture=MSIL">
       <HintPath>packages\BCrypt.Net-Core.1.6.0\lib\net452\BCrypt.Net-Core.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -55,6 +58,8 @@
     <Compile Include="domain\request\ReqIngresarUsuario.cs" />
     <Compile Include="domain\response\ResBase.cs" />
     <Compile Include="domain\response\ResIngresarUsuario.cs" />
+    <Compile Include="domain\response\ResObtenerRol.cs" />
+    <Compile Include="logic\LogRol.cs" />
     <Compile Include="logic\LogUsuario.cs" />
     <Compile Include="logic\Validacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,6 +68,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="utils\Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -83,8 +89,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="utils\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

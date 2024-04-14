@@ -8,8 +8,9 @@ namespace BackEnd.domain
 {
     public class Rol
     {
-        public int Id { get; set; }
-        public string TipoRol { get; set; }
-        public bool Estado { get; set; }
+        public int idRol { get; set; }
+        public String tipoRol { get; set; }
+        public String permisos { get; set; }
+        public bool estado { get; set; }
     }
 }
