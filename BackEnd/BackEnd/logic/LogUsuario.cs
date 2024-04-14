@@ -228,6 +228,7 @@ namespace BackEnd.logic
             return res;
         }
         //Armar el usuario para obtener la lista
+        //Otro cambio, para hacer pruebas
         private Usuario factoryArmarUsuario(Obtener_Usuarios_ActivosResult usuarioLinq)
         {
             Usuario usuario = new Usuario();
