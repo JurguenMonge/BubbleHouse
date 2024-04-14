@@ -122,6 +122,7 @@ namespace BackEnd.logic
             return res;
         }
 
+        //Modificar usuario
         public ResUsuario modificarUsuario(ReqIngresarUsuario req)
         {
             ResUsuario res = new ResUsuario();
