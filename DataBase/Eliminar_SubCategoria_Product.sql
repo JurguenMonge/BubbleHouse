@@ -1,10 +1,9 @@
-
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE Eliminar_SubCategoria_Producto
+CREATE PROCEDURE [dbo].[Eliminar_SubCategoria_Producto]
     @Id_SubCategoria_Producto int,
     @IDRETURN int OUTPUT,
     @ERRORID int OUTPUT,
@@ -12,8 +11,6 @@ CREATE PROCEDURE Eliminar_SubCategoria_Producto
 AS
 BEGIN
     BEGIN TRY
-        BEGIN TRANSACTION 
-
         -- Verificar si la subcategoría de producto existe
         IF NOT EXISTS (SELECT * FROM TB_SUBCATEGORIA_PRODUCTO WHERE ID_SUBCATE_PRODUCTO = @Id_SubCategoria_Producto)
         BEGIN
@@ -22,21 +19,35 @@ BEGIN
             SET @ERRORDESCRIPCION = 'La subcategoría de producto especificada no existe.';
             RETURN; -- Salir del procedimiento almacenado
         END
+		ELSE
+		BEGIN
+			-- Eliminar la subcategoría de producto
+			UPDATE TB_SUBCATEGORIA_PRODUCTO
+			SET ESTADO = 0
+			WHERE ID_SUBCATE_PRODUCTO = @Id_SubCategoria_Producto;
 
-        -- Eliminar la subcategoría de producto
-        UPDATE TB_SUBCATEGORIA_PRODUCTO
-        SET ESTADO = 0
-        WHERE ID_SUBCATE_PRODUCTO = @Id_SubCategoria_Producto;
-
-        SET @IDRETURN = 1; -- Éxito
-
-        COMMIT TRANSACTION 
+			SET @IDRETURN = 1; -- Éxito
+		END
     END TRY
     BEGIN CATCH
         SET @IDRETURN = -1;
         SET @ERRORID = ERROR_NUMBER();
         SET @ERRORDESCRIPCION = ERROR_MESSAGE();
-        ROLLBACK TRANSACTION 
+        --Bitacorear error en BD.
+		INSERT INTO TB_ERROR_EN_BASE_DATOS 
+			(
+				NUM_SEVERIVDAD,
+				STORE_PROCEDURE,
+				NUM_ERROR,
+				DSC_DESCRIPCION,
+				NUM_LINEA,
+				FEC_ERROR
+			) 
+			SELECT ERROR_SEVERITY(),
+				   ERROR_PROCEDURE(),
+				   ERROR_NUMBER(),
+				   ERROR_MESSAGE(),
+				   ERROR_LINE(),
+				   GETUTCDATE();
     END CATCH
 END
-GO
