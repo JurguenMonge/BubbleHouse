@@ -1,0 +1,14 @@
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE Obtener_Roles
+AS
+BEGIN
+    -- Seleccionar todos los roles cuyo estado sea diferente de 0
+    SELECT R.ID_ROL, R.DSC_TIPO_ROL, R.DSC_PERMISOS, R.ESTADO
+    FROM TB_ROL AS R
+    WHERE ESTADO <> 0;
+END

@@ -1,0 +1,17 @@
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE Obtener_SubCate_Productos_Por_Cate
+@Id_Categoria_Producto int
+AS
+BEGIN
+    -- Seleccionar todos las subcategorías de una categoría de productos cuyo estado sea diferente de 0
+    SELECT SCP.ID_SUBCATE_PRODUCTO, SCP.ID_CATE_PRODUCTO_ID, SCP.DSC_NOMBRE_SUBCATEGORIA
+    FROM TB_SUBCATEGORIA_PRODUCTO AS SCP
+	INNER JOIN TB_CATE_PRODUCTO AS CP ON SCP.ID_CATE_PRODUCTO_ID = CP.ID_CATE_PRODUCTO
+    WHERE SCP.ESTADO <> 0 AND CP.ID_CATE_PRODUCTO = @Id_Categoria_Producto;
+END
+GO
