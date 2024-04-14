@@ -449,4 +449,23 @@
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.Obtener_Sesion_Activa_By_IdUsuario" Method="Obtener_Sesion_Activa_By_IdUsuario1">
+    <Parameter Name="Id_Usuario" Parameter="id_Usuario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Obtener_Sesion_Activa_By_IdUsuarioResult1">
+      <Column Name="ID_SESION" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DSC_SESION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FEC_INICIO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ID_USUARIO1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DSC_CORREO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSC_NOMBRE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSC_PRIMER_APELLIDO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSC_SEGUNDO_APELLIDO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSC_TELEFONO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ESTADO1" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="DSC_PERMISOS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DSC_TIPO_ROL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>
