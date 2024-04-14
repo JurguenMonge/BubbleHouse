@@ -31,7 +31,6 @@ CREATE PROCEDURE Modificar_Ingrediente
 AS
 BEGIN
     BEGIN TRY
-        BEGIN TRANSACTION 
 
         -- Verificar si el ingrediente existe
         IF NOT EXISTS (SELECT * FROM TB_INGREDIENTE WHERE ID_INGREDIENTE = @Id_Ingrediente)
@@ -39,63 +38,67 @@ BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 6;
             SET @ERRORDESCRIPCION = 'El ingrediente especificado no existe.';
-            RETURN; -- Salir del procedimiento almacenado
         END
 
-        -- Verificar si la categoría de ingrediente especificada existe
-        IF NOT EXISTS (SELECT * FROM TB_CATE_INGREDIENTE WHERE ID_CATE_INGREDIENTE = @Id_Cate_Ingrediente)
+        ELSE IF NOT EXISTS (SELECT * FROM TB_CATE_INGREDIENTE WHERE ID_CATE_INGREDIENTE = @Id_Cate_Ingrediente)
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 7;
-            SET @ERRORDESCRIPCION = 'La categoría de ingrediente especificada no existe.';
-            RETURN; -- Salir del procedimiento almacenado
+            SET @ERRORDESCRIPCION = 'La categorÃ­a de ingrediente especificada no existe.';
         END
-
-        -- Validaciones de datos
-        IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Nombre_Ingrediente) > 0 OR LEN(@Dsc_Nombre_Ingrediente) = 0
+		ELSE IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Nombre_Ingrediente) > 0 OR LEN(@Dsc_Nombre_Ingrediente) = 0
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 8;
-            SET @ERRORDESCRIPCION = 'El nombre del ingrediente contiene caracteres especiales o está vacío.';
-            RETURN; -- Salir del procedimiento almacenado
+            SET @ERRORDESCRIPCION = 'El nombre del ingrediente contiene caracteres especiales o estÃ¡ vacÃ­o.';
         END
-
-        IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Descripcion) > 0 OR LEN(@Dsc_Descripcion) = 0
+		ELSE IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Descripcion) > 0 OR LEN(@Dsc_Descripcion) = 0
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 9;
-            SET @ERRORDESCRIPCION = 'La descripción del ingrediente contiene caracteres especiales o está vacía.';
-            RETURN; -- Salir del procedimiento almacenado
+            SET @ERRORDESCRIPCION = 'La descripciÃ³n del ingrediente contiene caracteres especiales o estÃ¡ vacÃ­a.';
         END
-
-        IF PATINDEX('%[^a-zA-Z0-9:/. ]%', @Dsc_Url_Imagen) > 0 OR LEN(@Dsc_Url_Imagen) = 0
+		ELSE IF PATINDEX('%[^a-zA-Z0-9:/. ]%', @Dsc_Url_Imagen) > 0 OR LEN(@Dsc_Url_Imagen) = 0
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 10;
-            SET @ERRORDESCRIPCION = 'La URL de la imagen contiene caracteres no válidos o está vacía.';
-            RETURN; -- Salir del procedimiento almacenado
+            SET @ERRORDESCRIPCION = 'La URL de la imagen contiene caracteres no vÃ¡lidos o estÃ¡ vacÃ­a.';
         END
+		ELSE
+		BEGIN
+			-- Actualizar el ingrediente
+			UPDATE TB_INGREDIENTE
+			SET ID_CATE_INGREDIENTE = @Id_Cate_Ingrediente,
+				DSC_NOMBRE_INGREDIENTE = @Dsc_Nombre_Ingrediente,
+				DSC_DESCRIPCION = @Dsc_Descripcion,
+				DSC_URL_IMAGEN = @Dsc_Url_Imagen,
+				NUM_PRECIO = @Num_Precio
+			WHERE ID_INGREDIENTE = @Id_Ingrediente;
 
-        -- Actualizar el ingrediente
-        UPDATE TB_INGREDIENTE
-        SET ID_CATE_INGREDIENTE = @Id_Cate_Ingrediente,
-            DSC_NOMBRE_INGREDIENTE = @Dsc_Nombre_Ingrediente,
-            DSC_DESCRIPCION = @Dsc_Descripcion,
-            DSC_URL_IMAGEN = @Dsc_Url_Imagen,
-            NUM_PRECIO = @Num_Precio
-        WHERE ID_INGREDIENTE = @Id_Ingrediente;
+			SET @IDRETURN = @Id_Ingrediente;
 
-        SET @IDRETURN = @Id_Ingrediente;
-
-        COMMIT TRANSACTION 
+        END 
     END TRY
     BEGIN CATCH
         SET @IDRETURN = -1;
         SET @ERRORID = ERROR_NUMBER();
         SET @ERRORDESCRIPCION = ERROR_MESSAGE();
-        ROLLBACK TRANSACTION 
-        -- Aquí puedes manejar el error como prefieras, por ejemplo, lanzar una excepción o registrar el error en una tabla de registro de errores.
+        --Bitacorear error en BD.
+		INSERT INTO TB_ERROR_EN_BASE_DATOS 
+			(
+				NUM_SEVERIVDAD,
+				STORE_PROCEDURE,
+				NUM_ERROR,
+				DSC_DESCRIPCION,
+				NUM_LINEA,
+				FEC_ERROR
+			) 
+			SELECT ERROR_SEVERITY(),
+				   ERROR_PROCEDURE(),
+				   ERROR_NUMBER(),
+				   ERROR_MESSAGE(),
+				   ERROR_LINE(),
+				   GETUTCDATE(); 
     END CATCH
 END
 GO
-
