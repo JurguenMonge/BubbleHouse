@@ -34,7 +34,6 @@ CREATE PROCEDURE Modificar_Usuario
 AS
 BEGIN
     BEGIN TRY
-        BEGIN TRANSACTION 
 
         -- Verificar si el usuario existe
         IF NOT EXISTS (SELECT * FROM TB_USUARIO WHERE ID_USUARIO = @Id_Usuario)
@@ -42,69 +41,74 @@ BEGIN
 			set @idReturn = -1;
 			set @errorId = 1;
 			set @errorDescripcion = 'El usuario especificado no existe.';
-            RETURN; -- Salir del procedimiento almacenado
         END
-
-        IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Nombre) > 0 OR LEN(@Dsc_Nombre) = 0
+		ELSE IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Nombre) > 0 OR LEN(@Dsc_Nombre) = 0
         BEGIN
 			set @idReturn = -1;
 			set @errorId = 2;
-			set @errorDescripcion = 'El nombre contiene caracteres especiales o est· vacÌo.';
-            RETURN; -- Salir del procedimiento almacenado
+			set @errorDescripcion = 'El nombre contiene caracteres especiales o est√° vac√≠o.';
         END
-
-        IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Primer_Apellido) > 0 OR LEN(@Dsc_Primer_Apellido) = 0
+		ELSE IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Primer_Apellido) > 0 OR LEN(@Dsc_Primer_Apellido) = 0
         BEGIN
 			set @idReturn = -1;
 			set @errorId = 2;
-			set @errorDescripcion = 'El primer apellido contiene caracteres especiales o est· vacÌo.';
-            RETURN; -- Salir del procedimiento almacenado
+			set @errorDescripcion = 'El primer apellido contiene caracteres especiales o est√° vac√≠o.';
         END
-
-        IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Segundo_Apellido) > 0 OR LEN(@Dsc_Segundo_Apellido) = 0
+		ELSE IF PATINDEX('%[^a-zA-Z0-9 ]%', @Dsc_Segundo_Apellido) > 0 OR LEN(@Dsc_Segundo_Apellido) = 0
         BEGIN
 			set @idReturn = -1;
 			set @errorId = 3;
-			set @errorDescripcion = 'El segundo apellido contiene caracteres especiales o est· vacÌo.';
-            RETURN; -- Salir del procedimiento almacenado
+			set @errorDescripcion = 'El segundo apellido contiene caracteres especiales o est√° vac√≠o.';
         END
-
-        IF LEN(@Dsc_Correo) = 0
+		ELSE IF LEN(@Dsc_Correo) = 0
         BEGIN
 			set @idReturn = -1;
 			set @errorId = 4;
-			set @errorDescripcion = 'El correo est· vacÌo.';
-            RETURN; -- Salir del procedimiento almacenado
+			set @errorDescripcion = 'El correo est√° vac√≠o.';
         END
-
-        IF LEN(@Dsc_Password) = 0
+		ELSE IF LEN(@Dsc_Password) = 0
         BEGIN
 			set @idReturn = -1;
 			set @errorId = 5;
-			set @errorDescripcion = 'La contraseÒa est· vacÌa.';
-            RETURN; -- Salir del procedimiento almacenado
+			set @errorDescripcion = 'La contrase√±a est√° vac√≠a.';
         END
+		ELSE
+		BEGIN
+			-- Actualizar el usuario
+			UPDATE TB_USUARIO
+			SET DSC_NOMBRE = @Dsc_Nombre,
+				DSC_PRIMER_APELLIDO = @Dsc_Primer_Apellido,
+				DSC_SEGUNDO_APELLIDO = @Dsc_Segundo_Apellido,
+				DSC_CORREO = @Dsc_Correo,
+				DSC_PASSWORD = @Dsc_Password,
+				FEC_REGISTRO = @Fec_Registro,
+				DSC_TELEFONO = @Dsc_Telefono,
+				ESTADO = @Estado
+			WHERE ID_USUARIO = @Id_Usuario;
 
-        -- Actualizar el usuario
-        UPDATE TB_USUARIO
-        SET DSC_NOMBRE = @Dsc_Nombre,
-            DSC_PRIMER_APELLIDO = @Dsc_Primer_Apellido,
-            DSC_SEGUNDO_APELLIDO = @Dsc_Segundo_Apellido,
-            DSC_CORREO = @Dsc_Correo,
-            DSC_PASSWORD = @Dsc_Password,
-            FEC_REGISTRO = @Fec_Registro,
-            DSC_TELEFONO = @Dsc_Telefono,
-            ESTADO = @Estado
-        WHERE ID_USUARIO = @Id_Usuario;
-
-        COMMIT TRANSACTION 
+			SET @IDRETURN = @Id_Usuario;
+        END
     END TRY
     BEGIN CATCH
         set @idReturn = -1;
 		set @errorId = ERROR_NUMBER();
 		set @errorDescripcion = ERROR_MESSAGE();
-        ROLLBACK TRANSACTION 
-        -- AquÌ puedes manejar el error como prefieras, por ejemplo, lanzar una excepciÛn o registrar el error en una tabla de registro de errores.
+        --Bitacorear error en BD.
+		INSERT INTO TB_ERROR_EN_BASE_DATOS 
+			(
+				NUM_SEVERIVDAD,
+				STORE_PROCEDURE,
+				NUM_ERROR,
+				DSC_DESCRIPCION,
+				NUM_LINEA,
+				FEC_ERROR
+			) 
+			SELECT ERROR_SEVERITY(),
+				   ERROR_PROCEDURE(),
+				   ERROR_NUMBER(),
+				   ERROR_MESSAGE(),
+				   ERROR_LINE(),
+				   GETUTCDATE(); 
     END CATCH
 END
 GO
