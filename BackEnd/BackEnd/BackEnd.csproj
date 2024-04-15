@@ -62,6 +62,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Conexion.dbml</DependentUpon>
     </Compile>
+    <Compile Include="domain\domain\CategoriaIngrediente.cs" />
+    <Compile Include="domain\domain\Ingrediente.cs" />
+    <Compile Include="domain\domain\Producto.cs" />
+    <Compile Include="domain\domain\Receta.cs" />
     <Compile Include="domain\domain\Rol.cs" />
     <Compile Include="domain\domain\Sesion.cs" />
     <Compile Include="domain\domain\Usuario.cs" />
