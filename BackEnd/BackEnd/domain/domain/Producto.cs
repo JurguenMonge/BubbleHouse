@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BackEnd.domain
 {
-    public class Producto 
+    public class Producto
     {
         public int idProducto { get; set; }
         public int idSubcateProducto { get; set; }
