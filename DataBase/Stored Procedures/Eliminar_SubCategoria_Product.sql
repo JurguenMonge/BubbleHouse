@@ -17,7 +17,6 @@ BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 12;
             SET @ERRORDESCRIPCION = 'La subcategoría de producto especificada no existe.';
-            RETURN; -- Salir del procedimiento almacenado
         END
 		ELSE
 		BEGIN
