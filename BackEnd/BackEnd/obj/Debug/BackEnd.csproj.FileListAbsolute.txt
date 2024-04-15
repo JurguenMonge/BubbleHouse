@@ -56,14 +56,10 @@ D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\BackEnd\BackEnd\bin\Debug\M
 D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\BackEnd\BackEnd\bin\Debug\Microsoft.IdentityModel.Logging.xml
 D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\BackEnd\BackEnd\bin\Debug\Microsoft.IdentityModel.Tokens.xml
 D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\BackEnd\BackEnd\bin\Debug\Newtonsoft.Json.xml
-D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.Buffers.xml
 D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
-D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.Memory.xml
-D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.Numerics.Vectors.xml
 D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.Text.Encodings.Web.xml
 D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.Text.Json.xml
-D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.ValueTuple.xml
 D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\BackEnd\BackEnd\obj\Debug\BackEnd.csproj.AssemblyReference.cache
 D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\BackEnd\BackEnd\obj\Debug\BackEnd.csproj.CoreCompileInputs.cache

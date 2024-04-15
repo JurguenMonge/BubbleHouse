@@ -62,43 +62,51 @@ namespace BackEnd.logic
                     int? idReturn = 0;
                     int? idError = 0;
                     String errorBD = "";
-                    var result = linq.Solicitar_Login(req.correo, ref idReturn, ref idError, ref errorBD);
-                    if (result != null)
-                    {
-                        res.Sesion.Usuario.Nombre = result.FirstOrDefault()?.DSC_NOMBRE;
-                        res.Sesion.Usuario.PrimerApellido = result.FirstOrDefault()?.DSC_PRIMER_APELLIDO;
-                        res.Sesion.Usuario.SegundoApellido = result.FirstOrDefault()?.DSC_SEGUNDO_APELLIDO;
-                        res.Sesion.Usuario.CorreoElectronico = result.FirstOrDefault()?.DSC_CORREO;
-                        res.Sesion.Usuario.NumeroTelefono = result.FirstOrDefault()?.DSC_TELEFONO;
-                        var IdUsuario = result.FirstOrDefault()?.ID_USUARIO;
-                        res.Sesion.Usuario.IdUsuario = IdUsuario.Value;
-
+                    var linqUsuario = linq.Solicitar_Login(req.correo, ref idReturn, ref idError, ref errorBD);    
                         if (idError == 0)
                         {
-                            actualPassword = result.FirstOrDefault()?.DSC_PASSWORD;
+                            Usuario usuario = new Usuario();
+                            foreach (var item in linqUsuario)
+                            {
+                                usuario = factoryArmarUsuario(item); ;
+                            }
+                            actualPassword = usuario.Password;
                             if (VerificarPassword(req.password, actualPassword))
                             {
                                 res.Resultado = true;
-                                var jwtManager = new JwtManager("BubbleHouseSecretKey2024jfuur46ag49sad64");
+                                var jwtManager = new JwtManager("VGhpcyBpcyBhIHN0cmluZyBlbmNvZGluZyBjYW5kZWxhYmxlIGZvciBlbWFpbHMgYXQgdGhhdCBhcmUgYmVlbiBkZWZpbml0ZWx5IGFzc2VtYmxlZCBpbiBkYXRhIHN0cmF0ZWd5LiBCeSB0aGUgQkRCdWJibGVIb3VzZSBpbiBhIHN0cmluZyBlbmNvZGluZy4=");
                                 bool valido = false;
-                                var resultSesion = linq.Obtener_Sesion_Activa_By_IdUsuario(res.Sesion.Usuario.IdUsuario);
-                                if (resultSesion != null)
+                                var linqSesion = linq.Obtener_Sesion_Activa_By_IdUsuario(usuario.IdUsuario);
+                                if (idError != null)
                                 {
-                                    ClaimsPrincipal principal = jwtManager.GetPrincipal(resultSesion.FirstOrDefault()?.DSC_SESION);
-                                    if (principal != null)
+                                    
+                                    Sesion sesion  = new Sesion();
+                                    sesion.Id_Sesion = "vacio";
+                                    foreach (var item in linqSesion)
                                     {
-                                        //valido
-                                        res.Sesion.Id_Sesion = resultSesion.FirstOrDefault()?.ID_SESION;
-                                        valido = true;
+                                        sesion = factoryArmarSesion(item); ;
                                     }
-                                }
-                                if (valido == false)
-                                {
-                                    String id_Sesion = GenerateHexId();
-                                    string token = jwtManager.GenerateToken(req.correo);
-                                    linq.Insertar_Sesion(id_Sesion, res.Sesion.Usuario.IdUsuario, token, req.origen, ref idReturn, ref idError, ref errorBD);
-                                    res.Sesion.Id_Sesion = id_Sesion;
-                                }
+                                    if(sesion.Id_Sesion != "vacio")
+                                    {
+                                        ClaimsPrincipal principal = jwtManager.GetPrincipal(sesion.Token_Sesion);
+                                        if (principal != null)
+                                        {
+                                        //valido
+                                            valido = true;
+                                        }
+                                    }
+                                    
+                                    if (valido == false)
+                                    {
+                                        String id_Sesion = GenerateHexId();
+                                        string token = jwtManager.GenerateToken(req.correo);
+                                        linq.Insertar_Sesion(id_Sesion, usuario.IdUsuario , token, req.origen, ref idReturn, ref idError, ref errorBD);
+                                        sesion.Id_Sesion = id_Sesion;
+                                    }
+                                    usuario.Password = "";
+                                    sesion.Usuario = usuario;
+                                    res.Sesion = sesion;
+                                }   
                             }
                             else
                             {
@@ -120,7 +128,7 @@ namespace BackEnd.logic
                         res.ListaDeErrores.Add("Usuario no encontrado");
                         tipoRegistro = 2;
                     }
-                }
+               
             }
             catch
             {
@@ -132,5 +140,24 @@ namespace BackEnd.logic
             return res;
 
         }
+        private Usuario factoryArmarUsuario(Solicitar_LoginResult usuarioLinq)
+        {
+            Usuario usuario = new Usuario();
+            usuario.IdUsuario = usuarioLinq.ID_USUARIO;
+            usuario.Nombre = usuarioLinq.DSC_NOMBRE;
+            usuario.PrimerApellido = usuarioLinq.DSC_PRIMER_APELLIDO;
+            usuario.SegundoApellido = usuarioLinq.DSC_SEGUNDO_APELLIDO;
+            usuario.Password = usuarioLinq.DSC_PASSWORD;
+            usuario.NumeroTelefono = usuarioLinq.DSC_TELEFONO;
+            return usuario;
+        }
+        private Sesion factoryArmarSesion(Obtener_Sesion_Activa_By_IdUsuarioResult sesionLinq)
+        {
+            Sesion sesion = new Sesion();
+            sesion.Id_Sesion = sesionLinq.ID_SESION;
+            sesion.Token_Sesion = sesionLinq.DSC_SESION;
+            return sesion;
+        }
     }
+
 }
