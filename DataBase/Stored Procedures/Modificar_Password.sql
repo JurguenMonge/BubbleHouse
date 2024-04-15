@@ -32,7 +32,7 @@ BEGIN
         BEGIN
             SET @IDRETURN = -1;
             SET @ERRORID = 2;
-            SET @ERRORDESCRIPCION = 'El token est· vacÌo';
+            SET @ERRORDESCRIPCION = 'El token est√° vac√≠o';
         END
         ELSE
         BEGIN
@@ -55,7 +55,7 @@ BEGIN
                 BEGIN
                     SET @IDRETURN = -1;
                     SET @ERRORID = 1;
-                    SET @ERRORDESCRIPCION = 'El Token ya expirÛ';
+                    SET @ERRORDESCRIPCION = 'El Token ya expir√≥';
 
                     UPDATE TB_RECUPERACION_PASSWORD 
                     SET FEC_USO = GETDATE(), ESTADO = 0
@@ -80,6 +80,7 @@ BEGIN
         COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
+        ROLLBACK TRANSACTION;
         SET @IDRETURN = -1;
         SET @ERRORID = ERROR_NUMBER();
         SET @ERRORDESCRIPCION = ERROR_MESSAGE();
@@ -99,7 +100,7 @@ BEGIN
             ERROR_MESSAGE(),
             ERROR_LINE(),
             GETUTCDATE();
-        ROLLBACK TRANSACTION;
+        
     END CATCH
 END
 GO
