@@ -80,15 +80,13 @@ C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.Va
 C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\Microsoft.IdentityModel.Tokens.xml
 C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
-C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.Memory.xml
 C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.Text.Json.xml
 C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\Microsoft.IdentityModel.Logging.xml
-C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.Buffers.xml
 C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
 C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.Text.Encodings.Web.xml
 C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
-C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.ValueTuple.xml
 C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
