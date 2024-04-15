@@ -71,7 +71,7 @@ namespace BackEnd.logic
                         res.Sesion.Usuario.CorreoElectronico = result.FirstOrDefault()?.DSC_CORREO;
                         res.Sesion.Usuario.NumeroTelefono = result.FirstOrDefault()?.DSC_TELEFONO;
                         var IdUsuario = result.FirstOrDefault()?.ID_USUARIO;
-                        res.Sesion.Usuario.Id = IdUsuario.Value;
+                        res.Sesion.Usuario.IdUsuario = IdUsuario.Value;
 
                         if (idError == 0)
                         {
@@ -81,7 +81,7 @@ namespace BackEnd.logic
                                 res.Resultado = true;
                                 var jwtManager = new JwtManager("BubbleHouseSecretKey2024jfuur46ag49sad64");
                                 bool valido = false;
-                                var resultSesion = linq.Obtener_Sesion_Activa_By_IdUsuario(res.Sesion.Usuario.Id);
+                                var resultSesion = linq.Obtener_Sesion_Activa_By_IdUsuario(res.Sesion.Usuario.IdUsuario);
                                 if (resultSesion != null)
                                 {
                                     ClaimsPrincipal principal = jwtManager.GetPrincipal(resultSesion.FirstOrDefault()?.DSC_SESION);
@@ -96,7 +96,7 @@ namespace BackEnd.logic
                                 {
                                     String id_Sesion = GenerateHexId();
                                     string token = jwtManager.GenerateToken(req.correo);
-                                    linq.Insertar_Sesion(id_Sesion, res.Sesion.Usuario.Id, token, req.origen, ref idReturn, ref idError, ref errorBD);
+                                    linq.Insertar_Sesion(id_Sesion, res.Sesion.Usuario.IdUsuario, token, req.origen, ref idReturn, ref idError, ref errorBD);
                                     res.Sesion.Id_Sesion = id_Sesion;
                                 }
                             }

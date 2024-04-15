@@ -44,7 +44,7 @@ namespace BackEnd.logic
                         String errorBD = "";
                         linq.Insertar_Usuario(req.Usuario.Nombre, req.Usuario.PrimerApellido,
                             req.Usuario.SegundoApellido, req.Usuario.CorreoElectronico, req.Usuario.Password,
-                            req.Usuario.NumeroTelefono, req.Usuario.idRol, ref idReturn, ref idError, ref errorBD);
+                            req.Usuario.NumeroTelefono, req.Usuario.rol.idRol, ref idReturn, ref idError, ref errorBD);
                         if (idError == 0)
                         {
                             res.Resultado = true;
@@ -233,11 +233,11 @@ namespace BackEnd.logic
             usuario.Nombre = usuarioLinq.DSC_NOMBRE;
             usuario.PrimerApellido = usuarioLinq.DSC_PRIMER_APELLIDO;
             usuario.SegundoApellido = usuarioLinq.DSC_SEGUNDO_APELLIDO;
+            usuario.CorreoElectronico = usuarioLinq.DSC_CORREO;
             usuario.Password = usuarioLinq.DSC_PASSWORD;
             usuario.NumeroTelefono = usuarioLinq.DSC_TELEFONO;
-            usuario.tipoRol = usuarioLinq.DSC_TIPO_ROL;
-            usuario.permisos = usuarioLinq.DSC_PERMISOS;
-            usuario.estado = usuarioLinq.ESTADO.HasValue ? (usuarioLinq.ESTADO.Value == 1 ? true : false) : false;
+            usuario.rol.tipoRol = usuarioLinq.DSC_TIPO_ROL;
+            usuario.rol.permisos = usuarioLinq.DSC_PERMISOS;
             return usuario;
         }
 
