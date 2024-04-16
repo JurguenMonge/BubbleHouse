@@ -74,7 +74,7 @@ namespace BackEnd.logic
                             if (VerificarPassword(req.password, actualPassword))
                             {
                                 res.Resultado = true;
-                                var jwtManager = new JwtManager("VGhpcyBpcyBhIHN0cmluZyBlbmNvZGluZyBjYW5kZWxhYmxlIGZvciBlbWFpbHMgYXQgdGhhdCBhcmUgYmVlbiBkZWZpbml0ZWx5IGFzc2VtYmxlZCBpbiBkYXRhIHN0cmF0ZWd5LiBCeSB0aGUgQkRCdWJibGVIb3VzZSBpbiBhIHN0cmluZyBlbmNvZGluZy4=");
+                                var jwtManager = new JwtManager();
                                 bool valido = false;
                                 var linqSesion = linq.Obtener_Sesion_Activa_By_IdUsuario(usuario.IdUsuario);
                                 if (idError != null)
