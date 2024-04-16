@@ -13,9 +13,9 @@ namespace BackEnd.utils
     {
         private readonly string _secretKey;
 
-        public JwtManager(string secretKey)
+        public JwtManager()
         {
-            _secretKey = secretKey;
+            _secretKey = "VGhpcyBpcyBhIHN0cmluZyBlbmNvZGluZyBjYW5kZWxhYmxlIGZvciBlbWFpbHMgYXQgdGhhdCBhcmUgYmVlbiBkZWZpbml0ZWx5IGFzc2VtYmxlZCBpbiBkYXRhIHN0cmF0ZWd5LiBCeSB0aGUgQkRCdWJibGVIb3VzZSBpbiBhIHN0cmluZyBlbmNvZGluZy4=";
         }
 
         public string GenerateToken(string username)

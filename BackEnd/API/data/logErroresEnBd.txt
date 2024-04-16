@@ -1,0 +1,13 @@
+NO SE PUDO BITACOREAR EN BD EL MENSAJE DE ERROR FUE:    en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en System.Data.Linq.SqlClient.SqlConnectionManager.UseConnection(IConnectionUser user)
+   en System.Data.Linq.SqlClient.SqlProvider.get_IsSqlCe()
+   en System.Data.Linq.SqlClient.SqlProvider.InitializeProviderMode()
+   en System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   en BackEnd.data.ConexionDataContext.Insertar_Bitacora(String cLASE, String mETODO, Nullable`1 tIPO, String dESCRIPCION, String rEQUEST, String rESPONSE) en C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\data\Conexion.designer.cs:línea 165
+   en BackEnd.utils.Utils.crearBitacora(List`1 listaDeErrores, Int16 tipo, String laClase, String elMetodo, String elRequest, String elResponse) en C:\Users\Jurguen Monge\Documents\BubbleHouse\BackEnd\BackEnd\utils\Utils.cs:línea 18 --> CLASE: LogUsuario METODO: ingresarUsuario TIPO 3 DESCRIPCION System.Collections.Generic.List`1[System.String] REQ: {"Usuario":{"IdUsuario":0,"Nombre":"sample string 2","PrimerApellido":"sample string 3","SegundoApellido":"sample string 4","CorreoElectronico":"sample string 5","Password":"$2b$12$..5Apfkt9q9pWPPXF8NpbewebMSQ5/L4oJY0nIsO5bdB/8jm1NwUm","NumeroTelefono":"sample string 7","rol":{"idRol":1,"tipoRol":null,"permisos":null,"estado":false},"estado":false}} RES {"ListaDeErrores":["Ocurrió un error al insertar el usuario"],"Resultado":false} FECHA: 14/4/2024 07:44:09

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BackEnd.domain
 {
-    public class Usuario : Rol
+    public class Usuario
     {
         public int IdUsuario { get; set; }
         public string Nombre { get; set; }
@@ -16,5 +16,7 @@ namespace BackEnd.domain
         public string CorreoElectronico { get; set; }
         public string Password { get; set; }
         public string NumeroTelefono { get; set; }
+        public Rol rol = new Rol(); 
+        public bool estado { get; set; }
     }
 }
