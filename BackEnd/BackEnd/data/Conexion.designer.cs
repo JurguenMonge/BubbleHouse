@@ -33,7 +33,7 @@ namespace BackEnd.data
     #endregion
 		
 		public ConexionDataContext() : 
-				base(global::BackEnd.Properties.Settings.Default.BDBubbleHouseConnectionString3, mappingSource)
+				base(global::BackEnd.Properties.Settings.Default.BDBubbleHouseConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -463,6 +463,36 @@ namespace BackEnd.data
 			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(2)));
 			eRRORDESCRIPCION = ((string)(result.GetParameterValue(3)));
 			return ((ISingleResult<Solicitar_LoginResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Eliminar_Sesion")]
+		public int Eliminar_Sesion([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Sesion", DbType="NVarChar(MAX)")] string id_Sesion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_cierre", DbType="NVarChar(MAX)")] string dSC_cierre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Sesion, dSC_cierre, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Recuperacion_Password")]
+		public int Insertar_Recuperacion_Password([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Token", DbType="NVarChar(100)")] string dsc_Token, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Correo", DbType="NVarChar(50)")] string dsc_Correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dsc_Token, dsc_Correo, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Modificar_Password")]
+		public int Modificar_Password([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Token", DbType="NVarChar(100)")] string dsc_Token, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="New_Password", DbType="NVarChar(MAX)")] string new_Password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dsc_Token, new_Password, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
 		}
 	}
 	

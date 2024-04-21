@@ -67,5 +67,27 @@ namespace BackEnd.Properties {
                 return ((string)(this["BDBubbleHouseConnectionString3"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-AR7N3CH;Initial Catalog=BDBubbleHouse;Persist Security Info=T" +
+            "rue;User ID=Moviles;Password=123;Encrypt=False;TrustServerCertificate=True")]
+        public string BDBubbleHouseConnectionString4 {
+            get {
+                return ((string)(this["BDBubbleHouseConnectionString4"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-AR7N3CH;Initial Catalog=BDBubbleHouse;Persist Security Info=T" +
+            "rue;User ID=Moviles;Encrypt=False;TrustServerCertificate=True")]
+        public string BDBubbleHouseConnectionString5 {
+            get {
+                return ((string)(this["BDBubbleHouseConnectionString5"]));
+            }
+        }
     }
 }

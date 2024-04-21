@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDBubbleHouse" Class="ConexionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=Fernanda\SQLEXPRESS;Initial Catalog=BDBubbleHouse;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="BackEnd.Properties.Settings" SettingsPropertyName="BDBubbleHouseConnectionString3" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-AR7N3CH;Initial Catalog=BDBubbleHouse;Persist Security Info=True;User ID=Moviles;Encrypt=False;Trust Server Certificate=True" SettingsObjectName="BackEnd.Properties.Settings" SettingsPropertyName="BDBubbleHouseConnectionString4" Provider="System.Data.SqlClient" />
   <Function Name="dbo.Desactivar_Ingrediente" Method="Desactivar_Ingrediente">
     <Parameter Name="Id_Ingrediente" Parameter="id_Ingrediente" Type="System.Int32" DbType="Int" />
     <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
@@ -516,5 +516,29 @@
       <Column Name="DSC_TELEFONO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.Eliminar_Sesion" Method="Eliminar_Sesion">
+    <Parameter Name="Id_Sesion" Parameter="id_Sesion" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DSC_cierre" Parameter="dSC_cierre" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Insertar_Recuperacion_Password" Method="Insertar_Recuperacion_Password">
+    <Parameter Name="Dsc_Token" Parameter="dsc_Token" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Dsc_Correo" Parameter="dsc_Correo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Modificar_Password" Method="Modificar_Password">
+    <Parameter Name="Dsc_Token" Parameter="dsc_Token" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="New_Password" Parameter="new_Password" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

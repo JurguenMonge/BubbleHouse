@@ -20,6 +20,11 @@ namespace BackEnd.logic
             return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
 
+        private string EncriptarPassword(string password)
+        {
+            return BCrypt.Net.BCrypt.HashPassword(password, 12);
+        }
+
         private static string GenerateHexId()
         {
             int length = 50;
@@ -132,6 +137,9 @@ namespace BackEnd.logic
             }
             catch
             {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("Ocurrió un error al crear la sesion");
+                tipoRegistro = 3;
             }
             finally
             {
@@ -140,6 +148,158 @@ namespace BackEnd.logic
             return res;
 
         }
+
+        public ResLogOut LogOut(ReqLogOut req)
+        {
+            ResLogOut res = new ResLogOut();
+            short tipoRegistro = 0;
+            try
+            {
+                if (String.IsNullOrEmpty(req.id_Sesion))
+                {
+                    res.Resultado = false;
+                    res.ListaDeErrores.Add("Id de la sesion faltante");
+                    tipoRegistro = 2;
+                }
+                if (!res.ListaDeErrores.Any())
+                {
+                    ConexionDataContext linq = new ConexionDataContext();
+                    int? idReturn = 0;
+                    int? idError = 0;
+                    String errorBD = "";
+                    var linqUsuario = linq.Eliminar_Sesion(req.id_Sesion, req.dsc_cierre, ref idReturn, ref idError, ref errorBD);
+                    if (idError != 1)
+                    {
+                        res.Resultado = true;
+                    }
+                    else
+                    {
+                        res.Resultado = false;
+                        res.ListaDeErrores.Add("Ocurrió un error al eliminar la sesion");
+                        tipoRegistro = 3;
+                    }
+                }
+                }
+            catch (Exception ex)
+            {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("Ocurrió un error al eliminar la sesion");
+                tipoRegistro = 3;
+            }
+            finally
+            {
+                utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, JsonConvert.SerializeObject(req), JsonConvert.SerializeObject(res));
+            }
+
+            return res;
+        }
+
+        public ResSolicitarPassword solicitarPassword(ReqSolicitarPassword req)
+        {
+            ResSolicitarPassword res = new ResSolicitarPassword();
+            short tipoRegistro = 0;
+            try
+            {
+                if (String.IsNullOrEmpty(req.correo))
+                {
+                    res.Resultado = false;
+                    res.ListaDeErrores.Add("correo faltante");
+                    tipoRegistro = 2;
+                }
+                if (!res.ListaDeErrores.Any())
+                {
+                    ConexionDataContext linq = new ConexionDataContext();
+                    int? idReturn = 0;
+                    int? idError = 0;
+                    String errorBD = "";
+                    var jwtManager = new JwtManager();
+                    string token = jwtManager.GenerateToken(req.correo);
+                    var linqUsuario = linq.Insertar_Recuperacion_Password(token, req.correo, ref idReturn, ref idError, ref errorBD);
+                    if (idError != 1)
+                    {
+                        string fromAddress = "guapilesbubblehouse@hotmail.com";
+                        string password = "miopwfayoljnozhj";
+                        string toAddress = req.correo;
+                        string subject = "Solicitud de cambio de contraseña";
+                        string body = "De click en el siguiente enlance https://localhost:44311/api/changePassword/{" + token +"}";
+                        EmailSender emailSender = new EmailSender(fromAddress, password);
+                        res.Resultado = emailSender.SendEmail(toAddress, subject, body);
+                    }
+                    else
+                    {
+                        res.Resultado = false;
+
+                        res.ListaDeErrores.Add("Ocurrió un error al insertar la solicitud de recuperacion");
+                        tipoRegistro = 3;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("error al solicitar nueva contraseña");
+                tipoRegistro = 3;
+            }
+            finally
+            {
+                utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, JsonConvert.SerializeObject(req), JsonConvert.SerializeObject(res));
+            }
+            return res; 
+        }
+
+        public ResChangePassword changePassword(ReqChangePassword req)
+        {
+            ResChangePassword res = new ResChangePassword();
+            short tipoRegistro = 0;
+            try
+            {
+                if (String.IsNullOrEmpty(req.token))
+                {
+                    res.Resultado = false;
+                    res.ListaDeErrores.Add("token faltante");
+                    tipoRegistro = 2;
+                }
+                if (String.IsNullOrEmpty(req.password))
+                {
+                    res.Resultado = false;
+                    res.ListaDeErrores.Add("contraseña faltante");
+                    tipoRegistro = 2;
+                }
+                if (!res.ListaDeErrores.Any())
+                {
+                    ConexionDataContext linq = new ConexionDataContext();
+                    int? idReturn = 0;
+                    int? idError = 0;
+                    String errorBD = "";
+                    var jwtManager = new JwtManager();
+                    req.password = EncriptarPassword(req.password);
+                    var linqUsuario = linq.Modificar_Password(req.token, req.password, ref idReturn, ref idError, ref errorBD);
+                    if (idError != 1)
+                    {
+                        res.Resultado = true;
+                    }
+                    else
+                    {
+                        res.Resultado = false;
+                        res.ListaDeErrores.Add("Ocurrió un error al modificar la contraseña");
+                        tipoRegistro = 3;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("error al modificar la contraseña");
+                tipoRegistro = 3;
+            }
+            finally
+            {
+                utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, JsonConvert.SerializeObject(req), JsonConvert.SerializeObject(res));
+            }
+            return res;
+        }
+
+
         private Usuario factoryArmarUsuario(Solicitar_LoginResult usuarioLinq)
         {
             Usuario usuario = new Usuario();

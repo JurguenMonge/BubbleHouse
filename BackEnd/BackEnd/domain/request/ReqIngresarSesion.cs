@@ -10,7 +10,6 @@ namespace BackEnd.domain
     {
         public String password { get; set; }
         public String correo { get; set; }
-
         public String origen { get; set; }
 
     }

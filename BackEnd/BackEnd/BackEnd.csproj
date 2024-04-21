@@ -73,12 +73,18 @@
     <Compile Include="domain\domain\SubcategoriaProducto.cs" />
     <Compile Include="domain\domain\Usuario.cs" />
     <Compile Include="domain\request\ReqCategoriaProducto.cs" />
+    <Compile Include="domain\request\ReqChangePassword.cs" />
     <Compile Include="domain\request\ReqIngresarSesion.cs" />
     <Compile Include="domain\request\ReqIngresarUsuario.cs" />
+    <Compile Include="domain\request\ReqLogOut.cs" />
+    <Compile Include="domain\request\ReqSolicitarPassword.cs" />
     <Compile Include="domain\response\ResBase.cs" />
     <Compile Include="domain\response\ResCategoriaProducto.cs" />
+    <Compile Include="domain\response\ResChangePassword.cs" />
     <Compile Include="domain\response\ResIngresarSesion.cs" />
+    <Compile Include="domain\response\ResLogOut.cs" />
     <Compile Include="domain\response\ResObtenerCategoriaProducto.cs" />
+    <Compile Include="domain\response\ResSolicitarPassword.cs" />
     <Compile Include="domain\response\ResUsuario.cs" />
     <Compile Include="domain\response\ResObtenerRol.cs" />
     <Compile Include="domain\response\ResObtenerUsuario.cs" />
@@ -94,6 +100,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="utils\EmailSender.cs" />
     <Compile Include="utils\JwtManager.cs" />
     <Compile Include="utils\Utils.cs" />
   </ItemGroup>

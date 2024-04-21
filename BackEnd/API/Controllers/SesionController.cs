@@ -17,5 +17,26 @@ namespace API.Controllers
         {
             return new LogSesion().Login(req);
         }
+
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.Route("api/logout")]
+        public ResLogOut LogOut(ReqLogOut req)
+        {
+            return new LogSesion().LogOut(req);
+        }
+
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.Route("api/solicitarPassword")]
+        public ResSolicitarPassword SolicitarPassword(ReqSolicitarPassword req)
+        {
+            return new LogSesion().solicitarPassword(req);
+        }
+
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.Route("api/changePassword")]
+        public ResChangePassword changePassword(ReqChangePassword req)
+        {
+            return new LogSesion().changePassword(req);
+        }
     }
 }
