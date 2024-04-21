@@ -56,5 +56,16 @@ namespace BackEnd.Properties {
                 return ((string)(this["BDBubbleHouseConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Fernanda\\SQLEXPRESS;Initial Catalog=BDBubbleHouse;Integrated Security" +
+            "=True;Encrypt=True;TrustServerCertificate=True")]
+        public string BDBubbleHouseConnectionString3 {
+            get {
+                return ((string)(this["BDBubbleHouseConnectionString3"]));
+            }
+        }
     }
 }

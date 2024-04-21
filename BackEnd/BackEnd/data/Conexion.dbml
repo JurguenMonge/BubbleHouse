@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDBubbleHouse" Class="ConexionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-IJSDIJ5;Initial Catalog=BDBubbleHouse;Persist Security Info=True;User ID=Jurguen;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="BackEnd.Properties.Settings" SettingsPropertyName="BDBubbleHouseConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=Fernanda\SQLEXPRESS;Initial Catalog=BDBubbleHouse;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="BackEnd.Properties.Settings" SettingsPropertyName="BDBubbleHouseConnectionString3" Provider="System.Data.SqlClient" />
   <Function Name="dbo.Desactivar_Ingrediente" Method="Desactivar_Ingrediente">
     <Parameter Name="Id_Ingrediente" Parameter="id_Ingrediente" Type="System.Int32" DbType="Int" />
     <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
@@ -42,15 +42,15 @@
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.Eliminar_Receta" Method="Eliminar_Receta">
-    <Parameter Name="ID_RECETA" Parameter="iD_RECETA" Type="System.Int32" DbType="Int" />
+  <Function Name="dbo.Eliminar_Producto" Method="Eliminar_Producto">
+    <Parameter Name="Id_Producto" Parameter="id_Producto" Type="System.Int32" DbType="Int" />
     <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.Eliminar_Producto" Method="Eliminar_Producto">
-    <Parameter Name="Id_Producto" Parameter="id_Producto" Type="System.Int32" DbType="Int" />
+  <Function Name="dbo.Eliminar_Receta" Method="Eliminar_Receta">
+    <Parameter Name="ID_RECETA" Parameter="iD_RECETA" Type="System.Int32" DbType="Int" />
     <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
@@ -189,18 +189,6 @@
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.Modificar_Ingrediente" Method="Modificar_Ingrediente">
-    <Parameter Name="Id_Ingrediente" Parameter="id_Ingrediente" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Id_Cate_Ingrediente" Parameter="id_Cate_Ingrediente" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Dsc_Nombre_Ingrediente" Parameter="dsc_Nombre_Ingrediente" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="Dsc_Descripcion" Parameter="dsc_Descripcion" Type="System.String" DbType="NVarChar(MAX)" />
-    <Parameter Name="Dsc_Url_Imagen" Parameter="dsc_Url_Imagen" Type="System.String" DbType="NVarChar(MAX)" />
-    <Parameter Name="Num_Precio" Parameter="num_Precio" Type="System.Decimal" DbType="Decimal(10,2)" />
-    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.Modificar_Factura" Method="Modificar_Factura">
     <Parameter Name="Id_Factura" Parameter="id_Factura" Type="System.Int32" DbType="Int" />
     <Parameter Name="Id_Producto" Parameter="id_Producto" Type="System.Int32" DbType="Int" />
@@ -208,6 +196,18 @@
     <Parameter Name="Num_Subtotal" Parameter="num_Subtotal" Type="System.Decimal" DbType="Decimal(10,2)" />
     <Parameter Name="Num_Descuento" Parameter="num_Descuento" Type="System.Decimal" DbType="Decimal(10,2)" />
     <Parameter Name="Num_Total" Parameter="num_Total" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Modificar_Ingrediente" Method="Modificar_Ingrediente">
+    <Parameter Name="Id_Ingrediente" Parameter="id_Ingrediente" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Id_Cate_Ingrediente" Parameter="id_Cate_Ingrediente" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Dsc_Nombre_Ingrediente" Parameter="dsc_Nombre_Ingrediente" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Dsc_Descripcion" Parameter="dsc_Descripcion" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Dsc_Url_Imagen" Parameter="dsc_Url_Imagen" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Num_Precio" Parameter="num_Precio" Type="System.Decimal" DbType="Decimal(10,2)" />
     <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
@@ -275,6 +275,18 @@
       <Column Name="DSC_NOMBRE_CATEGORIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.Obtener_Facturas_Completadas" Method="Obtener_Facturas_Completadas">
+    <ElementType Name="Obtener_Facturas_CompletadasResult">
+      <Column Name="ID_FACTURA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_SESION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NUM_SUBTOTAL" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="NUM_DESCUENTO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="NUM_TOTAL" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.Obtener_Facturas_No_Pagadas" Method="Obtener_Facturas_No_Pagadas">
     <ElementType Name="Obtener_Facturas_No_PagadasResult">
       <Column Name="ID_FACTURA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -287,8 +299,8 @@
       <Column Name="ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.Obtener_Facturas_Completadas" Method="Obtener_Facturas_Completadas">
-    <ElementType Name="Obtener_Facturas_CompletadasResult">
+  <Function Name="dbo.Obtener_Facturas_No_Preparadas" Method="Obtener_Facturas_No_Preparadas">
+    <ElementType Name="Obtener_Facturas_No_PreparadasResult">
       <Column Name="ID_FACTURA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ID_SESION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
@@ -308,18 +320,6 @@
       <Column Name="NUM_PRECIO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
       <Column Name="ID_CATE_INGREDIENTE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DSC_NOMBRE_CATEGORIA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.Obtener_Facturas_No_Preparadas" Method="Obtener_Facturas_No_Preparadas">
-    <ElementType Name="Obtener_Facturas_No_PreparadasResult">
-      <Column Name="ID_FACTURA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_SESION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="NUM_SUBTOTAL" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="NUM_DESCUENTO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="NUM_TOTAL" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.Obtener_Productos_Activos" Method="Obtener_Productos_Activos">
@@ -472,20 +472,6 @@
       <Column Name="DSC_NOMBRE_SUBCATEGORIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.Obtener_Usuarios_Activos" Method="Obtener_Usuarios_Activos">
-    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
-    <ElementType Name="Obtener_Usuarios_ActivosResult">
-      <Column Name="DSC_NOMBRE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DSC_PRIMER_APELLIDO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DSC_SEGUNDO_APELLIDO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DSC_CORREO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DSC_PASSWORD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DSC_TELEFONO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DSC_TIPO_ROL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DSC_PERMISOS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.Obtener_Usuario" Method="Obtener_Usuario">
     <Parameter Name="Id_Usuario" Parameter="id_Usuario" Type="System.Int32" DbType="Int" />
     <ElementType Name="Obtener_UsuarioResult">
@@ -498,6 +484,20 @@
       <Column Name="FEC_REGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="DSC_TELEFONO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Obtener_Usuarios_Activos" Method="Obtener_Usuarios_Activos">
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="Obtener_Usuarios_ActivosResult">
+      <Column Name="DSC_NOMBRE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSC_PRIMER_APELLIDO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSC_SEGUNDO_APELLIDO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSC_CORREO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSC_PASSWORD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DSC_TELEFONO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSC_TIPO_ROL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSC_PERMISOS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.Solicitar_Login" Method="Solicitar_Login">
