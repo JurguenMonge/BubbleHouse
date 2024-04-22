@@ -67,6 +67,16 @@ namespace BackEnd.logic
             }
         }
 
+        public static void ValidarRol(Usuario usuario, ResUsuario res, ref short tipoRegistro)
+        {
+            if (usuario.rol.idRol == 0)
+            {
+                res.Resultado=false;
+                res.ListaDeErrores.Add("Rol inexistente");
+                tipoRegistro = 2;
+            }
+        }
+
     }
 
 }

@@ -9,11 +9,11 @@ namespace BackEnd.domain
     public class Producto
     {
         public int idProducto { get; set; }
-        public int idSubcateProducto { get; set; }
-        public string dscNombreProducto { get; set; }
-        public string dscDescripcion {  get; set; }
-        public string dscUrlImgen {  get; set; }
-        public float numPrecio { get; set; }
+        public SubcategoriaProducto subcategoriaProducto { get; set; }
+        public string nombreProducto { get; set; }
+        public string descripcion {  get; set; }
+        public string urlImgen {  get; set; }
+        public float precio { get; set; }
         public bool estado {  get; set; }
 
     }

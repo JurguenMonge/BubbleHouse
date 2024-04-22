@@ -33,7 +33,7 @@ namespace BackEnd.data
     #endregion
 		
 		public ConexionDataContext() : 
-				base(global::BackEnd.Properties.Settings.Default.BDBubbleHouseConnectionString4, mappingSource)
+				base(global::BackEnd.Properties.Settings.Default.BDBubbleHouseConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -60,16 +60,6 @@ namespace BackEnd.data
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Desactivar_Ingrediente")]
-		public int Desactivar_Ingrediente([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Ingrediente", DbType="Int")] System.Nullable<int> id_Ingrediente, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Ingrediente, iDRETURN, eRRORID, eRRORDESCRIPCION);
-			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(1)));
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(2)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(3)));
-			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Desactivar_Producto")]
@@ -492,6 +482,16 @@ namespace BackEnd.data
 			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(2)));
 			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(3)));
 			eRRORDESCRIPCION = ((string)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Desactivar_Ingrediente")]
+		public int Desactivar_Ingrediente([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Ingrediente", DbType="Int")] System.Nullable<int> id_Ingrediente, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Ingrediente, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(3)));
 			return ((int)(result.ReturnValue));
 		}
 	}

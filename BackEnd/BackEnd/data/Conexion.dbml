@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDBubbleHouse" Class="ConexionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-AR7N3CH;Initial Catalog=BDBubbleHouse;Persist Security Info=True;User ID=Moviles;Encrypt=False;Trust Server Certificate=True" SettingsObjectName="BackEnd.Properties.Settings" SettingsPropertyName="BDBubbleHouseConnectionString4" Provider="System.Data.SqlClient" />
-  <Function Name="dbo.Desactivar_Ingrediente" Method="Desactivar_Ingrediente">
-    <Parameter Name="Id_Ingrediente" Parameter="id_Ingrediente" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-IJSDIJ5;Initial Catalog=BDBubbleHouse;Persist Security Info=True;User ID=Jurguen;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="BackEnd.Properties.Settings" SettingsPropertyName="BDBubbleHouseConnectionString2" Provider="System.Data.SqlClient" />
   <Function Name="dbo.Desactivar_Producto" Method="Desactivar_Producto">
     <Parameter Name="Id_Producto" Parameter="id_Producto" Type="System.Int32" DbType="Int" />
     <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
@@ -536,6 +529,13 @@
   <Function Name="dbo.Modificar_Password" Method="Modificar_Password">
     <Parameter Name="Dsc_Token" Parameter="dsc_Token" Type="System.String" DbType="NVarChar(100)" />
     <Parameter Name="New_Password" Parameter="new_Password" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Desactivar_Ingrediente" Method="Desactivar_Ingrediente">
+    <Parameter Name="Id_Ingrediente" Parameter="id_Ingrediente" Type="System.Int32" DbType="Int" />
     <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />

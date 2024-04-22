@@ -36,6 +36,7 @@ namespace BackEnd.logic
                     req.Usuario.Password = EncriptarPassword(req.Usuario.Password);
                     Validaciones.ValidarTelefono(req.Usuario, res, ref tipoRegistro);
                     Validaciones.ValidarCorreo(req.Usuario, res, ref tipoRegistro);
+                    Validaciones.ValidarRol(req.Usuario, res, ref tipoRegistro);
                     if (!res.ListaDeErrores.Any())
                     {
                         ConexionDataContext linq = new ConexionDataContext();

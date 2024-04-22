@@ -13,7 +13,7 @@ namespace API.Controllers
     {
         [System.Web.Http.HttpPost]
         [System.Web.Http.Route("api/usuario/ingresar")]
-        public ResUsuario ingresarPublicacion(ReqIngresarUsuario req)
+        public ResUsuario ingresarUsuario(ReqIngresarUsuario req)
         {
             return new LogUsuario().ingresarUsuario(req);
         }
