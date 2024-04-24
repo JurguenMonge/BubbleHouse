@@ -534,11 +534,4 @@
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.Desactivar_Ingrediente" Method="Desactivar_Ingrediente">
-    <Parameter Name="Id_Ingrediente" Parameter="id_Ingrediente" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
 </Database>
