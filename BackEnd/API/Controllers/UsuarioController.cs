@@ -11,6 +11,7 @@ namespace API.Controllers
 {
     public class UsuarioController : ApiController
     {
+        //Ingresar un usuario
         [System.Web.Http.HttpPost]
         [System.Web.Http.Route("api/usuario/ingresar")]
         public ResUsuario ingresarUsuario(ReqIngresarUsuario req)

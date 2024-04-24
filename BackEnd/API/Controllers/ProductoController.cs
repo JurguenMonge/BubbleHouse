@@ -18,5 +18,12 @@ namespace API.Controllers
         {
             return new LogProducto().ingresarProducto(req);
         }
+
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("api/producto/obtener")]
+        public ResProducto obtenerProductos()
+        {
+            return null;
+        }
     }
 }
