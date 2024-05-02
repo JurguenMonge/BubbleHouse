@@ -1,4 +1,7 @@
-﻿namespace FrontEnd
+﻿
+using Microsoft.Maui.Controls;
+
+namespace FrontEnd
 {
     public partial class App : Application
     {
@@ -6,7 +9,8 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new NavigationPage(new Login());
         }
     }
 }
+ 

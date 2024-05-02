@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDBubbleHouse" Class="ConexionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-IJSDIJ5;Initial Catalog=BDBubbleHouse;Persist Security Info=True;User ID=Jurguen;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="BackEnd.Properties.Settings" SettingsPropertyName="BDBubbleHouseConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-AR7N3CH;Initial Catalog=BDBubbleHouse;Persist Security Info=True;User ID=Moviles;Encrypt=False;Trust Server Certificate=True" SettingsObjectName="BackEnd.Properties.Settings" SettingsPropertyName="BDBubbleHouseConnectionString4" Provider="System.Data.SqlClient" />
   <Function Name="dbo.Desactivar_Producto" Method="Desactivar_Producto">
     <Parameter Name="Id_Producto" Parameter="id_Producto" Type="System.Int32" DbType="Int" />
     <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
@@ -493,23 +493,6 @@
       <Column Name="DSC_PERMISOS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.Solicitar_Login" Method="Solicitar_Login">
-    <Parameter Name="Dsc_Correo" Parameter="dsc_Correo" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
-    <ElementType Name="Solicitar_LoginResult">
-      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DSC_NOMBRE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DSC_PRIMER_APELLIDO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DSC_SEGUNDO_APELLIDO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DSC_CORREO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DSC_PASSWORD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="FEC_REGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DSC_TELEFONO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.Eliminar_Sesion" Method="Eliminar_Sesion">
     <Parameter Name="Id_Sesion" Parameter="id_Sesion" Type="System.String" DbType="NVarChar(MAX)" />
     <Parameter Name="DSC_cierre" Parameter="dSC_cierre" Type="System.String" DbType="NVarChar(MAX)" />
@@ -540,5 +523,22 @@
     <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Solicitar_Login" Method="Solicitar_Login">
+    <Parameter Name="Dsc_Correo" Parameter="dsc_Correo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="Solicitar_LoginResult">
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DSC_NOMBRE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSC_PRIMER_APELLIDO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSC_SEGUNDO_APELLIDO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSC_CORREO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSC_PASSWORD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FEC_REGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DSC_TELEFONO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

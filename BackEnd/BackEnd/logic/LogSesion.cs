@@ -46,6 +46,7 @@ namespace BackEnd.logic
         {
             ResIngresarSesion res = new ResIngresarSesion();
             short tipoRegistro = 0;
+            var cont = 0;
             try
             {
                 if (String.IsNullOrEmpty(req.correo))
@@ -67,7 +68,8 @@ namespace BackEnd.logic
                     int? idReturn = 0;
                     int? idError = 0;
                     String errorBD = "";
-                    var linqUsuario = linq.Solicitar_Login(req.correo, ref idReturn, ref idError, ref errorBD);    
+                    var linqUsuario = linq.Solicitar_Login(req.correo, ref idReturn, ref idError, ref errorBD);
+                    cont++;
                         if (idError == 0)
                         {
                             Usuario usuario = new Usuario();
