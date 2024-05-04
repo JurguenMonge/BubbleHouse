@@ -122,16 +122,6 @@ namespace BackEnd.data
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Eliminar_Receta")]
-		public int Eliminar_Receta([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_RECETA", DbType="Int")] System.Nullable<int> iD_RECETA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_RECETA, iDRETURN, eRRORID, eRRORDESCRIPCION);
-			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(1)));
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(2)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(3)));
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Eliminar_SubCategoria_Producto")]
 		public int Eliminar_SubCategoria_Producto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_SubCategoria_Producto", DbType="Int")] System.Nullable<int> id_SubCategoria_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
@@ -206,16 +196,6 @@ namespace BackEnd.data
 			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(5)));
 			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(6)));
 			eRRORDESCRIPCION = ((string)(result.GetParameterValue(7)));
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Receta")]
-		public int Insertar_Receta([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_RECETA", DbType="Int")] System.Nullable<int> iD_RECETA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_PRODUCTO", DbType="Int")] System.Nullable<int> iD_PRODUCTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_LACTEO", DbType="Int")] System.Nullable<int> iD_ING_LACTEO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_SABOR", DbType="Int")] System.Nullable<int> iD_ING_SABOR, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_AZUCAR", DbType="Int")] System.Nullable<int> iD_ING_AZUCAR, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_TOPPING", DbType="Int")] System.Nullable<int> iD_ING_TOPPING, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_BORDEADO", DbType="Int")] System.Nullable<int> iD_ING_BORDEADO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_BUBBLES", DbType="Int")] System.Nullable<int> iD_ING_BUBBLES, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_NOMBRE", DbType="VarChar(MAX)")] string dSC_NOMBRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_TAMANO", DbType="VarChar(50)")] string dSC_TAMANO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_RECETA, iD_PRODUCTO, iD_ING_LACTEO, iD_ING_SABOR, iD_ING_AZUCAR, iD_ING_TOPPING, iD_ING_BORDEADO, iD_ING_BUBBLES, dSC_NOMBRE, dSC_TAMANO, iDRETURN, eRRORID, eRRORDESCRIPCION);
-			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(10)));
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(11)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(12)));
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -493,6 +473,33 @@ namespace BackEnd.data
 			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(2)));
 			eRRORDESCRIPCION = ((string)(result.GetParameterValue(3)));
 			return ((ISingleResult<Solicitar_LoginResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Receta")]
+		public int Insertar_Receta([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_PRODUCTO", DbType="Int")] System.Nullable<int> iD_PRODUCTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_LACTEO", DbType="Int")] System.Nullable<int> iD_ING_LACTEO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_SABOR", DbType="Int")] System.Nullable<int> iD_ING_SABOR, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_AZUCAR", DbType="Int")] System.Nullable<int> iD_ING_AZUCAR, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_TOPPING", DbType="Int")] System.Nullable<int> iD_ING_TOPPING, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_BORDEADO", DbType="Int")] System.Nullable<int> iD_ING_BORDEADO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_BUBBLES", DbType="Int")] System.Nullable<int> iD_ING_BUBBLES, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_NOMBRE", DbType="VarChar(MAX)")] string dSC_NOMBRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_TAMANO", DbType="VarChar(50)")] string dSC_TAMANO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_PRODUCTO, iD_ING_LACTEO, iD_ING_SABOR, iD_ING_AZUCAR, iD_ING_TOPPING, iD_ING_BORDEADO, iD_ING_BUBBLES, dSC_NOMBRE, dSC_TAMANO, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(9)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(10)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(11)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Eliminar_Receta")]
+		public int Eliminar_Receta([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_RECETA", DbType="Int")] System.Nullable<int> iD_RECETA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_RECETA, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Ingrediente_ById")]
+		public ISingleResult<Obtener_Ingrediente_ByIdResult> Obtener_Ingrediente_ById([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_ingrediente)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_ingrediente);
+			return ((ISingleResult<Obtener_Ingrediente_ByIdResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -3741,6 +3748,140 @@ namespace BackEnd.data
 				if ((this._ESTADO != value))
 				{
 					this._ESTADO = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Obtener_Ingrediente_ByIdResult
+	{
+		
+		private int _ID_INGREDIENTE;
+		
+		private string _DSC_NOMBRE_INGREDIENTE;
+		
+		private string _DSC_DESCRIPCION;
+		
+		private string _DSC_URL_IMAGEN;
+		
+		private System.Nullable<decimal> _NUM_PRECIO;
+		
+		private int _ID_CATE_INGREDIENTE;
+		
+		private string _DSC_NOMBRE_CATEGORIA;
+		
+		public Obtener_Ingrediente_ByIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_INGREDIENTE", DbType="Int NOT NULL")]
+		public int ID_INGREDIENTE
+		{
+			get
+			{
+				return this._ID_INGREDIENTE;
+			}
+			set
+			{
+				if ((this._ID_INGREDIENTE != value))
+				{
+					this._ID_INGREDIENTE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_INGREDIENTE", DbType="NVarChar(100)")]
+		public string DSC_NOMBRE_INGREDIENTE
+		{
+			get
+			{
+				return this._DSC_NOMBRE_INGREDIENTE;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE_INGREDIENTE != value))
+				{
+					this._DSC_NOMBRE_INGREDIENTE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_DESCRIPCION", DbType="NVarChar(MAX)")]
+		public string DSC_DESCRIPCION
+		{
+			get
+			{
+				return this._DSC_DESCRIPCION;
+			}
+			set
+			{
+				if ((this._DSC_DESCRIPCION != value))
+				{
+					this._DSC_DESCRIPCION = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_URL_IMAGEN", DbType="NVarChar(MAX)")]
+		public string DSC_URL_IMAGEN
+		{
+			get
+			{
+				return this._DSC_URL_IMAGEN;
+			}
+			set
+			{
+				if ((this._DSC_URL_IMAGEN != value))
+				{
+					this._DSC_URL_IMAGEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_PRECIO", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> NUM_PRECIO
+		{
+			get
+			{
+				return this._NUM_PRECIO;
+			}
+			set
+			{
+				if ((this._NUM_PRECIO != value))
+				{
+					this._NUM_PRECIO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_CATE_INGREDIENTE", DbType="Int NOT NULL")]
+		public int ID_CATE_INGREDIENTE
+		{
+			get
+			{
+				return this._ID_CATE_INGREDIENTE;
+			}
+			set
+			{
+				if ((this._ID_CATE_INGREDIENTE != value))
+				{
+					this._ID_CATE_INGREDIENTE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_CATEGORIA", DbType="NVarChar(MAX)")]
+		public string DSC_NOMBRE_CATEGORIA
+		{
+			get
+			{
+				return this._DSC_NOMBRE_CATEGORIA;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE_CATEGORIA != value))
+				{
+					this._DSC_NOMBRE_CATEGORIA = value;
 				}
 			}
 		}

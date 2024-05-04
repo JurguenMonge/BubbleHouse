@@ -201,10 +201,10 @@
     <Compile Include="Controllers\CategoriaProducController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Controllers\RecetaController.cs" />
     <Compile Include="Controllers\RolController.cs" />
     <Compile Include="Controllers\SesionController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -282,6 +282,7 @@
     <Folder Include="Views\CategoriaProducto\" />
     <Folder Include="Views\CategoriaProduc\" />
     <Folder Include="Views\Producto\" />
+    <Folder Include="Views\Receta\" />
     <Folder Include="Views\Rol\" />
     <Folder Include="Views\Sesion\" />
   </ItemGroup>
