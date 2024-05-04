@@ -19,7 +19,7 @@ namespace BackEnd.domain
         public String dscTamano { get; set; }
         public DateTime fecha { get; set; }
         public bool estado { get; set; }
-        public String producto { get; set; }
+        public Producto producto { get; set; }
 
         public List<Ingrediente> listaIngrediente = new List<Ingrediente>();
 

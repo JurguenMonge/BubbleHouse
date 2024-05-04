@@ -42,13 +42,6 @@
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.Eliminar_Receta" Method="Eliminar_Receta">
-    <Parameter Name="ID_RECETA" Parameter="iD_RECETA" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.Eliminar_SubCategoria_Producto" Method="Eliminar_SubCategoria_Producto">
     <Parameter Name="Id_SubCategoria_Producto" Parameter="id_SubCategoria_Producto" Type="System.Int32" DbType="Int" />
     <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
@@ -114,22 +107,6 @@
     <Parameter Name="Dsc_Descripcion" Parameter="dsc_Descripcion" Type="System.String" DbType="NVarChar(MAX)" />
     <Parameter Name="Dsc_Url_Imagen" Parameter="dsc_Url_Imagen" Type="System.String" DbType="NVarChar(MAX)" />
     <Parameter Name="Num_Precio" Parameter="num_Precio" Type="System.Double" DbType="Float" />
-    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.Insertar_Receta" Method="Insertar_Receta">
-    <Parameter Name="ID_RECETA" Parameter="iD_RECETA" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ID_PRODUCTO" Parameter="iD_PRODUCTO" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ID_ING_LACTEO" Parameter="iD_ING_LACTEO" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ID_ING_SABOR" Parameter="iD_ING_SABOR" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ID_ING_AZUCAR" Parameter="iD_ING_AZUCAR" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ID_ING_TOPPING" Parameter="iD_ING_TOPPING" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ID_ING_BORDEADO" Parameter="iD_ING_BORDEADO" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ID_ING_BUBBLES" Parameter="iD_ING_BUBBLES" Type="System.Int32" DbType="Int" />
-    <Parameter Name="DSC_NOMBRE" Parameter="dSC_NOMBRE" Type="System.String" DbType="VarChar(MAX)" />
-    <Parameter Name="DSC_TAMANO" Parameter="dSC_TAMANO" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
@@ -539,6 +516,40 @@
       <Column Name="FEC_REGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="DSC_TELEFONO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Insertar_Receta" Method="Insertar_Receta">
+    <Parameter Name="ID_PRODUCTO" Parameter="iD_PRODUCTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_ING_LACTEO" Parameter="iD_ING_LACTEO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_ING_SABOR" Parameter="iD_ING_SABOR" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_ING_AZUCAR" Parameter="iD_ING_AZUCAR" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_ING_TOPPING" Parameter="iD_ING_TOPPING" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_ING_BORDEADO" Parameter="iD_ING_BORDEADO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_ING_BUBBLES" Parameter="iD_ING_BUBBLES" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DSC_NOMBRE" Parameter="dSC_NOMBRE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="DSC_TAMANO" Parameter="dSC_TAMANO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Eliminar_Receta" Method="Eliminar_Receta">
+    <Parameter Name="ID_RECETA" Parameter="iD_RECETA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Obtener_Ingrediente_ById" Method="Obtener_Ingrediente_ById">
+    <Parameter Name="id_ingrediente" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Obtener_Ingrediente_ByIdResult">
+      <Column Name="ID_INGREDIENTE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DSC_NOMBRE_INGREDIENTE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DSC_DESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DSC_URL_IMAGEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NUM_PRECIO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="ID_CATE_INGREDIENTE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DSC_NOMBRE_CATEGORIA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
