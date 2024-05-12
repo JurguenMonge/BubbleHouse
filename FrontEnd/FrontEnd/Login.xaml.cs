@@ -20,7 +20,8 @@ public partial class Login : ContentPage
             await login.IngresarSesion(txtCorreo.Text, txtPassword.Text);
             string nombreUsuario = Preferences.Get("UsuarioNombre", string.Empty);
             DisplayAlert("Inicio de sesión", "Bienvenido "+ nombreUsuario, "Aceptar");
-            
+            Navigation.PushAsync(new FormularioCategoriaProducto());
+
         }
         catch (Exception ex)
         {

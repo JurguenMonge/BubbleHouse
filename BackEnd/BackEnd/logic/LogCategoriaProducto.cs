@@ -84,6 +84,7 @@ namespace BackEnd.logic
                         res.listaCategoriaProducto.Add(categoriaProducto);
                     }
                 }
+                res.Resultado = true;
                 
             }
             catch (Exception)
@@ -205,7 +206,9 @@ namespace BackEnd.logic
         private CategoriaProducto factoryArmarCategoriaProducto(Obtener_Cate_Productos_ActivosResult categoriaLinq)
         {
             CategoriaProducto categoriaProduccto = new CategoriaProducto();
+            categoriaProduccto.idCategoriaProducto = categoriaLinq.ID_CATE_PRODUCTO;
             categoriaProduccto.dscNombreCategoria = categoriaLinq.DSC_NOMBRE_CATEGORIA;
+            categoriaProduccto.estado = true;
             return categoriaProduccto;
         }
 

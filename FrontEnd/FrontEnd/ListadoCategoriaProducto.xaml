@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrontEnd.ListadoCategoriaProducto"
+             Title="ListadoCategoriaProducto">
+    <ScrollView>
+    <VerticalStackLayout BackgroundColor="#A9DFF0" Spacing="15">
+        
+        <Button x:Name="btnCrearPractica" BackgroundColor="#BDC0F7"
+     Clicked="btnCrearPractica_Clicked" 
+     Text="Nueva Categoria de Producto" TextColor="White" BorderColor="White" Padding="40" Margin="40,40,40,40"></Button>
+        <CollectionView SelectionMode="Multiple"
+             ItemsSource="{Binding listaDeCategoriasProducto}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Frame Margin="12"
+                    BorderColor="Azure"
+                    CornerRadius="5"
+                    HasShadow="True"
+                    HeightRequest="100"
+                    WidthRequest="600"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                            <Frame.Background>
+                                <LinearGradientBrush EndPoint="1,0">
+                                    <GradientStop Offset="0" Color="#BDC0F7"/>
+                                    <GradientStop Offset="1" Color="#BDC0F7"/>
+                                </LinearGradientBrush>
+                            </Frame.Background>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Frame.GestureRecognizers>
+                            <VerticalStackLayout>
+                                <Label x:Name="txtid"
+                            FontSize="15"
+                            HorizontalTextAlignment="Start"
+                            Text="{Binding idCategoriaProducto}"
+                            VerticalOptions="Center"
+                            IsVisible="False" TextColor="white"/>
+                                <Label x:Name="txtNombre"
+                            FontSize="15"
+                            HorizontalTextAlignment="Start"
+                            Text="{Binding dscNombreCategoria}"
+                            VerticalOptions="Center"  TextColor="white"/>
+                                <Label x:Name="txtestado"
+                            FontSize="15"
+                            HorizontalTextAlignment="Start"
+                            Text="{Binding estado}"
+                            VerticalOptions="Center" TextColor="white"/>
+
+                            </VerticalStackLayout>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
