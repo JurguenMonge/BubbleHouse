@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrontEnd.FormularioCategoriaProducto"
+             Title="Categoria de Productos">
+    <ScrollView>
+        <Grid x:Name="Contenedor" BackgroundColor="#a9dff0" >
+            <VerticalStackLayout Spacing="1" Margin="40,40,40,0" Padding="10">
+                <Frame Margin="10,0,10,0" VerticalOptions="Center" BackgroundColor="#bdc0f7">
+                    <VerticalStackLayout Margin="10,0,10,0" Spacing="10">
+                        <Label FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" TextColor="Wheat"></Label>
+                        <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="White" Text="Nombre de Categoria"></Label>
+                        <Entry x:Name="txtNombre"  Keyboard="Text" Background="White"></Entry>
+                        <Button x:Name="btnIngresar" Text="Ingresar" Clicked="btnIngresar_ClickedAsync" BackgroundColor="#414BB2"></Button>
+                        <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_ClickedAsync" BackgroundColor="#F76887" IsVisible="False"></Button>
+                        <Entry x:Name="txtId"  Keyboard="Numeric" Background="White" IsReadOnly="true" IsVisible="False"></Entry>
+                    </VerticalStackLayout>
+                </Frame>
+                
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

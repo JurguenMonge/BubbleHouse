@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "HQypG6zoypD23N7+t3uh4IkSXew4horyxB3spoLmxVAehQlpQ9ZwZ7DM999IX25yiGdpnprHeE6DJ5PPt4ZL2Q==",
+  "dgSpecHash": "lq/fDZ/07uYLZZo3rbOelZTeGwon8mwCv9WPaFtbGUJ0q2o8VhiLKeoVwnwNiDyz/txZdFbLh8yGc/JmQxaj1Q==",
   "success": true,
   "projectFilePath": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\FrontEnd.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\victo\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",
     "C:\\Users\\victo\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",
     "C:\\Users\\victo\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "C:\\Users\\victo\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
