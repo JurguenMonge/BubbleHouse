@@ -35,7 +35,7 @@ public partial class FormularioCategoriaProducto : ContentPage
                 res = await controller.ActualizarCategoriaProducto(txtNombre.Text, int.Parse(txtId.Text));
                 if (res.Resultado)
                 {
-                    DisplayAlert("Actuañizacion Exitosa", "Categoria de producto actualizada con exito", "Aceptar");
+                    DisplayAlert("Actualizacion Exitosa", "Categoria de producto actualizada con exito", "Aceptar");
                     Navigation.PushAsync(new ListadoCategoriaProducto());
                 }
                 else

@@ -89,5 +89,17 @@ namespace BackEnd.Properties {
                 return ((string)(this["BDBubbleHouseConnectionString5"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-JBPH1CV\\SQLEXPRESS;Initial Catalog=BDBubbleHouse;Persist Secu" +
+            "rity Info=True;User ID=BubbleHouse;Password=123;Encrypt=False;TrustServerCertifi" +
+            "cate=True")]
+        public string BDBubbleHouseConnectionString6 {
+            get {
+                return ((string)(this["BDBubbleHouseConnectionString6"]));
+            }
+        }
     }
 }

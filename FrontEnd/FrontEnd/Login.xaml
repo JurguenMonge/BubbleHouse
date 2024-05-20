@@ -13,9 +13,9 @@
                     SemanticProperties.Description="dot net bot in a race car number eight" />
                 <Frame Margin="10,0,10,0" VerticalOptions="Center" BackgroundColor="#bdc0f7">
                     <VerticalStackLayout>
-                        <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="White" Text="Correo"></Label>
+                        <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="White" TextColor="Black" Text="Correo"></Label>
                         <Entry x:Name="txtCorreo"  Keyboard="Email" Background="White"></Entry>
-                        <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="White" Text="Contraseña"></Label>
+                        <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="White" TextColor="Black" Text="Contraseña"></Label>
                         <Entry x:Name="txtPassword" Keyboard="Text" IsPassword="true" Background="White"></Entry>
                     </VerticalStackLayout>
                 </Frame>

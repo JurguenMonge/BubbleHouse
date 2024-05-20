@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDBubbleHouse" Class="ConexionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-AR7N3CH;Initial Catalog=BDBubbleHouse;Persist Security Info=True;User ID=Moviles;Encrypt=False;Trust Server Certificate=True" SettingsObjectName="BackEnd.Properties.Settings" SettingsPropertyName="BDBubbleHouseConnectionString4" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-JBPH1CV\SQLEXPRESS;Initial Catalog=BDBubbleHouse;Persist Security Info=True;User ID=BubbleHouse;Encrypt=False;Trust Server Certificate=True" SettingsObjectName="BackEnd.Properties.Settings" SettingsPropertyName="BDBubbleHouseConnectionString6" Provider="System.Data.SqlClient" />
   <Function Name="dbo.Desactivar_Producto" Method="Desactivar_Producto">
     <Parameter Name="Id_Producto" Parameter="id_Producto" Type="System.Int32" DbType="Int" />
     <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
@@ -66,13 +66,6 @@
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.Insertar_Categoria_Ingrediente" Method="Insertar_Categoria_Ingrediente">
-    <Parameter Name="Dsc_Nombre_Categoria" Parameter="dsc_Nombre_Categoria" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.Insertar_Categoria_Producto" Method="Insertar_Categoria_Producto">
     <Parameter Name="Dsc_Nombre_Categoria" Parameter="dsc_Nombre_Categoria" Type="System.String" DbType="NVarChar(100)" />
     <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
@@ -551,5 +544,12 @@
       <Column Name="ID_CATE_INGREDIENTE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DSC_NOMBRE_CATEGORIA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.Insertar_Categoria_Producto" Method="Insertar_Categoria_Producto">
+    <Parameter Name="Dsc_Nombre_Categoria" Parameter="dsc_Nombre_Categoria" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>
