@@ -55,7 +55,7 @@ namespace API.Controllers
         }
 
         [System.Web.Http.HttpDelete]
-        [System.Web.Http.Route("api/subCategoriaProducto/eliminar/{id}")]
+        [System.Web.Http.Route("api/subCategoriaProducto/eliminar")]
         public ResSubCategoriaProducto eliminarSubCategoria(ReqSubCategoriaProducto req)
         {
             ValidacionesSesion vali = new ValidacionesSesion();
