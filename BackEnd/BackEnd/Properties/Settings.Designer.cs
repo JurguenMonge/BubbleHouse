@@ -101,5 +101,16 @@ namespace BackEnd.Properties {
                 return ((string)(this["BDBubbleHouseConnectionString6"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JBDOLMUS;Initial Catalog=BDBubbleHouse;Integrated Security=True;Encry" +
+            "pt=False")]
+        public string BDBubbleHouseConnectionString7 {
+            get {
+                return ((string)(this["BDBubbleHouseConnectionString7"]));
+            }
+        }
     }
 }

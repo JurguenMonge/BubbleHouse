@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace BackEnd.domain
 {
-    public class Ingrediente : CategoriaIngrediente
+    public class Ingrediente
     {
 
         public int idIngrediente { get; set; }
+        public int idCategoriaIngrediente { get; set; }
+        public String dscNombre { get; set; }
         public String dscDescripcion { get; set; }
         public String dscURLImagen { get; set; }
-        public float numPrecio { get; set; }
-        public bool estadoIngre { get; set; }
+        public decimal numPrecio { get; set; }
+        public bool estado { get; set; }
 
     }
 }

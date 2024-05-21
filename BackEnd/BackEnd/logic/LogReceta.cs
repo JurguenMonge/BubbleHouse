@@ -311,10 +311,10 @@ namespace BackEnd.logic
             Ingrediente ingrediente = new Ingrediente();
             ingrediente.idIngrediente = (int)usuarioLinq.ID_INGREDIENTE;
             ingrediente.dscDescripcion = usuarioLinq.DSC_DESCRIPCION;
-            ingrediente.idCateIngrediente = (int)usuarioLinq.ID_CATE_INGREDIENTE;
+            ingrediente.idCategoriaIngrediente = (int)usuarioLinq.ID_CATE_INGREDIENTE;
             ingrediente.dscURLImagen = usuarioLinq.DSC_URL_IMAGEN;
-            ingrediente.numPrecio = (float)usuarioLinq.NUM_PRECIO;
-            ingrediente.estadoIngre = true;
+            ingrediente.numPrecio = (decimal)usuarioLinq.NUM_PRECIO;
+            ingrediente.estado = true;
             return ingrediente;
         }
 

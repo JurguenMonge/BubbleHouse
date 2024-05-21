@@ -1,86 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\",
+  "WorkspaceRootPath": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\",
   "Documents": [
     {
-<<<<<<< Updated upstream
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\formulariocategoriaproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:formulariocategoriaproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\controller\\categoriaproductocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:controller\\categoriaproductocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\entidades\\entidad\\categoriaproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:entidades\\entidad\\categoriaproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\entidades\\request\\reqcategoriaproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:entidades\\request\\reqcategoriaproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\entidades\\request\\reqbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:entidades\\request\\reqbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\controller\\subcategoriaproductocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:controller\\subcategoriaproductocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\controller\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:controller\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\formulariocategoriaproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\formulariocategoriaproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:formulariocategoriaproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\formulariocategoriaproducto.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:formulariocategoriaproducto.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\entidades\\entidad\\subcategoriaproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:entidades\\entidad\\subcategoriaproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\entidades\\entidad\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:entidades\\entidad\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> Stashed changes
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\listadocategoriaproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\listadocategoriaproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:listadocategoriaproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\controller\\categoriaproductocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\controller\\categoriaproductocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:controller\\categoriaproductocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\listadocategoriaproducto.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\listadocategoriaproducto.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:listadocategoriaproducto.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\formulariocategoriaproducto.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\formulariocategoriaproducto.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:formulariocategoriaproducto.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -91,11 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 235,
-<<<<<<< Updated upstream
           "SelectedChildIndex": 2,
-=======
-          "SelectedChildIndex": 7,
->>>>>>> Stashed changes
           "Children": [
             {
               "$type": "Bookmark",
@@ -107,268 +54,102 @@
             },
             {
               "$type": "Document",
-<<<<<<< Updated upstream
               "DocumentIndex": 0,
               "Title": "Login.xaml",
-              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml",
               "RelativeDocumentMoniker": "Login.xaml",
-              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml",
               "RelativeToolTip": "Login.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAB5AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-20T21:09:16.941Z",
-=======
-              "DocumentIndex": 2,
-              "Title": "CategoriaProducto.cs",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\CategoriaProducto.cs",
-              "RelativeDocumentMoniker": "Entidades\\Entidad\\CategoriaProducto.cs",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\CategoriaProducto.cs",
-              "RelativeToolTip": "Entidades\\Entidad\\CategoriaProducto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T13:30:10.501Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ReqCategoriaProducto.cs",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Request\\ReqCategoriaProducto.cs",
-              "RelativeDocumentMoniker": "Entidades\\Request\\ReqCategoriaProducto.cs",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Request\\ReqCategoriaProducto.cs",
-              "RelativeToolTip": "Entidades\\Request\\ReqCategoriaProducto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T14:17:10.516Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ReqBase.cs",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Request\\ReqBase.cs",
-              "RelativeDocumentMoniker": "Entidades\\Request\\ReqBase.cs",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Request\\ReqBase.cs",
-              "RelativeToolTip": "Entidades\\Request\\ReqBase.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T14:16:49.294Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\LoginController.cs",
-              "RelativeDocumentMoniker": "Controller\\LoginController.cs",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\LoginController.cs",
-              "RelativeToolTip": "Controller\\LoginController.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwDQAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T14:16:04.068Z",
->>>>>>> Stashed changes
+              "WhenOpened": "2024-05-21T14:54:51.539Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Login.xaml.cs",
-<<<<<<< Updated upstream
-              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml.cs",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml.cs",
               "RelativeDocumentMoniker": "Login.xaml.cs",
-              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml.cs",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml.cs",
               "RelativeToolTip": "Login.xaml.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAEwBgAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T21:09:05.723Z",
-=======
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml.cs",
-              "RelativeDocumentMoniker": "Login.xaml.cs",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml.cs",
-              "RelativeToolTip": "Login.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T14:15:30.647Z",
->>>>>>> Stashed changes
+              "WhenOpened": "2024-05-21T14:54:51.656Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-<<<<<<< Updated upstream
               "DocumentIndex": 4,
               "Title": "App.xaml.cs",
-              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\App.xaml.cs",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\App.xaml.cs",
               "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\App.xaml.cs",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\App.xaml.cs",
               "RelativeToolTip": "App.xaml.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T21:05:15.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-21T14:54:51.662Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "FormularioCategoriaProducto.xaml.cs",
-              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\FormularioCategoriaProducto.xaml.cs",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\FormularioCategoriaProducto.xaml.cs",
               "RelativeDocumentMoniker": "FormularioCategoriaProducto.xaml.cs",
-              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\FormularioCategoriaProducto.xaml.cs",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\FormularioCategoriaProducto.xaml.cs",
               "RelativeToolTip": "FormularioCategoriaProducto.xaml.cs",
               "ViewState": "AQIAADAAAAAAAAAAAAAowEUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T20:48:25.157Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-21T14:54:51.667Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "ListadoCategoriaProducto.xaml.cs",
-              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\ListadoCategoriaProducto.xaml.cs",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\ListadoCategoriaProducto.xaml.cs",
               "RelativeDocumentMoniker": "ListadoCategoriaProducto.xaml.cs",
-              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\ListadoCategoriaProducto.xaml.cs",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\ListadoCategoriaProducto.xaml.cs",
               "RelativeToolTip": "ListadoCategoriaProducto.xaml.cs",
               "ViewState": "AQIAAEwAAAAAAAAAAAAwwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T20:48:15.951Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-21T14:54:51.67Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "CategoriaProductoController.cs",
-              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\CategoriaProductoController.cs",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\CategoriaProductoController.cs",
               "RelativeDocumentMoniker": "Controller\\CategoriaProductoController.cs",
-              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\CategoriaProductoController.cs",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\CategoriaProductoController.cs",
               "RelativeToolTip": "Controller\\CategoriaProductoController.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAgwCMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T20:47:55.138Z",
-=======
-              "DocumentIndex": 0,
-              "Title": "CategoriaProductoController.cs",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\CategoriaProductoController.cs",
-              "RelativeDocumentMoniker": "Controller\\CategoriaProductoController.cs",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\CategoriaProductoController.cs",
-              "RelativeToolTip": "Controller\\CategoriaProductoController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwCMAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T14:13:12.067Z",
->>>>>>> Stashed changes
+              "WhenOpened": "2024-05-21T14:54:51.673Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-<<<<<<< Updated upstream
               "Title": "FormularioCategoriaProducto.xaml",
-              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\FormularioCategoriaProducto.xaml",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\FormularioCategoriaProducto.xaml",
               "RelativeDocumentMoniker": "FormularioCategoriaProducto.xaml",
-              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\FormularioCategoriaProducto.xaml",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\FormularioCategoriaProducto.xaml",
               "RelativeToolTip": "FormularioCategoriaProducto.xaml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-20T20:44:50.842Z",
-=======
-              "Title": "FormularioCategoriaProducto.xaml.cs",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\FormularioCategoriaProducto.xaml.cs",
-              "RelativeDocumentMoniker": "FormularioCategoriaProducto.xaml.cs",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\FormularioCategoriaProducto.xaml.cs",
-              "RelativeToolTip": "FormularioCategoriaProducto.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T14:12:43.623Z",
->>>>>>> Stashed changes
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-21T14:54:51.677Z"
             },
             {
               "$type": "Document",
-<<<<<<< Updated upstream
               "DocumentIndex": 6,
               "Title": "ListadoCategoriaProducto.xaml",
-              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\ListadoCategoriaProducto.xaml",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\ListadoCategoriaProducto.xaml",
               "RelativeDocumentMoniker": "ListadoCategoriaProducto.xaml",
-              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\ListadoCategoriaProducto.xaml",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\ListadoCategoriaProducto.xaml",
               "RelativeToolTip": "ListadoCategoriaProducto.xaml",
               "ViewState": "AQIAACcAAAAAAAAAAAAhwEcAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-11T22:52:26.466Z",
-=======
-              "DocumentIndex": 11,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\Usuario.cs",
-              "RelativeDocumentMoniker": "Entidades\\Entidad\\Usuario.cs",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\Usuario.cs",
-              "RelativeToolTip": "Entidades\\Entidad\\Usuario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T13:30:06.004Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Sesion.cs",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\Sesion.cs",
-              "RelativeDocumentMoniker": "Entidades\\Entidad\\Sesion.cs",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\Sesion.cs",
-              "RelativeToolTip": "Entidades\\Entidad\\Sesion.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T13:29:54.457Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SubcategoriaProducto.cs",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\SubcategoriaProducto.cs",
-              "RelativeDocumentMoniker": "Entidades\\Entidad\\SubcategoriaProducto.cs",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\SubcategoriaProducto.cs",
-              "RelativeToolTip": "Entidades\\Entidad\\SubcategoriaProducto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T13:29:37.285Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SubCategoriaProductoController.cs",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\SubCategoriaProductoController.cs",
-              "RelativeDocumentMoniker": "Controller\\SubCategoriaProductoController.cs",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\SubCategoriaProductoController.cs",
-              "RelativeToolTip": "Controller\\SubCategoriaProductoController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T13:28:33.182Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FormularioCategoriaProducto.xaml",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\FormularioCategoriaProducto.xaml",
-              "RelativeDocumentMoniker": "FormularioCategoriaProducto.xaml",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\FormularioCategoriaProducto.xaml",
-              "RelativeToolTip": "FormularioCategoriaProducto.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-21T13:23:26.765Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T13:22:19.955Z",
->>>>>>> Stashed changes
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-21T14:54:51.682Z"
             }
           ]
         }
