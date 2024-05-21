@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrontEnd.PrincipalAdministrativa"
+             Title="PrincipalAdministrativa">
+    <Grid BackgroundColor="#a9dff0">
+        <VerticalStackLayout>
+            <HorizontalStackLayout Margin="10,10,10,10" Spacing="10">
+                <Button x:Name="btnCategorias" BackgroundColor="#414BB2" Text="Categorias" Clicked="btnCategorias_Clicked"></Button>
+                <Button x:Name="btnSubCategorias" BackgroundColor="#414BB2" Text="SubCategorias" Clicked="btnSubCategorias_Clicked"></Button>
+                <Button x:Name="btnProductos" BackgroundColor="#414BB2" Text="Productos" Clicked="btnProductos_Clicked"></Button>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+        
+    </Grid>
+    
+</ContentPage>

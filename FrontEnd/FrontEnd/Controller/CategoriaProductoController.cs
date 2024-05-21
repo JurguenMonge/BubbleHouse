@@ -35,6 +35,8 @@ namespace FrontEnd.Controller
                     categoria.idCategoriaProducto = 0;
                     categoria.estado = true;
                     req.CategoriaProducto = categoria;
+                    req.idSesion =  Preferences.Get("IdSesion",string.Empty);
+
 
                     var jsonContent = new StringContent(JsonConvert.SerializeObject(req), Encoding.UTF8, "application/json");
 
