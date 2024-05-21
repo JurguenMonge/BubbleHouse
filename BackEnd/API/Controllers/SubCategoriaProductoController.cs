@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using BackEnd.utils;
 
 namespace API.Controllers
 {
@@ -16,7 +17,17 @@ namespace API.Controllers
         [System.Web.Http.Route("api/subCategoriaProducto/ingresar")]
         public ResSubCategoriaProducto ingresarSubCategoria(ReqSubCategoriaProducto req)
         {
-            return new LogSubCategoriaProducto().ingresarSubCategoria(req);
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResSubCategoriaProducto res = new ResSubCategoriaProducto();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogSubCategoriaProducto().ingresarSubCategoria(req);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
         }
 
         [System.Web.Http.HttpGet]
@@ -30,14 +41,34 @@ namespace API.Controllers
         [System.Web.Http.Route("api/subCategoriaProducto/modificar")]
         public ResSubCategoriaProducto modificarSubCategoria(ReqSubCategoriaProducto req)
         {
-            return new LogSubCategoriaProducto().modificarSubCategoria(req);
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResSubCategoriaProducto res = new ResSubCategoriaProducto();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogSubCategoriaProducto().modificarSubCategoria(req);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
         }
 
         [System.Web.Http.HttpDelete]
         [System.Web.Http.Route("api/subCategoriaProducto/eliminar/{id}")]
-        public ResSubCategoriaProducto eliminarSubCategoria(int id)
+        public ResSubCategoriaProducto eliminarSubCategoria(ReqSubCategoriaProducto req)
         {
-            return new LogSubCategoriaProducto().eliminarSubCategoria(id);
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResSubCategoriaProducto res = new ResSubCategoriaProducto();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogSubCategoriaProducto().eliminarSubCategoria(req);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
         }
     }
 }

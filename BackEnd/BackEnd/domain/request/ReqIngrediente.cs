@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BackEnd.domain.request
 {
-    public class ReqIngrediente
+    public class ReqIngrediente : ReqBase
     {
         public Ingrediente Ingrediente { get; set; }
     }

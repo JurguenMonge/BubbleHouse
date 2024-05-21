@@ -163,13 +163,13 @@ namespace BackEnd.logic
 
 
         //Eliminar una subcategoría
-        public ResIngrediente eliminarIngrediente(int id)
+        public ResIngrediente eliminarIngrediente(ReqIngrediente req)
         {
             ResIngrediente res = new ResIngrediente();
             short tipoRegistro = 0; //1 Exitoso - 2 Error en logica - 3 Error no controlado
             try
             {
-                if (id != 0)
+                if (req.Ingrediente.idIngrediente != 0)
                 {
 
                     {
@@ -177,7 +177,7 @@ namespace BackEnd.logic
                         int? idReturn = 0;
                         int? idError = 0;
                         String errorBD = "";
-                        linq.Eliminar_Ingrediente(id, ref idReturn, ref idError, ref errorBD);
+                        linq.Eliminar_Ingrediente(req.Ingrediente.idIngrediente, ref idReturn, ref idError, ref errorBD);
                         if (idError == 0)
                         {
                             res.Resultado = true;

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using BackEnd.utils;
 
 namespace API.Controllers
 {
@@ -16,7 +17,17 @@ namespace API.Controllers
         [System.Web.Http.Route("api/categoriaIngrediente/ingresar")]
         public ResCategoriaIngrediente ingresarCategoria(ReqCategoriaIngrediente req)
         {
-            return new LogCategoriaIngrediente().ingresarCategoria(req);
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResCategoriaIngrediente res = new ResCategoriaIngrediente();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogCategoriaIngrediente().ingresarCategoria(req);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
         }
 
         [System.Web.Http.HttpGet]
@@ -30,14 +41,34 @@ namespace API.Controllers
         [System.Web.Http.Route("api/categoriaIngrediente/modificar")]
         public ResCategoriaIngrediente modificarCategoria(ReqCategoriaIngrediente req)
         {
-            return new LogCategoriaIngrediente().modificarCategoria(req);
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResCategoriaIngrediente res = new ResCategoriaIngrediente();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogCategoriaIngrediente().modificarCategoria(req);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
         }
 
         [System.Web.Http.HttpDelete]
-        [System.Web.Http.Route("api/categoriaIngrediente/eliminar/{id}")]
-        public ResCategoriaIngrediente eliminarCategoria(int id)
+        [System.Web.Http.Route("api/categoriaIngrediente/eliminar")]
+        public ResCategoriaIngrediente eliminarCategoria(ReqCategoriaIngrediente req)
         {
-            return new LogCategoriaIngrediente().eliminarCategoria(id);
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResCategoriaIngrediente res = new ResCategoriaIngrediente();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogCategoriaIngrediente().eliminarCategoria(req);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
         }
     }
 }
