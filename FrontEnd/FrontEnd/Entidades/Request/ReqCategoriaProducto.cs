@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FrontEnd.Entidades.Request
 {
-    public class ReqCategoriaProducto
+    public class ReqCategoriaProducto : ReqBase
     {
         public CategoriaProducto CategoriaProducto { get; set; }
     }

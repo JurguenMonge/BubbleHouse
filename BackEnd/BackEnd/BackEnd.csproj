@@ -72,6 +72,7 @@
     <Compile Include="domain\domain\Sesion.cs" />
     <Compile Include="domain\domain\SubcategoriaProducto.cs" />
     <Compile Include="domain\domain\Usuario.cs" />
+    <Compile Include="domain\request\ReqBase.cs" />
     <Compile Include="domain\request\ReqCategoriaProducto.cs" />
     <Compile Include="domain\request\ReqChangePassword.cs" />
     <Compile Include="domain\request\ReqIngresarSesion.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="utils\EmailSender.cs" />
     <Compile Include="utils\JwtManager.cs" />
     <Compile Include="utils\Utils.cs" />
+    <Compile Include="utils\ValidacionesSesion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
