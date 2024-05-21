@@ -15,7 +15,7 @@ namespace BackEnd.domain
          public float numDescuento { get; set; }
          public float numTotal {  get; set; }
          public DateTime fecha {  get; set; }
-         public bool estado {  get; set; }
+         public byte estado {  get; set; }
 
     }
 }

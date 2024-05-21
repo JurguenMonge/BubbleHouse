@@ -76,6 +76,7 @@
     <Compile Include="domain\request\ReqCategoriaIngrediente.cs" />
     <Compile Include="domain\request\ReqCategoriaProducto.cs" />
     <Compile Include="domain\request\ReqChangePassword.cs" />
+    <Compile Include="domain\request\ReqFactura.cs" />
     <Compile Include="domain\request\ReqIngrediente.cs" />
     <Compile Include="domain\request\ReqIngresarSesion.cs" />
     <Compile Include="domain\request\ReqIngresarUsuario.cs" />
@@ -88,11 +89,13 @@
     <Compile Include="domain\response\ResCategoriaIngrediente.cs" />
     <Compile Include="domain\response\ResCategoriaProducto.cs" />
     <Compile Include="domain\response\ResChangePassword.cs" />
+    <Compile Include="domain\response\ResFactura.cs" />
     <Compile Include="domain\response\ResIngrediente.cs" />
     <Compile Include="domain\response\ResIngresarSesion.cs" />
     <Compile Include="domain\response\ResLogOut.cs" />
     <Compile Include="domain\response\ResObtenerCategoriaIngrediente.cs" />
     <Compile Include="domain\response\ResObtenerCategoriaProducto.cs" />
+    <Compile Include="domain\response\ResObtenerFactura.cs" />
     <Compile Include="domain\response\ResObtenerIngredientes.cs" />
     <Compile Include="domain\response\ResObtenerProducto.cs" />
     <Compile Include="domain\response\ResObtenerRecetas.cs" />
