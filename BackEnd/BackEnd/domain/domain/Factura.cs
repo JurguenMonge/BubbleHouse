@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BackEnd.domain.domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace BackEnd.domain
          public float numTotal {  get; set; }
          public DateTime fecha {  get; set; }
          public byte estado {  get; set; }
-         public Producto
+         public List<ContenedorProductoFactura> productosList { get; set; }
 
     }
 }
