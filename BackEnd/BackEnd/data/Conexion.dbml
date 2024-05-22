@@ -101,17 +101,6 @@
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.Insertar_Factura" Method="Insertar_Factura">
-    <Parameter Name="Id_Producto" Parameter="id_Producto" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Id_Sesion" Parameter="id_Sesion" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Num_Subtotal" Parameter="num_Subtotal" Type="System.Decimal" DbType="Decimal(10,2)" />
-    <Parameter Name="Num_Descuento" Parameter="num_Descuento" Type="System.Decimal" DbType="Decimal(10,2)" />
-    <Parameter Name="Num_Total" Parameter="num_Total" Type="System.Decimal" DbType="Decimal(10,2)" />
-    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.Insertar_Ingrediente" Method="Insertar_Ingrediente">
     <Parameter Name="Id_Cate_Ingrediente" Parameter="id_Cate_Ingrediente" Type="System.Int32" DbType="Int" />
     <Parameter Name="Dsc_Nombre_Ingrediente" Parameter="dsc_Nombre_Ingrediente" Type="System.String" DbType="NVarChar(100)" />
@@ -283,18 +272,6 @@
     <ElementType Name="Obtener_Cate_Productos_ActivosResult">
       <Column Name="ID_CATE_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DSC_NOMBRE_CATEGORIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.Obtener_Facturas_Completadas" Method="Obtener_Facturas_Completadas">
-    <ElementType Name="Obtener_Facturas_CompletadasResult">
-      <Column Name="ID_FACTURA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_SESION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="NUM_SUBTOTAL" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="NUM_DESCUENTO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="NUM_TOTAL" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.Obtener_Facturas_No_Pagadas" Method="Obtener_Facturas_No_Pagadas">
@@ -547,6 +524,43 @@
     <Parameter Name="Dsc_Password" Parameter="dsc_Password" Type="System.String" DbType="NVarChar(MAX)" />
     <Parameter Name="Dsc_Telefono" Parameter="dsc_Telefono" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="ID_ROL" Parameter="iD_ROL" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Obtener_Facturas_Completadas" Method="Obtener_Facturas_Completadas">
+    <ElementType Name="Obtener_Facturas_CompletadasResult">
+      <Column Name="ID_FACTURA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NUM_TOTAL" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ID_R_FACTURA_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NUM_CANTIDAD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NUM_DESCUENTO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="NUM_SUBTOTAL" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DSC_NOMBRE_PRODUCTO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DSC_DESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DSC_URL_IMAGEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ID_RECETA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_SUBCATE_PRODUCTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NUM_PRECIO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Insertar_Productos_Factura" Method="Insertar_Productos_Factura">
+    <Parameter Name="id_producto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_factura" Type="System.Int32" DbType="Int" />
+    <Parameter Name="num_subtotal" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="num_cantidad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="num_descuento" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Insertar_Factura" Method="Insertar_Factura">
+    <Parameter Name="Num_Total" Parameter="num_Total" Type="System.Decimal" DbType="Decimal(10,2)" />
     <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />

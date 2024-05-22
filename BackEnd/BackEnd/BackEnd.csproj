@@ -121,6 +121,7 @@
     <Compile Include="logic\Validacion.cs" />
     <Compile Include="logic\ValidacionesCategoriaIngrediente.cs" />
     <Compile Include="logic\ValidacionesCategoriaProducto.cs" />
+    <Compile Include="logic\ValidacionesFactura.cs" />
     <Compile Include="logic\ValidacionesGenericas.cs" />
     <Compile Include="logic\ValidacionesIngrediente.cs" />
     <Compile Include="logic\ValidacionesSubCategoriaProducto.cs" />

@@ -10,11 +10,10 @@ namespace BackEnd.domain
     public class Factura
     {
          public int idFactura {  get; set; }
-         public int idSesion {  get; set; }
          public float numTotal {  get; set; }
          public DateTime fecha {  get; set; }
          public byte estado {  get; set; }
-         public List<ContenedorProductoFactura> productosList { get; set; }
+         public List<ContenedorProductoFactura> productosList = new List<ContenedorProductoFactura>();
 
     }
 }

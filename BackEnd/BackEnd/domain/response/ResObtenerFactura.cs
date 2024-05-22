@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace BackEnd.domain.response
 {
-    public class ResObtenerFactura
+    public class ResObtenerFactura : ResBase
     {
-        List<Factura> listaFacturas = new List<Factura>();
+        public List<Factura> listaFacturas = new List<Factura>();
     }
 }
