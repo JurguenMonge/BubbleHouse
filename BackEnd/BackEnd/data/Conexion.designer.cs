@@ -22,7 +22,7 @@ namespace BackEnd.data
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="BDBubbleHouse")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="db_aa9041_bubblehouse")]
 	public partial class ConexionDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -33,7 +33,7 @@ namespace BackEnd.data
     #endregion
 		
 		public ConexionDataContext() : 
-				base(global::BackEnd.Properties.Settings.Default.BDBubbleHouseConnectionString7, mappingSource)
+				base(global::BackEnd.Properties.Settings.Default.db_aa9041_bubblehouseConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -269,16 +269,6 @@ namespace BackEnd.data
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Usuario")]
-		public int Insertar_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Nombre", DbType="NVarChar(50)")] string dsc_Nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Primer_Apellido", DbType="NVarChar(50)")] string dsc_Primer_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Segundo_Apellido", DbType="NVarChar(50)")] string dsc_Segundo_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Correo", DbType="NVarChar(50)")] string dsc_Correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Password", DbType="NVarChar(MAX)")] string dsc_Password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Telefono", DbType="NVarChar(50)")] string dsc_Telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ROL", DbType="Int")] System.Nullable<int> iD_ROL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dsc_Nombre, dsc_Primer_Apellido, dsc_Segundo_Apellido, dsc_Correo, dsc_Password, dsc_Telefono, iD_ROL, iDRETURN, eRRORID, eRRORDESCRIPCION);
-			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(7)));
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(8)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(9)));
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Modificar_Categoria_Ingrediente")]
 		public int Modificar_Categoria_Ingrediente([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Categoria_Ingrediente", DbType="Int")] System.Nullable<int> id_Categoria_Ingrediente, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Nombre_Categoria", DbType="NVarChar(100)")] string dsc_Nombre_Categoria, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
@@ -500,6 +490,16 @@ namespace BackEnd.data
 			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(2)));
 			eRRORDESCRIPCION = ((string)(result.GetParameterValue(3)));
 			return ((ISingleResult<Solicitar_LoginResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Usuario")]
+		public int Insertar_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Nombre", DbType="NVarChar(50)")] string dsc_Nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Primer_Apellido", DbType="NVarChar(50)")] string dsc_Primer_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Segundo_Apellido", DbType="NVarChar(50)")] string dsc_Segundo_Apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Correo", DbType="NVarChar(50)")] string dsc_Correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Password", DbType="NVarChar(MAX)")] string dsc_Password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Telefono", DbType="NVarChar(50)")] string dsc_Telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ROL", DbType="Int")] System.Nullable<int> iD_ROL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dsc_Nombre, dsc_Primer_Apellido, dsc_Segundo_Apellido, dsc_Correo, dsc_Password, dsc_Telefono, iD_ROL, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(9)));
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
