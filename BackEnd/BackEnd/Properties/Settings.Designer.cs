@@ -112,5 +112,16 @@ namespace BackEnd.Properties {
                 return ((string)(this["BDBubbleHouseConnectionString7"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sql8010.site4now.net;Initial Catalog=db_aa9041_bubblehouse;User ID=db" +
+            "_aa9041_bubblehouse_admin;Password=BubbleHouse29")]
+        public string db_aa9041_bubblehouseConnectionString {
+            get {
+                return ((string)(this["db_aa9041_bubblehouseConnectionString"]));
+            }
+        }
     }
 }

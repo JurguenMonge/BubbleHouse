@@ -9,6 +9,7 @@ namespace BackEnd.domain.request
     public class ReqReceta
     {
         public Receta Receta { get; set; }
+        public int idProducto { get; set; }
 
         public String id_Sesion { get; set; }
     }

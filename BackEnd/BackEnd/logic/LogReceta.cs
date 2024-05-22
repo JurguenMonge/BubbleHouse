@@ -4,11 +4,8 @@ using BackEnd.domain.request;
 using BackEnd.domain.response;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BackEnd.logic
 {
@@ -29,31 +26,10 @@ namespace BackEnd.logic
                 res.Resultado = false;
                 res.ListaDeErrores.Add("el Nombre no debe contener caracteres especiales");
             }
-            result = validacionesGenericas.validarString(req.Receta.dscTamano);
-            if (result == 1)
+            if (validacionesGenericas.validarInt(req.idProducto) == 1)
             {
                 res.Resultado = false;
-                res.ListaDeErrores.Add("Tamano faltante");
-            }
-            else if (result == 2)
-            {
-                res.Resultado = false;
-                res.ListaDeErrores.Add("el Tamano no debe contener caracteres especiales");
-            }
-            if (validacionesGenericas.validarInt(req.Receta.idIngLacteo) == 1)
-            {
-                res.Resultado = false;
-                res.ListaDeErrores.Add("lacteo faltante");
-            }
-            if (validacionesGenericas.validarInt(req.Receta.idIngSabor) == 1)
-            {
-                res.Resultado = false;
-                res.ListaDeErrores.Add("sabor faltante");
-            }
-            if (validacionesGenericas.validarInt(req.Receta.producto.idProducto) == 1)
-            {
-                res.Resultado = false;
-                res.ListaDeErrores.Add("producto faltante");
+                res.ListaDeErrores.Add("Producto faltante");
             }
             return res;
         }
@@ -86,9 +62,7 @@ namespace BackEnd.logic
                         res = validaciones(req);
                         if (!res.ListaDeErrores.Any())
                         {
-                            linq.Insertar_Receta(req.Receta.producto.idProducto,req.Receta.idIngLacteo,req.Receta.idIngSabor,
-                                req.Receta.idIngAzucar,req.Receta.idIngTopping,req.Receta.idIngBordeado,req.Receta.idIngBubbles,
-                                req.Receta.dscNombre,req.Receta.dscTamano,ref idReturn, ref idError, ref errorBD);
+                            linq.Insertar_Receta(req.Receta.dscNombre,req.idProducto,ref idReturn, ref idError, ref errorBD);
                             if (idError == 0)
                             {
                                 res.Resultado = true;
@@ -177,48 +151,48 @@ namespace BackEnd.logic
             return res;
         }
 
-        public ResObtenerRecetas obtenerRecetas()
-        {
-            ResObtenerRecetas res = new ResObtenerRecetas();
-            short tipoRegistro = 0; //1 Exitoso - 2 Error en logica - 3 Error inesperado
-            try
-            {
-                ConexionDataContext linq = new ConexionDataContext();
-                int? idError = 0;
-                String errorBD = "";
-                var linqRoles = linq.Obtener_Receta();
-                if (idError == 0)
-                {
-                    res.Resultado = true;
-                    tipoRegistro = 1;
-                    foreach (var item in linqRoles)
-                    {
-                        Receta receta = factoryArmarReceta(item);
-                        if (receta != null)
-                        {
-                            res.listaRecetas.Add(receta);
-                        }
-                    }
-                }
-                else
-                {
-                    res.Resultado = false;
-                    res.ListaDeErrores.Add("Ocurrió un error en la base de datos, intentalo más tarde");
-                    tipoRegistro = 2;
-                }
-            }
-            catch (Exception)
-            {
-                res.Resultado = false;
-                res.ListaDeErrores.Add("Ocurrió un error al obtener la lista de recetas");
-                tipoRegistro = 3;
-            }
-            finally
-            {
-                utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, "No hay request", JsonConvert.SerializeObject(res));
-            }
-            return res;
-        }
+        //public ResObtenerRecetas obtenerRecetas()
+        //{
+        //    ResObtenerRecetas res = new ResObtenerRecetas();
+        //    short tipoRegistro = 0; //1 Exitoso - 2 Error en logica - 3 Error inesperado
+        //    try
+        //    {
+        //        ConexionDataContext linq = new ConexionDataContext();
+        //        int? idError = 0;
+        //        String errorBD = "";
+        //        var linqRoles = linq.Obtener_Receta();
+        //        if (idError == 0)
+        //        {
+        //            res.Resultado = true;
+        //            tipoRegistro = 1;
+        //            foreach (var item in linqRoles)
+        //            {
+        //                Receta receta = factoryArmarReceta(item);
+        //                if (receta != null)
+        //                {
+        //                    res.listaRecetas.Add(receta);
+        //                }
+        //            }
+        //        }
+        //        else
+        //        {
+        //            res.Resultado = false;
+        //            res.ListaDeErrores.Add("Ocurrió un error en la base de datos, intentalo más tarde");
+        //            tipoRegistro = 2;
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        res.Resultado = false;
+        //        res.ListaDeErrores.Add("Ocurrió un error al obtener la lista de recetas");
+        //        tipoRegistro = 3;
+        //    }
+        //    finally
+        //    {
+        //        utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, "No hay request", JsonConvert.SerializeObject(res));
+        //    }
+        //    return res;
+        //}
 
 
         private Rol factoryArmarRol(Obtener_SesionResult usuarioLinq)
@@ -227,84 +201,85 @@ namespace BackEnd.logic
             rol.tipoRol = usuarioLinq.DSC_TIPO_ROL;
             return rol;
         }
-        private Receta factoryArmarReceta(Obtener_RecetaResult usuarioLinq)
-        {
-            Receta receta = new Receta();
-            receta.idReceta = usuarioLinq.ID_RECETA;
-            receta.dscNombre = usuarioLinq.DSC_NOMBRE;
-            receta.dscTamano = usuarioLinq.DSC_TAMANO;
-            receta.idIngLacteo = (int)usuarioLinq.ID_ING_LACTEO;
-            receta.idIngSabor = (int)usuarioLinq.ID_ING_SABOR;
-            receta.idIngAzucar = (int)usuarioLinq.ID_ING_AZUCAR;
-            receta.idIngBordeado = (int)usuarioLinq.ID_ING_BORDEADO;
-            receta.idIngBubbles = (int)usuarioLinq.ID_ING_BUBBLES;
-            receta.idIngTopping = (int)usuarioLinq.ID_ING_TOPPING;
 
-                try
-                {
-                   ConexionDataContext linq = new ConexionDataContext();
-                    var linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_LACTEO);
-                    foreach (var item in linqingredientes)
-                    {
-                            Ingrediente ingrediente = factoryArmarIngredientes(item);
-                            if (ingrediente != null)
-                            {
-                                receta.listaIngrediente.Add(ingrediente);
-                            }
-                    }
-                    linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_SABOR);
-                    foreach (var item in linqingredientes)
-                    {
-                        Ingrediente ingrediente = factoryArmarIngredientes(item);
-                        if (ingrediente != null)
-                        {
-                            receta.listaIngrediente.Add(ingrediente);
-                        }
-                    }
-                    linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_AZUCAR);
-                    foreach (var item in linqingredientes)
-                    {
-                        Ingrediente ingrediente = factoryArmarIngredientes(item);
-                        if (ingrediente != null)
-                        {
-                            receta.listaIngrediente.Add(ingrediente);
-                        }
-                    }
-                    linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_BORDEADO);
-                    foreach (var item in linqingredientes)
-                    {
-                        Ingrediente ingrediente = factoryArmarIngredientes(item);
-                        if (ingrediente != null)
-                        {
-                            receta.listaIngrediente.Add(ingrediente);
-                        }
-                    }
-                    linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_BUBBLES);
-                    foreach (var item in linqingredientes)
-                    {
-                        Ingrediente ingrediente = factoryArmarIngredientes(item);
-                        if (ingrediente != null)
-                        {
-                            receta.listaIngrediente.Add(ingrediente);
-                        }
-                    }
-                    linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_TOPPING);
-                    foreach (var item in linqingredientes)
-                    {
-                        Ingrediente ingrediente = factoryArmarIngredientes(item);
-                        if (ingrediente != null)
-                        {
-                            receta.listaIngrediente.Add(ingrediente);
-                        }
-                    }
-            }
-                catch
-                {
+        //private Receta factoryArmarReceta(Obtener_RecetaResult usuarioLinq)
+        //{
+        //    Receta receta = new Receta();
+        //    receta.idReceta = usuarioLinq.ID_RECETA;
+        //    receta.dscNombre = usuarioLinq.DSC_NOMBRE;
+        //    receta.dscTamano = usuarioLinq.DSC_TAMANO;
+        //    receta.idIngLacteo = (int)usuarioLinq.ID_ING_LACTEO;
+        //    receta.idIngSabor = (int)usuarioLinq.ID_ING_SABOR;
+        //    receta.idIngAzucar = (int)usuarioLinq.ID_ING_AZUCAR;
+        //    receta.idIngBordeado = (int)usuarioLinq.ID_ING_BORDEADO;
+        //    receta.idIngBubbles = (int)usuarioLinq.ID_ING_BUBBLES;
+        //    receta.idIngTopping = (int)usuarioLinq.ID_ING_TOPPING;
 
-                }
+        //        try
+        //        {
+        //           ConexionDataContext linq = new ConexionDataContext();
+        //            var linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_LACTEO);
+        //            foreach (var item in linqingredientes)
+        //            {
+        //                    Ingrediente ingrediente = factoryArmarIngredientes(item);
+        //                    if (ingrediente != null)
+        //                    {
+        //                        receta.listaIngrediente.Add(ingrediente);
+        //                    }
+        //            }
+        //            linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_SABOR);
+        //            foreach (var item in linqingredientes)
+        //            {
+        //                Ingrediente ingrediente = factoryArmarIngredientes(item);
+        //                if (ingrediente != null)
+        //                {
+        //                    receta.listaIngrediente.Add(ingrediente);
+        //                }
+        //            }
+        //            linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_AZUCAR);
+        //            foreach (var item in linqingredientes)
+        //            {
+        //                Ingrediente ingrediente = factoryArmarIngredientes(item);
+        //                if (ingrediente != null)
+        //                {
+        //                    receta.listaIngrediente.Add(ingrediente);
+        //                }
+        //            }
+        //            linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_BORDEADO);
+        //            foreach (var item in linqingredientes)
+        //            {
+        //                Ingrediente ingrediente = factoryArmarIngredientes(item);
+        //                if (ingrediente != null)
+        //                {
+        //                    receta.listaIngrediente.Add(ingrediente);
+        //                }
+        //            }
+        //            linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_BUBBLES);
+        //            foreach (var item in linqingredientes)
+        //            {
+        //                Ingrediente ingrediente = factoryArmarIngredientes(item);
+        //                if (ingrediente != null)
+        //                {
+        //                    receta.listaIngrediente.Add(ingrediente);
+        //                }
+        //            }
+        //            linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_TOPPING);
+        //            foreach (var item in linqingredientes)
+        //            {
+        //                Ingrediente ingrediente = factoryArmarIngredientes(item);
+        //                if (ingrediente != null)
+        //                {
+        //                    receta.listaIngrediente.Add(ingrediente);
+        //                }
+        //            }
+        //    }
+        //        catch
+        //        {
 
-            return receta;
-        }
+        //        }
+
+        //    return receta;
+        //}
 
         private Ingrediente factoryArmarIngredientes(Obtener_Ingrediente_ByIdResult usuarioLinq)
         {

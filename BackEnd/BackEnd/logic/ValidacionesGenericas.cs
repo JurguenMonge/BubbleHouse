@@ -25,7 +25,7 @@ namespace BackEnd.logic
         }
         public int validarInt(int inte) 
         { 
-            if(inte < 0)
+            if(inte <= 0)
             {
                 return 1;
             }

@@ -184,3 +184,7 @@ D:\JB\Documents\BubbleHouse\BackEnd\BackEnd\obj\Debug\BackEnd.csproj.CoreCompile
 D:\JB\Documents\BubbleHouse\BackEnd\BackEnd\obj\Debug\BackEnd.csproj.Up2Date
 D:\JB\Documents\BubbleHouse\BackEnd\BackEnd\obj\Debug\BackEnd.dll
 D:\JB\Documents\BubbleHouse\BackEnd\BackEnd\obj\Debug\BackEnd.pdb
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\BackEnd\BackEnd\obj\Debug\BackEnd.csproj.AssemblyReference.cache
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\BackEnd\BackEnd\obj\Debug\BackEnd.csproj.CoreCompileInputs.cache
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\BackEnd\BackEnd\obj\Debug\BackEnd.dll
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\BackEnd\BackEnd\obj\Debug\BackEnd.pdb
