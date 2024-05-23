@@ -444,13 +444,6 @@
       <Column Name="DSC_TIPO_ROL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.Obtener_SubCate_Productos_Activos" Method="Obtener_SubCate_Productos_Activos">
-    <ElementType Name="Obtener_SubCate_Productos_ActivosResult">
-      <Column Name="ID_SUBCATE_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_CATE_PRODUCTO_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DSC_NOMBRE_SUBCATEGORIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.Obtener_SubCate_Productos_Por_Cate" Method="Obtener_SubCate_Productos_Por_Cate">
     <Parameter Name="Id_Categoria_Producto" Parameter="id_Categoria_Producto" Type="System.Int32" DbType="Int" />
     <ElementType Name="Obtener_SubCate_Productos_Por_CateResult">
@@ -572,5 +565,13 @@
     <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Obtener_SubCate_Productos_Activos" Method="Obtener_SubCate_Productos_Activos">
+    <ElementType Name="Obtener_SubCate_Productos_ActivosResult">
+      <Column Name="ID_SUBCATE_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_CATE_PRODUCTO_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DSC_NOMBRE_SUBCATEGORIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DSC_NOMBRE_CATEGORIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

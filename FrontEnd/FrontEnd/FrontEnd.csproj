@@ -69,6 +69,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\cruz.png" />
 	  <None Remove="Resources\Images\logo_celeste.png" />
 	</ItemGroup>
 

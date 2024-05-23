@@ -97,6 +97,7 @@ namespace FrontEnd.Controller
                     subcategoria.idSubcategoriaProducto = idSubCategoria;
                     subcategoria.estado = true;
                     req.SubCategoriaProducto = subcategoria;
+                    req.idSesion = Preferences.Get("IdSesion", string.Empty);
 
                     var jsonContent = new StringContent(JsonConvert.SerializeObject(req), Encoding.UTF8, "application/json");
 
@@ -137,6 +138,7 @@ namespace FrontEnd.Controller
                     subcategoria.idSubcategoriaProducto = id;
                     subcategoria.estado = true;
                     req.SubCategoriaProducto = subcategoria;
+                    req.idSesion = Preferences.Get("IdSesion", string.Empty);
 
                     var jsonContent = new StringContent(JsonConvert.SerializeObject(req), Encoding.UTF8, "application/json");
 

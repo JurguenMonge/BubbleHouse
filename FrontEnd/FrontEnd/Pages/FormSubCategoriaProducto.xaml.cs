@@ -12,6 +12,11 @@ public partial class FormSubCategoriaProducto : ContentPage
     private readonly string Placeholder = "Seleccionar categoría";
     
     private List<CategoriaProducto> _listaDeCategoriasProducto = new List<CategoriaProducto>();
+
+    private CategoriaProducto selectedCategoriaProducto;
+    public int cateProductoId;
+    private bool isPickerOpen = false;
+
     public FormSubCategoriaProducto()
 	{
 		InitializeComponent();
@@ -30,6 +35,19 @@ public partial class FormSubCategoriaProducto : ContentPage
         }
     }
 
+    public CategoriaProducto SelectedCategoriaProducto
+    {
+        get => selectedCategoriaProducto;
+        set
+        {
+            if (selectedCategoriaProducto != value)
+            {
+                selectedCategoriaProducto = value;
+                OnPropertyChanged(nameof(SelectedCategoriaProducto));
+            }
+        }
+    }
+
     public event PropertyChangedEventHandler PropertyChanged;
 
     protected virtual void OnPropertyChanged(string propertyName)
@@ -41,6 +59,22 @@ public partial class FormSubCategoriaProducto : ContentPage
     private async void CargarPublicaciones()
     {
         listaDeCategoriasProducto = await CategoriasDesdeApi();
+
+        // Agregar el elemento de placeholder al principio de la lista
+        listaDeCategoriasProducto.Insert(0, new CategoriaProducto { idCategoriaProducto = -1, dscNombreCategoria = "Seleccionar una subcategoría" });
+
+        pickCategoria.ItemsSource = listaDeCategoriasProducto;
+        pickCategoria.ItemDisplayBinding = new Binding("dscNombreCategoria");
+
+        // Si hay un cateProductoId seleccionado, configura el Picker
+        if (cateProductoId != 0)
+        {
+            SetSelectedCategoriaById(cateProductoId);
+        }
+        else
+        {
+            SetSelectedCategoriaById(-1);
+        }
         BindingContext = this;
     }
 
@@ -86,35 +120,42 @@ public partial class FormSubCategoriaProducto : ContentPage
         SubCategoriaProductoController controller = new SubCategoriaProductoController();
         try
         {
-            CategoriaProducto cate = (CategoriaProducto)CategoryPicker.SelectedItem;
-
-            ResSubCategoriaProducto res = new ResSubCategoriaProducto();
-            if (int.Parse(txtId.Text) == 0)
+            CategoriaProducto cate = (CategoriaProducto)pickCategoria.SelectedItem;
+            if(cate != null)
             {
-                res = await controller.IngresarSubCategoriaProducto(txtNombre.Text,cate.idCategoriaProducto);
-                if (res.Resultado)
+                ResSubCategoriaProducto res = new ResSubCategoriaProducto();
+                if (int.Parse(txtId.Text) == 0)
                 {
-                    DisplayAlert("Insercion Exitosa", "Categoria de producto guardada con exito", "Aceptar");
-                    Navigation.PushAsync(new SubCategoriaProductoPage());
+                    res = await controller.IngresarSubCategoriaProducto(txtNombre.Text, cate.idCategoriaProducto);
+                    if (res.Resultado)
+                    {
+                        DisplayAlert("Insercion Exitosa", "Categoria de producto guardada con éxito", "Aceptar");
+                        Navigation.PushAsync(new SubCategoriaProductoPage());
+                    }
+                    else
+                    {
+                        DisplayAlert("Error en insercion", "Sucedio un error al guardar: " + res.ListaDeErrores.First(), "Aceptar");
+                    }
                 }
                 else
                 {
-                    DisplayAlert("Error en insercion", "Sucedio un error al guardar: " + res.ListaDeErrores.First(), "Aceptar");
+                    res = await controller.ActualizarSubCategoriaProducto(int.Parse(txtId.Text), cate.idCategoriaProducto, txtNombre.Text);
+                    if (res.Resultado)
+                    {
+                        DisplayAlert("Actualiación Exitosa", "Subcategoría de producto actualizada con éxito", "Aceptar");
+                        Navigation.PushAsync(new SubCategoriaProductoPage());
+                    }
+                    else
+                    {
+                        DisplayAlert("Error en actualiación", "Sucedió un error al actualizar: " + res.ListaDeErrores.First(), "Aceptar");
+                    }
                 }
             }
             else
             {
-                res = await controller.ActualizarSubCategoriaProducto(int.Parse(txtId.Text), cate.idCategoriaProducto, txtNombre.Text);
-                if (res.Resultado)
-                {
-                    DisplayAlert("Actualiación Exitosa", "Subcategoría de producto actualizada con éxito", "Aceptar");
-                    Navigation.PushAsync(new SubCategoriaProductoPage());
-                }
-                else
-                {
-                    DisplayAlert("Error en actualiación", "Sucedió un error al actualizar: " + res.ListaDeErrores.First(), "Aceptar");
-                }
+                DisplayAlert("Error!", "Debe Seleccionar una categoría de producto", "Aceptar");
             }
+            
 
         }
         catch (Exception ex)
@@ -125,24 +166,40 @@ public partial class FormSubCategoriaProducto : ContentPage
 
     private async void btnEliminar_ClickedAsync(object sender, EventArgs e)
     {
-        SubCategoriaProductoController controller = new SubCategoriaProductoController();
-        try
+        bool answer = await DisplayAlert("Confirmación", "¿Estás seguro de que deseas eliminar esta subcategoría?", "Aceptar", "Cancelar");
+        if (answer)
         {
-            ResSubCategoriaProducto res = new ResSubCategoriaProducto();
-            res = await controller.EliminarSubCategoriaProducto(int.Parse(txtId.Text));
-            if (res.Resultado)
+            SubCategoriaProductoController controller = new SubCategoriaProductoController();
+            try
             {
-                DisplayAlert("Eliminación Exitosa", "Subcategoría de producto eliminada con éxito", "Aceptar");
-                Navigation.PushAsync(new SubCategoriaProductoPage());
+                ResSubCategoriaProducto res = new ResSubCategoriaProducto();
+                res = await controller.EliminarSubCategoriaProducto(int.Parse(txtId.Text));
+                if (res.Resultado)
+                {
+                    DisplayAlert("Eliminación Exitosa", "Subcategoría de producto eliminada con éxito", "Aceptar");
+                    Navigation.PushAsync(new SubCategoriaProductoPage());
+                }
+                else
+                {
+                    DisplayAlert("Error en eliminación", "Sucedió un error al eliminar: " + res.ListaDeErrores.First(), "Aceptar");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                DisplayAlert("Error en eliminación", "Sucedió un error al eliminar: " + res.ListaDeErrores.First(), "Aceptar");
+                DisplayAlert("Error interno", "Por favor reinstale la aplicación", "Aceptar");
             }
         }
-        catch (Exception ex)
+    }
+
+    private void SetSelectedCategoriaById(int cateProductoId)
+    {
+        foreach (var cate in listaDeCategoriasProducto)
         {
-            DisplayAlert("Error interno", "Por favor reinstale la aplicación", "Aceptar");
+            if (cate.idCategoriaProducto == cateProductoId)
+            {
+                pickCategoria.SelectedItem = cate;
+                break;
+            }
         }
     }
 
@@ -154,21 +211,20 @@ public partial class FormSubCategoriaProducto : ContentPage
         {
             txtId.Text = subcategoria.idSubcategoriaProducto.ToString();
             txtNombre.Text = subcategoria.dscNombreSubCategoria.ToString();
-            
-            foreach(CategoriaProducto cate in listaDeCategoriasProducto)
+
+            // Guardar el cateProductoId para usarlo después de cargar las categorías
+            cateProductoId = subcategoria.cateProductoId;
+
+            if (listaDeCategoriasProducto.Any())
             {
-                if(cate.idCategoriaProducto == subcategoria.cateProductoId)
-                {
-                    CategoryPicker.SelectedItem = cate;
-                    break;
-                }
+                SetSelectedCategoriaById(cateProductoId);
             }
-            
 
             if (!string.IsNullOrEmpty(txtId.Text) && txtId.Text != "0")
             {
+                
                 lblTitulo.Text = "Modificar Subcategoría de Producto";
-                btnIngresar.Text = "Actualizar";
+                btnIngresar.Text = "Modificar";
                 btnEliminar.IsVisible = true;
             }
             else
@@ -179,4 +235,21 @@ public partial class FormSubCategoriaProducto : ContentPage
         }
     }
 
+    private void pickCategoria_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        // Obtener el índice seleccionado
+        int selectedIndex = pickCategoria.SelectedIndex;
+
+        // Si se seleccionó el primer elemento (placeholder), no hacer nada
+        if (isPickerOpen && selectedIndex == 0)
+        {
+            pickCategoria.SelectedItem = false;
+        }
+
+    }
+
+    private void pickCategoria_Focused(object sender, FocusEventArgs e)
+    {
+        isPickerOpen = true;
+    }
 }

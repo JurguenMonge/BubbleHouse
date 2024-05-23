@@ -1,4 +1,6 @@
 using FrontEnd.Entidades;
+using FrontEnd.Entidades.Entidad;
+using FrontEnd.Entidades.Response;
 using Newtonsoft.Json;
 using System.ComponentModel;
 
@@ -24,6 +26,7 @@ public partial class SubCategoriaProductoPage : ContentPage
             OnPropertyChanged(nameof(listaSubCategoriasProducto));
         }
     }
+
 
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -90,7 +93,7 @@ public partial class SubCategoriaProductoPage : ContentPage
         }
     }
 
-    private void btnCrearSubCategoria_Clicked(object sender, EventArgs e)
+    private void TapGestureRecognizer_Tapped_1(object sender, TappedEventArgs e)
     {
         Navigation.PushAsync(new FormSubCategoriaProducto());
     }

@@ -11,6 +11,7 @@ namespace BackEnd.domain
         public int idSubcategoriaProducto {  get; set; }
         public int cateProductoId {  get; set; }
         public string dscNombreSubCategoria {  get; set; }
+        public string dscNombreCategoria { get; set; }
         public bool estado {  get; set; }
 
     }

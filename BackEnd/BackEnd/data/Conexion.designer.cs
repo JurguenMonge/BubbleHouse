@@ -425,13 +425,6 @@ namespace BackEnd.data
 			return ((ISingleResult<Obtener_Sesion_Activa_By_IdUsuarioResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_SubCate_Productos_Activos")]
-		public ISingleResult<Obtener_SubCate_Productos_ActivosResult> Obtener_SubCate_Productos_Activos()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<Obtener_SubCate_Productos_ActivosResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_SubCate_Productos_Por_Cate")]
 		public ISingleResult<Obtener_SubCate_Productos_Por_CateResult> Obtener_SubCate_Productos_Por_Cate([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Categoria_Producto", DbType="Int")] System.Nullable<int> id_Categoria_Producto)
 		{
@@ -520,6 +513,13 @@ namespace BackEnd.data
 			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(6)));
 			eRRORDESCRIPCION = ((string)(result.GetParameterValue(7)));
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_SubCate_Productos_Activos")]
+		public ISingleResult<Obtener_SubCate_Productos_ActivosResult> Obtener_SubCate_Productos_Activos()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<Obtener_SubCate_Productos_ActivosResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -3139,68 +3139,6 @@ namespace BackEnd.data
 		}
 	}
 	
-	public partial class Obtener_SubCate_Productos_ActivosResult
-	{
-		
-		private int _ID_SUBCATE_PRODUCTO;
-		
-		private System.Nullable<int> _ID_CATE_PRODUCTO_ID;
-		
-		private string _DSC_NOMBRE_SUBCATEGORIA;
-		
-		public Obtener_SubCate_Productos_ActivosResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SUBCATE_PRODUCTO", DbType="Int NOT NULL")]
-		public int ID_SUBCATE_PRODUCTO
-		{
-			get
-			{
-				return this._ID_SUBCATE_PRODUCTO;
-			}
-			set
-			{
-				if ((this._ID_SUBCATE_PRODUCTO != value))
-				{
-					this._ID_SUBCATE_PRODUCTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_CATE_PRODUCTO_ID", DbType="Int")]
-		public System.Nullable<int> ID_CATE_PRODUCTO_ID
-		{
-			get
-			{
-				return this._ID_CATE_PRODUCTO_ID;
-			}
-			set
-			{
-				if ((this._ID_CATE_PRODUCTO_ID != value))
-				{
-					this._ID_CATE_PRODUCTO_ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_SUBCATEGORIA", DbType="NVarChar(100)")]
-		public string DSC_NOMBRE_SUBCATEGORIA
-		{
-			get
-			{
-				return this._DSC_NOMBRE_SUBCATEGORIA;
-			}
-			set
-			{
-				if ((this._DSC_NOMBRE_SUBCATEGORIA != value))
-				{
-					this._DSC_NOMBRE_SUBCATEGORIA = value;
-				}
-			}
-		}
-	}
-	
 	public partial class Obtener_SubCate_Productos_Por_CateResult
 	{
 		
@@ -4028,6 +3966,86 @@ namespace BackEnd.data
 				if ((this._NUM_PRECIO != value))
 				{
 					this._NUM_PRECIO = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Obtener_SubCate_Productos_ActivosResult
+	{
+		
+		private int _ID_SUBCATE_PRODUCTO;
+		
+		private System.Nullable<int> _ID_CATE_PRODUCTO_ID;
+		
+		private string _DSC_NOMBRE_SUBCATEGORIA;
+		
+		private string _DSC_NOMBRE_CATEGORIA;
+		
+		public Obtener_SubCate_Productos_ActivosResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SUBCATE_PRODUCTO", DbType="Int NOT NULL")]
+		public int ID_SUBCATE_PRODUCTO
+		{
+			get
+			{
+				return this._ID_SUBCATE_PRODUCTO;
+			}
+			set
+			{
+				if ((this._ID_SUBCATE_PRODUCTO != value))
+				{
+					this._ID_SUBCATE_PRODUCTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_CATE_PRODUCTO_ID", DbType="Int")]
+		public System.Nullable<int> ID_CATE_PRODUCTO_ID
+		{
+			get
+			{
+				return this._ID_CATE_PRODUCTO_ID;
+			}
+			set
+			{
+				if ((this._ID_CATE_PRODUCTO_ID != value))
+				{
+					this._ID_CATE_PRODUCTO_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_SUBCATEGORIA", DbType="NVarChar(100)")]
+		public string DSC_NOMBRE_SUBCATEGORIA
+		{
+			get
+			{
+				return this._DSC_NOMBRE_SUBCATEGORIA;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE_SUBCATEGORIA != value))
+				{
+					this._DSC_NOMBRE_SUBCATEGORIA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_CATEGORIA", DbType="NVarChar(100)")]
+		public string DSC_NOMBRE_CATEGORIA
+		{
+			get
+			{
+				return this._DSC_NOMBRE_CATEGORIA;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE_CATEGORIA != value))
+				{
+					this._DSC_NOMBRE_CATEGORIA = value;
 				}
 			}
 		}
