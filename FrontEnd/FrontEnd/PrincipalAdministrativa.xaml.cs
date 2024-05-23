@@ -1,3 +1,5 @@
+using FrontEnd.Pages;
+
 namespace FrontEnd;
 
 public partial class PrincipalAdministrativa : ContentPage
@@ -15,7 +17,8 @@ public partial class PrincipalAdministrativa : ContentPage
 
     private void btnSubCategorias_Clicked(object sender, EventArgs e)
     {
-
+        Navigation.PushAsync(new SubCategoriaProductoPage());
+        Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
     }
 
     private void btnProductos_Clicked(object sender, EventArgs e)

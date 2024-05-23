@@ -212,6 +212,7 @@ namespace BackEnd.logic
             subCategoriaProduccto.idSubcategoriaProducto = subCategoriaLinq.ID_SUBCATE_PRODUCTO;
             subCategoriaProduccto.dscNombreSubCategoria = subCategoriaLinq.DSC_NOMBRE_SUBCATEGORIA;
             subCategoriaProduccto.cateProductoId = (int)subCategoriaLinq.ID_CATE_PRODUCTO_ID;
+            subCategoriaProduccto.estado = true;
             return subCategoriaProduccto;
         }
     }

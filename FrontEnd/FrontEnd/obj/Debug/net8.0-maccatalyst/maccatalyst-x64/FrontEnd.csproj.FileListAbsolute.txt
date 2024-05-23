@@ -562,9 +562,6 @@ D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\macca
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauisplash.inputs
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauisplash.stamp
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\logo_celeste.png
-D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot@3x.png
-D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot@2x.png
-D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon76x76@2x.png
@@ -577,6 +574,9 @@ D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\macca
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@3x.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@2x.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\Contents.json
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot@3x.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot@2x.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauiimage.stamp
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\f\MauiInfo.plist
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauifont.stamp
