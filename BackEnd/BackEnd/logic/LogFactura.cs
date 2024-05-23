@@ -15,7 +15,7 @@ namespace BackEnd.logic
 {
     public class LogFactura
     {
-        public ResObtenerFactura obtenerFacturasTodas()
+        public ResObtenerFactura obtenerFacturasCompletadas(int estado)
         {
             ResObtenerFactura res = new ResObtenerFactura();
             short tipoRegistro = 0;
@@ -23,7 +23,7 @@ namespace BackEnd.logic
             {
                 using (ConexionDataContext linq = new ConexionDataContext())
                 {
-                    var facturaslinq = linq.Obtener_Facturas_Completadas();
+                    var facturaslinq = linq.Obtener_Facturas((byte?)estado);
                     foreach (var item in facturaslinq)
                     {
                         Factura factura = res.listaFacturas.FirstOrDefault(f => f.idFactura == item.ID_FACTURA);
@@ -396,7 +396,7 @@ namespace BackEnd.logic
         }
 
 
-        private Factura factoryArmarFactura(Obtener_Facturas_CompletadasResult facturasLinq)
+        private Factura factoryArmarFactura(Obtener_FacturasResult facturasLinq)
         {
             Factura factura = new Factura();
            
@@ -406,7 +406,7 @@ namespace BackEnd.logic
             factura.estado = (byte)facturasLinq.ESTADO;
             return factura;
         }
-        private ContenedorProductoFactura factoryArmarProducto(Obtener_Facturas_CompletadasResult facturasLinq)
+        private ContenedorProductoFactura factoryArmarProducto(Obtener_FacturasResult facturasLinq)
         {
             Producto producto = new Producto();
             ContenedorProductoFactura contenedor = new ContenedorProductoFactura();
