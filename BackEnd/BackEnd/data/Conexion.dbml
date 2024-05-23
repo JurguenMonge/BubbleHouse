@@ -262,30 +262,6 @@
       <Column Name="DSC_NOMBRE_CATEGORIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.Obtener_Facturas_No_Pagadas" Method="Obtener_Facturas_No_Pagadas">
-    <ElementType Name="Obtener_Facturas_No_PagadasResult">
-      <Column Name="ID_FACTURA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_SESION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="NUM_SUBTOTAL" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="NUM_DESCUENTO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="NUM_TOTAL" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.Obtener_Facturas_No_Preparadas" Method="Obtener_Facturas_No_Preparadas">
-    <ElementType Name="Obtener_Facturas_No_PreparadasResult">
-      <Column Name="ID_FACTURA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_SESION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="NUM_SUBTOTAL" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="NUM_DESCUENTO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="NUM_TOTAL" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.Obtener_Ingrediente_ById" Method="Obtener_Ingrediente_ById">
     <Parameter Name="id_ingrediente" Type="System.Int32" DbType="Int" />
     <ElementType Name="Obtener_Ingrediente_ByIdResult">
@@ -517,25 +493,6 @@
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.Obtener_Facturas_Completadas" Method="Obtener_Facturas_Completadas">
-    <ElementType Name="Obtener_Facturas_CompletadasResult">
-      <Column Name="ID_FACTURA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NUM_TOTAL" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-      <Column Name="ID_R_FACTURA_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NUM_CANTIDAD" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NUM_DESCUENTO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="NUM_SUBTOTAL" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DSC_NOMBRE_PRODUCTO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DSC_DESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DSC_URL_IMAGEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="ID_RECETA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_SUBCATE_PRODUCTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NUM_PRECIO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.Insertar_Productos_Factura" Method="Insertar_Productos_Factura">
     <Parameter Name="id_producto" Type="System.Int32" DbType="Int" />
     <Parameter Name="id_factura" Type="System.Int32" DbType="Int" />
@@ -579,5 +536,25 @@
     <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Obtener_Facturas" Method="Obtener_Facturas">
+    <Parameter Name="estado" Type="System.Byte" DbType="TinyInt" />
+    <ElementType Name="Obtener_FacturasResult">
+      <Column Name="ID_FACTURA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NUM_TOTAL" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ID_R_FACTURA_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NUM_CANTIDAD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NUM_DESCUENTO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="NUM_SUBTOTAL" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DSC_NOMBRE_PRODUCTO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DSC_DESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DSC_URL_IMAGEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ID_RECETA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_SUBCATE_PRODUCTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NUM_PRECIO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

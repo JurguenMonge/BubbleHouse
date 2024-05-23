@@ -353,20 +353,6 @@ namespace BackEnd.data
 			return ((ISingleResult<Obtener_Cate_Productos_ActivosResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Facturas_No_Pagadas")]
-		public ISingleResult<Obtener_Facturas_No_PagadasResult> Obtener_Facturas_No_Pagadas()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<Obtener_Facturas_No_PagadasResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Facturas_No_Preparadas")]
-		public ISingleResult<Obtener_Facturas_No_PreparadasResult> Obtener_Facturas_No_Preparadas()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<Obtener_Facturas_No_PreparadasResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Ingrediente_ById")]
 		public ISingleResult<Obtener_Ingrediente_ByIdResult> Obtener_Ingrediente_ById([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_ingrediente)
 		{
@@ -475,13 +461,6 @@ namespace BackEnd.data
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Facturas_Completadas")]
-		public ISingleResult<Obtener_Facturas_CompletadasResult> Obtener_Facturas_Completadas()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<Obtener_Facturas_CompletadasResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Productos_Factura")]
 		public int Insertar_Productos_Factura([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_producto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_factura, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> num_subtotal, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> num_cantidad, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> num_descuento, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
@@ -530,6 +509,13 @@ namespace BackEnd.data
 			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(2)));
 			eRRORDESCRIPCION = ((string)(result.GetParameterValue(3)));
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Facturas")]
+		public ISingleResult<Obtener_FacturasResult> Obtener_Facturas([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="TinyInt")] System.Nullable<byte> estado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), estado);
+			return ((ISingleResult<Obtener_FacturasResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -616,310 +602,6 @@ namespace BackEnd.data
 				if ((this._DSC_NOMBRE_CATEGORIA != value))
 				{
 					this._DSC_NOMBRE_CATEGORIA = value;
-				}
-			}
-		}
-	}
-	
-	public partial class Obtener_Facturas_No_PagadasResult
-	{
-		
-		private int _ID_FACTURA;
-		
-		private System.Nullable<int> _ID_PRODUCTO;
-		
-		private string _ID_SESION;
-		
-		private System.Nullable<decimal> _NUM_SUBTOTAL;
-		
-		private System.Nullable<decimal> _NUM_DESCUENTO;
-		
-		private System.Nullable<decimal> _NUM_TOTAL;
-		
-		private System.Nullable<System.DateTime> _FECHA;
-		
-		private System.Nullable<byte> _ESTADO;
-		
-		public Obtener_Facturas_No_PagadasResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_FACTURA", DbType="Int NOT NULL")]
-		public int ID_FACTURA
-		{
-			get
-			{
-				return this._ID_FACTURA;
-			}
-			set
-			{
-				if ((this._ID_FACTURA != value))
-				{
-					this._ID_FACTURA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_PRODUCTO", DbType="Int")]
-		public System.Nullable<int> ID_PRODUCTO
-		{
-			get
-			{
-				return this._ID_PRODUCTO;
-			}
-			set
-			{
-				if ((this._ID_PRODUCTO != value))
-				{
-					this._ID_PRODUCTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SESION", DbType="NVarChar(100)")]
-		public string ID_SESION
-		{
-			get
-			{
-				return this._ID_SESION;
-			}
-			set
-			{
-				if ((this._ID_SESION != value))
-				{
-					this._ID_SESION = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_SUBTOTAL", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> NUM_SUBTOTAL
-		{
-			get
-			{
-				return this._NUM_SUBTOTAL;
-			}
-			set
-			{
-				if ((this._NUM_SUBTOTAL != value))
-				{
-					this._NUM_SUBTOTAL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_DESCUENTO", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> NUM_DESCUENTO
-		{
-			get
-			{
-				return this._NUM_DESCUENTO;
-			}
-			set
-			{
-				if ((this._NUM_DESCUENTO != value))
-				{
-					this._NUM_DESCUENTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_TOTAL", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> NUM_TOTAL
-		{
-			get
-			{
-				return this._NUM_TOTAL;
-			}
-			set
-			{
-				if ((this._NUM_TOTAL != value))
-				{
-					this._NUM_TOTAL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FECHA
-		{
-			get
-			{
-				return this._FECHA;
-			}
-			set
-			{
-				if ((this._FECHA != value))
-				{
-					this._FECHA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="TinyInt")]
-		public System.Nullable<byte> ESTADO
-		{
-			get
-			{
-				return this._ESTADO;
-			}
-			set
-			{
-				if ((this._ESTADO != value))
-				{
-					this._ESTADO = value;
-				}
-			}
-		}
-	}
-	
-	public partial class Obtener_Facturas_No_PreparadasResult
-	{
-		
-		private int _ID_FACTURA;
-		
-		private System.Nullable<int> _ID_PRODUCTO;
-		
-		private string _ID_SESION;
-		
-		private System.Nullable<decimal> _NUM_SUBTOTAL;
-		
-		private System.Nullable<decimal> _NUM_DESCUENTO;
-		
-		private System.Nullable<decimal> _NUM_TOTAL;
-		
-		private System.Nullable<System.DateTime> _FECHA;
-		
-		private System.Nullable<byte> _ESTADO;
-		
-		public Obtener_Facturas_No_PreparadasResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_FACTURA", DbType="Int NOT NULL")]
-		public int ID_FACTURA
-		{
-			get
-			{
-				return this._ID_FACTURA;
-			}
-			set
-			{
-				if ((this._ID_FACTURA != value))
-				{
-					this._ID_FACTURA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_PRODUCTO", DbType="Int")]
-		public System.Nullable<int> ID_PRODUCTO
-		{
-			get
-			{
-				return this._ID_PRODUCTO;
-			}
-			set
-			{
-				if ((this._ID_PRODUCTO != value))
-				{
-					this._ID_PRODUCTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SESION", DbType="NVarChar(100)")]
-		public string ID_SESION
-		{
-			get
-			{
-				return this._ID_SESION;
-			}
-			set
-			{
-				if ((this._ID_SESION != value))
-				{
-					this._ID_SESION = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_SUBTOTAL", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> NUM_SUBTOTAL
-		{
-			get
-			{
-				return this._NUM_SUBTOTAL;
-			}
-			set
-			{
-				if ((this._NUM_SUBTOTAL != value))
-				{
-					this._NUM_SUBTOTAL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_DESCUENTO", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> NUM_DESCUENTO
-		{
-			get
-			{
-				return this._NUM_DESCUENTO;
-			}
-			set
-			{
-				if ((this._NUM_DESCUENTO != value))
-				{
-					this._NUM_DESCUENTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_TOTAL", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> NUM_TOTAL
-		{
-			get
-			{
-				return this._NUM_TOTAL;
-			}
-			set
-			{
-				if ((this._NUM_TOTAL != value))
-				{
-					this._NUM_TOTAL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FECHA
-		{
-			get
-			{
-				return this._FECHA;
-			}
-			set
-			{
-				if ((this._FECHA != value))
-				{
-					this._FECHA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="TinyInt")]
-		public System.Nullable<byte> ESTADO
-		{
-			get
-			{
-				return this._ESTADO;
-			}
-			set
-			{
-				if ((this._ESTADO != value))
-				{
-					this._ESTADO = value;
 				}
 			}
 		}
@@ -3765,7 +3447,7 @@ namespace BackEnd.data
 		}
 	}
 	
-	public partial class Obtener_Facturas_CompletadasResult
+	public partial class Obtener_FacturasResult
 	{
 		
 		private int _ID_FACTURA;
@@ -3798,7 +3480,7 @@ namespace BackEnd.data
 		
 		private System.Nullable<decimal> _NUM_PRECIO;
 		
-		public Obtener_Facturas_CompletadasResult()
+		public Obtener_FacturasResult()
 		{
 		}
 		

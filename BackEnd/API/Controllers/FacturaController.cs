@@ -30,7 +30,39 @@ namespace API.Controllers
             ResObtenerFactura res = new ResObtenerFactura();
             if (vali.validarSesionyRolAdmin(req.idSesion))
             {
-                res = new LogFactura().obtenerFacturasTodas();
+                res = new LogFactura().obtenerFacturasCompletadas(3);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
+        }
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("api/factura/obtenerNoPreparadas")]
+        public ResObtenerFactura obtenerFacturasNoCompletadas(ReqFactura req)
+        {
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResObtenerFactura res = new ResObtenerFactura();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogFactura().obtenerFacturasCompletadas(2);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
+        }
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("api/factura/obtenerNoPagadas")]
+        public ResObtenerFactura obtenerFacturasNoPagadas(ReqFactura req)
+        {
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResObtenerFactura res = new ResObtenerFactura();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogFactura().obtenerFacturasCompletadas(1);
             }
             else
             {
