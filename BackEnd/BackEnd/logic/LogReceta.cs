@@ -17,6 +17,7 @@ namespace BackEnd.logic
         public ResReceta validaciones(ReqReceta req)
         {
             ResReceta res = new ResReceta();
+            /*
             ValidacionesGenericas validacionesGenericas = new ValidacionesGenericas();
             var result = validacionesGenericas.validarString(req.Receta.dscNombre);
             if (result == 1)
@@ -50,11 +51,7 @@ namespace BackEnd.logic
                 res.Resultado = false;
                 res.ListaDeErrores.Add("sabor faltante");
             }
-            if (validacionesGenericas.validarInt(req.Receta.producto.idProducto) == 1)
-            {
-                res.Resultado = false;
-                res.ListaDeErrores.Add("producto faltante");
-            }
+            */
             return res;
         }
 
@@ -63,6 +60,7 @@ namespace BackEnd.logic
         {
             short tipoRegistro = 0;
             ResReceta res = new ResReceta();
+            /*
             try
             {
                 if (req != null)
@@ -126,12 +124,14 @@ namespace BackEnd.logic
             {
                 utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, JsonConvert.SerializeObject(req), JsonConvert.SerializeObject(res));
             }
+            */
             return res; 
         }
 
         public ResReceta eliminarReceta(int id)
         {
             ResReceta res = new ResReceta();
+            /*
             short tipoRegistro = 0; //1 Exitoso - 2 Error en logica - 3 Error no controlado
             try
             {
@@ -174,12 +174,14 @@ namespace BackEnd.logic
             {
                 utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, "No hay request", JsonConvert.SerializeObject(res));
             }
+            */
             return res;
         }
 
         public ResObtenerRecetas obtenerRecetas()
         {
             ResObtenerRecetas res = new ResObtenerRecetas();
+            /*
             short tipoRegistro = 0; //1 Exitoso - 2 Error en logica - 3 Error inesperado
             try
             {
@@ -217,6 +219,7 @@ namespace BackEnd.logic
             {
                 utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, "No hay request", JsonConvert.SerializeObject(res));
             }
+            */
             return res;
         }
 
@@ -230,6 +233,7 @@ namespace BackEnd.logic
         private Receta factoryArmarReceta(Obtener_RecetaResult usuarioLinq)
         {
             Receta receta = new Receta();
+            /*
             receta.idReceta = usuarioLinq.ID_RECETA;
             receta.dscNombre = usuarioLinq.DSC_NOMBRE;
             receta.dscTamano = usuarioLinq.DSC_TAMANO;
@@ -302,7 +306,7 @@ namespace BackEnd.logic
                 {
 
                 }
-
+            */
             return receta;
         }
 
