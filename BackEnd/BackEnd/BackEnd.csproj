@@ -77,6 +77,7 @@
     <Compile Include="domain\request\ReqCategoriaIngrediente.cs" />
     <Compile Include="domain\request\ReqCategoriaProducto.cs" />
     <Compile Include="domain\request\ReqChangePassword.cs" />
+    <Compile Include="domain\request\ReqContenedorProducto.cs" />
     <Compile Include="domain\request\ReqFactura.cs" />
     <Compile Include="domain\request\ReqIngrediente.cs" />
     <Compile Include="domain\request\ReqIngresarSesion.cs" />
