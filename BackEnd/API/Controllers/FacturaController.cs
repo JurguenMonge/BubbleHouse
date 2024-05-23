@@ -17,7 +17,7 @@ namespace API.Controllers
         // GET: Factura
         [System.Web.Http.HttpPost]
         [System.Web.Http.Route("api/factura/ingresar")]
-        public ResFactura ingresar(ReqFactura req)
+        public ResFactura ingresarFactura(ReqFactura req)
         {
             return new LogFactura().ingresarFactura(req);
         }
@@ -30,7 +30,39 @@ namespace API.Controllers
             ResObtenerFactura res = new ResObtenerFactura();
             if (vali.validarSesionyRolAdmin(req.idSesion))
             {
-                res = new LogFactura().obtenerFacturasTodas();
+                res = new LogFactura().obtenerFacturasCompletadas(3);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
+        }
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("api/factura/obtenerNoPreparadas")]
+        public ResObtenerFactura obtenerFacturasNoCompletadas(ReqFactura req)
+        {
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResObtenerFactura res = new ResObtenerFactura();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogFactura().obtenerFacturasCompletadas(2);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
+        }
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("api/factura/obtenerNoPagadas")]
+        public ResObtenerFactura obtenerFacturasNoPagadas(ReqFactura req)
+        {
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResObtenerFactura res = new ResObtenerFactura();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogFactura().obtenerFacturasCompletadas(1);
             }
             else
             {
@@ -41,13 +73,81 @@ namespace API.Controllers
 
         [System.Web.Http.HttpPut]
         [System.Web.Http.Route("api/factura/modificar")]
-        public ResFactura modificarCategoria(ReqFactura req)
+        public ResFactura modificarFactura(ReqFactura req)
         {
             ValidacionesSesion vali = new ValidacionesSesion();
             ResFactura res = new ResFactura();
             if (vali.validarSesionyRolAdmin(req.idSesion))
             {
                 res = new LogFactura().modificarFactura(req);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
+        }
+
+        [System.Web.Http.HttpDelete]
+        [System.Web.Http.Route("api/factura/eliminar")]
+        public ResFactura eliminarFactura(ReqFactura req)
+        {
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResFactura res = new ResFactura();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogFactura().eliminarFactura(req) ;
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
+        }
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.Route("api/productofactura/ingresar")]
+        public ResFactura ingresarProducto(ReqContenedorProducto req)
+        {
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResFactura res = new ResFactura();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogFactura().ingresarProductoaFactura(req);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
+        }
+
+
+        [System.Web.Http.HttpPut]
+        [System.Web.Http.Route("api/productofactura/modificar")]
+        public ResFactura modificarProducto(ReqContenedorProducto req)
+        {
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResFactura res = new ResFactura();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogFactura().modificarProductoaFactura(req);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
+        }
+
+        [System.Web.Http.HttpDelete]
+        [System.Web.Http.Route("api/productofactura/eliminar")]
+        public ResFactura eliminarProducto(ReqContenedorProducto req)
+        {
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResFactura res = new ResFactura();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogFactura().EliminarProductoaFactura(req);
             }
             else
             {

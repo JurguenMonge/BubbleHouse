@@ -15,7 +15,7 @@ namespace BackEnd.logic
 {
     public class LogFactura
     {
-        public ResObtenerFactura obtenerFacturasTodas()
+        public ResObtenerFactura obtenerFacturasCompletadas(int estado)
         {
             ResObtenerFactura res = new ResObtenerFactura();
             short tipoRegistro = 0;
@@ -23,7 +23,7 @@ namespace BackEnd.logic
             {
                 using (ConexionDataContext linq = new ConexionDataContext())
                 {
-                    var facturaslinq = linq.Obtener_Facturas_Completadas();
+                    var facturaslinq = linq.Obtener_Facturas((byte?)estado);
                     foreach (var item in facturaslinq)
                     {
                         Factura factura = res.listaFacturas.FirstOrDefault(f => f.idFactura == item.ID_FACTURA);
@@ -160,11 +160,17 @@ namespace BackEnd.logic
                             {
                                 res.Resultado = true;
                             }
+                            else
+                            {
+                                res.Resultado = false;
+                                res.ListaDeErrores.Add("Ocurrió un problema al registrar un producto");
+                                tipoRegistro = 3;
+                            }
                         }
                         else
                         {
                             res.Resultado = false;
-                            res.ListaDeErrores.Add("Ocurrió un error al insertar la factura");
+                            res.ListaDeErrores.Add("Ocurrió un error al modificar la factura");
                             tipoRegistro = 3;
                         }
 
@@ -183,9 +189,214 @@ namespace BackEnd.logic
             }
             return res;
         }
+        public ResFactura eliminarFactura(ReqFactura req)
+        {
+            ResFactura res = new ResFactura();
+            short tipoRegistro = 0;
+            try
+            {
+                ValidacionesFactura.ValidarFactura(req.Factura, res, ref tipoRegistro);
+                ValidacionesFactura.ValidarFecha(req.Factura, res, ref tipoRegistro);
+                ValidacionesFactura.ValidarTotal(req.Factura, res, ref tipoRegistro);
+                foreach (ContenedorProductoFactura cont in req.Factura.productosList)
+                {
+                    ValidacionesFactura.ValidarContenedor(cont, res, ref tipoRegistro);
+                    ValidacionesFactura.ValidarNumSubTotal(cont, res, ref tipoRegistro);
+                    ValidacionesFactura.ValidarDescuento(cont, res, ref tipoRegistro);
+                    ValidacionesFactura.ValidarCantidad(cont, res, ref tipoRegistro);
+                    ValidacionesFactura.ValidarPrecio(cont.producto, res, ref tipoRegistro);
+                    ValidacionesFactura.ValidarProducto(cont.producto, res, ref tipoRegistro);
+                }
+                if (!res.ListaDeErrores.Any())
+                {
+                    using (ConexionDataContext linq = new ConexionDataContext())
+                    {
+                        int? idReturn = 0;
+                        int? idError = 0;
+                        String errorBD = "";
+                        bool fallo = false;
+                        linq.Eliminar_Factura(req.Factura.idFactura, ref idReturn, ref idError, ref errorBD);
+                        if (idError == 0)
+                        {
+                            foreach (ContenedorProductoFactura cont in req.Factura.productosList)
+                            {
+                                linq.Eliminar_Producto_Factura(cont.IdRFacturaProducto, ref idReturn, ref idError, ref errorBD);
+                                if (idError != 0)
+                                {
+                                    fallo = true;
+                                    break;
+                                }
+                            }
+                            if (fallo == false)
+                            {
+                                res.Resultado = true;
+                            }
+                            else
+                            {
+                                res.Resultado = false;
+                                res.ListaDeErrores.Add("Ocurrió un problema al eliminar un producto");
+                                tipoRegistro = 3;
+                            }
+                        }
+                        else
+                        {
+                            res.Resultado = false;
+                            res.ListaDeErrores.Add("Ocurrió un error al eliminar la factura");
+                            tipoRegistro = 3;
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("Ocurrió un error al obtener modificar una factura");
+                tipoRegistro = 3;
+            }
+            finally
+            {
+                utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, "No hay request", JsonConvert.SerializeObject(res));
+            }
+            return res;
+        }
+        public ResFactura ingresarProductoaFactura(ReqContenedorProducto req)
+        {
+            ResFactura res = new ResFactura();
+            short tipoRegistro = 0;
+            try
+            {
+                    ValidacionesFactura.ValidarNumSubTotal(req.contenedor, res, ref tipoRegistro);
+                    ValidacionesFactura.ValidarDescuento(req.contenedor, res, ref tipoRegistro);
+                    ValidacionesFactura.ValidarCantidad(req.contenedor, res, ref tipoRegistro);
+                    ValidacionesFactura.ValidarPrecio(req.contenedor.producto, res, ref tipoRegistro);
+                    ValidacionesFactura.ValidarProducto(req.contenedor.producto, res, ref tipoRegistro);
+                if (!res.ListaDeErrores.Any())
+                {
+                    using (ConexionDataContext linq = new ConexionDataContext())
+                    {
+                        int? idReturn = 0;
+                        int? idError = 0;
+                        String errorBD = "";
+                                linq.Insertar_Productos_Factura(req.contenedor.producto.idProducto, req.contenedor.idFactura, req.contenedor.numSubtotal, req.contenedor.numCantidad, req.contenedor.descuento,
+                                    ref idReturn, ref idError, ref errorBD);
+                            if (idError == 0)
+                            {
+                                res.Resultado = true;
+                            }
+                            else
+                            {
+                                res.Resultado = false;
+                                res.ListaDeErrores.Add("Ocurrió un error al ingresar el producto");
+                                tipoRegistro = 3;
+                            }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("Ocurrió un error al obtener ingresar el producto");
+                tipoRegistro = 3;
+            }
+            finally
+            {
+                utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, "No hay request", JsonConvert.SerializeObject(res));
+            }
+            return res;
+        }
+        public ResFactura modificarProductoaFactura(ReqContenedorProducto req)
+        {
+            ResFactura res = new ResFactura();
+            short tipoRegistro = 0;
+            try
+            {
+                ValidacionesFactura.ValidarNumSubTotal(req.contenedor, res, ref tipoRegistro);
+                ValidacionesFactura.ValidarDescuento(req.contenedor, res, ref tipoRegistro);
+                ValidacionesFactura.ValidarCantidad(req.contenedor, res, ref tipoRegistro);
+                ValidacionesFactura.ValidarPrecio(req.contenedor.producto, res, ref tipoRegistro);
+                ValidacionesFactura.ValidarProducto(req.contenedor.producto, res, ref tipoRegistro);
+                if (!res.ListaDeErrores.Any())
+                {
+                    using (ConexionDataContext linq = new ConexionDataContext())
+                    {
+                        int? idReturn = 0;
+                        int? idError = 0;
+                        String errorBD = "";
+                        linq.Modificar_Productos_Factura(req.contenedor.IdRFacturaProducto, req.contenedor.idFactura, req.contenedor.numSubtotal, req.contenedor.numCantidad, req.contenedor.descuento,
+                            ref idReturn, ref idError, ref errorBD);
+                        if (idError == 0)
+                        {
+                            res.Resultado = true;
+                        }
+                        else
+                        {
+                            res.Resultado = false;
+                            res.ListaDeErrores.Add("Ocurrió un error al modificar el producto");
+                            tipoRegistro = 3;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("Ocurrió un error al obtener modificar un producto");
+                tipoRegistro = 3;
+            }
+            finally
+            {
+                utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, "No hay request", JsonConvert.SerializeObject(res));
+            }
+            return res;
+        }
+        public ResFactura EliminarProductoaFactura(ReqContenedorProducto req)
+        {
+            ResFactura res = new ResFactura();
+            short tipoRegistro = 0;
+            try
+            {
+                ValidacionesFactura.ValidarNumSubTotal(req.contenedor, res, ref tipoRegistro);
+                ValidacionesFactura.ValidarDescuento(req.contenedor, res, ref tipoRegistro);
+                ValidacionesFactura.ValidarCantidad(req.contenedor, res, ref tipoRegistro);
+                ValidacionesFactura.ValidarPrecio(req.contenedor.producto, res, ref tipoRegistro);
+                ValidacionesFactura.ValidarProducto(req.contenedor.producto, res, ref tipoRegistro);
+                if (!res.ListaDeErrores.Any())
+                {
+                    using (ConexionDataContext linq = new ConexionDataContext())
+                    {
+                        int? idReturn = 0;
+                        int? idError = 0;
+                        String errorBD = "";
+                        linq.Eliminar_Producto_Factura(req.contenedor.IdRFacturaProducto, ref idReturn, ref idError, ref errorBD);
+                        if (idError == 0)
+                        {
+                            res.Resultado = true;
+                        }
+                        else
+                        {
+                            res.Resultado = false;
+                            res.ListaDeErrores.Add("Ocurrió un error al eliminar el producto");
+                            tipoRegistro = 3;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("Ocurrió un error al obtener eliminar el producto");
+                tipoRegistro = 3;
+            }
+            finally
+            {
+                utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, "No hay request", JsonConvert.SerializeObject(res));
+            }
+            return res;
+        }
 
 
-        private Factura factoryArmarFactura(Obtener_Facturas_CompletadasResult facturasLinq)
+        private Factura factoryArmarFactura(Obtener_FacturasResult facturasLinq)
         {
             Factura factura = new Factura();
            
@@ -195,7 +406,7 @@ namespace BackEnd.logic
             factura.estado = (byte)facturasLinq.ESTADO;
             return factura;
         }
-        private ContenedorProductoFactura factoryArmarProducto(Obtener_Facturas_CompletadasResult facturasLinq)
+        private ContenedorProductoFactura factoryArmarProducto(Obtener_FacturasResult facturasLinq)
         {
             Producto producto = new Producto();
             ContenedorProductoFactura contenedor = new ContenedorProductoFactura();
