@@ -353,20 +353,6 @@ namespace BackEnd.data
 			return ((ISingleResult<Obtener_Cate_Productos_ActivosResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Facturas_No_Pagadas")]
-		public ISingleResult<Obtener_Facturas_No_PagadasResult> Obtener_Facturas_No_Pagadas()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<Obtener_Facturas_No_PagadasResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Facturas_No_Preparadas")]
-		public ISingleResult<Obtener_Facturas_No_PreparadasResult> Obtener_Facturas_No_Preparadas()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<Obtener_Facturas_No_PreparadasResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Ingrediente_ById")]
 		public ISingleResult<Obtener_Ingrediente_ByIdResult> Obtener_Ingrediente_ById([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_ingrediente)
 		{
@@ -531,6 +517,20 @@ namespace BackEnd.data
 			eRRORDESCRIPCION = ((string)(result.GetParameterValue(3)));
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Facturas_No_Pagadas")]
+		public ISingleResult<Obtener_Facturas_No_PagadasResult> Obtener_Facturas_No_Pagadas()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<Obtener_Facturas_No_PagadasResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Facturas_No_Preparadas")]
+		public ISingleResult<Obtener_Facturas_No_PreparadasResult> Obtener_Facturas_No_Preparadas()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<Obtener_Facturas_No_PreparadasResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class Obtener_Cate_Ingredientes_ActivosResult
@@ -616,310 +616,6 @@ namespace BackEnd.data
 				if ((this._DSC_NOMBRE_CATEGORIA != value))
 				{
 					this._DSC_NOMBRE_CATEGORIA = value;
-				}
-			}
-		}
-	}
-	
-	public partial class Obtener_Facturas_No_PagadasResult
-	{
-		
-		private int _ID_FACTURA;
-		
-		private System.Nullable<int> _ID_PRODUCTO;
-		
-		private string _ID_SESION;
-		
-		private System.Nullable<decimal> _NUM_SUBTOTAL;
-		
-		private System.Nullable<decimal> _NUM_DESCUENTO;
-		
-		private System.Nullable<decimal> _NUM_TOTAL;
-		
-		private System.Nullable<System.DateTime> _FECHA;
-		
-		private System.Nullable<byte> _ESTADO;
-		
-		public Obtener_Facturas_No_PagadasResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_FACTURA", DbType="Int NOT NULL")]
-		public int ID_FACTURA
-		{
-			get
-			{
-				return this._ID_FACTURA;
-			}
-			set
-			{
-				if ((this._ID_FACTURA != value))
-				{
-					this._ID_FACTURA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_PRODUCTO", DbType="Int")]
-		public System.Nullable<int> ID_PRODUCTO
-		{
-			get
-			{
-				return this._ID_PRODUCTO;
-			}
-			set
-			{
-				if ((this._ID_PRODUCTO != value))
-				{
-					this._ID_PRODUCTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SESION", DbType="NVarChar(100)")]
-		public string ID_SESION
-		{
-			get
-			{
-				return this._ID_SESION;
-			}
-			set
-			{
-				if ((this._ID_SESION != value))
-				{
-					this._ID_SESION = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_SUBTOTAL", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> NUM_SUBTOTAL
-		{
-			get
-			{
-				return this._NUM_SUBTOTAL;
-			}
-			set
-			{
-				if ((this._NUM_SUBTOTAL != value))
-				{
-					this._NUM_SUBTOTAL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_DESCUENTO", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> NUM_DESCUENTO
-		{
-			get
-			{
-				return this._NUM_DESCUENTO;
-			}
-			set
-			{
-				if ((this._NUM_DESCUENTO != value))
-				{
-					this._NUM_DESCUENTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_TOTAL", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> NUM_TOTAL
-		{
-			get
-			{
-				return this._NUM_TOTAL;
-			}
-			set
-			{
-				if ((this._NUM_TOTAL != value))
-				{
-					this._NUM_TOTAL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FECHA
-		{
-			get
-			{
-				return this._FECHA;
-			}
-			set
-			{
-				if ((this._FECHA != value))
-				{
-					this._FECHA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="TinyInt")]
-		public System.Nullable<byte> ESTADO
-		{
-			get
-			{
-				return this._ESTADO;
-			}
-			set
-			{
-				if ((this._ESTADO != value))
-				{
-					this._ESTADO = value;
-				}
-			}
-		}
-	}
-	
-	public partial class Obtener_Facturas_No_PreparadasResult
-	{
-		
-		private int _ID_FACTURA;
-		
-		private System.Nullable<int> _ID_PRODUCTO;
-		
-		private string _ID_SESION;
-		
-		private System.Nullable<decimal> _NUM_SUBTOTAL;
-		
-		private System.Nullable<decimal> _NUM_DESCUENTO;
-		
-		private System.Nullable<decimal> _NUM_TOTAL;
-		
-		private System.Nullable<System.DateTime> _FECHA;
-		
-		private System.Nullable<byte> _ESTADO;
-		
-		public Obtener_Facturas_No_PreparadasResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_FACTURA", DbType="Int NOT NULL")]
-		public int ID_FACTURA
-		{
-			get
-			{
-				return this._ID_FACTURA;
-			}
-			set
-			{
-				if ((this._ID_FACTURA != value))
-				{
-					this._ID_FACTURA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_PRODUCTO", DbType="Int")]
-		public System.Nullable<int> ID_PRODUCTO
-		{
-			get
-			{
-				return this._ID_PRODUCTO;
-			}
-			set
-			{
-				if ((this._ID_PRODUCTO != value))
-				{
-					this._ID_PRODUCTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SESION", DbType="NVarChar(100)")]
-		public string ID_SESION
-		{
-			get
-			{
-				return this._ID_SESION;
-			}
-			set
-			{
-				if ((this._ID_SESION != value))
-				{
-					this._ID_SESION = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_SUBTOTAL", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> NUM_SUBTOTAL
-		{
-			get
-			{
-				return this._NUM_SUBTOTAL;
-			}
-			set
-			{
-				if ((this._NUM_SUBTOTAL != value))
-				{
-					this._NUM_SUBTOTAL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_DESCUENTO", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> NUM_DESCUENTO
-		{
-			get
-			{
-				return this._NUM_DESCUENTO;
-			}
-			set
-			{
-				if ((this._NUM_DESCUENTO != value))
-				{
-					this._NUM_DESCUENTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_TOTAL", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> NUM_TOTAL
-		{
-			get
-			{
-				return this._NUM_TOTAL;
-			}
-			set
-			{
-				if ((this._NUM_TOTAL != value))
-				{
-					this._NUM_TOTAL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FECHA
-		{
-			get
-			{
-				return this._FECHA;
-			}
-			set
-			{
-				if ((this._FECHA != value))
-				{
-					this._FECHA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="TinyInt")]
-		public System.Nullable<byte> ESTADO
-		{
-			get
-			{
-				return this._ESTADO;
-			}
-			set
-			{
-				if ((this._ESTADO != value))
-				{
-					this._ESTADO = value;
 				}
 			}
 		}
@@ -3799,6 +3495,562 @@ namespace BackEnd.data
 		private System.Nullable<decimal> _NUM_PRECIO;
 		
 		public Obtener_Facturas_CompletadasResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_FACTURA", DbType="Int NOT NULL")]
+		public int ID_FACTURA
+		{
+			get
+			{
+				return this._ID_FACTURA;
+			}
+			set
+			{
+				if ((this._ID_FACTURA != value))
+				{
+					this._ID_FACTURA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_TOTAL", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> NUM_TOTAL
+		{
+			get
+			{
+				return this._NUM_TOTAL;
+			}
+			set
+			{
+				if ((this._NUM_TOTAL != value))
+				{
+					this._NUM_TOTAL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FECHA
+		{
+			get
+			{
+				return this._FECHA;
+			}
+			set
+			{
+				if ((this._FECHA != value))
+				{
+					this._FECHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="TinyInt")]
+		public System.Nullable<byte> ESTADO
+		{
+			get
+			{
+				return this._ESTADO;
+			}
+			set
+			{
+				if ((this._ESTADO != value))
+				{
+					this._ESTADO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_R_FACTURA_PRODUCTO", DbType="Int NOT NULL")]
+		public int ID_R_FACTURA_PRODUCTO
+		{
+			get
+			{
+				return this._ID_R_FACTURA_PRODUCTO;
+			}
+			set
+			{
+				if ((this._ID_R_FACTURA_PRODUCTO != value))
+				{
+					this._ID_R_FACTURA_PRODUCTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_CANTIDAD", DbType="Int")]
+		public System.Nullable<int> NUM_CANTIDAD
+		{
+			get
+			{
+				return this._NUM_CANTIDAD;
+			}
+			set
+			{
+				if ((this._NUM_CANTIDAD != value))
+				{
+					this._NUM_CANTIDAD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_DESCUENTO", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> NUM_DESCUENTO
+		{
+			get
+			{
+				return this._NUM_DESCUENTO;
+			}
+			set
+			{
+				if ((this._NUM_DESCUENTO != value))
+				{
+					this._NUM_DESCUENTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_SUBTOTAL", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> NUM_SUBTOTAL
+		{
+			get
+			{
+				return this._NUM_SUBTOTAL;
+			}
+			set
+			{
+				if ((this._NUM_SUBTOTAL != value))
+				{
+					this._NUM_SUBTOTAL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_PRODUCTO", DbType="Int NOT NULL")]
+		public int ID_PRODUCTO
+		{
+			get
+			{
+				return this._ID_PRODUCTO;
+			}
+			set
+			{
+				if ((this._ID_PRODUCTO != value))
+				{
+					this._ID_PRODUCTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_PRODUCTO", DbType="NVarChar(100)")]
+		public string DSC_NOMBRE_PRODUCTO
+		{
+			get
+			{
+				return this._DSC_NOMBRE_PRODUCTO;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE_PRODUCTO != value))
+				{
+					this._DSC_NOMBRE_PRODUCTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_DESCRIPCION", DbType="NVarChar(MAX)")]
+		public string DSC_DESCRIPCION
+		{
+			get
+			{
+				return this._DSC_DESCRIPCION;
+			}
+			set
+			{
+				if ((this._DSC_DESCRIPCION != value))
+				{
+					this._DSC_DESCRIPCION = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_URL_IMAGEN", DbType="NVarChar(MAX)")]
+		public string DSC_URL_IMAGEN
+		{
+			get
+			{
+				return this._DSC_URL_IMAGEN;
+			}
+			set
+			{
+				if ((this._DSC_URL_IMAGEN != value))
+				{
+					this._DSC_URL_IMAGEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_RECETA", DbType="Int")]
+		public System.Nullable<int> ID_RECETA
+		{
+			get
+			{
+				return this._ID_RECETA;
+			}
+			set
+			{
+				if ((this._ID_RECETA != value))
+				{
+					this._ID_RECETA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SUBCATE_PRODUCTO", DbType="Int")]
+		public System.Nullable<int> ID_SUBCATE_PRODUCTO
+		{
+			get
+			{
+				return this._ID_SUBCATE_PRODUCTO;
+			}
+			set
+			{
+				if ((this._ID_SUBCATE_PRODUCTO != value))
+				{
+					this._ID_SUBCATE_PRODUCTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_PRECIO", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> NUM_PRECIO
+		{
+			get
+			{
+				return this._NUM_PRECIO;
+			}
+			set
+			{
+				if ((this._NUM_PRECIO != value))
+				{
+					this._NUM_PRECIO = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Obtener_Facturas_No_PagadasResult
+	{
+		
+		private int _ID_FACTURA;
+		
+		private System.Nullable<decimal> _NUM_TOTAL;
+		
+		private System.Nullable<System.DateTime> _FECHA;
+		
+		private System.Nullable<byte> _ESTADO;
+		
+		private int _ID_R_FACTURA_PRODUCTO;
+		
+		private System.Nullable<int> _NUM_CANTIDAD;
+		
+		private System.Nullable<decimal> _NUM_DESCUENTO;
+		
+		private System.Nullable<decimal> _NUM_SUBTOTAL;
+		
+		private int _ID_PRODUCTO;
+		
+		private string _DSC_NOMBRE_PRODUCTO;
+		
+		private string _DSC_DESCRIPCION;
+		
+		private string _DSC_URL_IMAGEN;
+		
+		private System.Nullable<int> _ID_RECETA;
+		
+		private System.Nullable<int> _ID_SUBCATE_PRODUCTO;
+		
+		private System.Nullable<decimal> _NUM_PRECIO;
+		
+		public Obtener_Facturas_No_PagadasResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_FACTURA", DbType="Int NOT NULL")]
+		public int ID_FACTURA
+		{
+			get
+			{
+				return this._ID_FACTURA;
+			}
+			set
+			{
+				if ((this._ID_FACTURA != value))
+				{
+					this._ID_FACTURA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_TOTAL", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> NUM_TOTAL
+		{
+			get
+			{
+				return this._NUM_TOTAL;
+			}
+			set
+			{
+				if ((this._NUM_TOTAL != value))
+				{
+					this._NUM_TOTAL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FECHA
+		{
+			get
+			{
+				return this._FECHA;
+			}
+			set
+			{
+				if ((this._FECHA != value))
+				{
+					this._FECHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="TinyInt")]
+		public System.Nullable<byte> ESTADO
+		{
+			get
+			{
+				return this._ESTADO;
+			}
+			set
+			{
+				if ((this._ESTADO != value))
+				{
+					this._ESTADO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_R_FACTURA_PRODUCTO", DbType="Int NOT NULL")]
+		public int ID_R_FACTURA_PRODUCTO
+		{
+			get
+			{
+				return this._ID_R_FACTURA_PRODUCTO;
+			}
+			set
+			{
+				if ((this._ID_R_FACTURA_PRODUCTO != value))
+				{
+					this._ID_R_FACTURA_PRODUCTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_CANTIDAD", DbType="Int")]
+		public System.Nullable<int> NUM_CANTIDAD
+		{
+			get
+			{
+				return this._NUM_CANTIDAD;
+			}
+			set
+			{
+				if ((this._NUM_CANTIDAD != value))
+				{
+					this._NUM_CANTIDAD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_DESCUENTO", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> NUM_DESCUENTO
+		{
+			get
+			{
+				return this._NUM_DESCUENTO;
+			}
+			set
+			{
+				if ((this._NUM_DESCUENTO != value))
+				{
+					this._NUM_DESCUENTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_SUBTOTAL", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> NUM_SUBTOTAL
+		{
+			get
+			{
+				return this._NUM_SUBTOTAL;
+			}
+			set
+			{
+				if ((this._NUM_SUBTOTAL != value))
+				{
+					this._NUM_SUBTOTAL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_PRODUCTO", DbType="Int NOT NULL")]
+		public int ID_PRODUCTO
+		{
+			get
+			{
+				return this._ID_PRODUCTO;
+			}
+			set
+			{
+				if ((this._ID_PRODUCTO != value))
+				{
+					this._ID_PRODUCTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_PRODUCTO", DbType="NVarChar(100)")]
+		public string DSC_NOMBRE_PRODUCTO
+		{
+			get
+			{
+				return this._DSC_NOMBRE_PRODUCTO;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE_PRODUCTO != value))
+				{
+					this._DSC_NOMBRE_PRODUCTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_DESCRIPCION", DbType="NVarChar(MAX)")]
+		public string DSC_DESCRIPCION
+		{
+			get
+			{
+				return this._DSC_DESCRIPCION;
+			}
+			set
+			{
+				if ((this._DSC_DESCRIPCION != value))
+				{
+					this._DSC_DESCRIPCION = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_URL_IMAGEN", DbType="NVarChar(MAX)")]
+		public string DSC_URL_IMAGEN
+		{
+			get
+			{
+				return this._DSC_URL_IMAGEN;
+			}
+			set
+			{
+				if ((this._DSC_URL_IMAGEN != value))
+				{
+					this._DSC_URL_IMAGEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_RECETA", DbType="Int")]
+		public System.Nullable<int> ID_RECETA
+		{
+			get
+			{
+				return this._ID_RECETA;
+			}
+			set
+			{
+				if ((this._ID_RECETA != value))
+				{
+					this._ID_RECETA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SUBCATE_PRODUCTO", DbType="Int")]
+		public System.Nullable<int> ID_SUBCATE_PRODUCTO
+		{
+			get
+			{
+				return this._ID_SUBCATE_PRODUCTO;
+			}
+			set
+			{
+				if ((this._ID_SUBCATE_PRODUCTO != value))
+				{
+					this._ID_SUBCATE_PRODUCTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_PRECIO", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> NUM_PRECIO
+		{
+			get
+			{
+				return this._NUM_PRECIO;
+			}
+			set
+			{
+				if ((this._NUM_PRECIO != value))
+				{
+					this._NUM_PRECIO = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Obtener_Facturas_No_PreparadasResult
+	{
+		
+		private int _ID_FACTURA;
+		
+		private System.Nullable<decimal> _NUM_TOTAL;
+		
+		private System.Nullable<System.DateTime> _FECHA;
+		
+		private System.Nullable<byte> _ESTADO;
+		
+		private int _ID_R_FACTURA_PRODUCTO;
+		
+		private System.Nullable<int> _NUM_CANTIDAD;
+		
+		private System.Nullable<decimal> _NUM_DESCUENTO;
+		
+		private System.Nullable<decimal> _NUM_SUBTOTAL;
+		
+		private int _ID_PRODUCTO;
+		
+		private string _DSC_NOMBRE_PRODUCTO;
+		
+		private string _DSC_DESCRIPCION;
+		
+		private string _DSC_URL_IMAGEN;
+		
+		private System.Nullable<int> _ID_RECETA;
+		
+		private System.Nullable<int> _ID_SUBCATE_PRODUCTO;
+		
+		private System.Nullable<decimal> _NUM_PRECIO;
+		
+		public Obtener_Facturas_No_PreparadasResult()
 		{
 		}
 		
