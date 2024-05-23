@@ -123,10 +123,12 @@ namespace BackEnd.logic
             short tipoRegistro = 0;
             try
             {
+                ValidacionesFactura.ValidarFactura(req.Factura, res, ref tipoRegistro);
                 ValidacionesFactura.ValidarFecha(req.Factura, res, ref tipoRegistro);
                 ValidacionesFactura.ValidarTotal(req.Factura, res, ref tipoRegistro);
                 foreach (ContenedorProductoFactura cont in req.Factura.productosList)
                 {
+                    ValidacionesFactura.ValidarContenedor(cont, res, ref tipoRegistro);
                     ValidacionesFactura.ValidarNumSubTotal(cont, res, ref tipoRegistro);
                     ValidacionesFactura.ValidarDescuento(cont, res, ref tipoRegistro);
                     ValidacionesFactura.ValidarCantidad(cont, res, ref tipoRegistro);
@@ -137,17 +139,16 @@ namespace BackEnd.logic
                 {
                     using (ConexionDataContext linq = new ConexionDataContext())
                     {
-                        int? idReturnFactura = 0;
                         int? idReturn = 0;
                         int? idError = 0;
                         bool fallo = false;
                         String errorBD = "";
-                        linq.Insertar_Factura((decimal?)req.Factura.numTotal, ref idReturnFactura, ref idError, ref errorBD);
+                        linq.Modificar_Factura(req.Factura.idFactura,(decimal?)req.Factura.numTotal, ref idReturn, ref idError, ref errorBD);
                         if (idError == 0)
                         {
                             foreach (ContenedorProductoFactura cont in req.Factura.productosList)
                             {
-                                linq.Insertar_Productos_Factura(cont.producto.idProducto, idReturnFactura, cont.numSubtotal, cont.numCantidad, cont.descuento,
+                                linq.Modificar_Productos_Factura(cont.IdRFacturaProducto, req.Factura.idFactura, cont.numSubtotal, cont.numCantidad, cont.descuento,
                                     ref idReturn, ref idError, ref errorBD);
                                 if (idError != 0)
                                 {

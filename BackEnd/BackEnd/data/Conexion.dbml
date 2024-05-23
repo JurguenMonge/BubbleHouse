@@ -180,18 +180,6 @@
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.Modificar_Factura" Method="Modificar_Factura">
-    <Parameter Name="Id_Factura" Parameter="id_Factura" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Id_Producto" Parameter="id_Producto" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Id_Sesion" Parameter="id_Sesion" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Num_Subtotal" Parameter="num_Subtotal" Type="System.Decimal" DbType="Decimal(10,2)" />
-    <Parameter Name="Num_Descuento" Parameter="num_Descuento" Type="System.Decimal" DbType="Decimal(10,2)" />
-    <Parameter Name="Num_Total" Parameter="num_Total" Type="System.Decimal" DbType="Decimal(10,2)" />
-    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.Modificar_Ingrediente" Method="Modificar_Ingrediente">
     <Parameter Name="Id_Ingrediente" Parameter="id_Ingrediente" Type="System.Int32" DbType="Int" />
     <Parameter Name="Id_Cate_Ingrediente" Parameter="id_Cate_Ingrediente" Type="System.Int32" DbType="Int" />
@@ -561,6 +549,25 @@
   </Function>
   <Function Name="dbo.Insertar_Factura" Method="Insertar_Factura">
     <Parameter Name="Num_Total" Parameter="num_Total" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Modificar_Factura" Method="Modificar_Factura">
+    <Parameter Name="Id_Factura" Parameter="id_Factura" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Num_Total" Parameter="num_Total" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Modificar_Productos_Factura" Method="Modificar_Productos_Factura">
+    <Parameter Name="Id_R_Producto_Factura" Parameter="id_R_Producto_Factura" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_factura" Type="System.Int32" DbType="Int" />
+    <Parameter Name="num_subtotal" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="num_cantidad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="num_descuento" Type="System.Decimal" DbType="Decimal(10,2)" />
     <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
