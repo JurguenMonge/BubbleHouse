@@ -38,5 +38,22 @@ namespace API.Controllers
             }
             return res;
         }
+
+        [System.Web.Http.HttpPut]
+        [System.Web.Http.Route("api/factura/modificar")]
+        public ResFactura modificarCategoria(ReqFactura req)
+        {
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResFactura res = new ResFactura();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogFactura().modificarFactura(req);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
+        }
     }
 }
