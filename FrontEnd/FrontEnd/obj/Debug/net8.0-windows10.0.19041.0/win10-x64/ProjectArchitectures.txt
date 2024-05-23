@@ -1,1 +1,1 @@
-D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\FrontEnd.csproj;x64
+D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\FrontEnd\FrontEnd\FrontEnd.csproj;x64

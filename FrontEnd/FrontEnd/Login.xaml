@@ -7,16 +7,18 @@
         <Grid x:Name="Contenedor" BackgroundColor="#a9dff0">
             <VerticalStackLayout Spacing="15" Margin="40,40,40,0" Padding="10">
                 <Image
-                    Source="logo_celeste.png"
+                    Source="dotnet_logo.png"
                     HeightRequest="185"
                     Aspect="AspectFit"
-                    SemanticProperties.Description="dot net bot in a race car number eight" />
-                <Frame Margin="10,0,10,0" VerticalOptions="Center" BackgroundColor="#bdc0f7">
+                    IsVisible="True"
+                    IsEnabled="True"/>
+                
+                <Frame Margin="10,0,10,0" VerticalOptions="Center" BackgroundColor="#bdc0f7" BorderColor="#bdc0f7">
                     <VerticalStackLayout>
-                        <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="Black" Text="Correo"></Label>
-                        <Entry x:Name="txtCorreo"  Keyboard="Email" Background="White"></Entry>
-                        <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="Black" Text="Contraseña"></Label>
-                        <Entry x:Name="txtPassword" Keyboard="Text" IsPassword="true" Background="White"></Entry>
+                        <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="White" Text="Correo" ></Label>
+                        <Entry x:Name="txtCorreo" TextColor="Black" Keyboard="Email" Background="White"></Entry>
+                        <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="White" Text="Contraseña"></Label>
+                        <Entry x:Name="txtPassword" TextColor="Black"  Keyboard="Text" IsPassword="true" Background="White"></Entry>
                     </VerticalStackLayout>
                 </Frame>
                 <Button x:Name="btnIngresar" Text="Ingresar" Clicked="btnIngresar_Clicked" BackgroundColor="#bdc0f7"></Button>
