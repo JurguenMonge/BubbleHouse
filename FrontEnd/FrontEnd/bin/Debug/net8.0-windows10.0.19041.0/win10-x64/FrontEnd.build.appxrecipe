@@ -214,6 +214,9 @@
     <AppxPackagedFile Include="D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo_celeste.scale-100.png">
+      <PackagePath>logo_celeste.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\FrontEnd\FrontEnd\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\FrontEnd.deps.json">
       <PackagePath>FrontEnd.deps.json</PackagePath>
     </AppxPackagedFile>

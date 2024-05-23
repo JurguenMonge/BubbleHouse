@@ -25,4 +25,10 @@ public partial class PrincipalAdministrativa : ContentPage
     {
 
     }
+
+    private void btnAceptarPedidos_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new AceptarFacturas());
+        Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+    }
 }

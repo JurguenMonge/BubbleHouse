@@ -3,32 +3,52 @@
   "WorkspaceRootPath": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\pages\\formsubcategoriaproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\formsubcategoriaproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\pages\\subcategoriaproductopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\subcategoriaproductopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\aceptarfacturas.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:aceptarfacturas.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\aceptarfacturas.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:aceptarfacturas.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\pages\\formsubcategoriaproducto.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\formsubcategoriaproducto.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\pages\\formsubcategoriaproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\formsubcategoriaproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\principaladministrativa.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:principaladministrativa.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\principaladministrativa.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:principaladministrativa.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\pages\\subcategoriaproductopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\subcategoriaproductopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\pages\\subcategoriaproductopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -42,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 235,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,7 +74,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "AceptarFacturas.xaml.cs",
+              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\AceptarFacturas.xaml.cs",
+              "RelativeDocumentMoniker": "AceptarFacturas.xaml.cs",
+              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\AceptarFacturas.xaml.cs",
+              "RelativeToolTip": "AceptarFacturas.xaml.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAowB0AAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T20:40:12.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PrincipalAdministrativa.xaml.cs",
+              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\PrincipalAdministrativa.xaml.cs",
+              "RelativeDocumentMoniker": "PrincipalAdministrativa.xaml.cs",
+              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\PrincipalAdministrativa.xaml.cs",
+              "RelativeToolTip": "PrincipalAdministrativa.xaml.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwB4AAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T20:31:13.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PrincipalAdministrativa.xaml",
+              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\PrincipalAdministrativa.xaml",
+              "RelativeDocumentMoniker": "PrincipalAdministrativa.xaml",
+              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\PrincipalAdministrativa.xaml",
+              "RelativeToolTip": "PrincipalAdministrativa.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-23T20:30:41.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Colors.xaml",
+              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\Resources\\Styles\\Colors.xaml",
+              "RelativeDocumentMoniker": "Resources\\Styles\\Colors.xaml",
+              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\Resources\\Styles\\Colors.xaml",
+              "RelativeToolTip": "Resources\\Styles\\Colors.xaml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAB4AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-23T20:26:07.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AceptarFacturas.xaml",
+              "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\AceptarFacturas.xaml",
+              "RelativeDocumentMoniker": "AceptarFacturas.xaml",
+              "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\AceptarFacturas.xaml",
+              "RelativeToolTip": "AceptarFacturas.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-23T20:24:45.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\MainPage.xaml",
               "RelativeDocumentMoniker": "MainPage.xaml",
@@ -67,33 +152,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Login.xaml",
               "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml",
               "RelativeDocumentMoniker": "Login.xaml",
               "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml",
               "RelativeToolTip": "Login.xaml",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAYwAwAAAAkAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-05-23T19:55:02.945Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\App.xaml.cs",
               "RelativeDocumentMoniker": "App.xaml.cs",
               "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\App.xaml.cs",
               "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-23T19:54:19.817Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "App.xaml",
               "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
@@ -106,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "FormSubCategoriaProducto.xaml",
               "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormSubCategoriaProducto.xaml",
               "RelativeDocumentMoniker": "Pages\\FormSubCategoriaProducto.xaml",
@@ -119,20 +204,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "FormSubCategoriaProducto.xaml.cs",
               "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormSubCategoriaProducto.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\FormSubCategoriaProducto.xaml.cs",
               "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormSubCategoriaProducto.xaml.cs",
               "RelativeToolTip": "Pages\\FormSubCategoriaProducto.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAF0AAAAQAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-23T01:30:16.79Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "SubCategoriaProductoPage.xaml.cs",
               "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\SubCategoriaProductoPage.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\SubCategoriaProductoPage.xaml.cs",
@@ -145,13 +230,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "SubCategoriaProductoPage.xaml",
               "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\SubCategoriaProductoPage.xaml",
               "RelativeDocumentMoniker": "Pages\\SubCategoriaProductoPage.xaml",
               "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\SubCategoriaProductoPage.xaml",
               "RelativeToolTip": "Pages\\SubCategoriaProductoPage.xaml",
-              "ViewState": "AQIAACQAAAAAAAAAAIBJwDQAAAAkAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAIBZwDQAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-05-23T00:17:26.468Z",
               "EditorCaption": ""

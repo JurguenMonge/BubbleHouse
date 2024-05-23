@@ -12,6 +12,12 @@ build_property.ProjectDir = D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
+[D:/Usuario/Documents/Universidad/BeGreat/BubbleHouse/FrontEnd/FrontEnd/AceptarFacturas.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.AceptarFacturas.xaml
+build_metadata.AdditionalFiles.TargetPath = AceptarFacturas.xaml
+build_metadata.AdditionalFiles.RelativePath = AceptarFacturas.xaml
+
 [D:/Usuario/Documents/Universidad/BeGreat/BubbleHouse/FrontEnd/FrontEnd/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.App.xaml

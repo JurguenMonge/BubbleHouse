@@ -11,6 +11,9 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
+    <MauiXaml Update="AceptarFacturas.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="FormularioCategoriaProducto.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
