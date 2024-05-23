@@ -10,9 +10,26 @@ using BackEnd.domain.domain;
 
 namespace BackEnd.logic
 {
-    public class ValidacionesFactura
-    {
-        public static void ValidarFecha(Factura factura, ResFactura res, ref short tipoRegistro)
+    public class ValidacionesFactura { 
+
+
+        public static void ValidarFactura(Factura factura, ResFactura res, ref short tipoRegistro)
+        {
+            if (factura == null)
+            {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("factura nula.");
+                tipoRegistro = 2;
+                return;
+            }
+            if (factura.idFactura <= 0)
+            {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("factura vacia");
+                tipoRegistro = 2;
+            }
+        }
+    public static void ValidarFecha(Factura factura, ResFactura res, ref short tipoRegistro)
         {
             if (factura.fecha == null)
             {
@@ -122,6 +139,23 @@ namespace BackEnd.logic
             {
                 res.Resultado = false;
                 res.ListaDeErrores.Add("Producto vacio");
+                tipoRegistro = 2;
+            }
+        }
+
+        public static void ValidarContenedor(ContenedorProductoFactura contenedor, ResFactura res, ref short tipoRegistro)
+        {
+            if (contenedor == null)
+            {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("contendor nulo.");
+                tipoRegistro = 2;
+                return;
+            }
+            if (contenedor.IdRFacturaProducto <= 0)
+            {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("Contenedor vacio");
                 tipoRegistro = 2;
             }
         }

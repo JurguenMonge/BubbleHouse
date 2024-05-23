@@ -279,16 +279,6 @@ namespace BackEnd.data
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Modificar_Factura")]
-		public int Modificar_Factura([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Factura", DbType="Int")] System.Nullable<int> id_Factura, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Producto", DbType="Int")] System.Nullable<int> id_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Sesion", DbType="Int")] System.Nullable<int> id_Sesion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Num_Subtotal", DbType="Decimal(10,2)")] System.Nullable<decimal> num_Subtotal, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Num_Descuento", DbType="Decimal(10,2)")] System.Nullable<decimal> num_Descuento, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Num_Total", DbType="Decimal(10,2)")] System.Nullable<decimal> num_Total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Factura, id_Producto, id_Sesion, num_Subtotal, num_Descuento, num_Total, iDRETURN, eRRORID, eRRORDESCRIPCION);
-			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(6)));
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(7)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(8)));
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Modificar_Ingrediente")]
 		public int Modificar_Ingrediente([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Ingrediente", DbType="Int")] System.Nullable<int> id_Ingrediente, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Cate_Ingrediente", DbType="Int")] System.Nullable<int> id_Cate_Ingrediente, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Nombre_Ingrediente", DbType="NVarChar(100)")] string dsc_Nombre_Ingrediente, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Descripcion", DbType="NVarChar(MAX)")] string dsc_Descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Url_Imagen", DbType="NVarChar(MAX)")] string dsc_Url_Imagen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Num_Precio", DbType="Decimal(10,2)")] System.Nullable<decimal> num_Precio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
@@ -509,6 +499,26 @@ namespace BackEnd.data
 			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(1)));
 			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(2)));
 			eRRORDESCRIPCION = ((string)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Modificar_Factura")]
+		public int Modificar_Factura([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Factura", DbType="Int")] System.Nullable<int> id_Factura, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Num_Total", DbType="Decimal(10,2)")] System.Nullable<decimal> num_Total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Factura, num_Total, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Modificar_Productos_Factura")]
+		public int Modificar_Productos_Factura([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_R_Producto_Factura", DbType="Int")] System.Nullable<int> id_R_Producto_Factura, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_factura, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> num_subtotal, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> num_cantidad, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> num_descuento, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_R_Producto_Factura, id_factura, num_subtotal, num_cantidad, num_descuento, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(7)));
 			return ((int)(result.ReturnValue));
 		}
 	}
