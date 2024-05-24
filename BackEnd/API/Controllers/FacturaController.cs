@@ -22,7 +22,7 @@ namespace API.Controllers
             return new LogFactura().ingresarFactura(req);
         }
 
-        [System.Web.Http.HttpGet]
+        [System.Web.Http.HttpPost]
         [System.Web.Http.Route("api/factura/obtenerCompletadas")]
         public ResObtenerFactura obtenerFacturasCompletas(ReqFactura req)
         {
@@ -38,7 +38,7 @@ namespace API.Controllers
             }
             return res;
         }
-        [System.Web.Http.HttpGet]
+        [System.Web.Http.HttpPost]
         [System.Web.Http.Route("api/factura/obtenerNoPreparadas")]
         public ResObtenerFactura obtenerFacturasNoCompletadas(ReqFactura req)
         {
@@ -54,7 +54,7 @@ namespace API.Controllers
             }
             return res;
         }
-        [System.Web.Http.HttpGet]
+        [System.Web.Http.HttpPost]
         [System.Web.Http.Route("api/factura/obtenerNoPagadas")]
         public ResObtenerFactura obtenerFacturasNoPagadas(ReqFactura req)
         {

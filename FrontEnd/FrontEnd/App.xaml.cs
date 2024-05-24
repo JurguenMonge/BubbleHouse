@@ -9,7 +9,7 @@ namespace FrontEnd
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new PrincipalAdministrativa());
+            MainPage = new NavigationPage(new Login());
         }
     }
 }

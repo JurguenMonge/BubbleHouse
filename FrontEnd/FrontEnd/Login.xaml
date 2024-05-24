@@ -16,12 +16,13 @@
                 <Frame Margin="10,0,10,0" VerticalOptions="Center" BackgroundColor="#bdc0f7" BorderColor="#bdc0f7">
                     <VerticalStackLayout>
                         <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="White" Text="Correo" ></Label>
-                        <Entry x:Name="txtCorreo" TextColor="Black" Keyboard="Email" Background="White"></Entry>
+                        <Entry x:Name="txtCorreo" TextColor="Black" Keyboard="Email" Background="White" Text="gmail@gmail" ></Entry>
                         <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="White" Text="Contraseña"></Label>
-                        <Entry x:Name="txtPassword" TextColor="Black"  Keyboard="Text" IsPassword="true" Background="White"></Entry>
+                        <Entry x:Name="txtPassword" TextColor="Black"  Keyboard="Text" IsPassword="true" Background="White" Text="123"></Entry>
                     </VerticalStackLayout>
                 </Frame>
                 <Button x:Name="btnIngresar" Text="Ingresar" Clicked="btnIngresar_Clicked" BackgroundColor="#bdc0f7"></Button>
+                <ActivityIndicator x:Name="spinner" IsRunning="False" IsVisible="False" Color="White"/>
                 <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Start" TextColor="White" Text="¿Olvidaste tu contraseña?"></Label>
             </VerticalStackLayout>
         </Grid>

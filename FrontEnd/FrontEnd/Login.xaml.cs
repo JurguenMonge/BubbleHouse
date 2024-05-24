@@ -14,6 +14,8 @@ public partial class Login : ContentPage
 
     private async void btnIngresar_Clicked(object sender, EventArgs e)
     {
+        spinner.IsRunning = true;
+        spinner.IsVisible = true;
         LoginController login = new LoginController();
         try
         {
@@ -21,6 +23,7 @@ public partial class Login : ContentPage
             string nombreUsuario = Preferences.Get("UsuarioNombre", string.Empty);
             DisplayAlert("Inicio de sesión", "Bienvenido "+ nombreUsuario, "Aceptar");
             Navigation.PushAsync(new PrincipalAdministrativa());
+            Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
 
         }
         catch (Exception ex)
