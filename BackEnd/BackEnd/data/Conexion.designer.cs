@@ -219,16 +219,6 @@ namespace BackEnd.data
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Receta")]
-		public int Insertar_Receta([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_PRODUCTO", DbType="Int")] System.Nullable<int> iD_PRODUCTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_LACTEO", DbType="Int")] System.Nullable<int> iD_ING_LACTEO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_SABOR", DbType="Int")] System.Nullable<int> iD_ING_SABOR, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_AZUCAR", DbType="Int")] System.Nullable<int> iD_ING_AZUCAR, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_TOPPING", DbType="Int")] System.Nullable<int> iD_ING_TOPPING, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_BORDEADO", DbType="Int")] System.Nullable<int> iD_ING_BORDEADO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ING_BUBBLES", DbType="Int")] System.Nullable<int> iD_ING_BUBBLES, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_NOMBRE", DbType="VarChar(MAX)")] string dSC_NOMBRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_TAMANO", DbType="VarChar(50)")] string dSC_TAMANO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_PRODUCTO, iD_ING_LACTEO, iD_ING_SABOR, iD_ING_AZUCAR, iD_ING_TOPPING, iD_ING_BORDEADO, iD_ING_BUBBLES, dSC_NOMBRE, dSC_TAMANO, iDRETURN, eRRORID, eRRORDESCRIPCION);
-			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(9)));
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(10)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(11)));
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Recuperacion_Password")]
 		public int Insertar_Recuperacion_Password([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Token", DbType="NVarChar(100)")] string dsc_Token, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Correo", DbType="NVarChar(50)")] string dsc_Correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
@@ -516,6 +506,26 @@ namespace BackEnd.data
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), estado);
 			return ((ISingleResult<Obtener_FacturasResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Receta")]
+		public int Insertar_Receta([global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_NOMBRE", DbType="VarChar(MAX)")] string dSC_NOMBRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dSC_NOMBRE, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Receta_Ingrediente")]
+		public int Insertar_Receta_Ingrediente([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_RECETA", DbType="Int")] System.Nullable<int> iD_RECETA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_INGREDIENTE", DbType="Int")] System.Nullable<int> iD_INGREDIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_RECETA, iD_INGREDIENTE, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
