@@ -283,71 +283,6 @@
       <Column Name="DSC_NOMBRE_CATEGORIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.Obtener_Receta" Method="Obtener_Receta">
-    <ElementType Name="Obtener_RecetaResult">
-      <Column Name="ID_RECETA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_ING_LACTEO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_ING_SABOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_ING_AZUCAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_ING_TOPPING" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_ING_BORDEADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_ING_BUBBLES" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DSC_NOMBRE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DSC_TAMANO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-      <Column Name="ID_PRODUCTO1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_SUBCATE_PRODUCTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DSC_NOMBRE_PRODUCTO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DSC_DESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DSC_URL_IMAGEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NUM_PRECIO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="ESTADO1" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-      <Column Name="ID_INGREDIENTE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_CATE_INGREDIENTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DSC_NOMBRE_INGREDIENTE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DSC_DESCRIPCION1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DSC_URL_IMAGEN1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NUM_PRECIO1" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="ESTADO2" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-      <Column Name="ID_INGREDIENTE1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_CATE_INGREDIENTE1" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DSC_NOMBRE_INGREDIENTE1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DSC_DESCRIPCION2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DSC_URL_IMAGEN2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NUM_PRECIO2" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="ESTADO3" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-      <Column Name="ID_INGREDIENTE2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_CATE_INGREDIENTE2" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DSC_NOMBRE_INGREDIENTE2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DSC_DESCRIPCION3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DSC_URL_IMAGEN3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NUM_PRECIO3" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="ESTADO4" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-      <Column Name="ID_INGREDIENTE3" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_CATE_INGREDIENTE3" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DSC_NOMBRE_INGREDIENTE3" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DSC_DESCRIPCION4" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DSC_URL_IMAGEN4" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NUM_PRECIO4" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="ESTADO5" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-      <Column Name="ID_INGREDIENTE4" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_CATE_INGREDIENTE4" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DSC_NOMBRE_INGREDIENTE4" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DSC_DESCRIPCION5" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DSC_URL_IMAGEN5" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NUM_PRECIO5" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="ESTADO6" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-      <Column Name="ID_INGREDIENTE5" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_CATE_INGREDIENTE5" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DSC_NOMBRE_INGREDIENTE5" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DSC_DESCRIPCION6" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DSC_URL_IMAGEN6" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NUM_PRECIO6" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="ESTADO7" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.Obtener_Roles" Method="Obtener_Roles">
     <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
@@ -557,5 +492,14 @@
     <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Obtener_Receta" Method="Obtener_Receta">
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="Obtener_RecetaResult">
+      <Column Name="DSC_NOMBRE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Ingredientes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

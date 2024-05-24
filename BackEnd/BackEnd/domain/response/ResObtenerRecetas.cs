@@ -8,6 +8,6 @@ namespace BackEnd.domain.response
 {
     public class ResObtenerRecetas : ResBase
     {
-        public List<Receta> listaRecetas = new List<Receta>();
+        public List<RecetaCompleta> listaRecetas = new List<RecetaCompleta>();
     }
 }

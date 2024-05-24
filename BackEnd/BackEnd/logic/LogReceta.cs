@@ -187,21 +187,21 @@ namespace BackEnd.logic
         public ResObtenerRecetas obtenerRecetas()
         {
             ResObtenerRecetas res = new ResObtenerRecetas();
-            /*
+            
             short tipoRegistro = 0; //1 Exitoso - 2 Error en logica - 3 Error inesperado
             try
             {
                 ConexionDataContext linq = new ConexionDataContext();
                 int? idError = 0;
                 String errorBD = "";
-                var linqRoles = linq.Obtener_Receta();
+                var linqReceta = linq.Obtener_Receta(ref idError, ref errorBD);
                 if (idError == 0)
                 {
                     res.Resultado = true;
                     tipoRegistro = 1;
-                    foreach (var item in linqRoles)
+                    foreach (var item in linqReceta)
                     {
-                        Receta receta = factoryArmarReceta(item);
+                        RecetaCompleta receta = factoryArmarReceta(item);
                         if (receta != null)
                         {
                             res.listaRecetas.Add(receta);
@@ -225,7 +225,7 @@ namespace BackEnd.logic
             {
                 utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, "No hay request", JsonConvert.SerializeObject(res));
             }
-            */
+            
             return res;
         }
 
@@ -236,83 +236,15 @@ namespace BackEnd.logic
             rol.tipoRol = usuarioLinq.DSC_TIPO_ROL;
             return rol;
         }
-        private Receta factoryArmarReceta(Obtener_RecetaResult usuarioLinq)
+        private RecetaCompleta factoryArmarReceta(Obtener_RecetaResult recetaLinq)
         {
-            Receta receta = new Receta();
-            /*
-            receta.idReceta = usuarioLinq.ID_RECETA;
-            receta.dscNombre = usuarioLinq.DSC_NOMBRE;
-            receta.dscTamano = usuarioLinq.DSC_TAMANO;
-            receta.idIngLacteo = (int)usuarioLinq.ID_ING_LACTEO;
-            receta.idIngSabor = (int)usuarioLinq.ID_ING_SABOR;
-            receta.idIngAzucar = (int)usuarioLinq.ID_ING_AZUCAR;
-            receta.idIngBordeado = (int)usuarioLinq.ID_ING_BORDEADO;
-            receta.idIngBubbles = (int)usuarioLinq.ID_ING_BUBBLES;
-            receta.idIngTopping = (int)usuarioLinq.ID_ING_TOPPING;
-
-                try
-                {
-                   ConexionDataContext linq = new ConexionDataContext();
-                    var linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_LACTEO);
-                    foreach (var item in linqingredientes)
-                    {
-                            Ingrediente ingrediente = factoryArmarIngredientes(item);
-                            if (ingrediente != null)
-                            {
-                                receta.listaIngrediente.Add(ingrediente);
-                            }
-                    }
-                    linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_SABOR);
-                    foreach (var item in linqingredientes)
-                    {
-                        Ingrediente ingrediente = factoryArmarIngredientes(item);
-                        if (ingrediente != null)
-                        {
-                            receta.listaIngrediente.Add(ingrediente);
-                        }
-                    }
-                    linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_AZUCAR);
-                    foreach (var item in linqingredientes)
-                    {
-                        Ingrediente ingrediente = factoryArmarIngredientes(item);
-                        if (ingrediente != null)
-                        {
-                            receta.listaIngrediente.Add(ingrediente);
-                        }
-                    }
-                    linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_BORDEADO);
-                    foreach (var item in linqingredientes)
-                    {
-                        Ingrediente ingrediente = factoryArmarIngredientes(item);
-                        if (ingrediente != null)
-                        {
-                            receta.listaIngrediente.Add(ingrediente);
-                        }
-                    }
-                    linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_BUBBLES);
-                    foreach (var item in linqingredientes)
-                    {
-                        Ingrediente ingrediente = factoryArmarIngredientes(item);
-                        if (ingrediente != null)
-                        {
-                            receta.listaIngrediente.Add(ingrediente);
-                        }
-                    }
-                    linqingredientes = linq.Obtener_Ingrediente_ById((int)usuarioLinq.ID_ING_TOPPING);
-                    foreach (var item in linqingredientes)
-                    {
-                        Ingrediente ingrediente = factoryArmarIngredientes(item);
-                        if (ingrediente != null)
-                        {
-                            receta.listaIngrediente.Add(ingrediente);
-                        }
-                    }
+            RecetaCompleta receta = new RecetaCompleta();
+            receta.nombreReceta = recetaLinq.DSC_NOMBRE;
+            receta.fecha = (DateTime)recetaLinq.FECHA;
+            if (!string.IsNullOrEmpty(recetaLinq.Ingredientes))
+            {
+                receta.ingredientes = recetaLinq.Ingredientes.Split(',').Select(i => i.Trim()).ToList();
             }
-                catch
-                {
-
-                }
-            */
             return receta;
         }
 
