@@ -32,9 +32,6 @@ namespace BackEnd.logic
                             factura = factoryArmarFactura(item); // Crea una nueva instancia de factura
                             res.listaFacturas.Add(factura);
                         }
-
-                        ContenedorProductoFactura contenedor = factoryArmarProducto(item); // Crea el contenedor de producto
-                        factura.productosList.Add(contenedor); // Agrega el contenedor a la lista de productos de la factura
                     }
                 }
                 res.Resultado = true;
@@ -50,7 +47,37 @@ namespace BackEnd.logic
             }
             return res;
         }
-                                                
+
+        public ResObtenerProductosFactura obtenerProductosFactura(Factura fac)
+        {
+            ResObtenerProductosFactura res = new ResObtenerProductosFactura();
+            short tipoRegistro = 0;
+            try
+            {
+                using (ConexionDataContext linq = new ConexionDataContext())
+                {
+                    var facturaslinq = linq.Obtener_Productos_Facturas((byte?)fac.idFactura);
+                    foreach (var item in facturaslinq)
+                    {
+                        ContenedorProducto contenedor = factoryArmarProducto(item);
+                        res.Contenedores.Add(contenedor);
+                    }
+                }
+                res.Resultado = true;
+            }
+            catch (Exception ex)
+            {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("Ocurrió un error al obtener la lista de ingredientes");
+                tipoRegistro = 3;
+            }
+            finally
+            {
+                utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, "No hay request", JsonConvert.SerializeObject(res));
+            }
+            return res;
+        }
+
         public ResFactura ingresarFactura(ReqFactura req)
         {
             ResFactura res = new ResFactura();
@@ -406,22 +433,21 @@ namespace BackEnd.logic
             factura.estado = (byte)facturasLinq.ESTADO;
             return factura;
         }
-        private ContenedorProductoFactura factoryArmarProducto(Obtener_FacturasResult facturasLinq)
+        private ContenedorProducto factoryArmarProducto(Obtener_Productos_FacturasResult facturasLinq)
         {
-            Producto producto = new Producto();
-            ContenedorProductoFactura contenedor = new ContenedorProductoFactura();
-            producto.idProducto = facturasLinq.ID_PRODUCTO;
-            producto.nombreProducto = facturasLinq.DSC_NOMBRE_PRODUCTO;
-            producto.descripcion = facturasLinq.DSC_DESCRIPCION;
-            producto.urlImgen = facturasLinq.DSC_URL_IMAGEN;
-            producto.precio = (float)facturasLinq.NUM_PRECIO;
-            producto.estado = true;
+            ContenedorProducto contenedor = new ContenedorProducto();
+
+            contenedor.idProducto = facturasLinq.ID_PRODUCTO;
+            contenedor.nombreProducto = facturasLinq.DSC_NOMBRE_PRODUCTO;
+            contenedor.descripcion = facturasLinq.DSC_DESCRIPCION;
+            contenedor.urlImgen = facturasLinq.DSC_URL_IMAGEN;
+            contenedor.precio = (float)facturasLinq.NUM_PRECIO;
+            contenedor.estado = true;
             if(facturasLinq.ID_RECETA != 0)
             {///////Codigo de receta faltante
                 Receta receta = new Receta();
-                producto.receta = receta;
+                contenedor.informacionReceta = "Informacion de Receta";
             }
-            contenedor.producto = producto;
             contenedor.IdRFacturaProducto = facturasLinq.ID_R_FACTURA_PRODUCTO;
             contenedor.idFactura = facturasLinq.ID_FACTURA;
             contenedor.numSubtotal = (decimal)facturasLinq.NUM_SUBTOTAL;

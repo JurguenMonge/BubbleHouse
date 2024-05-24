@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:FrontEnd.Entidades.Entidad"
              x:Class="FrontEnd.AceptarFacturas"
              Title="AceptarFacturas">
-    <Grid Margin="10" x:Name="contenedor" BackgroundColor="#a9dff0">
+    <Grid Margin="10,10,10,10" x:Name="contenedor" BackgroundColor="#a9dff0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -16,9 +16,6 @@
         </Grid.ColumnDefinitions>
 
         <Label Grid.Row="0" Grid.ColumnSpan="2" TextColor="White" FontAttributes="Bold" FontSize="Title" Text="Pedidos por Cobrar" HorizontalOptions="Center" VerticalOptions="Center" />
-
-        <Button Grid.Row="1" Grid.Column="0" x:Name="btnTarjeta" WidthRequest="150" HeightRequest="30" BackgroundColor="Black" Text="Tarjeta" TextColor="White" Clicked="btnTarjeta_Clicked" HorizontalOptions="End" VerticalOptions="Start"/>
-        <Button Grid.Row="1" Grid.Column="1" x:Name="btnEfectivo" WidthRequest="150" HeightRequest="30" BackgroundColor="White" Text="Efectivo" TextColor="Black" Clicked="btnEfectivo_Clicked" HorizontalOptions="Start" VerticalOptions="Start"/>
 
         <!-- Frame with a Card -->
         <CollectionView Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding listaDeFacturas}">

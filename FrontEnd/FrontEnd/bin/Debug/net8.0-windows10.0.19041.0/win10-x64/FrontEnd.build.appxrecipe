@@ -199,6 +199,9 @@
     <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cruz.scale-100.png">
+      <PackagePath>cruz.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -213,6 +216,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo_celeste.scale-100.png">
+      <PackagePath>logo_celeste.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\FrontEnd.deps.json">
       <PackagePath>FrontEnd.deps.json</PackagePath>

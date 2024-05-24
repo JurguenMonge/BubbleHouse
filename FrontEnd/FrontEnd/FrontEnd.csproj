@@ -87,6 +87,9 @@
 	  <MauiXaml Update="AceptarFacturas.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="DespliegueFacturaNoPagada.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="FormularioCategoriaProducto.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

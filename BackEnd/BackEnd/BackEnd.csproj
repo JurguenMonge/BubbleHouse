@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="domain\domain\CategoriaIngrediente.cs" />
     <Compile Include="domain\domain\CategoriaProducto.cs" />
+    <Compile Include="domain\domain\ContenedorProducto.cs" />
     <Compile Include="domain\domain\ContenedorProductoFactura.cs" />
     <Compile Include="domain\domain\Factura.cs" />
     <Compile Include="domain\domain\Ingrediente.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="domain\response\ResObtenerFactura.cs" />
     <Compile Include="domain\response\ResObtenerIngredientes.cs" />
     <Compile Include="domain\response\ResObtenerProducto.cs" />
+    <Compile Include="domain\response\ResObtenerProductosFactura.cs" />
     <Compile Include="domain\response\ResObtenerRecetas.cs" />
     <Compile Include="domain\response\ResObtenerSubCategoriaProducto.cs" />
     <Compile Include="domain\response\ResProducto.cs" />
