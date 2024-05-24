@@ -70,6 +70,22 @@ namespace API.Controllers
             }
             return res;
         }
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.Route("api/factura/obtenerProductos")]
+        public ResObtenerProductosFactura obtenerProductosFactura(ReqFactura req)
+        {
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResObtenerProductosFactura res = new ResObtenerProductosFactura();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogFactura().obtenerProductosFactura(req.Factura);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
+        }
 
         [System.Web.Http.HttpPut]
         [System.Web.Http.Route("api/factura/modificar")]

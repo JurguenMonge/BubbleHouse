@@ -494,13 +494,6 @@ namespace BackEnd.data
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Facturas")]
-		public ISingleResult<Obtener_FacturasResult> Obtener_Facturas([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="TinyInt")] System.Nullable<byte> estado)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), estado);
-			return ((ISingleResult<Obtener_FacturasResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Receta")]
 		public int Insertar_Receta([global::System.Data.Linq.Mapping.ParameterAttribute(Name="DSC_NOMBRE", DbType="VarChar(MAX)")] string dSC_NOMBRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
@@ -528,6 +521,20 @@ namespace BackEnd.data
 			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(0)));
 			eRRORDESCRIPCION = ((string)(result.GetParameterValue(1)));
 			return ((ISingleResult<Obtener_RecetaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Facturas")]
+		public ISingleResult<Obtener_FacturasResult> Obtener_Facturas([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="TinyInt")] System.Nullable<byte> estado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), estado);
+			return ((ISingleResult<Obtener_FacturasResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Productos_Facturas")]
+		public ISingleResult<Obtener_Productos_FacturasResult> Obtener_Productos_Facturas([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="TinyInt")] System.Nullable<byte> id_Factura)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Factura);
+			return ((ISingleResult<Obtener_Productos_FacturasResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -2371,6 +2378,68 @@ namespace BackEnd.data
 		}
 	}
 	
+	public partial class Obtener_RecetaResult
+	{
+		
+		private string _DSC_NOMBRE;
+		
+		private System.Nullable<System.DateTime> _FECHA;
+		
+		private string _Ingredientes;
+		
+		public Obtener_RecetaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE", DbType="NVarChar(MAX)")]
+		public string DSC_NOMBRE
+		{
+			get
+			{
+				return this._DSC_NOMBRE;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE != value))
+				{
+					this._DSC_NOMBRE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FECHA
+		{
+			get
+			{
+				return this._FECHA;
+			}
+			set
+			{
+				if ((this._FECHA != value))
+				{
+					this._FECHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ingredientes", DbType="NVarChar(MAX)")]
+		public string Ingredientes
+		{
+			get
+			{
+				return this._Ingredientes;
+			}
+			set
+			{
+				if ((this._Ingredientes != value))
+				{
+					this._Ingredientes = value;
+				}
+			}
+		}
+	}
+	
 	public partial class Obtener_FacturasResult
 	{
 		
@@ -2381,28 +2450,6 @@ namespace BackEnd.data
 		private System.Nullable<System.DateTime> _FECHA;
 		
 		private System.Nullable<byte> _ESTADO;
-		
-		private int _ID_R_FACTURA_PRODUCTO;
-		
-		private System.Nullable<int> _NUM_CANTIDAD;
-		
-		private System.Nullable<decimal> _NUM_DESCUENTO;
-		
-		private System.Nullable<decimal> _NUM_SUBTOTAL;
-		
-		private int _ID_PRODUCTO;
-		
-		private string _DSC_NOMBRE_PRODUCTO;
-		
-		private string _DSC_DESCRIPCION;
-		
-		private string _DSC_URL_IMAGEN;
-		
-		private System.Nullable<int> _ID_RECETA;
-		
-		private System.Nullable<int> _ID_SUBCATE_PRODUCTO;
-		
-		private System.Nullable<decimal> _NUM_PRECIO;
 		
 		public Obtener_FacturasResult()
 		{
@@ -2471,6 +2518,38 @@ namespace BackEnd.data
 				}
 			}
 		}
+	}
+	
+	public partial class Obtener_Productos_FacturasResult
+	{
+		
+		private int _ID_R_FACTURA_PRODUCTO;
+		
+		private System.Nullable<int> _NUM_CANTIDAD;
+		
+		private System.Nullable<decimal> _NUM_DESCUENTO;
+		
+		private System.Nullable<decimal> _NUM_SUBTOTAL;
+		
+		private int _ID_FACTURA;
+		
+		private int _ID_PRODUCTO;
+		
+		private string _DSC_NOMBRE_PRODUCTO;
+		
+		private string _DSC_DESCRIPCION;
+		
+		private string _DSC_URL_IMAGEN;
+		
+		private System.Nullable<int> _ID_RECETA;
+		
+		private System.Nullable<int> _ID_SUBCATE_PRODUCTO;
+		
+		private System.Nullable<decimal> _NUM_PRECIO;
+		
+		public Obtener_Productos_FacturasResult()
+		{
+		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_R_FACTURA_PRODUCTO", DbType="Int NOT NULL")]
 		public int ID_R_FACTURA_PRODUCTO
@@ -2532,6 +2611,22 @@ namespace BackEnd.data
 				if ((this._NUM_SUBTOTAL != value))
 				{
 					this._NUM_SUBTOTAL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_FACTURA", DbType="Int NOT NULL")]
+		public int ID_FACTURA
+		{
+			get
+			{
+				return this._ID_FACTURA;
+			}
+			set
+			{
+				if ((this._ID_FACTURA != value))
+				{
+					this._ID_FACTURA = value;
 				}
 			}
 		}
@@ -2644,68 +2739,6 @@ namespace BackEnd.data
 				if ((this._NUM_PRECIO != value))
 				{
 					this._NUM_PRECIO = value;
-				}
-			}
-		}
-	}
-	
-	public partial class Obtener_RecetaResult
-	{
-		
-		private string _DSC_NOMBRE;
-		
-		private System.Nullable<System.DateTime> _FECHA;
-		
-		private string _Ingredientes;
-		
-		public Obtener_RecetaResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE", DbType="NVarChar(MAX)")]
-		public string DSC_NOMBRE
-		{
-			get
-			{
-				return this._DSC_NOMBRE;
-			}
-			set
-			{
-				if ((this._DSC_NOMBRE != value))
-				{
-					this._DSC_NOMBRE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FECHA
-		{
-			get
-			{
-				return this._FECHA;
-			}
-			set
-			{
-				if ((this._FECHA != value))
-				{
-					this._FECHA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ingredientes", DbType="NVarChar(MAX)")]
-		public string Ingredientes
-		{
-			get
-			{
-				return this._Ingredientes;
-			}
-			set
-			{
-				if ((this._Ingredientes != value))
-				{
-					this._Ingredientes = value;
 				}
 			}
 		}
