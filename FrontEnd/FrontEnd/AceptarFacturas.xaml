@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FrontEnd.Entidades.Entidad"
+             x:Class="FrontEnd.AceptarFacturas"
+             Title="AceptarFacturas">
+    <Grid Margin="10" x:Name="contenedor" BackgroundColor="#a9dff0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.ColumnSpan="2" TextColor="White" FontAttributes="Bold" FontSize="Title" Text="Pedidos por Cobrar" HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <Button Grid.Row="1" Grid.Column="0" x:Name="btnTarjeta" WidthRequest="150" HeightRequest="30" BackgroundColor="Black" Text="Tarjeta" TextColor="White" Clicked="btnTarjeta_Clicked" HorizontalOptions="End" VerticalOptions="Start"/>
+        <Button Grid.Row="1" Grid.Column="1" x:Name="btnEfectivo" WidthRequest="150" HeightRequest="30" BackgroundColor="White" Text="Efectivo" TextColor="Black" Clicked="btnEfectivo_Clicked" HorizontalOptions="Start" VerticalOptions="Start"/>
+
+        <!-- Frame with a Card -->
+        <CollectionView Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding listaDeFacturas}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="10,0,10,0" VerticalOptions="Center" BackgroundColor="#bdc0f7" BorderColor="#bdc0f7" CornerRadius="50" MaximumWidthRequest="550">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Frame.GestureRecognizers>
+                        <VerticalStackLayout>
+                            <Label Text="{Binding idFactura, StringFormat='Numero de Factura: {0}'}" FontSize="20" TextColor="White" />
+                            <Label Text="{Binding fecha, StringFormat='Fecha: {0}'}" FontSize="20" TextColor="White" />
+                            <Label Text="{Binding numTotal, StringFormat='Total: {0}'}" FontSize="20" TextColor="White" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

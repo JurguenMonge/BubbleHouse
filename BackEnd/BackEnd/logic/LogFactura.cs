@@ -50,7 +50,7 @@ namespace BackEnd.logic
             }
             return res;
         }
-
+                                                
         public ResFactura ingresarFactura(ReqFactura req)
         {
             ResFactura res = new ResFactura();

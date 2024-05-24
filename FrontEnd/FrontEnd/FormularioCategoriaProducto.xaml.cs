@@ -1,6 +1,8 @@
 using FrontEnd.Controller;
 using FrontEnd.Entidades.Entidad;
 using FrontEnd.Entidades.Response;
+using Newtonsoft.Json;
+using System.ComponentModel;
 
 namespace FrontEnd;
 
@@ -9,7 +11,72 @@ public partial class FormularioCategoriaProducto : ContentPage
 	public FormularioCategoriaProducto()
 	{
 		InitializeComponent();
-	}
+        CargarFacturas();
+    }
+
+    private List<Factura> _listaDeFacturas = new List<Factura>();
+
+    private async void CargarFacturas()
+    {
+        listaDeFacturas = await FacturasDesdeApi();
+        BindingContext = this;
+    }
+
+    private async Task<List<Factura>> FacturasDesdeApi()
+    {
+        List<Factura> retornarPublicacionApi = new List<Factura>();
+        String laURL = "https://localhost:44311/api/factura/obtenerNoPagadas";
+
+        try
+        {
+
+            using (HttpClient httpClient = new HttpClient())
+            {
+                var response = await httpClient.GetAsync(laURL);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    ResObtenerFactura res = JsonConvert.DeserializeObject<ResObtenerFactura>(responseContent);
+
+                    if (res.Resultado)
+                    {
+                        retornarPublicacionApi = res.listaFacturas;
+                        Console.WriteLine(retornarPublicacionApi);
+                    }
+                    else
+                    {
+                        Console.WriteLine("No se encontró el backend");
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error interno");
+        }
+
+        return retornarPublicacionApi;
+    }
+
+    #region refrezcarCompomentes
+    public List<Factura> listaDeFacturas
+    {
+        get { return _listaDeFacturas; }
+        set
+        {
+            _listaDeFacturas = value;
+            OnPropertyChanged(nameof(listaDeFacturas));
+        }
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected virtual void OnPropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+    #endregion
 
     private async void btnIngresar_ClickedAsync(object sender, EventArgs e)
     {
