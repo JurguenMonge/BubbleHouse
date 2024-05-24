@@ -10,28 +10,45 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button x:Name="btnCrearPractica"
-            Grid.Row="0"
-            BackgroundColor="#BDC0F7"
-            Clicked="btnCrearSubCategoria_Clicked"
-            Text="Nueva SubCategoría de Producto"
-            TextColor="White"
-            BorderColor="White"
-            Padding="10"
-            Margin="10"/>
+            <Frame Margin="12"
+                   BorderColor="Azure"
+                   CornerRadius="5"
+                   HasShadow="True"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand">
+                <Frame.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Offset="0" Color="#BDC0F7"/>
+                        <GradientStop Offset="1" Color="#BDC0F7"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                </Frame.GestureRecognizers>
+                <VerticalStackLayout>
+                    <Image Source="cruz.png" 
+                           WidthRequest="50"
+                           HeightRequest="50"
+                           />
+                    <Label x:Name="btnCrearPractica"
+                            Text="Nueva SubCategoría de Producto"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            Padding="10"
+                            Margin="10"
+                           HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Frame>
 
             <CollectionView Grid.Row="1"
-                    SelectionMode="Multiple"
                     ItemsSource="{Binding listaSubCategoriasProducto}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
                             <Frame Margin="12"
-                           BorderColor="Azure"
-                           CornerRadius="5"
-                           HasShadow="True"
-                           HorizontalOptions="FillAndExpand"
-                           VerticalOptions="FillAndExpand">
+                                   BorderColor="Azure"
+                                   CornerRadius="5"
+                                   HasShadow="True">
                                 <Frame.Background>
                                     <LinearGradientBrush EndPoint="1,0">
                                         <GradientStop Offset="0" Color="#BDC0F7"/>
@@ -41,34 +58,41 @@
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                                 </Frame.GestureRecognizers>
-                                <VerticalStackLayout>
-                                    <Label x:Name="txtid"
-                                   FontSize="15"
-                                   HorizontalTextAlignment="Start"
-                                   Text="{Binding idSubcategoriaProducto}"
-                                   VerticalOptions="Center"
-                                   IsVisible="False"
-                                   TextColor="white"/>
-                                    <Label x:Name="txtIdCategoria"
-                                    IsVisible="False"
-                                    FontSize="15"
-                                    HorizontalTextAlignment="Start"
-                                    Text="{Binding cateProductoId}"
-                                    VerticalOptions="Center"
-                                    TextColor="white"/>
+                                <Grid >
+                                    <StackLayout>                                    <Label x:Name="txtid"
+                                           Text="{Binding idSubcategoriaProducto}"
+                                           IsVisible="False"/>
+                                    <Label x:Name="lblIdCategoria"
+                                           Text="{Binding cateProductoId}"
+                                           IsVisible="False"/>
+                                    <Label x:Name="lblNombreCategoria"
+                                           FontSize="15"
+                                           HorizontalTextAlignment="Start"
+                                           Text="{Binding dscNombreCategoria}"
+                                           VerticalOptions="Center"
+                                           TextColor="white"/>
                                     <Label x:Name="txtNombre"
-                                   FontSize="15"
-                                   HorizontalTextAlignment="Start"
-                                   Text="{Binding dscNombreSubCategoria}"
-                                   VerticalOptions="Center"
-                                   TextColor="white"/>
-                                    <Label x:Name="txtestado"
-                                   FontSize="15"
-                                   HorizontalTextAlignment="Start"
-                                   Text="{Binding estado}"
-                                   VerticalOptions="Center"
-                                   TextColor="white"/>
-                                </VerticalStackLayout>
+                                           FontSize="15"
+                                           HorizontalTextAlignment="Start"
+                                           Text="{Binding dscNombreSubCategoria}"
+                                           VerticalOptions="Center"
+                                           TextColor="white"/>
+                                        
+                                    </StackLayout>
+
+                                    <HorizontalStackLayout HorizontalOptions="End">
+                                            <Label Text="Activa"
+                                               FontSize="16"
+                                               TextColor="white"
+                                               Padding="5"
+                                               HorizontalTextAlignment="End"/>
+                                            <Switch x:Name="estado"
+                                                    IsToggled="True"
+                                                    HorizontalOptions="End"
+                                                    IsEnabled="False"
+                                                    OnColor="White"/>
+                                        </HorizontalStackLayout>
+                                </Grid>
                             </Frame>
                         </StackLayout>
                     </DataTemplate>

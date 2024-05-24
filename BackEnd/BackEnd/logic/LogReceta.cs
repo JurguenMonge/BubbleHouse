@@ -17,7 +17,7 @@ namespace BackEnd.logic
         public ResReceta validaciones(ReqReceta req)
         {
             ResReceta res = new ResReceta();
-            /*
+            
             ValidacionesGenericas validacionesGenericas = new ValidacionesGenericas();
             var result = validacionesGenericas.validarString(req.Receta.dscNombre);
             if (result == 1)
@@ -28,30 +28,8 @@ namespace BackEnd.logic
             else if (result == 2)
             {
                 res.Resultado = false;
-                res.ListaDeErrores.Add("el Nombre no debe contener caracteres especiales");
+                res.ListaDeErrores.Add("El Nombre no debe contener caracteres especiales");
             }
-            result = validacionesGenericas.validarString(req.Receta.dscTamano);
-            if (result == 1)
-            {
-                res.Resultado = false;
-                res.ListaDeErrores.Add("Tamano faltante");
-            }
-            else if (result == 2)
-            {
-                res.Resultado = false;
-                res.ListaDeErrores.Add("el Tamano no debe contener caracteres especiales");
-            }
-            if (validacionesGenericas.validarInt(req.Receta.idIngLacteo) == 1)
-            {
-                res.Resultado = false;
-                res.ListaDeErrores.Add("lacteo faltante");
-            }
-            if (validacionesGenericas.validarInt(req.Receta.idIngSabor) == 1)
-            {
-                res.Resultado = false;
-                res.ListaDeErrores.Add("sabor faltante");
-            }
-            */
             return res;
         }
 
@@ -60,7 +38,7 @@ namespace BackEnd.logic
         {
             short tipoRegistro = 0;
             ResReceta res = new ResReceta();
-            /*
+            
             try
             {
                 if (req != null)
@@ -74,7 +52,7 @@ namespace BackEnd.logic
                     foreach (var item in linqSesion)
                     {
                         Rol rol = factoryArmarRol(item);
-                        if (rol != null && rol.tipoRol == "Administrador") 
+                        if (rol != null && (rol.tipoRol == "Super Administrador" || rol.tipoRol == "Administrador")) 
                         {
                             permisos = true;
                         }
@@ -84,12 +62,40 @@ namespace BackEnd.logic
                         res = validaciones(req);
                         if (!res.ListaDeErrores.Any())
                         {
-                            linq.Insertar_Receta(req.Receta.producto.idProducto,req.Receta.idIngLacteo,req.Receta.idIngSabor,
-                                req.Receta.idIngAzucar,req.Receta.idIngTopping,req.Receta.idIngBordeado,req.Receta.idIngBubbles,
-                                req.Receta.dscNombre,req.Receta.dscTamano,ref idReturn, ref idError, ref errorBD);
+                            idReturn = 0;
+                            idError = 0;
+                            errorBD = "";
+                            linq.Insertar_Receta(req.Receta.dscNombre,ref idReturn, ref idError, ref errorBD);
                             if (idError == 0)
                             {
-                                res.Resultado = true;
+                                int? idReturnIng = 0;
+                                int? idErrorIng = 0;
+                                String errorBDIng = "";
+                                ResIngrediente resInge = new ResIngrediente();
+                                foreach (Ingrediente ing in req.Receta.listaIngrediente)
+                                {
+                                    ValidacionesIngrediente.ValidarCategoria(ing,resInge,ref tipoRegistro);
+                                    ValidacionesIngrediente.ValidarNombre(ing, resInge, ref tipoRegistro);
+                                    ValidacionesIngrediente.ValidarDescripcion(ing, resInge, ref tipoRegistro);
+                                    ValidacionesIngrediente.ValidarUrlImagen(ing, resInge, ref tipoRegistro);
+                                    ValidacionesIngrediente.ValidarPrecio(ing, resInge, ref tipoRegistro);
+                                    if (!res.ListaDeErrores.Any())
+                                    {
+                                        linq.Insertar_Receta_Ingrediente(idReturn,ing.idIngrediente, 
+                                            ref idReturnIng, ref idErrorIng, ref errorBDIng);
+                                        if (idErrorIng != 0)
+                                        {
+                                            res.Resultado = false;
+                                            res.ListaDeErrores.Add(errorBDIng);
+                                            tipoRegistro = 2;
+                                            break;
+                                        }
+                                    }
+                                }
+                                if (idErrorIng == 0)
+                                {
+                                    res.Resultado = true;
+                                }
                             }
                             else
                             {
@@ -124,7 +130,7 @@ namespace BackEnd.logic
             {
                 utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, JsonConvert.SerializeObject(req), JsonConvert.SerializeObject(res));
             }
-            */
+            
             return res; 
         }
 

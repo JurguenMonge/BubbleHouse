@@ -6,17 +6,17 @@
     <ScrollView>
         <Grid x:Name="Contenedor" BackgroundColor="#a9dff0" >
             <VerticalStackLayout Spacing="1" Margin="40,40,40,0" Padding="10">
-                <Frame Margin="10,0,10,0" VerticalOptions="Center" BackgroundColor="#bdc0f7" BorderColor="#bdc0f7" CornerRadius="50">
+                <Frame Margin="10,0,10,0" VerticalOptions="Center" BackgroundColor="#bdc0f7" BorderColor="Azure" CornerRadius="50">
                     <VerticalStackLayout Margin="10,0,10,0" Spacing="10">
                         <Label x:Name="lblTitulo" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" TextColor="White" Text="Crear Subcategoría de Producto"/>
-                        <Label FontAttributes="Bold" TextColor="White" Text="Categoría"></Label>
-                        <Picker x:Name="CategoryPicker"
-                            FontAttributes="Bold"
-                            FontSize="12"
-                            VerticalTextAlignment="Center"
-                            ItemsSource="{Binding listaDeCategoriasProducto}"
-                            ItemDisplayBinding="{Binding dscNombreCategoria}"
-                            SelectedItem="{Binding CategoriaProducto}"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Categoría del Producto"></Label>
+                        <Picker x:Name="pickCategoria"
+                                FontAttributes="Bold"
+                                FontSize="12"
+                                VerticalTextAlignment="Center"
+                                SelectedIndexChanged="pickCategoria_SelectedIndexChanged"
+                                Focused="pickCategoria_Focused"
+                                />
                         <Label FontAttributes="Bold" TextColor="White" Text="Nombre de subcategoría"></Label>
                         <Entry x:Name="txtNombre"  Keyboard="Text" Background="White" TextColor="Black"></Entry>
                         <Button x:Name="btnIngresar" Text="Guardar" Clicked="btnIngresar_ClickedAsync" BackgroundColor="#414BB2"></Button>
