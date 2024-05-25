@@ -6,6 +6,7 @@ using BackEnd.domain.response;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -216,7 +217,8 @@ namespace BackEnd.logic
             }
             return res;
         }
-        public ResFactura eliminarFactura(ReqFactura req)
+
+        public ResFactura modificarEstadoFactura(ReqFactura req, int estado)
         {
             ResFactura res = new ResFactura();
             short tipoRegistro = 0;
@@ -225,15 +227,49 @@ namespace BackEnd.logic
                 ValidacionesFactura.ValidarFactura(req.Factura, res, ref tipoRegistro);
                 ValidacionesFactura.ValidarFecha(req.Factura, res, ref tipoRegistro);
                 ValidacionesFactura.ValidarTotal(req.Factura, res, ref tipoRegistro);
-                foreach (ContenedorProductoFactura cont in req.Factura.productosList)
+                if (!res.ListaDeErrores.Any())
                 {
-                    ValidacionesFactura.ValidarContenedor(cont, res, ref tipoRegistro);
-                    ValidacionesFactura.ValidarNumSubTotal(cont, res, ref tipoRegistro);
-                    ValidacionesFactura.ValidarDescuento(cont, res, ref tipoRegistro);
-                    ValidacionesFactura.ValidarCantidad(cont, res, ref tipoRegistro);
-                    ValidacionesFactura.ValidarPrecio(cont.producto, res, ref tipoRegistro);
-                    ValidacionesFactura.ValidarProducto(cont.producto, res, ref tipoRegistro);
+                    using (ConexionDataContext linq = new ConexionDataContext())
+                    {
+                        int? idReturn = 0;
+                        int? idError = 0;
+                        bool fallo = false;
+                        String errorBD = "";
+                        linq.Modificar_Estado_Factura(req.Factura.idFactura, (decimal?)req.Factura.numTotal, (byte?)estado, ref idReturn, ref idError, ref errorBD);
+                        if (idError == 0)
+                        {
+                            res.Resultado = true;
+                        }
+                        else
+                        {
+                            res.Resultado = false;
+                            res.ListaDeErrores.Add("Ocurrió un error al modificar la factura");
+                            tipoRegistro = 3;
+                        }
+
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("Ocurrió un error al obtener modificar una factura");
+                tipoRegistro = 3;
+            }
+            finally
+            {
+                utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, "No hay request", JsonConvert.SerializeObject(res));
+            }
+            return res;
+        }
+
+        public ResFactura eliminarFactura(ReqFactura req)
+        {
+            ResFactura res = new ResFactura();
+            short tipoRegistro = 0;
+            try
+            {
+                ValidacionesFactura.ValidarFactura(req.Factura, res, ref tipoRegistro);
                 if (!res.ListaDeErrores.Any())
                 {
                     using (ConexionDataContext linq = new ConexionDataContext())
@@ -383,11 +419,7 @@ namespace BackEnd.logic
             short tipoRegistro = 0;
             try
             {
-                ValidacionesFactura.ValidarNumSubTotal(req.contenedor, res, ref tipoRegistro);
-                ValidacionesFactura.ValidarDescuento(req.contenedor, res, ref tipoRegistro);
-                ValidacionesFactura.ValidarCantidad(req.contenedor, res, ref tipoRegistro);
-                ValidacionesFactura.ValidarPrecio(req.contenedor.producto, res, ref tipoRegistro);
-                ValidacionesFactura.ValidarProducto(req.contenedor.producto, res, ref tipoRegistro);
+                ValidacionesFactura.ValidarContenedor(req.contenedor, res, ref tipoRegistro);
                 if (!res.ListaDeErrores.Any())
                 {
                     using (ConexionDataContext linq = new ConexionDataContext())

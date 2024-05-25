@@ -509,4 +509,13 @@
       <Column Name="DSC_NOMBRE_CATEGORIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.Modificar_Estado_Factura" Method="Modificar_Estado_Factura">
+    <Parameter Name="Id_Factura" Parameter="id_Factura" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Num_Total" Parameter="num_Total" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="estado" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

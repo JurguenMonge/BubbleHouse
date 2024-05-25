@@ -101,7 +101,7 @@
                         <Entry x:Name="txtefectivo" Keyboard="Numeric" Text="0.00" TextColor="Black" MinimumWidthRequest="200" MaximumHeightRequest="500" IsVisible="False"/>
                     </HorizontalStackLayout>
                     <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
-                            <Button x:Name="btnAceptar" FontSize="Subtitle" Text="Aceptar Pedido" Clicked="btnAceptar_Clicked"  BackgroundColor="#414BB2" TextColor="White" Grid.Column="4" />
+                            <Button x:Name="btnAceptar" FontSize="Subtitle" Text="Aceptar Pedido" Clicked="btnAceptar_Clicked"   BackgroundColor="#414BB2" TextColor="White" Grid.Column="4" />
                             <Button x:Name="btncambios" FontSize="Subtitle" Text="Aplicar Cambios" Clicked="btncambios_Clicked"  BackgroundColor="#414BB2" TextColor="White" Grid.Column="4" />
                             <Button x:Name="btnCancelar" FontSize="Subtitle" Text="Cancelar Pedido" Clicked="btnCancelar_Clicked" BackgroundColor="#F76887" TextColor="White" Grid.Column="4" />
                     </HorizontalStackLayout>

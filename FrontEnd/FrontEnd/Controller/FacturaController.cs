@@ -87,5 +87,109 @@ namespace FrontEnd.Controller
             return res;
         }
 
+        public static async Task<ResFactura> ModificarEstadoNoPreparadoFactura(ReqFactura req)
+        {
+            ResFactura res = new ResFactura();
+            try
+            {
+                if (!req.Factura.productosList.Any())
+                {
+                    res.ListaDeErrores.Add("No hay productos en la factura");
+                }
+                if (res.ListaDeErrores.Count() == 0)
+                {
+                    req.idSesion = Preferences.Get("IdSesion", string.Empty);
+
+
+                    var jsonContent = new StringContent(JsonConvert.SerializeObject(req), Encoding.UTF8, "application/json");
+
+                    using (HttpClient httpClient = new HttpClient())
+                    {
+                        var response = await httpClient.PutAsync("https://localhost:44311/api/factura/modificarEstadoNoPreparado", jsonContent);
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var responseContent = await response.Content.ReadAsStringAsync();
+                            res = JsonConvert.DeserializeObject<ResFactura>(responseContent);
+                        }
+                        else
+                        {
+                            res.ListaDeErrores.Add(" Error al intentar modificar una factura");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                res.ListaDeErrores.Add("Error interno");
+            }
+            return res;
+        }
+
+        public static async Task<ResFactura> EliminarProducto(ReqContenedorProducto req)
+        {
+            ResFactura res = new ResFactura();
+            try
+            {
+                if (res.ListaDeErrores.Count() == 0)
+                {
+                    req.idSesion = Preferences.Get("IdSesion", string.Empty);
+
+
+                    var jsonContent = new StringContent(JsonConvert.SerializeObject(req), Encoding.UTF8, "application/json");
+
+                    using (HttpClient httpClient = new HttpClient())
+                    {
+                        var response = await httpClient.PostAsync("https://localhost:44311/api/productofactura/eliminar", jsonContent);
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var responseContent = await response.Content.ReadAsStringAsync();
+                            res = JsonConvert.DeserializeObject<ResFactura>(responseContent);
+                        }
+                        else
+                        {
+                            res.ListaDeErrores.Add(" Error al intentar eliminar un producto");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                res.ListaDeErrores.Add("Error interno");
+            }
+            return res;
+        }
+
+        public static async Task<ResFactura> EliminarFactura(ReqFactura req)
+        {
+            ResFactura res = new ResFactura();
+            try
+            {
+                if (res.ListaDeErrores.Count() == 0)
+                {
+                    req.idSesion = Preferences.Get("IdSesion", string.Empty);
+
+                    var jsonContent = new StringContent(JsonConvert.SerializeObject(req), Encoding.UTF8, "application/json");
+
+                    using (HttpClient httpClient = new HttpClient())
+                    {
+                        var response = await httpClient.PostAsync("https://localhost:44311/api/factura/eliminar", jsonContent);
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var responseContent = await response.Content.ReadAsStringAsync();
+                            res = JsonConvert.DeserializeObject<ResFactura>(responseContent);
+                        }
+                        else
+                        {
+                            res.ListaDeErrores.Add(" Error al intentar eliminar una factura");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                res.ListaDeErrores.Add("Error interno");
+            }
+            return res;
+        }
     }
 }

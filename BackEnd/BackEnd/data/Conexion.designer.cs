@@ -538,6 +538,16 @@ namespace BackEnd.data
 			eRRORDESCRIPCION = ((string)(result.GetParameterValue(1)));
 			return ((ISingleResult<Obtener_Productos_ActivosResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Modificar_Estado_Factura")]
+		public int Modificar_Estado_Factura([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Factura", DbType="Int")] System.Nullable<int> id_Factura, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Num_Total", DbType="Decimal(10,2)")] System.Nullable<decimal> num_Total, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="TinyInt")] System.Nullable<byte> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Factura, num_Total, estado, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(5)));
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	public partial class Obtener_Cate_Ingredientes_ActivosResult
