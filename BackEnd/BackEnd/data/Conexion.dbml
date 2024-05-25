@@ -112,17 +112,6 @@
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.Insertar_Producto" Method="Insertar_Producto">
-    <Parameter Name="Id_SubCategoria_Producto" Parameter="id_SubCategoria_Producto" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Dsc_Nombre_Producto" Parameter="dsc_Nombre_Producto" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="Dsc_Descripcion" Parameter="dsc_Descripcion" Type="System.String" DbType="NVarChar(MAX)" />
-    <Parameter Name="Dsc_Url_Imagen" Parameter="dsc_Url_Imagen" Type="System.String" DbType="NVarChar(MAX)" />
-    <Parameter Name="Num_Precio" Parameter="num_Precio" Type="System.Double" DbType="Float" />
-    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.Insertar_Recuperacion_Password" Method="Insertar_Recuperacion_Password">
     <Parameter Name="Dsc_Token" Parameter="dsc_Token" Type="System.String" DbType="NVarChar(100)" />
     <Parameter Name="Dsc_Correo" Parameter="dsc_Correo" Type="System.String" DbType="NVarChar(50)" />
@@ -268,19 +257,6 @@
       <Column Name="NUM_PRECIO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
       <Column Name="ID_CATE_INGREDIENTE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DSC_NOMBRE_CATEGORIA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.Obtener_Productos_Activos" Method="Obtener_Productos_Activos">
-    <ElementType Name="Obtener_Productos_ActivosResult">
-      <Column Name="DSC_NOMBRE_PRODUCTO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DSC_DESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DSC_URL_IMAGEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NUM_PRECIO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-      <Column Name="ID_SUBCATE_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DSC_NOMBRE_SUBCATEGORIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="ID_CATE_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DSC_NOMBRE_CATEGORIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.Obtener_Roles" Method="Obtener_Roles">
@@ -506,6 +482,31 @@
       <Column Name="ID_RECETA" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ID_SUBCATE_PRODUCTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NUM_PRECIO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Insertar_Producto" Method="Insertar_Producto">
+    <Parameter Name="Id_SubCategoria_Producto" Parameter="id_SubCategoria_Producto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Dsc_Nombre_Producto" Parameter="dsc_Nombre_Producto" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Dsc_Descripcion" Parameter="dsc_Descripcion" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Dsc_Url_Imagen" Parameter="dsc_Url_Imagen" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Num_Precio" Parameter="num_Precio" Type="System.Double" DbType="Float" />
+    <Parameter Name="ID_RECETA" Parameter="iD_RECETA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Obtener_Productos_Activos" Method="Obtener_Productos_Activos">
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="Obtener_Productos_ActivosResult">
+      <Column Name="DSC_NOMBRE_PRODUCTO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DSC_DESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DSC_URL_IMAGEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NUM_PRECIO" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="DSC_NOMBRE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DSC_NOMBRE_SUBCATEGORIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DSC_NOMBRE_CATEGORIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

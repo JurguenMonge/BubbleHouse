@@ -34,7 +34,7 @@ namespace BackEnd.logic
                         int? idError = 0;
                         String errorBD = "";
                         linq.Insertar_Producto(req.Producto.subcategoriaProducto.idSubcategoriaProducto,req.Producto.nombreProducto,
-                            req.Producto.descripcion,req.Producto.urlImgen,req.Producto.precio,ref idReturn, ref idError, ref errorBD);
+                            req.Producto.descripcion,req.Producto.urlImgen,req.Producto.precio,req.Producto.receta.idReceta,ref idReturn, ref idError, ref errorBD);
                         if (idError == 0)
                         {
                             res.Resultado = true;
@@ -64,7 +64,7 @@ namespace BackEnd.logic
             }
             return res;
         }
-        /*
+        
         public ResObtenerProducto obtenerProductos()
         {
             ResObtenerProducto res = new ResObtenerProducto();
@@ -74,17 +74,17 @@ namespace BackEnd.logic
                 ConexionDataContext linq = new ConexionDataContext();
                 int? idError = 0;
                 String errorBD = "";
-                var linqReceta = linq.Obtener_Productos_Activos();
+                var linqReceta = linq.Obtener_Productos_Activos(ref idError, ref errorBD);
                 if (idError == 0)
                 {
                     res.Resultado = true;
                     tipoRegistro = 1;
                     foreach (var item in linqReceta)
                     {
-                        RecetaCompleta receta = factoryArmarReceta(item);
-                        if (receta != null)
+                        Producto producto = factoryArmarProducto(item);
+                        if (producto != null)
                         {
-                            res.listaRecetas.Add(receta);
+                            res.listaProductos.Add(producto);
                         }
                     }
                 }
@@ -109,6 +109,68 @@ namespace BackEnd.logic
 
             return res;
         }
-        */
+
+        public ResProducto eliminarProducto(int id)
+        {
+            ResProducto res = new ResProducto();
+            short tipoRegistro = 0;
+            try
+            {
+                if (id != 0)
+                {                  
+                    ConexionDataContext linq = new ConexionDataContext();
+                    int? idReturn = 0;
+                    int? idError = 0;
+                    String errorBD = "";
+                    linq.Eliminar_Producto(id, ref idReturn, ref idError, ref errorBD);
+                    if (idError == 0)
+                    {
+                        res.Resultado = true;
+                        tipoRegistro = 1;
+                    }
+                    else
+                    {
+                        res.Resultado = false;
+                        res.ListaDeErrores.Add(errorBD);
+                        tipoRegistro = 2;
+                    }
+                    
+                }
+                else
+                {
+                    res.Resultado = false;
+                    res.ListaDeErrores.Add("No se enviaron correctamente los datos");
+                    tipoRegistro = 2;
+                }
+            }
+            catch (Exception)
+            {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("Ocurrió un error al eliminar el producto");
+                tipoRegistro = 3;
+            }
+            finally
+            {
+                utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, "No hay request", JsonConvert.SerializeObject(res));
+            }
+            return res;
+        }
+
+        private Producto factoryArmarProducto(Obtener_Productos_ActivosResult linqProducto)
+        {
+            Producto producto = new Producto();
+            producto.receta = new Receta();
+            producto.subcategoriaProducto = new SubcategoriaProducto();
+            producto.categoriaProducto = new CategoriaProducto();
+            producto.nombreProducto = linqProducto.DSC_NOMBRE_PRODUCTO;
+            producto.descripcion = linqProducto.DSC_DESCRIPCION;
+            producto.urlImgen = linqProducto.DSC_URL_IMAGEN;
+            producto.precio = (float)linqProducto.NUM_PRECIO;
+            producto.receta.dscNombre = linqProducto.DSC_NOMBRE;
+            producto.subcategoriaProducto.dscNombreSubCategoria = linqProducto.DSC_NOMBRE_SUBCATEGORIA;
+            producto.categoriaProducto.dscNombreCategoria = linqProducto.DSC_NOMBRE_CATEGORIA;
+            return producto;
+        }
+        
     }
 }
