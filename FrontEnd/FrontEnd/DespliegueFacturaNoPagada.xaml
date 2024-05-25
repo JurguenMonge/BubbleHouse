@@ -35,6 +35,7 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <Frame Grid.Column="0" BackgroundColor="#a9dff0" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
@@ -50,6 +51,9 @@
                             <Label Text="Descuento" FontSize="Subtitle" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
                         </Frame>
                         <Frame Grid.Column="4" BackgroundColor="#a9dff0" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
+                            <Label Text="SubTotal" FontSize="Subtitle" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                        </Frame>
+                        <Frame Grid.Column="5" BackgroundColor="#a9dff0" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
                             <Label Text="Acciones" FontSize="Subtitle" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
                         </Frame>
                     </Grid>
@@ -65,13 +69,14 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
                                     <Frame Grid.Column="0" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
                                         <Label Text="{Binding nombreProducto}" TextColor="Black" />
                                     </Frame>
                                     <Frame Grid.Column="1" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
-                                        <Entry Keyboard="Numeric" Text="{Binding numCantidad}" TextColor="Black" />
+                                        <Entry Keyboard="Numeric" Text="{Binding numCantidad}" TextColor="Black" TextChanged="Entry_TextChanged"/>
                                     </Frame>
                                     <Frame Grid.Column="2" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
                                         <Label Text="{Binding precio}" TextColor="Black" />
@@ -80,7 +85,10 @@
                                         <Entry Keyboard="Numeric" Text="{Binding descuento}" TextColor="Black" />
                                     </Frame>
                                     <Frame Grid.Column="4" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
-                                        <Button x:Name="btnEliminar" FontSize="14" Text="Eliminar" Clicked="btnEliminar_Clicked"  BackgroundColor="#F76887" TextColor="White" Grid.Column="4" />
+                                        <Entry Keyboard="Numeric" Text="{Binding numSubtotal}" TextColor="Black" />
+                                    </Frame> 
+                                    <Frame Grid.Column="5" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
+                                        <Button x:Name="btnEliminar" FontSize="14" Text="Eliminar" Clicked="btnEliminar_Clicked"  BackgroundColor="#F76887" TextColor="White" Grid.Column="5" />
                                     </Frame>
                                 </Grid>
                             </DataTemplate>
@@ -89,8 +97,8 @@
                     <VerticalStackLayout Spacing="15">
                         <Label x:Name="lbltotal" Text="Total:" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Start" />
                     <HorizontalStackLayout HorizontalOptions="Start" Spacing="15">
-                        <Label Text="Efectivo:" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Start" />
-                        <Entry Keyboard="Numeric" Text="0.00" TextColor="Black" MinimumWidthRequest="200" MaximumHeightRequest="500"/>
+                        <Label x:Name="lblefectivo" Text="Efectivo:" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Start" IsVisible="False"/>
+                        <Entry x:Name="txtefectivo" Keyboard="Numeric" Text="0.00" TextColor="Black" MinimumWidthRequest="200" MaximumHeightRequest="500" IsVisible="False"/>
                     </HorizontalStackLayout>
                     <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
                             <Button x:Name="btnAceptar" FontSize="Subtitle" Text="Aceptar Pedido" Clicked="btnAceptar_Clicked"  BackgroundColor="#414BB2" TextColor="White" Grid.Column="4" />
