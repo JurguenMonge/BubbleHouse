@@ -1,4 +1,5 @@
 ﻿using BackEnd.domain;
+using BackEnd.domain.response;
 using BackEnd.logic;
 using Microsoft.Ajax.Utilities;
 using System;
@@ -21,9 +22,16 @@ namespace API.Controllers
 
         [System.Web.Http.HttpGet]
         [System.Web.Http.Route("api/producto/obtener")]
-        public ResProducto obtenerProductos()
+        public ResObtenerProducto obtenerProductos()
         {
-            return null;
+            return new LogProducto().obtenerProductos();
+        }
+
+        [System.Web.Http.HttpDelete]
+        [System.Web.Http.Route("api/producto/eliminar/{id}")]
+        public ResProducto eliminarReceta(int id)
+        {
+            return new LogProducto().eliminarProducto(id);
         }
     }
 }

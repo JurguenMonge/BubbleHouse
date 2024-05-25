@@ -8,6 +8,6 @@ namespace BackEnd.domain
 {
     public class ResObtenerProducto : ResBase
     {
-        List<Producto> listaProductos = new List<Producto>();
+        public List<Producto> listaProductos = new List<Producto>();
     }
 }

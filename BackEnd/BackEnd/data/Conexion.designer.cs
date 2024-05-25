@@ -209,16 +209,6 @@ namespace BackEnd.data
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Producto")]
-		public int Insertar_Producto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_SubCategoria_Producto", DbType="Int")] System.Nullable<int> id_SubCategoria_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Nombre_Producto", DbType="NVarChar(100)")] string dsc_Nombre_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Descripcion", DbType="NVarChar(MAX)")] string dsc_Descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Url_Imagen", DbType="NVarChar(MAX)")] string dsc_Url_Imagen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Num_Precio", DbType="Float")] System.Nullable<double> num_Precio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_SubCategoria_Producto, dsc_Nombre_Producto, dsc_Descripcion, dsc_Url_Imagen, num_Precio, iDRETURN, eRRORID, eRRORDESCRIPCION);
-			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(5)));
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(6)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(7)));
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Recuperacion_Password")]
 		public int Insertar_Recuperacion_Password([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Token", DbType="NVarChar(100)")] string dsc_Token, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Correo", DbType="NVarChar(50)")] string dsc_Correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
@@ -355,13 +345,6 @@ namespace BackEnd.data
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<Obtener_Ingredientes_ActivosResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Productos_Activos")]
-		public ISingleResult<Obtener_Productos_ActivosResult> Obtener_Productos_Activos()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<Obtener_Productos_ActivosResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Roles")]
@@ -535,6 +518,25 @@ namespace BackEnd.data
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Factura);
 			return ((ISingleResult<Obtener_Productos_FacturasResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insertar_Producto")]
+		public int Insertar_Producto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_SubCategoria_Producto", DbType="Int")] System.Nullable<int> id_SubCategoria_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Nombre_Producto", DbType="NVarChar(100)")] string dsc_Nombre_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Descripcion", DbType="NVarChar(MAX)")] string dsc_Descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Url_Imagen", DbType="NVarChar(MAX)")] string dsc_Url_Imagen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Num_Precio", DbType="Float")] System.Nullable<double> num_Precio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_RECETA", DbType="Int")] System.Nullable<int> iD_RECETA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_SubCategoria_Producto, dsc_Nombre_Producto, dsc_Descripcion, dsc_Url_Imagen, num_Precio, iD_RECETA, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(8)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Productos_Activos")]
+		public ISingleResult<Obtener_Productos_ActivosResult> Obtener_Productos_Activos([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), eRRORID, eRRORDESCRIPCION);
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(1)));
+			return ((ISingleResult<Obtener_Productos_ActivosResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -878,176 +880,6 @@ namespace BackEnd.data
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_CATEGORIA", DbType="NVarChar(MAX)")]
-		public string DSC_NOMBRE_CATEGORIA
-		{
-			get
-			{
-				return this._DSC_NOMBRE_CATEGORIA;
-			}
-			set
-			{
-				if ((this._DSC_NOMBRE_CATEGORIA != value))
-				{
-					this._DSC_NOMBRE_CATEGORIA = value;
-				}
-			}
-		}
-	}
-	
-	public partial class Obtener_Productos_ActivosResult
-	{
-		
-		private string _DSC_NOMBRE_PRODUCTO;
-		
-		private string _DSC_DESCRIPCION;
-		
-		private string _DSC_URL_IMAGEN;
-		
-		private System.Nullable<decimal> _NUM_PRECIO;
-		
-		private System.Nullable<byte> _ESTADO;
-		
-		private int _ID_SUBCATE_PRODUCTO;
-		
-		private string _DSC_NOMBRE_SUBCATEGORIA;
-		
-		private int _ID_CATE_PRODUCTO;
-		
-		private string _DSC_NOMBRE_CATEGORIA;
-		
-		public Obtener_Productos_ActivosResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_PRODUCTO", DbType="NVarChar(100)")]
-		public string DSC_NOMBRE_PRODUCTO
-		{
-			get
-			{
-				return this._DSC_NOMBRE_PRODUCTO;
-			}
-			set
-			{
-				if ((this._DSC_NOMBRE_PRODUCTO != value))
-				{
-					this._DSC_NOMBRE_PRODUCTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_DESCRIPCION", DbType="NVarChar(MAX)")]
-		public string DSC_DESCRIPCION
-		{
-			get
-			{
-				return this._DSC_DESCRIPCION;
-			}
-			set
-			{
-				if ((this._DSC_DESCRIPCION != value))
-				{
-					this._DSC_DESCRIPCION = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_URL_IMAGEN", DbType="NVarChar(MAX)")]
-		public string DSC_URL_IMAGEN
-		{
-			get
-			{
-				return this._DSC_URL_IMAGEN;
-			}
-			set
-			{
-				if ((this._DSC_URL_IMAGEN != value))
-				{
-					this._DSC_URL_IMAGEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_PRECIO", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> NUM_PRECIO
-		{
-			get
-			{
-				return this._NUM_PRECIO;
-			}
-			set
-			{
-				if ((this._NUM_PRECIO != value))
-				{
-					this._NUM_PRECIO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="TinyInt")]
-		public System.Nullable<byte> ESTADO
-		{
-			get
-			{
-				return this._ESTADO;
-			}
-			set
-			{
-				if ((this._ESTADO != value))
-				{
-					this._ESTADO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SUBCATE_PRODUCTO", DbType="Int NOT NULL")]
-		public int ID_SUBCATE_PRODUCTO
-		{
-			get
-			{
-				return this._ID_SUBCATE_PRODUCTO;
-			}
-			set
-			{
-				if ((this._ID_SUBCATE_PRODUCTO != value))
-				{
-					this._ID_SUBCATE_PRODUCTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_SUBCATEGORIA", DbType="NVarChar(100)")]
-		public string DSC_NOMBRE_SUBCATEGORIA
-		{
-			get
-			{
-				return this._DSC_NOMBRE_SUBCATEGORIA;
-			}
-			set
-			{
-				if ((this._DSC_NOMBRE_SUBCATEGORIA != value))
-				{
-					this._DSC_NOMBRE_SUBCATEGORIA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_CATE_PRODUCTO", DbType="Int NOT NULL")]
-		public int ID_CATE_PRODUCTO
-		{
-			get
-			{
-				return this._ID_CATE_PRODUCTO;
-			}
-			set
-			{
-				if ((this._ID_CATE_PRODUCTO != value))
-				{
-					this._ID_CATE_PRODUCTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_CATEGORIA", DbType="NVarChar(100)")]
 		public string DSC_NOMBRE_CATEGORIA
 		{
 			get
@@ -2739,6 +2571,140 @@ namespace BackEnd.data
 				if ((this._NUM_PRECIO != value))
 				{
 					this._NUM_PRECIO = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Obtener_Productos_ActivosResult
+	{
+		
+		private string _DSC_NOMBRE_PRODUCTO;
+		
+		private string _DSC_DESCRIPCION;
+		
+		private string _DSC_URL_IMAGEN;
+		
+		private System.Nullable<decimal> _NUM_PRECIO;
+		
+		private string _DSC_NOMBRE;
+		
+		private string _DSC_NOMBRE_SUBCATEGORIA;
+		
+		private string _DSC_NOMBRE_CATEGORIA;
+		
+		public Obtener_Productos_ActivosResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_PRODUCTO", DbType="NVarChar(100)")]
+		public string DSC_NOMBRE_PRODUCTO
+		{
+			get
+			{
+				return this._DSC_NOMBRE_PRODUCTO;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE_PRODUCTO != value))
+				{
+					this._DSC_NOMBRE_PRODUCTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_DESCRIPCION", DbType="NVarChar(MAX)")]
+		public string DSC_DESCRIPCION
+		{
+			get
+			{
+				return this._DSC_DESCRIPCION;
+			}
+			set
+			{
+				if ((this._DSC_DESCRIPCION != value))
+				{
+					this._DSC_DESCRIPCION = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_URL_IMAGEN", DbType="NVarChar(MAX)")]
+		public string DSC_URL_IMAGEN
+		{
+			get
+			{
+				return this._DSC_URL_IMAGEN;
+			}
+			set
+			{
+				if ((this._DSC_URL_IMAGEN != value))
+				{
+					this._DSC_URL_IMAGEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_PRECIO", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> NUM_PRECIO
+		{
+			get
+			{
+				return this._NUM_PRECIO;
+			}
+			set
+			{
+				if ((this._NUM_PRECIO != value))
+				{
+					this._NUM_PRECIO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE", DbType="NVarChar(MAX)")]
+		public string DSC_NOMBRE
+		{
+			get
+			{
+				return this._DSC_NOMBRE;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE != value))
+				{
+					this._DSC_NOMBRE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_SUBCATEGORIA", DbType="NVarChar(100)")]
+		public string DSC_NOMBRE_SUBCATEGORIA
+		{
+			get
+			{
+				return this._DSC_NOMBRE_SUBCATEGORIA;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE_SUBCATEGORIA != value))
+				{
+					this._DSC_NOMBRE_SUBCATEGORIA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE_CATEGORIA", DbType="NVarChar(100)")]
+		public string DSC_NOMBRE_CATEGORIA
+		{
+			get
+			{
+				return this._DSC_NOMBRE_CATEGORIA;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE_CATEGORIA != value))
+				{
+					this._DSC_NOMBRE_CATEGORIA = value;
 				}
 			}
 		}
