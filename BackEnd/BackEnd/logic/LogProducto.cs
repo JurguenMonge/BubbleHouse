@@ -64,6 +64,51 @@ namespace BackEnd.logic
             }
             return res;
         }
+        /*
+        public ResObtenerProducto obtenerProductos()
+        {
+            ResObtenerProducto res = new ResObtenerProducto();
+            short tipoRegistro = 0; //1 Exitoso - 2 Error en logica - 3 Error inesperado
+            try
+            {
+                ConexionDataContext linq = new ConexionDataContext();
+                int? idError = 0;
+                String errorBD = "";
+                var linqReceta = linq.Obtener_Productos_Activos();
+                if (idError == 0)
+                {
+                    res.Resultado = true;
+                    tipoRegistro = 1;
+                    foreach (var item in linqReceta)
+                    {
+                        RecetaCompleta receta = factoryArmarReceta(item);
+                        if (receta != null)
+                        {
+                            res.listaRecetas.Add(receta);
+                        }
+                    }
+                }
+                else
+                {
+                    res.Resultado = false;
+                    res.ListaDeErrores.Add("Ocurrió un error en la base de datos, intentalo más tarde");
+                    tipoRegistro = 2;
+                }
+            }
+            catch (Exception)
+            {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("Ocurrió un error al obtener la lista de recetas");
+                tipoRegistro = 3;
+            }
+            finally
+            {
+                utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, "No hay request", JsonConvert.SerializeObject(res));
+            }
 
+
+            return res;
+        }
+        */
     }
 }
