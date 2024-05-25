@@ -4,13 +4,14 @@ using FrontEnd.Entidades.Request;
 using FrontEnd.Entidades.Response;
 using Newtonsoft.Json;
 using System.ComponentModel;
+using System.Globalization;
 using System.Text;
 
 namespace FrontEnd;
 
 public partial class DespliegueFacturaNoPagada : ContentPage
 {
-
+    bool aceptado = false;
     private List<ContenedorProducto> _listaDeProductos = new List<ContenedorProducto>();
     int selecionado = 0;
     private bool isFirstLoad = true;
@@ -42,6 +43,7 @@ public partial class DespliegueFacturaNoPagada : ContentPage
                 total = total + cont.numSubtotal;
             }
             lbltotal.Text = "Total: " + total;
+            fact.numTotal = (float)total;
         }
     }
 
@@ -141,24 +143,101 @@ public partial class DespliegueFacturaNoPagada : ContentPage
             lblefectivo.IsVisible = true;
         }
     }
-    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    private async void btnEliminar_Clicked(object sender, EventArgs e)
     {
+        var button = sender as Button;
+        var item = button?.BindingContext as ContenedorProducto;
 
+        try
+        {
+            if (item != null)
+            {
+                ReqContenedorProducto req = new ReqContenedorProducto();
+                ContenedorProductoFactura contenedor = new ContenedorProductoFactura();
+                contenedor.IdRFacturaProducto = item.IdRFacturaProducto;
+                req.contenedor = contenedor;
+                ResFactura res = new ResFactura();
+                res = await FacturaController.EliminarProducto(req);
+
+                if (res.Resultado)
+                {
+                    await CargarProductosAsync();
+                    var formularioPractica = new DespliegueFacturaNoPagada();
+                    formularioPractica.BindingContext = fact;
+                    DisplayAlert("Producto eliminado", "producto eliminado con exito", "Aceptar");
+                    Navigation.PushAsync(formularioPractica);
+                    Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+                }
+                else
+                {
+                    await DisplayAlert("Error en factura", "Sucedio un error al eliminar el producto" + res.ListaDeErrores.First(), "Aceptar");
+                }
+            }
+            else
+            {
+                await DisplayAlert("Error", "No se pudo obtener el elemento seleccionado", "Aceptar");
+            }
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error interno", "Por favor reinstale la aplicación", "Aceptar");
+        }
     }
 
-    private void Button_Clicked(object sender, EventArgs e)
+    private async void btnAceptar_Clicked(object sender, EventArgs e)
     {
-
-    }
-
-    private void btnEliminar_Clicked(object sender, EventArgs e)
-    {
-
-    }
-
-    private void btnAceptar_Clicked(object sender, EventArgs e)
-    {
-
+        aceptado = true;
+        btncambios_Clicked(sender, e);
+        ReqFactura req = new ReqFactura();
+        List<ContenedorProductoFactura> list = new List<ContenedorProductoFactura>();
+        foreach (ContenedorProducto contenedor in listaDeProductos)
+        {
+            ContenedorProductoFactura contenedorFactura = new ContenedorProductoFactura();
+            contenedorFactura.idFactura = contenedor.idFactura;
+            contenedorFactura.IdRFacturaProducto = contenedor.IdRFacturaProducto;
+            contenedorFactura.numSubtotal = contenedor.numSubtotal;
+            contenedorFactura.descuento = contenedor.descuento;
+            contenedorFactura.numCantidad = contenedor.numCantidad;
+            Producto producto = new Producto();
+            producto.idProducto = contenedor.idProducto;
+            producto.precio = contenedor.precio;
+            producto.subcategoriaProducto = contenedor.subcategoriaProducto;
+            contenedorFactura.producto = producto;
+            list.Add(contenedorFactura);
+        }
+        fact.productosList = list;
+        req.Factura = fact;
+        try
+        {
+            decimal valor = decimal.Parse(txtefectivo.Text, CultureInfo.InvariantCulture);
+            if (selecionado == 1 && valor == 0)
+            {
+                DisplayAlert("Efectivo", "El efectivo no a sido ingresado", "Aceptar");
+            }
+            ResFactura res = new ResFactura();
+            res = await FacturaController.ModificarEstadoNoPreparadoFactura(req);
+            if (res.Resultado)
+            {
+                if(selecionado == 1)
+                {
+                    DisplayAlert("Pedido aceptado", "Su cambio: " + (valor - (decimal)req.Factura.numTotal), "Aceptar");
+                }
+                else
+                {
+                    DisplayAlert("Pedido Aceptado", "Factura aceptada con exito", "Aceptar");
+                }
+                Navigation.PushAsync(new AceptarFacturas());
+                Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+            }
+            else
+            {
+                DisplayAlert("Error en factura", "Sucedio un error al modificar la factura" + res.ListaDeErrores.First(), "Aceptar");
+            }
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("Error interno", "Porfavor reinstale la aplicacion", "Aceptar");
+        }
     }
 
     private async void btncambios_Clicked(object sender, EventArgs e)
@@ -188,11 +267,14 @@ public partial class DespliegueFacturaNoPagada : ContentPage
             res = await FacturaController.ModificarFactura(req);
             if (res.Resultado)
             {
-                DisplayAlert("Factura Modificada", "Factura modificada con exito", "Aceptar");
-                var formularioPractica = new DespliegueFacturaNoPagada();
-                formularioPractica.BindingContext = fact;
-                Navigation.PushAsync(formularioPractica);
-                Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+                if (!aceptado)
+                {
+                    DisplayAlert("Factura Modificada", "Factura modificada con exito", "Aceptar");
+                    var formularioPractica = new DespliegueFacturaNoPagada();
+                    formularioPractica.BindingContext = fact;
+                    Navigation.PushAsync(formularioPractica);
+                    Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+                }
             }
             else
             {
@@ -207,9 +289,29 @@ public partial class DespliegueFacturaNoPagada : ContentPage
 
     }
 
-    private void btnCancelar_Clicked(object sender, EventArgs e)
+    private async void btnCancelar_Clicked(object sender, EventArgs e)
     {
-
+        ReqFactura req = new ReqFactura();
+        req.Factura = fact;
+        try
+        {
+            ResFactura res = new ResFactura();
+            res = await FacturaController.EliminarFactura(req);
+            if (res.Resultado)
+            {
+                DisplayAlert("Pedido cancelado", "pedido cancelado con exito", "Aceptar");
+                Navigation.PushAsync(new AceptarFacturas());
+                Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+            }
+            else
+            {
+                DisplayAlert("Error en factura", "Sucedio un error al eliminar la factura" + res.ListaDeErrores.First(), "Aceptar");
+            }
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("Error interno", "Porfavor reinstale la aplicacion", "Aceptar");
+        }
     }
 
     private void Entry_TextChanged(object sender, TextChangedEventArgs e)
@@ -239,7 +341,6 @@ public partial class DespliegueFacturaNoPagada : ContentPage
                 // Manejar el caso en el que la entrada no sea un número válido
                 // Puedes mostrar un mensaje de error o realizar alguna otra acción.
             }
-
             // Calcular el nuevo subtotal
             item.numSubtotal = item.numCantidad * precio;
 
@@ -251,5 +352,10 @@ public partial class DespliegueFacturaNoPagada : ContentPage
                 OnPropertyChanged(nameof(listaDeProductos));
             }
         }
+    }
+
+    private void btnAceptar_Clicked_1(object sender, EventArgs e)
+    {
+
     }
 }

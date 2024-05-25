@@ -104,7 +104,41 @@ namespace API.Controllers
             return res;
         }
 
-        [System.Web.Http.HttpDelete]
+        [System.Web.Http.HttpPut]
+        [System.Web.Http.Route("api/factura/modificarEstadoNoPreparado")]
+        public ResFactura modificar_EstadoFactura(ReqFactura req)
+        {
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResFactura res = new ResFactura();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogFactura().modificarEstadoFactura(req,2);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
+        }
+
+        [System.Web.Http.HttpPut]
+        [System.Web.Http.Route("api/factura/modificarEstadoCompletado")]
+        public ResFactura modificar_EstadoCompletadoFactura(ReqFactura req)
+        {
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResFactura res = new ResFactura();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogFactura().modificarEstadoFactura(req, 3);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
+        }
+
+        [System.Web.Http.HttpPost]
         [System.Web.Http.Route("api/factura/eliminar")]
         public ResFactura eliminarFactura(ReqFactura req)
         {
@@ -155,7 +189,7 @@ namespace API.Controllers
             return res;
         }
 
-        [System.Web.Http.HttpDelete]
+        [System.Web.Http.HttpPost]
         [System.Web.Http.Route("api/productofactura/eliminar")]
         public ResFactura eliminarProducto(ReqContenedorProducto req)
         {
