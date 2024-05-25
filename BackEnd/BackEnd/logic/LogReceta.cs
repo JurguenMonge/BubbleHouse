@@ -137,7 +137,7 @@ namespace BackEnd.logic
         public ResReceta eliminarReceta(int id)
         {
             ResReceta res = new ResReceta();
-            /*
+            
             short tipoRegistro = 0; //1 Exitoso - 2 Error en logica - 3 Error no controlado
             try
             {
@@ -180,7 +180,7 @@ namespace BackEnd.logic
             {
                 utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, "No hay request", JsonConvert.SerializeObject(res));
             }
-            */
+            
             return res;
         }
 
