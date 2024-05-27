@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\controller\\ingredientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:controller\\ingredientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\entidades\\entidad\\ingrediente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:entidades\\entidad\\ingrediente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\controller\\subcategoriaproductocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:controller\\subcategoriaproductocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\controller\\ingredientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:controller\\ingredientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 350,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,39 +34,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Ingrediente.cs",
               "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\Ingrediente.cs",
               "RelativeDocumentMoniker": "Entidades\\Entidad\\Ingrediente.cs",
               "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\Ingrediente.cs",
               "RelativeToolTip": "Entidades\\Entidad\\Ingrediente.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T21:17:53.909Z",
+              "WhenOpened": "2024-05-27T21:49:40.465Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "SubCategoriaProductoController.cs",
               "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\SubCategoriaProductoController.cs",
               "RelativeDocumentMoniker": "Controller\\SubCategoriaProductoController.cs",
               "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\SubCategoriaProductoController.cs",
               "RelativeToolTip": "Controller\\SubCategoriaProductoController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAH4AAAAAAAAAAAAYwBoAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-27T21:17:41.216Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "IngredienteController.cs",
               "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\IngredienteController.cs",
               "RelativeDocumentMoniker": "Controller\\IngredienteController.cs",
               "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\IngredienteController.cs",
               "RelativeToolTip": "Controller\\IngredienteController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAH4AAAAAAAAAAAAYwFcAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-27T21:17:35.609Z",
               "EditorCaption": ""
