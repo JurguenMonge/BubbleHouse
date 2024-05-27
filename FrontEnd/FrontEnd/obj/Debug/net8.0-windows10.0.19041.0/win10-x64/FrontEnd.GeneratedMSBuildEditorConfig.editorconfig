@@ -42,6 +42,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.DespliegueFactura
 build_metadata.AdditionalFiles.TargetPath = DespliegueFacturaNoPagada.xaml
 build_metadata.AdditionalFiles.RelativePath = DespliegueFacturaNoPagada.xaml
 
+[C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/DespliegueFacturaNoPreparada.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.DespliegueFacturaNoPreparada.xaml
+build_metadata.AdditionalFiles.TargetPath = DespliegueFacturaNoPreparada.xaml
+build_metadata.AdditionalFiles.RelativePath = DespliegueFacturaNoPreparada.xaml
+
 [C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/FormularioCategoriaProducto.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.FormularioCategoriaProducto.xaml

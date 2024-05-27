@@ -201,6 +201,7 @@ public partial class DespliegueFacturaNoPagada : ContentPage
             Producto producto = new Producto();
             producto.idProducto = contenedor.idProducto;
             producto.precio = contenedor.precio;
+
             producto.subcategoriaProducto = contenedor.subcategoriaProducto;
             contenedorFactura.producto = producto;
             list.Add(contenedorFactura);
