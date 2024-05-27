@@ -950,3 +950,4 @@ C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\
 C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\FrontEnd.dll
 C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\refint\FrontEnd.dll
 C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\FrontEnd.pdb
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\cruz.png

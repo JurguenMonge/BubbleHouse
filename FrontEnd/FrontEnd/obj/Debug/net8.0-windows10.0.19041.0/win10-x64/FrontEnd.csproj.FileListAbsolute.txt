@@ -720,3 +720,4 @@ D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041
 D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo_celeste.scale-100.png
 C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cruz.scale-100.png
 C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo_celeste.scale-100.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cruz.scale-100.png

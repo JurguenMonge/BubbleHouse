@@ -1,46 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\",
+  "WorkspaceRootPath": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\pages\\formsubcategoriaproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\formsubcategoriaproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\completarfacturas.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\completarfacturas.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:completarfacturas.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\aceptarfacturas.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:aceptarfacturas.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\desplieguefacturanopreparada.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:desplieguefacturanopreparada.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\desplieguefacturanopagada.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:desplieguefacturanopagada.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\completarfacturas.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:completarfacturas.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\desplieguefacturanopreparada.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\desplieguefacturanopreparada.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:desplieguefacturanopreparada.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\resources\\images\\logo_celeste.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:resources\\images\\logo_celeste.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\controller\\facturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:controller\\facturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\proyectos\\moviles\\bubblehouse\\frontend\\frontend\\controller\\facturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:controller\\facturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\aceptarfacturas.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:aceptarfacturas.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\desplieguefacturanopreparada.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:desplieguefacturanopreparada.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\desplieguefacturanopagada.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:desplieguefacturanopagada.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\completarfacturas.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:completarfacturas.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\resources\\images\\logo_celeste.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:resources\\images\\logo_celeste.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,44 +54,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 350,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "DespliegueFacturaNoPagada.xaml",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\DespliegueFacturaNoPagada.xaml",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\DespliegueFacturaNoPagada.xaml",
               "RelativeDocumentMoniker": "DespliegueFacturaNoPagada.xaml",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\DespliegueFacturaNoPagada.xaml",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\DespliegueFacturaNoPagada.xaml",
               "RelativeToolTip": "DespliegueFacturaNoPagada.xaml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAEsAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-05-25T21:05:13.961Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FacturaController.cs",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\FacturaController.cs",
+              "RelativeDocumentMoniker": "Controller\\FacturaController.cs",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\FacturaController.cs",
+              "RelativeToolTip": "Controller\\FacturaController.cs",
+              "ViewState": "AQIAAL0AAAAAAAAAAAAAAH8AAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T21:12:51.408Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FacturaController.cs",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\FacturaController.cs",
-              "RelativeDocumentMoniker": "Controller\\FacturaController.cs",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\FacturaController.cs",
-              "RelativeToolTip": "Controller\\FacturaController.cs",
-              "ViewState": "AQIAAHsAAAAAAAAAAADwv38AAABNAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T21:12:51.408Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "DespliegueFacturaNoPreparada.xaml",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\DespliegueFacturaNoPreparada.xaml",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\DespliegueFacturaNoPreparada.xaml",
               "RelativeDocumentMoniker": "DespliegueFacturaNoPreparada.xaml",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\DespliegueFacturaNoPreparada.xaml",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\DespliegueFacturaNoPreparada.xaml",
               "RelativeToolTip": "DespliegueFacturaNoPreparada.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA7AAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABAAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-05-27T14:56:24.152Z",
               "IsPinned": true,
@@ -102,72 +106,75 @@
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Login.xaml",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml",
-              "RelativeDocumentMoniker": "Login.xaml",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml",
-              "RelativeToolTip": "Login.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-27T15:49:00.994Z",
+              "Title": "FormSubCategoriaProducto.xaml.cs",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormSubCategoriaProducto.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\FormSubCategoriaProducto.xaml.cs",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormSubCategoriaProducto.xaml.cs",
+              "RelativeToolTip": "Pages\\FormSubCategoriaProducto.xaml.cs",
+              "ViewState": "AQIAAEwAAAAAAAAAAAApwFcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T16:54:34.29Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Login.xaml.cs",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml.cs",
-              "RelativeDocumentMoniker": "Login.xaml.cs",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml.cs",
-              "RelativeToolTip": "Login.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T15:48:59.446Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AceptarFacturas.xaml",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\AceptarFacturas.xaml",
-              "RelativeDocumentMoniker": "AceptarFacturas.xaml",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\AceptarFacturas.xaml",
-              "RelativeToolTip": "AceptarFacturas.xaml",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAACYAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-27T15:45:49.464Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "CompletarFacturas.xaml",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\CompletarFacturas.xaml",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\CompletarFacturas.xaml",
               "RelativeDocumentMoniker": "CompletarFacturas.xaml",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\CompletarFacturas.xaml",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\CompletarFacturas.xaml",
               "RelativeToolTip": "CompletarFacturas.xaml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABcAAABIAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-05-27T15:44:22.641Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
+              "Title": "Login.xaml",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml",
+              "RelativeDocumentMoniker": "Login.xaml",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml",
+              "RelativeToolTip": "Login.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-27T15:49:00.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Login.xaml.cs",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml.cs",
+              "RelativeDocumentMoniker": "Login.xaml.cs",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Login.xaml.cs",
+              "RelativeToolTip": "Login.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T15:48:59.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AceptarFacturas.xaml",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\AceptarFacturas.xaml",
+              "RelativeDocumentMoniker": "AceptarFacturas.xaml",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\AceptarFacturas.xaml",
+              "RelativeToolTip": "AceptarFacturas.xaml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACYAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-27T15:45:49.464Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "logo_celeste.png - PNG [163x162, 32 bits, PNG]",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Resources\\Images\\logo_celeste.png",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Resources\\Images\\logo_celeste.png",
               "RelativeDocumentMoniker": "Resources\\Images\\logo_celeste.png",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\Resources\\Images\\logo_celeste.png - PNG [163x162, 32 bits, PNG]",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Resources\\Images\\logo_celeste.png - PNG [163x162, 32 bits, PNG]",
               "RelativeToolTip": "Resources\\Images\\logo_celeste.png - PNG [163x162, 32 bits, PNG]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
               "WhenOpened": "2024-05-27T15:42:08.863Z",
@@ -175,29 +182,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "CompletarFacturas.xaml.cs",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\CompletarFacturas.xaml.cs",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\CompletarFacturas.xaml.cs",
               "RelativeDocumentMoniker": "CompletarFacturas.xaml.cs",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\CompletarFacturas.xaml.cs",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\CompletarFacturas.xaml.cs",
               "RelativeToolTip": "CompletarFacturas.xaml.cs",
               "ViewState": "AQIAAEYAAAAAAAAAAAAcwF8AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T15:24:53.67Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-27T15:24:53.67Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "DespliegueFacturaNoPreparada.xaml.cs",
-              "DocumentMoniker": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\DespliegueFacturaNoPreparada.xaml.cs",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\DespliegueFacturaNoPreparada.xaml.cs",
               "RelativeDocumentMoniker": "DespliegueFacturaNoPreparada.xaml.cs",
-              "ToolTip": "C:\\Proyectos\\Moviles\\BubbleHouse\\FrontEnd\\FrontEnd\\DespliegueFacturaNoPreparada.xaml.cs",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\DespliegueFacturaNoPreparada.xaml.cs",
               "RelativeToolTip": "DespliegueFacturaNoPreparada.xaml.cs",
               "ViewState": "AQIAAIgAAAAAAAAAAAApwIIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T15:11:53.904Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-27T15:11:53.904Z"
             }
           ]
         }

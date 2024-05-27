@@ -8,95 +8,95 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FrontEnd
-build_property.ProjectDir = C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\
+build_property.ProjectDir = D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/AceptarFacturas.xaml]
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/AceptarFacturas.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.AceptarFacturas.xaml
 build_metadata.AdditionalFiles.TargetPath = AceptarFacturas.xaml
 build_metadata.AdditionalFiles.RelativePath = AceptarFacturas.xaml
 
-[C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/App.xaml]
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/AppShell.xaml]
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/CompletarFacturas.xaml]
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/CompletarFacturas.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.CompletarFacturas.xaml
 build_metadata.AdditionalFiles.TargetPath = CompletarFacturas.xaml
 build_metadata.AdditionalFiles.RelativePath = CompletarFacturas.xaml
 
-[C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/DespliegueFacturaNoPagada.xaml]
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/DespliegueFacturaNoPagada.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.DespliegueFacturaNoPagada.xaml
 build_metadata.AdditionalFiles.TargetPath = DespliegueFacturaNoPagada.xaml
 build_metadata.AdditionalFiles.RelativePath = DespliegueFacturaNoPagada.xaml
 
-[C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/DespliegueFacturaNoPreparada.xaml]
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/DespliegueFacturaNoPreparada.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.DespliegueFacturaNoPreparada.xaml
 build_metadata.AdditionalFiles.TargetPath = DespliegueFacturaNoPreparada.xaml
 build_metadata.AdditionalFiles.RelativePath = DespliegueFacturaNoPreparada.xaml
 
-[C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/FormularioCategoriaProducto.xaml]
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/FormularioCategoriaProducto.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.FormularioCategoriaProducto.xaml
 build_metadata.AdditionalFiles.TargetPath = FormularioCategoriaProducto.xaml
 build_metadata.AdditionalFiles.RelativePath = FormularioCategoriaProducto.xaml
 
-[C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/ListadoCategoriaProducto.xaml]
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/ListadoCategoriaProducto.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.ListadoCategoriaProducto.xaml
 build_metadata.AdditionalFiles.TargetPath = ListadoCategoriaProducto.xaml
 build_metadata.AdditionalFiles.RelativePath = ListadoCategoriaProducto.xaml
 
-[C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/Login.xaml]
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/Login.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.Login.xaml
 build_metadata.AdditionalFiles.TargetPath = Login.xaml
 build_metadata.AdditionalFiles.RelativePath = Login.xaml
 
-[C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/MainPage.xaml]
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/Pages/FormSubCategoriaProducto.xaml]
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/Pages/FormSubCategoriaProducto.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.Pages.FormSubCategoriaProducto.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\FormSubCategoriaProducto.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\FormSubCategoriaProducto.xaml
 
-[C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/Pages/SubCategoriaProductoPage.xaml]
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/Pages/SubCategoriaProductoPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.Pages.SubCategoriaProductoPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\SubCategoriaProductoPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\SubCategoriaProductoPage.xaml
 
-[C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/PrincipalAdministrativa.xaml]
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/PrincipalAdministrativa.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.PrincipalAdministrativa.xaml
 build_metadata.AdditionalFiles.TargetPath = PrincipalAdministrativa.xaml
 build_metadata.AdditionalFiles.RelativePath = PrincipalAdministrativa.xaml
 
-[C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/Resources/Styles/Colors.xaml]
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/Resources/Styles/Styles.xaml]
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
