@@ -89,7 +89,7 @@ public partial class CompletarFacturas : ContentPage
 
         if (item != null)
         {
-            var formularioPractica = new DespliegueFacturaNoPagada();
+            var formularioPractica = new DespliegueFacturaNoPreparada();
             formularioPractica.BindingContext = item;
             Navigation.PushAsync(formularioPractica);
         }

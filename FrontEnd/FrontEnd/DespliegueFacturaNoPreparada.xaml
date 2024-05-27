@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrontEnd.DespliegueFacturaNoPreparada"
+             Title="DespliegueFacturaNoPreparada">
+    <Grid Margin="10" x:Name="contenedor" BackgroundColor="#a9dff0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!-- Frame with a Card -->
+        <Frame  Grid.Row="2" Grid.ColumnSpan="2" Margin="0" VerticalOptions="Start" BackgroundColor="White" BorderColor="Black" CornerRadius="10" MaximumWidthRequest="1200">
+            <ScrollView>
+                <VerticalStackLayout Padding="10">
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="lblIdFactura" Text="ID de Factura: " TextColor="Black" FontSize="Subtitle" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+                        <Label x:Name="lblfecha" Text="Fecha: " TextColor="Black" FontSize="Subtitle" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Column="1" />
+                    </Grid>
+                    <Label Text="Factura" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Start" />
+                    <!-- Encabezados -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.Column="0" BackgroundColor="#a9dff0" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
+                            <Label Text="Nombre" FontSize="Subtitle" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                        </Frame>
+                        <Frame Grid.Column="1" BackgroundColor="#a9dff0" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
+                            <Label Text="Cantidad" FontSize="Subtitle" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                        </Frame>
+                    </Grid>
+
+                    <!-- Tabla de datos -->
+                    <ActivityIndicator x:Name="spinner" IsRunning="True" IsVisible="True" Color="Black"/>
+                    <CollectionView ItemsSource="{Binding listaDeProductos}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="3*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Frame Grid.Column="0" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
+                                        <Label Text="{Binding nombreProducto}" FontSize="Title" TextColor="Black" />
+                                    </Frame>
+                                    <Frame Grid.Column="1" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
+                                        <Label Text="{Binding numCantidad}" FontSize="Title" TextColor="Black"/>
+                                    </Frame>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <VerticalStackLayout Spacing="15" Padding="10">
+                        <Grid HorizontalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Button HorizontalOptions="Start" x:Name="btnAceptar" FontSize="Subtitle" Text="Aceptar Pedido" Clicked="btnAceptar_Clicked" MaximumWidthRequest="350"  BackgroundColor="#414BB2" TextColor="White"/>
+                            <Button HorizontalOptions="End" x:Name="btnCancelar" FontSize="Subtitle" Text="Cancelar Pedido" Clicked="btnCancelar_Clicked" BackgroundColor="#F76887" TextColor="White" Grid.Column="1" />
+                        </Grid>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </ScrollView>
+        </Frame>
+    </Grid>
+</ContentPage>

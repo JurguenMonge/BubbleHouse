@@ -20,6 +20,9 @@
     <MauiXaml Update="DespliegueFacturaNoPagada.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="DespliegueFacturaNoPreparada.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="FormularioCategoriaProducto.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
