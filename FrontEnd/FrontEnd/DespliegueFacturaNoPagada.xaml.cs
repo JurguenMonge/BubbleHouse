@@ -214,24 +214,31 @@ public partial class DespliegueFacturaNoPagada : ContentPage
             {
                 DisplayAlert("Efectivo", "El efectivo no a sido ingresado", "Aceptar");
             }
-            ResFactura res = new ResFactura();
-            res = await FacturaController.ModificarEstadoNoPreparadoFactura(req);
-            if (res.Resultado)
+            else if(float.Parse(txtefectivo.Text) < fact.numTotal)
             {
-                if(selecionado == 1)
-                {
-                    DisplayAlert("Pedido aceptado", "Su cambio: " + (valor - (decimal)req.Factura.numTotal), "Aceptar");
-                }
-                else
-                {
-                    DisplayAlert("Pedido Aceptado", "Factura aceptada con exito", "Aceptar");
-                }
-                Navigation.PushAsync(new AceptarFacturas());
-                Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+                DisplayAlert("Efectivo", "El efectivo ingresado es menor al total a cobrar", "Aceptar");
             }
             else
             {
-                DisplayAlert("Error en factura", "Sucedio un error al modificar la factura" + res.ListaDeErrores.First(), "Aceptar");
+                ResFactura res = new ResFactura();
+                res = await FacturaController.ModificarEstadoNoPreparadoFactura(req);
+                if (res.Resultado)
+                {
+                    if (selecionado == 1)
+                    {
+                        DisplayAlert("Pedido aceptado", "Su cambio: " + (valor - (decimal)req.Factura.numTotal), "Aceptar");
+                    }
+                    else
+                    {
+                        DisplayAlert("Pedido Aceptado", "Factura aceptada con exito", "Aceptar");
+                    }
+                    Navigation.PushAsync(new AceptarFacturas());
+                    Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+                }
+                else
+                {
+                    DisplayAlert("Error en factura", "Sucedio un error al modificar la factura" + res.ListaDeErrores.First(), "Aceptar");
+                }
             }
         }
         catch (Exception ex)
