@@ -25,6 +25,7 @@ namespace BackEnd.logic
                 {
                     ValidacionesIngrediente.ValidarCategoria(req.Ingrediente, res, ref tipoRegistro);
                     ValidacionesIngrediente.ValidarNombre(req.Ingrediente, res, ref tipoRegistro);
+                    ValidacionesIngrediente.ValidarCategoria(req.Ingrediente, res, ref tipoRegistro);
                     ValidacionesIngrediente.ValidarDescripcion(req.Ingrediente, res, ref tipoRegistro);
                     ValidacionesIngrediente.ValidarUrlImagen(req.Ingrediente, res, ref tipoRegistro);
                     ValidacionesIngrediente.ValidarPrecio(req.Ingrediente, res, ref tipoRegistro);
@@ -117,6 +118,7 @@ namespace BackEnd.logic
 
                     ValidacionesIngrediente.ValidarCategoria(req.Ingrediente, res, ref tipoRegistro);
                     ValidacionesIngrediente.ValidarNombre(req.Ingrediente, res, ref tipoRegistro);
+                    ValidacionesIngrediente.ValidarCategoria(req.Ingrediente, res, ref tipoRegistro);
                     ValidacionesIngrediente.ValidarDescripcion(req.Ingrediente, res, ref tipoRegistro);
                     ValidacionesIngrediente.ValidarUrlImagen(req.Ingrediente, res, ref tipoRegistro);
                     ValidacionesIngrediente.ValidarPrecio(req.Ingrediente, res, ref tipoRegistro);
@@ -218,6 +220,7 @@ namespace BackEnd.logic
             ingrediente.idIngrediente = ingredienteLink.ID_INGREDIENTE;
             ingrediente.idCategoriaIngrediente = ingredienteLink.ID_CATE_INGREDIENTE;
             ingrediente.dscNombre = ingredienteLink.DSC_NOMBRE_INGREDIENTE;
+            ingrediente.dscNombreCategoriaIngrediente = ingredienteLink.DSC_NOMBRE_CATEGORIA;
             ingrediente.dscDescripcion = ingredienteLink.DSC_DESCRIPCION;
             ingrediente.dscURLImagen = ingredienteLink.DSC_URL_IMAGEN;
             ingrediente.numPrecio = (decimal)ingredienteLink.NUM_PRECIO;

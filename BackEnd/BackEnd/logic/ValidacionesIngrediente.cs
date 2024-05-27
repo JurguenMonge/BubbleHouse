@@ -28,6 +28,15 @@ namespace BackEnd.logic
                 tipoRegistro = 2;
             }
         }
+        public static void ValidarNombreCategoria(Ingrediente ingrediente, ResIngrediente res, ref short tipoRegistro)
+        {
+            if (String.IsNullOrEmpty(ingrediente.dscNombreCategoriaIngrediente))
+            {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("Nombre faltante");
+                tipoRegistro = 2;
+            }
+        }
         public static void ValidarDescripcion(Ingrediente ingrediente, ResIngrediente res, ref short tipoRegistro)
         {
             if (String.IsNullOrEmpty(ingrediente.dscDescripcion))

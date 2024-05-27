@@ -9,8 +9,7 @@ namespace FrontEnd.Pages;
 
 public partial class FormSubCategoriaProducto : ContentPage
 {
-    private readonly string Placeholder = "Seleccionar categoría";
-    
+        
     private List<CategoriaProducto> _listaDeCategoriasProducto = new List<CategoriaProducto>();
 
     private CategoriaProducto selectedCategoriaProducto;
