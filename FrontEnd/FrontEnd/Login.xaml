@@ -7,7 +7,7 @@
         <Grid x:Name="Contenedor" BackgroundColor="#a9dff0">
             <VerticalStackLayout Spacing="15" Margin="40,40,40,0" Padding="10">
                 <Image
-                    Source="dotnet_logo.png"
+                    Source="logo_celeste.png"
                     HeightRequest="185"
                     Aspect="AspectFit"
                     IsVisible="True"
