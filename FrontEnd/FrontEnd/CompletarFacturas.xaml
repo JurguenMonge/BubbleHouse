@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:FrontEnd.Entidades.Entidad"
-             x:Class="FrontEnd.AceptarFacturas"
-             Title="AceptarFacturas">
+             x:Class="FrontEnd.CompletarFacturas"
+             Title="CompletarFacturas">
     <ContentPage.Resources>
         <Style x:Key="SquaredFrameStyle" TargetType="Frame">
             <Setter Property="BackgroundColor" Value="#bdc0f7" />
@@ -11,7 +10,7 @@
             <Setter Property="CornerRadius" Value="0" />
             <Setter Property="Padding" Value="10" />
             <Setter Property="MaximumWidthRequest" Value="550" />
-            
+
         </Style>
     </ContentPage.Resources>
     <Grid Margin="10,10,10,10" x:Name="contenedor" BackgroundColor="#a9dff0">
@@ -27,11 +26,11 @@
         </Grid.ColumnDefinitions>
 
         <!-- Header Label -->
-        <Label Grid.Row="0" Grid.ColumnSpan="2" TextColor="White" FontAttributes="Bold" FontSize="Title" Text="Pedidos por Cobrar" HorizontalOptions="Center" VerticalOptions="Center" />
+        <Label Grid.Row="0" Grid.ColumnSpan="2" TextColor="White" FontAttributes="Bold" FontSize="Title" Text="Pedidos por Preparar" HorizontalOptions="Center" VerticalOptions="Center" />
 
         <!-- Buttons -->
-        <Button Grid.Row="1" Grid.Column="0" x:Name="btnPorCobrar" WidthRequest="250" HeightRequest="30" BackgroundColor="Black" Text="Cobrar" FontSize="Subtitle" TextColor="White" HorizontalOptions="End" VerticalOptions="Start" Margin="10,10,0,10"/>
-        <Button Grid.Row="1" Grid.Column="1" x:Name="btnPorPreparar" WidthRequest="250" HeightRequest="30" BackgroundColor="White" Text="Preparar" FontSize="Subtitle" TextColor="Black" Clicked="btnPorPreparar_Clicked" HorizontalOptions="Start" VerticalOptions="Start" Margin="0,10,10,10"/>
+        <Button Grid.Row="1" Grid.Column="0" x:Name="btnPorCobrar" WidthRequest="250" HeightRequest="30" BackgroundColor="White" Text="Cobrar" FontSize="Subtitle" TextColor="Black" Clicked="btnPorCobrar_Clicked" HorizontalOptions="End" VerticalOptions="Start" Margin="10,10,0,10"/>
+        <Button Grid.Row="1" Grid.Column="1" x:Name="btnPorPreparar" WidthRequest="250" HeightRequest="30" BackgroundColor="Black" Text="Preparar" FontSize="Subtitle" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="0,10,10,10"/>
 
         <!-- CollectionView with Frame template -->
         <CollectionView Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding listaDeFacturas}">

@@ -7,16 +7,15 @@ using System.Text;
 
 namespace FrontEnd;
 
-public partial class AceptarFacturas : ContentPage
+public partial class CompletarFacturas : ContentPage
 {
     private List<Factura> _listaDeFacturas = new List<Factura>();
-
-    public AceptarFacturas()
+    public CompletarFacturas()
 	{
-        InitializeComponent();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-        CargarFacturas();                                                                                                                                                                                                                                                          
-    }
-    
+		InitializeComponent();
+        CargarFacturas();
+	}
+
     #region refrezcarCompomentes
     public List<Factura> listaDeFacturas
     {
@@ -46,7 +45,7 @@ public partial class AceptarFacturas : ContentPage
     private async Task<List<Factura>> FacturasDesdeApi()
     {
         List<Factura> retornarPublicacionApi = new List<Factura>();
-        String laURL = "https://localhost:44311/api/factura/obtenerNoPagadas";
+        String laURL = "https://localhost:44311/api/factura/obtenerNoPreparadas";
         try
         {
 
@@ -82,7 +81,7 @@ public partial class AceptarFacturas : ContentPage
 
         return retornarPublicacionApi;
     }
-    
+
     private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
         var button = sender as Frame;
@@ -95,9 +94,10 @@ public partial class AceptarFacturas : ContentPage
             Navigation.PushAsync(formularioPractica);
         }
     }
-    private void btnPorPreparar_Clicked(object sender, EventArgs e)
+
+    private void btnPorCobrar_Clicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new CompletarFacturas());
+        Navigation.PushAsync(new AceptarFacturas());
         Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
     }
 }
