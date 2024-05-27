@@ -11,44 +11,59 @@
             <Setter Property="CornerRadius" Value="0" />
             <Setter Property="Padding" Value="10" />
             <Setter Property="MaximumWidthRequest" Value="550" />
-            
         </Style>
     </ContentPage.Resources>
     <Grid Margin="10,10,10,10" x:Name="contenedor" BackgroundColor="#a9dff0">
-        <!-- Row and Column Definitions -->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+        <!-- Grid for the background image -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Source="logo_celeste.png" Aspect="AspectFill" Opacity="0.3"
+                   HorizontalOptions="Center" VerticalOptions="Center"
+                   WidthRequest="200" HeightRequest="200"/>
+        </Grid>
 
-        <!-- Header Label -->
-        <Label Grid.Row="0" Grid.ColumnSpan="2" TextColor="White" FontAttributes="Bold" FontSize="Title" Text="Pedidos por Cobrar" HorizontalOptions="Center" VerticalOptions="Center" />
+        <!-- Main content Grid -->
+        <Grid Margin="0" BackgroundColor="Transparent">
+            <!-- Row and Column Definitions -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-        <!-- Buttons -->
-        <Button Grid.Row="1" Grid.Column="0" x:Name="btnPorCobrar" WidthRequest="250" HeightRequest="30" BackgroundColor="Black" Text="Cobrar" FontSize="Subtitle" TextColor="White" HorizontalOptions="End" VerticalOptions="Start" Margin="10,10,0,10"/>
-        <Button Grid.Row="1" Grid.Column="1" x:Name="btnPorPreparar" WidthRequest="250" HeightRequest="30" BackgroundColor="White" Text="Preparar" FontSize="Subtitle" TextColor="Black" Clicked="btnPorPreparar_Clicked" HorizontalOptions="Start" VerticalOptions="Start" Margin="0,10,10,10"/>
+            <!-- Header Label -->
+            <Label Grid.Row="0" Grid.ColumnSpan="2" TextColor="White" FontAttributes="Bold" FontSize="Title" Text="Pedidos por Cobrar" HorizontalOptions="Center" VerticalOptions="Center" />
 
-        <!-- CollectionView with Frame template -->
-        <CollectionView Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding listaDeFacturas}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Frame Style="{StaticResource SquaredFrameStyle}">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-                        </Frame.GestureRecognizers>
-                        <VerticalStackLayout>
-                            <Label Text="{Binding idFactura, StringFormat='Numero de Factura: {0}'}" FontSize="20" TextColor="White" />
-                            <Label Text="{Binding fecha, StringFormat='Fecha: {0}'}" FontSize="20" TextColor="White" />
-                            <Label Text="{Binding numTotal, StringFormat='Total: {0}'}" FontSize="20" TextColor="White" />
-                        </VerticalStackLayout>
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+            <!-- Buttons -->
+            <Button Grid.Row="1" Grid.Column="0" x:Name="btnPorCobrar" WidthRequest="250" HeightRequest="30" BackgroundColor="Black" Text="Cobrar" FontSize="Subtitle" TextColor="White" HorizontalOptions="End" VerticalOptions="Start" Margin="10,10,0,10"/>
+            <Button Grid.Row="1" Grid.Column="1" x:Name="btnPorPreparar" WidthRequest="250" HeightRequest="30" BackgroundColor="White" Text="Preparar" FontSize="Subtitle" TextColor="Black" Clicked="btnPorPreparar_Clicked" HorizontalOptions="Start" VerticalOptions="Start" Margin="0,10,10,10"/>
+
+            <!-- CollectionView with Frame template -->
+            <CollectionView Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding listaDeFacturas}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Style="{StaticResource SquaredFrameStyle}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                            </Frame.GestureRecognizers>
+                            <VerticalStackLayout>
+                                <Label Text="{Binding idFactura, StringFormat='Numero de Factura: {0}'}" FontSize="20" TextColor="White" />
+                                <Label Text="{Binding fecha, StringFormat='Fecha: {0}'}" FontSize="20" TextColor="White" />
+                                <Label Text="{Binding numTotal, StringFormat='Total: {0}'}" FontSize="20" TextColor="White" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
     </Grid>
 </ContentPage>
