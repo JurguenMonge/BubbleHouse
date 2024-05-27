@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrontEnd.Productos"
+             Title="Productos">
+    <ContentPage.Resources>
+        <Style x:Key="SquaredFrameStyle" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="#bdc0f7" />
+            <Setter Property="BorderColor" Value="Black" />
+            <Setter Property="CornerRadius" Value="0" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="MaximumWidthRequest" Value="550" />
+        </Style>
+    </ContentPage.Resources>
+    <Grid Margin="10,10,10,10" x:Name="contenedor" BackgroundColor="#a9dff0">
+        <!-- Row and Column Definitions -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Header Label -->
+        <Label Grid.Row="0" Grid.ColumnSpan="2" TextColor="White" FontAttributes="Bold" FontSize="Title" Text="Listado de productos" HorizontalOptions="Center" VerticalOptions="Center" />
+    </Grid>
+</ContentPage>

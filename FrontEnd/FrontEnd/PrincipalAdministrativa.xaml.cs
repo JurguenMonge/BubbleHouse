@@ -21,7 +21,7 @@ public partial class PrincipalAdministrativa : ContentPage
 
     private void btnProductos_Clicked(object sender, EventArgs e)
     {
-
+        Navigation.PushAsync(new Productos());
     }
 
     private void btnAceptarPedidos_Clicked(object sender, EventArgs e)
