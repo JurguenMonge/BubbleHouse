@@ -120,24 +120,28 @@ public partial class FormularioCategoriaProducto : ContentPage
 
     private async void btnEliminar_ClickedAsync(object sender, EventArgs e)
     {
-        CategoriaProductoController controller = new CategoriaProductoController();
-        try
+        bool answer = await DisplayAlert("Confirmación", "¿Estás seguro de eliminar esta categoría?", "Aceptar", "Cancelar");
+        if (answer)
         {
-            ResCategoriaProducto res = new ResCategoriaProducto();
-            res = await controller.EliminarCategoriaProducto(int.Parse(txtId.Text));
-            if (res.Resultado)
+            CategoriaProductoController controller = new CategoriaProductoController();
+            try
             {
-                DisplayAlert("Eliminacion Exitosa", "Categoria de producto eliminada con exito", "Aceptar");
-                Navigation.PushAsync(new ListadoCategoriaProducto());
+                ResCategoriaProducto res = new ResCategoriaProducto();
+                res = await controller.EliminarCategoriaProducto(int.Parse(txtId.Text));
+                if (res.Resultado)
+                {
+                    DisplayAlert("Eliminacion Exitosa", "Categoria de producto eliminada con exito", "Aceptar");
+                    Navigation.PushAsync(new ListadoCategoriaProducto());
+                }
+                else
+                {
+                    DisplayAlert("Error en eliminacion", "Sucedio un error al eliminar: " + res.ListaDeErrores.First(), "Aceptar");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                DisplayAlert("Error en eliminacion", "Sucedio un error al eliminar: " + res.ListaDeErrores.First(), "Aceptar");
+                DisplayAlert("Error interno", "Porfavor reinstale la aplicacion", "Aceptar");
             }
-        }
-        catch (Exception ex)
-        {
-            DisplayAlert("Error interno", "Porfavor reinstale la aplicacion", "Aceptar");
         }
     }
 
@@ -152,6 +156,7 @@ public partial class FormularioCategoriaProducto : ContentPage
 
             if (!string.IsNullOrEmpty(txtId.Text) && txtId.Text != "0")
             {
+                lblTitulo.Text = "Modificar Categoría de Producto";
                 btnIngresar.Text = "Actualizar";
                 btnEliminar.IsVisible = true;
             }

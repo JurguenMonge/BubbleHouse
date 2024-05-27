@@ -93,7 +93,7 @@ public partial class SubCategoriaProductoPage : ContentPage
         }
     }
 
-    private void TapGestureRecognizer_Tapped_1(object sender, TappedEventArgs e)
+    private void TapCrearSubCategoria(object sender, TappedEventArgs e)
     {
         Navigation.PushAsync(new FormSubCategoriaProducto());
     }

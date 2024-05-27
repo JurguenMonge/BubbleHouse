@@ -166,7 +166,7 @@ public partial class FormSubCategoriaProducto : ContentPage
 
     private async void btnEliminar_ClickedAsync(object sender, EventArgs e)
     {
-        bool answer = await DisplayAlert("Confirmación", "¿Estás seguro de que deseas eliminar esta subcategoría?", "Aceptar", "Cancelar");
+        bool answer = await DisplayAlert("Confirmación", "¿Estás seguro de eliminar esta subcategoría?", "Aceptar", "Cancelar");
         if (answer)
         {
             SubCategoriaProductoController controller = new SubCategoriaProductoController();

@@ -92,7 +92,8 @@ public partial class ListadoCategoriaProducto : ContentPage
         }
     }
 
-    private void btnCrearPractica_Clicked(object sender, EventArgs e)
+
+    private void TapCrearCategoria(object sender, TappedEventArgs e)
     {
         Navigation.PushAsync(new FormularioCategoriaProducto());
     }

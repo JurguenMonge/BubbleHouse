@@ -23,7 +23,7 @@
                     </LinearGradientBrush>
                 </Frame.Background>
                 <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                    <TapGestureRecognizer Tapped="TapCrearSubCategoria"/>
                 </Frame.GestureRecognizers>
                 <VerticalStackLayout>
                     <Image Source="cruz.png" 
@@ -59,39 +59,40 @@
                                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                                 </Frame.GestureRecognizers>
                                 <Grid >
-                                    <StackLayout>                                    <Label x:Name="txtid"
-                                           Text="{Binding idSubcategoriaProducto}"
-                                           IsVisible="False"/>
-                                    <Label x:Name="lblIdCategoria"
-                                           Text="{Binding cateProductoId}"
-                                           IsVisible="False"/>
-                                    <Label x:Name="lblNombreCategoria"
-                                           FontSize="15"
-                                           HorizontalTextAlignment="Start"
-                                           Text="{Binding dscNombreCategoria}"
-                                           VerticalOptions="Center"
-                                           TextColor="white"/>
-                                    <Label x:Name="txtNombre"
-                                           FontSize="15"
-                                           HorizontalTextAlignment="Start"
-                                           Text="{Binding dscNombreSubCategoria}"
-                                           VerticalOptions="Center"
-                                           TextColor="white"/>
+                                    <StackLayout>                                    
+                                        <Label x:Name="txtid"
+                                               Text="{Binding idSubcategoriaProducto}"
+                                               IsVisible="False"/>
+                                        <Label x:Name="lblIdCategoria"
+                                               Text="{Binding cateProductoId}"
+                                               IsVisible="False"/>
+                                        <Label x:Name="lblNombreCategoria"
+                                               FontSize="15"
+                                               HorizontalTextAlignment="Start"
+                                               Text="{Binding dscNombreCategoria}"
+                                               VerticalOptions="Center"
+                                               TextColor="white"/>
+                                        <Label x:Name="txtNombre"
+                                               FontSize="15"
+                                               HorizontalTextAlignment="Start"
+                                               Text="{Binding dscNombreSubCategoria}"
+                                               VerticalOptions="Center"
+                                               TextColor="white"/>
                                         
                                     </StackLayout>
 
                                     <HorizontalStackLayout HorizontalOptions="End">
-                                            <Label Text="Activa"
+                                        <Label Text="Activa"
                                                FontSize="16"
                                                TextColor="white"
                                                Padding="5"
                                                HorizontalTextAlignment="End"/>
-                                            <Switch x:Name="estado"
-                                                    IsToggled="True"
-                                                    HorizontalOptions="End"
-                                                    IsEnabled="False"
-                                                    OnColor="White"/>
-                                        </HorizontalStackLayout>
+                                        <Switch x:Name="estado"
+                                                IsToggled="True"
+                                                HorizontalOptions="End"
+                                                IsEnabled="False"
+                                                OnColor="White"/>
+                                    </HorizontalStackLayout>
                                 </Grid>
                             </Frame>
                         </StackLayout>

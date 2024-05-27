@@ -22,7 +22,8 @@ namespace FrontEnd.Controller
                 {
                     res.ListaDeErrores.Add("Ingrese el nombre de la categoria del producto");
                 }
-                Regex regex = new Regex("^[a-zA-Z0-9 ]*$");
+                Regex regex = new Regex("^[a-zA-Z0-9\\u00C0-\\u00FF ]*$");
+
                 if (!regex.IsMatch(nombre))
                 {
                     res.ListaDeErrores.Add("El nombre de la categoria del producto no debe llevar caracteres especiales");
@@ -72,7 +73,8 @@ namespace FrontEnd.Controller
                 {
                     res.ListaDeErrores.Add("Ingrese el nombre de la categoria del producto");
                 }
-                Regex regex = new Regex("^[a-zA-Z0-9 ]*$");
+                Regex regex = new Regex("^[a-zA-Z0-9\\u00C0-\\u00FF ]*$");
+
                 if (!regex.IsMatch(nombre))
                 {
                     res.ListaDeErrores.Add("El nombre de la categoria del producto no debe llevar caracteres especiales");
@@ -85,6 +87,7 @@ namespace FrontEnd.Controller
                     categoria.idCategoriaProducto = id;
                     categoria.estado = true;
                     req.CategoriaProducto = categoria;
+                    req.idSesion = Preferences.Get("IdSesion", string.Empty);
 
                     var jsonContent = new StringContent(JsonConvert.SerializeObject(req), Encoding.UTF8, "application/json");
 
@@ -116,11 +119,28 @@ namespace FrontEnd.Controller
             ResCategoriaProducto res = new ResCategoriaProducto();
             try
             {
+                ReqCategoriaProducto req = new ReqCategoriaProducto();
+                CategoriaProducto categoria = new CategoriaProducto();
+                categoria.dscNombreCategoria = "";
+                categoria.idCategoriaProducto = id;
+                categoria.estado = true;
+                req.CategoriaProducto = categoria;
+                req.idSesion = Preferences.Get("IdSesion", string.Empty);
+
+                var jsonContent = new StringContent(JsonConvert.SerializeObject(req), Encoding.UTF8, "application/json");
                 if (id != 0)
                 {
                     using (HttpClient httpClient = new HttpClient())
                     {
-                        var response = await httpClient.DeleteAsync("https://localhost:44311/api/categoriaProducto/eliminar/" + id);
+                       
+                        var request = new HttpRequestMessage
+                        {
+                            Method = HttpMethod.Delete,
+                            RequestUri = new Uri("https://localhost:44311/api/categoriaProducto/eliminar"),
+                            Content = jsonContent
+                        };
+
+                        var response = await httpClient.SendAsync(request);
                         if (response.IsSuccessStatusCode)
                         {
                             var responseContent = await response.Content.ReadAsStringAsync();

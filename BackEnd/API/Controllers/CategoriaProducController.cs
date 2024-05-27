@@ -40,14 +40,34 @@ namespace API.Controllers
         [System.Web.Http.Route("api/categoriaProducto/modificar")]
         public ResCategoriaProducto modificarCategoria(ReqCategoriaProducto req)
         {
-            return new LogCategoriaProducto().modificarCategoria(req);
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResCategoriaProducto res = new ResCategoriaProducto();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogCategoriaProducto().modificarCategoria(req);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
         }
 
         [System.Web.Http.HttpDelete]
-        [System.Web.Http.Route("api/categoriaProducto/eliminar/{id}")]
-        public ResCategoriaProducto eliminarCategoria(int id)
+        [System.Web.Http.Route("api/categoriaProducto/eliminar")]
+        public ResCategoriaProducto eliminarCategoria(ReqCategoriaProducto req)
         {
-            return new LogCategoriaProducto().eliminarCategoria(id);
+            ValidacionesSesion vali = new ValidacionesSesion();
+            ResCategoriaProducto res = new ResCategoriaProducto();
+            if (vali.validarSesionyRolAdmin(req.idSesion))
+            {
+                res = new LogCategoriaProducto().eliminarCategoria(req);
+            }
+            else
+            {
+                res.ListaDeErrores.Add("Sesion o rol invalido");
+            }
+            return res;
         }
 
     }

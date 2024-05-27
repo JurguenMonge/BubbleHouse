@@ -28,7 +28,7 @@ namespace FrontEnd.Controller
                 {
                     res.ListaDeErrores.Add("Debe seleccionar una categoría");
                 }
-                Regex regex = new Regex("^[a-zA-Z0-9 ]*$");
+                Regex regex = new Regex("^[a-zA-Z0-9\\u00C0-\\u00FF ]*$");
                 if (!regex.IsMatch(nombre))
                 {
                     res.ListaDeErrores.Add("El nombre de la subcategoría del producto no debe llevar caracteres especiales");
@@ -83,7 +83,7 @@ namespace FrontEnd.Controller
                 {
                     res.ListaDeErrores.Add("Debe seleccionar una categoría");
                 }
-                Regex regex = new Regex("^[a-zA-Z0-9 ]*$");
+                Regex regex = new Regex("^[a-zA-Z0-9\\u00C0-\\u00FF ]*$");
                 if (!regex.IsMatch(nombre))
                 {
                     res.ListaDeErrores.Add("El nombre de la subcategoría del producto no debe llevar caracteres especiales");
