@@ -361,9 +361,9 @@ public partial class DespliegueFacturaNoPagada : ContentPage
             }
         }
     }
-
-    private void btnAceptar_Clicked_1(object sender, EventArgs e)
+    private void btnVolver_Clicked(object sender, EventArgs e)
     {
-
+        Navigation.PushAsync(new AceptarFacturas());
+        Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
     }
 }

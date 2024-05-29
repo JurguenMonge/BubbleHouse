@@ -176,4 +176,10 @@ public partial class DespliegueFacturaNoPreparada : ContentPage
             DisplayAlert("Error interno", "Porfavor reinstale la aplicacion", "Aceptar");
         }
     }
+
+    private void btnVolver_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new CompletarFacturas());
+        Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+    }
 }

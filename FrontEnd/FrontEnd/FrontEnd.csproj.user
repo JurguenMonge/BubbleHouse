@@ -17,10 +17,16 @@
     <MauiXaml Update="CompletarFacturas.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="DespliegueFactura.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="DespliegueFacturaNoPagada.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="DespliegueFacturaNoPreparada.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="FacturasCompletadas.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="FormularioCategoriaProducto.xaml">

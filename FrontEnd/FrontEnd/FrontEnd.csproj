@@ -58,6 +58,7 @@
 
 	<ItemGroup>
 	  <Compile Remove="CompletarFacturas.cs" />
+	  <Compile Remove="FacturasCompletadas.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -94,10 +95,16 @@
 	  <MauiXaml Update="CompletarFacturas.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="DespliegueFactura.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="DespliegueFacturaNoPagada.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="DespliegueFacturaNoPreparada.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="FacturasCompletadas.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="FormularioCategoriaProducto.xaml">
