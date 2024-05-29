@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FrontEnd.Pages.SubCategoriaProductoPage">
+             x:Class="FrontEnd.Pages.IngredientePage">
+    
     <ScrollView>
         <Grid BackgroundColor="#A9DFF0" RowSpacing="15" Padding="10">
             <Grid.RowDefinitions>
@@ -22,25 +23,25 @@
                     </LinearGradientBrush>
                 </Frame.Background>
                 <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapCrearSubCategoria"/>
+                    <TapGestureRecognizer Tapped="TapAgregarIngrediente"/>
                 </Frame.GestureRecognizers>
                 <VerticalStackLayout>
                     <Image Source="cruz.png" 
-                           WidthRequest="50"
-                           HeightRequest="50"
-                           />
-                    <Label x:Name="btnCrearPractica"
-                            Text="Nueva SubCategoría de Producto"
+                       WidthRequest="50"
+                       HeightRequest="50"
+                       />
+                    <Label 
+                            Text="Nuevo Ingrediente"
                             TextColor="White"
                             FontAttributes="Bold"
                             Padding="10"
                             Margin="10"
-                           HorizontalTextAlignment="Center"/>
+                            HorizontalTextAlignment="Center"/>
                 </VerticalStackLayout>
             </Frame>
 
             <CollectionView Grid.Row="1"
-                    ItemsSource="{Binding listaSubCategoriasProducto}">
+                ItemsSource="{Binding listaIngrediente}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
@@ -55,32 +56,43 @@
                                     </LinearGradientBrush>
                                 </Frame.Background>
                                 <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="TapModificarSubCategoria"/>
+                                    <TapGestureRecognizer Tapped="TapModificarIngrediente"/>
                                 </Frame.GestureRecognizers>
-                                <Grid ColumnDefinitions="*,*">
-                                    <StackLayout Grid.Column="0">                                    
+                                <Grid ColumnDefinitions="0.25*,0.5*,0.25*">
+                                    <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                        <Image Source="dotnet_bot.png"
+                                               WidthRequest="100"
+                                               HeightRequest="100"/>
+                                    </StackLayout>
+                                    <StackLayout VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1">
                                         <Label x:Name="txtid"
-                                               Text="{Binding idSubcategoriaProducto}"
+                                               Text="{Binding idIngrediente}"
                                                IsVisible="False"/>
                                         <Label x:Name="lblIdCategoria"
-                                               Text="{Binding cateProductoId}"
+                                               Text="{Binding idCategoriaIngrediente}"
                                                IsVisible="False"/>
                                         <Label x:Name="lblNombreCategoria"
                                                FontSize="15"
                                                HorizontalTextAlignment="Start"
-                                               Text="{Binding dscNombreCategoria}"
+                                               Text="{Binding dscNombreCategoriaIngrediente}"
                                                VerticalOptions="Center"
                                                TextColor="white"/>
-                                        <Label x:Name="txtNombre"
+                                        <Label x:Name="lblNombreIngrediente"
                                                FontSize="15"
                                                HorizontalTextAlignment="Start"
-                                               Text="{Binding dscNombreSubCategoria}"
+                                               Text="{Binding dscNombre}"
                                                VerticalOptions="Center"
                                                TextColor="white"/>
-                                        
+                                        <Label x:Name="lblDescripcion"
+                                               FontSize="15"
+                                               HorizontalTextAlignment="Start"
+                                               Text="{Binding dscDescripcion}"
+                                               VerticalOptions="Center"
+                                               TextColor="white"/>
+
                                     </StackLayout>
 
-                                    <HorizontalStackLayout Grid.Column="1" HorizontalOptions="End">
+                                    <HorizontalStackLayout Grid.Column="2" >
                                         <Label Text="Activa"
                                                FontSize="16"
                                                TextColor="white"

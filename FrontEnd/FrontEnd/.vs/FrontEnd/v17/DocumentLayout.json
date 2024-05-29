@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\entidades\\entidad\\ingrediente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:entidades\\entidad\\ingrediente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\pages\\formingrediente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\formingrediente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\controller\\subcategoriaproductocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:controller\\subcategoriaproductocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\pages\\formingrediente.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\formingrediente.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\controller\\ingredientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:controller\\ingredientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\pages\\ingredientepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\ingredientepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\pages\\ingredientepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\ingredientepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 350,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,41 +38,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Ingrediente.cs",
-              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\Ingrediente.cs",
-              "RelativeDocumentMoniker": "Entidades\\Entidad\\Ingrediente.cs",
-              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\Ingrediente.cs",
-              "RelativeToolTip": "Entidades\\Entidad\\Ingrediente.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAfAAAA",
+              "DocumentIndex": 1,
+              "Title": "FormIngrediente.xaml.cs",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormIngrediente.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\FormIngrediente.xaml.cs",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormIngrediente.xaml.cs",
+              "RelativeToolTip": "Pages\\FormIngrediente.xaml.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T21:49:40.465Z",
+              "WhenOpened": "2024-05-29T03:31:36.285Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SubCategoriaProductoController.cs",
-              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\SubCategoriaProductoController.cs",
-              "RelativeDocumentMoniker": "Controller\\SubCategoriaProductoController.cs",
-              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\SubCategoriaProductoController.cs",
-              "RelativeToolTip": "Controller\\SubCategoriaProductoController.cs",
-              "ViewState": "AQIAAH4AAAAAAAAAAAAYwBoAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T21:17:41.216Z",
+              "DocumentIndex": 0,
+              "Title": "FormIngrediente.xaml",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormIngrediente.xaml",
+              "RelativeDocumentMoniker": "Pages\\FormIngrediente.xaml",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormIngrediente.xaml",
+              "RelativeToolTip": "Pages\\FormIngrediente.xaml",
+              "ViewState": "AQIAABcAAAAAAAAAAAAawCIAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-29T03:26:04.134Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IngredienteController.cs",
-              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\IngredienteController.cs",
-              "RelativeDocumentMoniker": "Controller\\IngredienteController.cs",
-              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\IngredienteController.cs",
-              "RelativeToolTip": "Controller\\IngredienteController.cs",
-              "ViewState": "AQIAAH4AAAAAAAAAAAAYwFcAAAAJAAAA",
+              "Title": "IngredientePage.xaml.cs",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\IngredientePage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\IngredientePage.xaml.cs",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\IngredientePage.xaml.cs",
+              "RelativeToolTip": "Pages\\IngredientePage.xaml.cs",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAqwGAAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T21:17:35.609Z",
+              "WhenOpened": "2024-05-29T01:55:43.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IngredientePage.xaml",
+              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\IngredientePage.xaml",
+              "RelativeDocumentMoniker": "Pages\\IngredientePage.xaml",
+              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\IngredientePage.xaml",
+              "RelativeToolTip": "Pages\\IngredientePage.xaml",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAD8AAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-29T01:51:49.313Z",
               "EditorCaption": ""
             }
           ]

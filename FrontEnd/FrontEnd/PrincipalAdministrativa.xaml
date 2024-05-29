@@ -9,6 +9,7 @@
                 <Button x:Name="btnCategorias" BackgroundColor="#414BB2" Text="Categorias" Clicked="btnCategorias_Clicked"></Button>
                 <Button x:Name="btnSubCategorias" BackgroundColor="#414BB2" Text="SubCategorias" Clicked="btnSubCategorias_Clicked"></Button>
                 <Button x:Name="btnProductos" BackgroundColor="#414BB2" Text="Productos" Clicked="btnProductos_Clicked"></Button>
+                <Button x:Name="btnIngredientes" BackgroundColor="#414BB2" Text="Ingredientes" Clicked="btnIngredientes_Clicked"></Button>
                 <Button x:Name="btnAceptarPedidos" BackgroundColor="#414BB2" Text="Aceptar Pedidos" Clicked="btnAceptarPedidos_Clicked"></Button>
             </HorizontalStackLayout>
         </VerticalStackLayout>

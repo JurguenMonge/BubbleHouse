@@ -28,4 +28,9 @@ public partial class PrincipalAdministrativa : ContentPage
     {
         Navigation.PushAsync(new AceptarFacturas());
     }
+
+    private void btnIngredientes_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new IngredientePage());
+    }
 }

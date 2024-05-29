@@ -76,11 +76,23 @@ build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/Pages/FormIngrediente.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.Pages.FormIngrediente.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\FormIngrediente.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\FormIngrediente.xaml
+
 [D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/Pages/FormSubCategoriaProducto.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.Pages.FormSubCategoriaProducto.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\FormSubCategoriaProducto.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\FormSubCategoriaProducto.xaml
+
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/Pages/IngredientePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.Pages.IngredientePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\IngredientePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\IngredientePage.xaml
 
 [D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/Pages/SubCategoriaProductoPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

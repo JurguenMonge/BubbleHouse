@@ -80,7 +80,7 @@ public partial class SubCategoriaProductoPage : ContentPage
         return retornarSubCategoriasApi;
     }
 
-    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    private void TapModificarSubCategoria(object sender, TappedEventArgs e)
     {
         var button = sender as Frame;
         var item = button?.BindingContext as SubcategoriaProducto;
