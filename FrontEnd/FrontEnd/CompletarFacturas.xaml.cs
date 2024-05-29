@@ -100,4 +100,10 @@ public partial class CompletarFacturas : ContentPage
         Navigation.PushAsync(new AceptarFacturas());
         Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
     }
+
+    private void btnCompletas_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new FacturasCompletadas());
+        Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+    }
 }

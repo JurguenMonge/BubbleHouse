@@ -109,5 +109,6 @@
                 </VerticalStackLayout>
             </ScrollView>
         </Frame>
+        <Button HorizontalOptions="Start" x:Name="btnVolver" FontSize="Subtitle" Text="Volver" Clicked="btnVolver_Clicked" MaximumWidthRequest="350"  BackgroundColor="#414BB2" TextColor="White"/>
     </Grid>
 </ContentPage>
