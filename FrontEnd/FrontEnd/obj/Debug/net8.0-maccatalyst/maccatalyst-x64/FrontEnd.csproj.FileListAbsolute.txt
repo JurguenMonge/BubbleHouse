@@ -975,3 +975,4 @@ D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\macca
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\bubble@3x.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\bubble@2x.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\bubble.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\home.png

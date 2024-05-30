@@ -14,6 +14,7 @@ public partial class FormIngrediente : ContentPage
     private CategoriaIngrediente selectedCategoriaIngrediente;
     public int cateIngredienteId;
     private bool isPickerOpen = false;
+    string path = "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Resources\\Images\\";
     public string selectedImagePath;
 
     public FormIngrediente()
@@ -118,10 +119,10 @@ public partial class FormIngrediente : ContentPage
 
     private void pickCategoria_SelectedIndexChanged(object sender, EventArgs e)
     {
-        // Obtener el índice seleccionado
+        
         int selectedIndex = pickCategoria.SelectedIndex;
 
-        // Si se seleccionó el primer elemento (placeholder), no hacer nada
+        
         if (isPickerOpen && selectedIndex == 0)
         {
             pickCategoria.SelectedItem = false;
@@ -141,6 +142,7 @@ public partial class FormIngrediente : ContentPage
             CategoriaIngrediente cate = (CategoriaIngrediente)pickCategoria.SelectedItem;
             if (cate != null)
             {
+                
                 ResIngrediente res = new ResIngrediente();
                 if (int.Parse(txtId.Text) == 0)
                 {
@@ -148,7 +150,7 @@ public partial class FormIngrediente : ContentPage
                     if (res.Resultado)
                     {
                         await DisplayAlert("Insercion Exitosa", "Ingrediente guardado con éxito", "Aceptar");
-                        Navigation.PushAsync(new IngredientePage());
+                        await Navigation.PopAsync();
                     }
                     else
                     {
@@ -157,11 +159,24 @@ public partial class FormIngrediente : ContentPage
                 }
                 else
                 {
+                    if (String.IsNullOrEmpty(selectedImagePath))
+                    {
+                        var imageSource = selectedImage.Source;
+
+                        
+                        if (imageSource is FileImageSource fileImageSource)
+                        {
+                            selectedImagePath = fileImageSource.File;
+                        }
+                        
+                    }
+
                     res = await controller.ActualizarIngrediente(int.Parse(txtId.Text), cate.idCateIngrediente, txtNombreIngrediente.Text, txtDescripcion.Text, selectedImagePath, decimal.Parse(txtPrecio.Text));
                     if (res.Resultado)
                     {
                         await DisplayAlert("Actualiación Exitosa", "Ingrediente actualizado con éxito", "Aceptar");
-                        Navigation.PushAsync(new IngredientePage());
+                        await Navigation.PopAsync();
+
                     }
                     else
                     {
@@ -195,7 +210,7 @@ public partial class FormIngrediente : ContentPage
                 if (res.Resultado)
                 {
                     await DisplayAlert("Eliminación Exitosa", "Ingrediente eliminado con éxito", "Aceptar");
-                    Navigation.PushAsync(new IngredientePage());
+                    await Navigation.PopAsync();
                 }
                 else
                 {
@@ -256,11 +271,17 @@ public partial class FormIngrediente : ContentPage
 
     private void btnCancelar_Clicked(object sender, EventArgs e)
     {
+        
+        if (!string.IsNullOrEmpty(selectedImagePath) && File.Exists(path+selectedImagePath))
+        {
+            File.Delete(path+selectedImagePath);
+        }
         Navigation.PopAsync();
     }
 
     private async void btnSeleccionar_Clicked(object sender, EventArgs e)
     {
+
         try
         {
             var result = await FilePicker.PickAsync(new PickOptions
@@ -271,36 +292,34 @@ public partial class FormIngrediente : ContentPage
 
             if (result != null)
             {
-                // Obtener el stream de la imagen seleccionada
+                
                 var stream = await result.OpenReadAsync();
 
-                // Generar un nombre único para la imagen
+                
                 var fileName = Path.GetFileName(result.FullPath);
-                //var uniqueFileName = $"{Guid.NewGuid()}_{fileName}";
 
-                // Crear la ruta completa para guardar la imagen en la carpeta Resources/Images
-                var imagePath = Path.Combine("D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Resources\\Images\\", fileName);
+                
+                var imagePath = Path.Combine(path, fileName);
 
-                // Asegurarse de que el directorio exista
+                
                 Directory.CreateDirectory(Path.GetDirectoryName(imagePath));
 
-                // Copiar la imagen al directorio del proyecto
+                
                 using (var fileStream = new FileStream(imagePath, FileMode.Create, FileAccess.Write))
                 {
                     await stream.CopyToAsync(fileStream);
                 }
 
-                // Actualizar la imagen seleccionada en la UI
+                
                 selectedImage.Source = ImageSource.FromStream(() => new FileStream(imagePath, FileMode.Open, FileAccess.Read));
 
-                // Guardar la ruta relativa de la imagen para usarla más adelante
+                
                 selectedImagePath = fileName;
 
             }
         }
         catch (Exception ex)
         {
-            // Manejar excepciones si es necesario
             await DisplayAlert("Error", $"Ocurrió un error: {ex.Message}", "OK");
         }
     }

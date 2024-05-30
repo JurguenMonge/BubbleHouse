@@ -1018,3 +1018,4 @@ D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\menu@3x.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\menu@2x.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\menu.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\home.png

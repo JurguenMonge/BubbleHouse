@@ -1,6 +1,7 @@
 using FrontEnd.Entidades.Entidad;
 using FrontEnd.Entidades.Response;
 using Newtonsoft.Json;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace FrontEnd.Pages;
@@ -14,10 +15,10 @@ public partial class IngredientePage : ContentPage
 
     }
 
-    private List<Ingrediente> _listaIngrediente = new List<Ingrediente>();
+    private ObservableCollection<Ingrediente> _listaIngrediente = new ObservableCollection<Ingrediente>();
 
     #region refrezcarCompomentes
-    public List<Ingrediente> listaIngrediente
+    public ObservableCollection<Ingrediente> listaIngrediente
     {
         get { return _listaIngrediente; }
         set
@@ -39,7 +40,12 @@ public partial class IngredientePage : ContentPage
 
     private async void CargarIngredientes()
     {
-        listaIngrediente = await IngredientesDesdeApi();
+        listaIngrediente.Clear();
+        var ingredientes = await IngredientesDesdeApi();
+        foreach (var ingrediente in ingredientes)
+        {
+            listaIngrediente.Add(ingrediente);
+        }
         BindingContext = this;
     }
 
@@ -97,6 +103,12 @@ public partial class IngredientePage : ContentPage
         
 
         Navigation.PushAsync(new FormIngrediente());
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        CargarIngredientes(); 
     }
 
 }

@@ -3337,3 +3337,4 @@ D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetiz
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\producto.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\receta.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\usuario.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\home.png

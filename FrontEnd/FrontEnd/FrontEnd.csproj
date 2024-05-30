@@ -75,6 +75,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\cruz.png" />
+	  <None Remove="Resources\Images\fondo.png" />
 	  <None Remove="Resources\Images\logo_celeste.png" />
 	</ItemGroup>
 
@@ -146,10 +147,6 @@
 	  <None Update="Login.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </None>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="img\" />
 	</ItemGroup>
 
 </Project>

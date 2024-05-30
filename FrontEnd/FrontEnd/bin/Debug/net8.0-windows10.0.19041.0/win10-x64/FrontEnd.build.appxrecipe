@@ -199,6 +199,9 @@
     <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\azucar.scale-100.jpg">
+      <PackagePath>azucar.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\bubble.scale-100.png">
       <PackagePath>bubble.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -229,6 +232,9 @@
     <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\carrito.scale-400.png">
       <PackagePath>carrito.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chocolate.scale-100.jpg">
+      <PackagePath>chocolate.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cruz.scale-100.png">
       <PackagePath>cruz.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -247,11 +253,11 @@
     <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\evento.scale-100.jpg">
-      <PackagePath>evento.scale-100.jpg</PackagePath>
+    <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\fondo.scale-100.png">
+      <PackagePath>fondo.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\gmail.scale-100.png">
-      <PackagePath>gmail.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-100.png">
+      <PackagePath>home.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\ingrediente.scale-100.png">
       <PackagePath>ingrediente.scale-100.png</PackagePath>
@@ -331,8 +337,8 @@
     <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\receta.scale-400.png">
       <PackagePath>receta.scale-400.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\ubicacion.scale-100.png">
-      <PackagePath>ubicacion.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\seleccionar.scale-100.png">
+      <PackagePath>seleccionar.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\usuario.scale-100.png">
       <PackagePath>usuario.scale-100.png</PackagePath>
@@ -348,6 +354,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\usuario.scale-400.png">
       <PackagePath>usuario.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\vainilla.scale-100.jpg">
+      <PackagePath>vainilla.scale-100.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\FrontEnd.deps.json">
       <PackagePath>FrontEnd.deps.json</PackagePath>

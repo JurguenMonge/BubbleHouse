@@ -30,6 +30,10 @@ namespace FrontEnd.Controller
                 {
                     res.ListaDeErrores.Add("Debe seleccionar una imagen");
                 }
+                if (precio < 0)
+                {
+                    res.ListaDeErrores.Add("Ingrese un precio");
+                }
                 if (idCategoriaIngrediente <= 0)
                 {
                     res.ListaDeErrores.Add("Debe seleccionar una categoría ingrediente");
@@ -48,6 +52,7 @@ namespace FrontEnd.Controller
                     ingrediente.dscDescripcion = descripcion;
                     ingrediente.dscURLImagen = urlImagen;
                     ingrediente.idIngrediente = 0;
+                    ingrediente.numPrecio = precio;
                     ingrediente.estado = true;
                     req.Ingrediente = ingrediente;
                     req.idSesion = Preferences.Get("IdSesion", string.Empty);
@@ -95,6 +100,10 @@ namespace FrontEnd.Controller
                 {
                     res.ListaDeErrores.Add("Debe seleccionar una imagen");
                 }
+                if (precio < 0)
+                {
+                    res.ListaDeErrores.Add("Ingrese un precio");
+                }
                 if (idCategoriaIngrediente <= 0)
                 {
                     res.ListaDeErrores.Add("Debe seleccionar una categoría ingrediente");
@@ -112,6 +121,7 @@ namespace FrontEnd.Controller
                     ingrediente.idCategoriaIngrediente = idCategoriaIngrediente;
                     ingrediente.dscDescripcion = descripcion;
                     ingrediente.dscURLImagen = urlImagen;
+                    ingrediente.numPrecio = precio;
                     ingrediente.idIngrediente = idIngrediente;
                     ingrediente.estado = true;
                     req.Ingrediente = ingrediente;

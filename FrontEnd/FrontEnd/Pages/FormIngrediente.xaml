@@ -28,8 +28,8 @@
                         <Entry x:Name="txtPrecio" Keyboard="Numeric" Background="White" TextColor="Black" Placeholder="Ingrese el precio"/>
                         <Label FontAttributes="Bold" TextColor="White" Text="Imagen"/>
                         <Grid ColumnDefinitions="0.4*,0.6*">
-                            <Image x:Name="selectedImage" Source="dotnet_bot.png" HeightRequest="80"/>
-                            <StackLayout HorizontalOptions="End" VerticalOptions="Center" Grid.Column="1">
+                            <Image HorizontalOptions="Start" x:Name="selectedImage" Source="fondo.png" HeightRequest="100" WidthRequest="100"/>
+                            <StackLayout  HorizontalOptions="End" VerticalOptions="Center" Grid.Column="1">
                                 <Button x:Name="btnSeleccionar" Clicked="btnSeleccionar_Clicked" Text="Seleccionar Imagen" TextColor="White" BackgroundColor="DodgerBlue" WidthRequest="160"/>
                             </StackLayout>
                             
