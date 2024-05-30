@@ -47,7 +47,16 @@
     <MauiXaml Update="Pages\IngredientePage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Pages\ProductoPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Pages\RecetaPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Pages\SubCategoriaProductoPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Pages\UsuarioAdminPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="PrincipalAdministrativa.xaml">

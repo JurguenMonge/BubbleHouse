@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FrontEnd.PrincipalAdministrativa"
-             Title="PrincipalAdministrativa">
-    <Grid BackgroundColor="#a9dff0">
+             xmlns:local="clr-namespace:FrontEnd"
+             xmlns:local1="clr-namespace:FrontEnd.Pages">
+    <!--<Grid BackgroundColor="#a9dff0">
         <VerticalStackLayout>
             <HorizontalStackLayout Margin="10,10,10,10" Spacing="10">
                 <Button x:Name="btnCategorias" BackgroundColor="#414BB2" Text="Categorias" Clicked="btnCategorias_Clicked"></Button>
@@ -14,6 +15,12 @@
             </HorizontalStackLayout>
         </VerticalStackLayout>
         
-    </Grid>
-    
-</ContentPage>
+    </Grid>-->
+
+    <!--<local:AceptarFacturas Title="Pedidos" IconImageSource="pedido.svg" />
+    <local1:ProductoPage Title="Productos" IconImageSource="producto.svg" />
+    <local1:IngredientePage Title="Ingredientes" IconImageSource="ingrediente.svg" />
+    <local1:RecetaPage Title="Recetas" IconImageSource="receta.svg" />
+    <local1:UsuarioAdminPage Title="Usuarios" IconImageSource="usuario.svg" />-->
+
+</TabbedPage>
