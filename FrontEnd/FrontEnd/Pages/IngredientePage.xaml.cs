@@ -94,6 +94,8 @@ public partial class IngredientePage : ContentPage
 
     private void TapAgregarIngrediente(object sender, TappedEventArgs e)
     {
+        
+
         Navigation.PushAsync(new FormIngrediente());
     }
 }

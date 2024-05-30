@@ -8,9 +8,15 @@ namespace FrontEnd
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new Login());
+            MainPage = new Login();
         }
+
+        public void NavigateToMainPage()
+        {
+            // Navegar a la página principal con la TabbedPage después de iniciar sesión
+            MainPage = new NavigationPage(new PrincipalAdministrativa());
+        }
+
     }
 }
  

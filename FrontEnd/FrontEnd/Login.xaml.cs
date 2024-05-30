@@ -22,9 +22,10 @@ public partial class Login : ContentPage
             await login.IngresarSesion(txtCorreo.Text, txtPassword.Text);
             string nombreUsuario = Preferences.Get("UsuarioNombre", string.Empty);
             DisplayAlert("Inicio de sesión", "Bienvenido "+ nombreUsuario, "Aceptar");
-            Navigation.PushAsync(new PrincipalAdministrativa());
-            Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
-
+            //Navigation.PushAsync(new PrincipalAdministrativa());
+            //Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+            // Navegar a la página principal después de iniciar sesión
+            ((App)Application.Current).NavigateToMainPage();
         }
         catch (Exception ex)
         {

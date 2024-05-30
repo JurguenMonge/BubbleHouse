@@ -74,8 +74,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\bubble.svg" />
+	  <None Remove="Resources\Images\carrito.svg" />
 	  <None Remove="Resources\Images\cruz.png" />
+	  <None Remove="Resources\Images\ingrediente.svg" />
 	  <None Remove="Resources\Images\logo_celeste.png" />
+	  <None Remove="Resources\Images\menu.svg" />
+	  <None Remove="Resources\Images\pedido.svg" />
+	  <None Remove="Resources\Images\producto.svg" />
+	  <None Remove="Resources\Images\receta.svg" />
+	  <None Remove="Resources\Images\usuario.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -125,7 +133,16 @@
 	  <MauiXaml Update="Pages\IngredientePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\ProductoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\RecetaPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\SubCategoriaProductoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\UsuarioAdminPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PrincipalAdministrativa.xaml">
