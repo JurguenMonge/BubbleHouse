@@ -98,4 +98,5 @@ public partial class IngredientePage : ContentPage
 
         Navigation.PushAsync(new FormIngrediente());
     }
+
 }

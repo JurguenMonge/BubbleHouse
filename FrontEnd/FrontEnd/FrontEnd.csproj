@@ -148,4 +148,8 @@
 	  </None>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="img\" />
+	</ItemGroup>
+
 </Project>

@@ -208,7 +208,9 @@ namespace BackEnd.logic
         private CategoriaIngrediente factoryArmarCategoriaIngrediente(Obtener_Cate_Ingredientes_ActivosResult categoriaLinq)
         {
             CategoriaIngrediente categoriaIngrediente = new CategoriaIngrediente();
+            categoriaIngrediente.idCateIngrediente = categoriaLinq.ID_CATE_INGREDIENTE;
             categoriaIngrediente.dscNombreCategoria = categoriaLinq.DSC_NOMBRE_CATEGORIA;
+            categoriaIngrediente.estadoCate = true;
             return categoriaIngrediente;
         }
     }

@@ -62,7 +62,7 @@
                                 </Frame.GestureRecognizers>
                                 <Grid ColumnDefinitions="0.25*,0.5*,0.25*">
                                     <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
-                                        <Image Source="dotnet_bot.png"
+                                        <Image Source="{Binding dscURLImagen}"
                                                WidthRequest="100"
                                                HeightRequest="100"/>
                                     </StackLayout>

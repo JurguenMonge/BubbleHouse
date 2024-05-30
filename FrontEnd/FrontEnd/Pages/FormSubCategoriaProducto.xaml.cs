@@ -128,12 +128,12 @@ public partial class FormSubCategoriaProducto : ContentPage
                     res = await controller.IngresarSubCategoriaProducto(txtNombre.Text, cate.idCategoriaProducto);
                     if (res.Resultado)
                     {
-                        DisplayAlert("Insercion Exitosa", "Categoria de producto guardada con éxito", "Aceptar");
+                        await DisplayAlert("Insercion Exitosa", "Categoria de producto guardada con éxito", "Aceptar");
                         Navigation.PushAsync(new SubCategoriaProductoPage());
                     }
                     else
                     {
-                        DisplayAlert("Error en insercion", "Sucedio un error al guardar: " + res.ListaDeErrores.First(), "Aceptar");
+                        await DisplayAlert("Error en insercion", "Sucedio un error al guardar: " + res.ListaDeErrores.First(), "Aceptar");
                     }
                 }
                 else
@@ -141,25 +141,25 @@ public partial class FormSubCategoriaProducto : ContentPage
                     res = await controller.ActualizarSubCategoriaProducto(int.Parse(txtId.Text), cate.idCategoriaProducto, txtNombre.Text);
                     if (res.Resultado)
                     {
-                        DisplayAlert("Actualiación Exitosa", "Subcategoría de producto actualizada con éxito", "Aceptar");
+                        await DisplayAlert("Actualiación Exitosa", "Subcategoría de producto actualizada con éxito", "Aceptar");
                         Navigation.PushAsync(new SubCategoriaProductoPage());
                     }
                     else
                     {
-                        DisplayAlert("Error en actualiación", "Sucedió un error al actualizar: " + res.ListaDeErrores.First(), "Aceptar");
+                        await DisplayAlert("Error en actualiación", "Sucedió un error al actualizar: " + res.ListaDeErrores.First(), "Aceptar");
                     }
                 }
             }
             else
             {
-                DisplayAlert("Error!", "Debe Seleccionar una categoría de producto", "Aceptar");
+                await DisplayAlert("Error!", "Debe Seleccionar una categoría de producto", "Aceptar");
             }
             
 
         }
         catch (Exception ex)
         {
-            DisplayAlert("Error interno", "Porfavor reinstale la aplicacion", "Aceptar");
+            await DisplayAlert("Error interno", "Porfavor reinstale la aplicacion", "Aceptar");
         }
     }
 
@@ -175,17 +175,17 @@ public partial class FormSubCategoriaProducto : ContentPage
                 res = await controller.EliminarSubCategoriaProducto(int.Parse(txtId.Text));
                 if (res.Resultado)
                 {
-                    DisplayAlert("Eliminación Exitosa", "Subcategoría de producto eliminada con éxito", "Aceptar");
+                    await DisplayAlert("Eliminación Exitosa", "Subcategoría de producto eliminada con éxito", "Aceptar");
                     Navigation.PushAsync(new SubCategoriaProductoPage());
                 }
                 else
                 {
-                    DisplayAlert("Error en eliminación", "Sucedió un error al eliminar: " + res.ListaDeErrores.First(), "Aceptar");
+                    await DisplayAlert("Error en eliminación", "Sucedió un error al eliminar: " + res.ListaDeErrores.First(), "Aceptar");
                 }
             }
             catch (Exception ex)
             {
-                DisplayAlert("Error interno", "Por favor reinstale la aplicación", "Aceptar");
+                await DisplayAlert("Error interno", "Por favor reinstale la aplicación", "Aceptar");
             }
         }
     }
@@ -250,5 +250,10 @@ public partial class FormSubCategoriaProducto : ContentPage
     private void pickCategoria_Focused(object sender, FocusEventArgs e)
     {
         isPickerOpen = true;
+    }
+
+    private void btnCancelar_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PopAsync();
     }
 }

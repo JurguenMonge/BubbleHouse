@@ -89,12 +89,12 @@ public partial class FormularioCategoriaProducto : ContentPage
                 res = await controller.IngresarCategoriaProducto(txtNombre.Text);
                 if (res.Resultado)
                 {
-                    DisplayAlert("Insercion Exitosa", "Categoria de producto guardada con exito", "Aceptar");
+                    await DisplayAlert("Insercion Exitosa", "Categoria de producto guardada con exito", "Aceptar");
                     Navigation.PushAsync(new ListadoCategoriaProducto());
                 }
                 else
                 {
-                    DisplayAlert("Error en insercion", "Sucedio un error al guardar: " + res.ListaDeErrores.First(), "Aceptar");
+                    await DisplayAlert("Error en insercion", "Sucedio un error al guardar: " + res.ListaDeErrores.First(), "Aceptar");
                 }
             }
             else
@@ -102,19 +102,19 @@ public partial class FormularioCategoriaProducto : ContentPage
                 res = await controller.ActualizarCategoriaProducto(txtNombre.Text, int.Parse(txtId.Text));
                 if (res.Resultado)
                 {
-                    DisplayAlert("Actualizacion Exitosa", "Categoria de producto actualizada con exito", "Aceptar");
+                    await DisplayAlert("Actualizacion Exitosa", "Categoria de producto actualizada con exito", "Aceptar");
                     Navigation.PushAsync(new ListadoCategoriaProducto());
                 }
                 else
                 {
-                    DisplayAlert("Error en actualiacion", "Sucedio un error al actualizar: " + res.ListaDeErrores.First(), "Aceptar");
+                    await DisplayAlert("Error en actualiacion", "Sucedio un error al actualizar: " + res.ListaDeErrores.First(), "Aceptar");
                 }
             }
 
         }
         catch (Exception ex)
         {
-            DisplayAlert("Error interno", "Porfavor reinstale la aplicacion", "Aceptar");
+            await DisplayAlert("Error interno", "Porfavor reinstale la aplicacion", "Aceptar");
         }
     }
 
@@ -130,17 +130,17 @@ public partial class FormularioCategoriaProducto : ContentPage
                 res = await controller.EliminarCategoriaProducto(int.Parse(txtId.Text));
                 if (res.Resultado)
                 {
-                    DisplayAlert("Eliminacion Exitosa", "Categoria de producto eliminada con exito", "Aceptar");
+                    await DisplayAlert("Eliminacion Exitosa", "Categoria de producto eliminada con exito", "Aceptar");
                     Navigation.PushAsync(new ListadoCategoriaProducto());
                 }
                 else
                 {
-                    DisplayAlert("Error en eliminacion", "Sucedio un error al eliminar: " + res.ListaDeErrores.First(), "Aceptar");
+                    await DisplayAlert("Error en eliminacion", "Sucedio un error al eliminar: " + res.ListaDeErrores.First(), "Aceptar");
                 }
             }
             catch (Exception ex)
             {
-                DisplayAlert("Error interno", "Porfavor reinstale la aplicacion", "Aceptar");
+                await DisplayAlert("Error interno", "Porfavor reinstale la aplicacion", "Aceptar");
             }
         }
     }
@@ -167,4 +167,10 @@ public partial class FormularioCategoriaProducto : ContentPage
             }
         }
     }
+
+    private void btnCancelar_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PopAsync();
+    }
+
 }

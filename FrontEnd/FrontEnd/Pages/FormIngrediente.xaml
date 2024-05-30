@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FrontEnd.Pages.FormIngrediente"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False">
     <ScrollView>
         <Grid x:Name="Contenedor" BackgroundColor="#a9dff0" >
             <VerticalStackLayout Spacing="1" Margin="40,40,40,0" Padding="10">
@@ -14,8 +15,8 @@
                         <Label FontAttributes="Bold" TextColor="White" Text="Categoría del Ingrediente"></Label>
                         <Picker x:Name="pickCategoria"
                                 FontAttributes="Bold"
-                                Background="White"
                                 TextColor="Gray"
+                                BackgroundColor="White"
                                 FontSize="12"
                                 VerticalTextAlignment="Center"
                                 SelectedIndexChanged="pickCategoria_SelectedIndexChanged"
@@ -27,15 +28,16 @@
                         <Entry x:Name="txtPrecio" Keyboard="Numeric" Background="White" TextColor="Black" Placeholder="Ingrese el precio"/>
                         <Label FontAttributes="Bold" TextColor="White" Text="Imagen"/>
                         <Grid ColumnDefinitions="0.4*,0.6*">
-                            <Image Source="dotnet_bot.png" HeightRequest="80"/>
-                            <StackLayout HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1">
-                                <Button  Text="Seleccionar Imagen" WidthRequest="160"/>
+                            <Image x:Name="selectedImage" Source="dotnet_bot.png" HeightRequest="80"/>
+                            <StackLayout HorizontalOptions="End" VerticalOptions="Center" Grid.Column="1">
+                                <Button x:Name="btnSeleccionar" Clicked="btnSeleccionar_Clicked" Text="Seleccionar Imagen" TextColor="White" BackgroundColor="DodgerBlue" WidthRequest="160"/>
                             </StackLayout>
                             
                         </Grid>
                         
                         <Button x:Name="btnIngresar" Text="Agregar" Clicked="btnIngresar_Clicked" BackgroundColor="#414BB2"></Button>
                         <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" BackgroundColor="#F76887" IsVisible="False"></Button>
+                        <Button x:Name="btnCancelar" Text="Cancelar" Clicked="btnCancelar_Clicked" BackgroundColor="Gray"></Button>
                         <Entry x:Name="txtId"  Keyboard="Numeric" Background="White" IsReadOnly="true" IsVisible="False" Text="0"></Entry>
                     </VerticalStackLayout>
                 </Frame>

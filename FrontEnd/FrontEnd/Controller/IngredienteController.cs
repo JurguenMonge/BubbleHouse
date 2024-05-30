@@ -13,7 +13,7 @@ namespace FrontEnd.Controller
 {
     public class IngredienteController
     {
-        public async Task<ResIngrediente> IngresarIngrediente(int idCategoriaIngrediente, string nombreIngrediente, string nombreCategoriaIngrediente, string descripcion, string urlImagen, decimal precio)
+        public async Task<ResIngrediente> IngresarIngrediente(int idCategoriaIngrediente, string nombreIngrediente, string descripcion, string urlImagen, decimal precio)
         {
             ResIngrediente res = new ResIngrediente();
             try
@@ -21,10 +21,6 @@ namespace FrontEnd.Controller
                 if (String.IsNullOrEmpty(nombreIngrediente))
                 {
                     res.ListaDeErrores.Add("Ingrese el nombre del ingrediente");
-                }
-                if (String.IsNullOrEmpty(nombreCategoriaIngrediente))
-                {
-                    res.ListaDeErrores.Add("Ingrese el nombre de la categoría del ingrediente");
                 }
                 if (String.IsNullOrEmpty(descripcion))
                 {
@@ -43,17 +39,12 @@ namespace FrontEnd.Controller
                 {
                     res.ListaDeErrores.Add("El nombre del ingrediente no debe llevar caracteres especiales");
                 }
-                if (!regex.IsMatch(nombreCategoriaIngrediente))
-                {
-                    res.ListaDeErrores.Add("El nombre de la categoría del ingrediente no debe llevar caracteres especiales");
-                }
                 if (res.ListaDeErrores.Count() == 0)
                 {
                     ReqIngrediente req = new ReqIngrediente();
                     Ingrediente ingrediente = new Ingrediente();
                     ingrediente.dscNombre = nombreIngrediente;
                     ingrediente.idCategoriaIngrediente = idCategoriaIngrediente;
-                    ingrediente.dscNombreCategoriaIngrediente = nombreCategoriaIngrediente;
                     ingrediente.dscDescripcion = descripcion;
                     ingrediente.dscURLImagen = urlImagen;
                     ingrediente.idIngrediente = 0;
@@ -87,7 +78,7 @@ namespace FrontEnd.Controller
             return res;
         }
 
-        public async Task<ResIngrediente> ActualizarIngrediente(int idIngrediente, int idCategoriaIngrediente, string nombreIngrediente, string nombreCategoriaIngrediente, string descripcion, string urlImagen, decimal precio)
+        public async Task<ResIngrediente> ActualizarIngrediente(int idIngrediente, int idCategoriaIngrediente, string nombreIngrediente, string descripcion, string urlImagen, decimal precio)
         {
             ResIngrediente res = new ResIngrediente();
             try
@@ -95,10 +86,6 @@ namespace FrontEnd.Controller
                 if (String.IsNullOrEmpty(nombreIngrediente))
                 {
                     res.ListaDeErrores.Add("Ingrese el nombre del ingrediente");
-                }
-                if (String.IsNullOrEmpty(nombreCategoriaIngrediente))
-                {
-                    res.ListaDeErrores.Add("Ingrese el nombre de la categoría del ingrediente");
                 }
                 if (String.IsNullOrEmpty(descripcion))
                 {
@@ -117,17 +104,12 @@ namespace FrontEnd.Controller
                 {
                     res.ListaDeErrores.Add("El nombre del ingrediente no debe llevar caracteres especiales");
                 }
-                if (!regex.IsMatch(nombreCategoriaIngrediente))
-                {
-                    res.ListaDeErrores.Add("El nombre de la categoría del ingrediente no debe llevar caracteres especiales");
-                }
                 if (res.ListaDeErrores.Count() == 0)
                 {
                     ReqIngrediente req = new ReqIngrediente();
                     Ingrediente ingrediente = new Ingrediente();
                     ingrediente.dscNombre = nombreIngrediente;
                     ingrediente.idCategoriaIngrediente = idCategoriaIngrediente;
-                    ingrediente.dscNombreCategoriaIngrediente = nombreCategoriaIngrediente;
                     ingrediente.dscDescripcion = descripcion;
                     ingrediente.dscURLImagen = urlImagen;
                     ingrediente.idIngrediente = idIngrediente;
