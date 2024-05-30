@@ -93,6 +93,6 @@ public partial class ProductoPage : ContentPage
 
     private void TapAgregarIngrediente(object sender, TappedEventArgs e)
     {
-        Navigation.PushAsync(new FormIngrediente());
+        Navigation.PushAsync(new FormProducto());
     }
 }

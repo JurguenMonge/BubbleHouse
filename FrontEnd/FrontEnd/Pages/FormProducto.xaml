@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrontEnd.Pages.FormProducto"
+             Title="FormProducto">
+
+    <ScrollView>
+        <Grid x:Name="Contenedor" BackgroundColor="#a9dff0" >
+            <VerticalStackLayout Spacing="1" Margin="40,40,40,0" Padding="10">
+                <Frame Margin="10,0,10,0" VerticalOptions="Center" BackgroundColor="#bdc0f7" BorderColor="Azure" CornerRadius="50">
+                    <VerticalStackLayout Margin="10,0,10,0" Spacing="10">
+                        <Label x:Name="lblTitulo" FontAttributes="Bold" FontSize="Title" HorizontalTextAlignment="Center" TextColor="White" Text="Crear Producto"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Nombre del Producto" />
+                        <Entry x:Name="txtNombreProducto" Keyboard="Text" Background="White" TextColor="Black" Placeholder="Ingrese el nombre"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Receta del Producto"></Label>
+                        <Picker x:Name="pickReceta"
+                              FontAttributes="Bold"
+                              Background="White"
+                              TextColor="Gray"
+                              FontSize="12"
+                              VerticalTextAlignment="Center"
+                              SelectedIndexChanged="pickCategoria_SelectedIndexChanged"
+                              Focused="pickCategoria_Focused"
+                          />
+                        <Label FontAttributes="Bold" TextColor="White" Text="SubCategoría del Producto"></Label>
+                        <Picker x:Name="pickSubCategoria"
+                             FontAttributes="Bold"
+                             Background="White"
+                             TextColor="Gray"
+                             FontSize="12"
+                             VerticalTextAlignment="Center"
+                             SelectedIndexChanged="pickCategoria_SelectedIndexChanged"
+                             Focused="pickCategoria_Focused"
+                         />
+                        <Label FontAttributes="Bold" TextColor="White" Text="Categoría del Producto"></Label>
+                        <Picker x:Name="pickCategoria"
+                            FontAttributes="Bold"
+                            Background="White"
+                            TextColor="Gray"
+                            FontSize="12"
+                            VerticalTextAlignment="Center"
+                            SelectedIndexChanged="pickCategoria_SelectedIndexChanged"
+                            Focused="pickCategoria_Focused"
+                        />
+                        <Label FontAttributes="Bold" TextColor="White" Text="Descripción"/>
+                        <Editor x:Name="txtDescripcion" Background="White" HeightRequest="200" Placeholder="Ingrese una descripción"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Precio"/>
+                        <Entry x:Name="txtPrecio" Keyboard="Numeric" Background="White" TextColor="Black" Placeholder="Ingrese el precio"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Imagen"/>
+                        <Grid ColumnDefinitions="0.4*,0.6*">
+                            <Image Source="dotnet_bot.png" HeightRequest="80"/>
+                            <StackLayout HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1">
+                                <Button  Text="Seleccionar Imagen" WidthRequest="160"/>
+                            </StackLayout>
+                        </Grid>
+                        <Button x:Name="btnIngresar" Text="Agregar" Clicked="btnIngresar_Clicked" BackgroundColor="#414BB2"></Button>
+                        <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" BackgroundColor="#F76887" IsVisible="False"></Button>
+                        <Entry x:Name="txtId"  Keyboard="Numeric" Background="White" IsReadOnly="true" IsVisible="False" Text="0"></Entry>
+                    </VerticalStackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+
+
+</ContentPage>
