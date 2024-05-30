@@ -76,7 +76,7 @@
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                     <VerticalStackLayout Spacing="20">
-                        <Label x:Name="lbltotal" Text="Total: $10.00" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Start" Margin="900,50,0,0" />
+                        <Label x:Name="lbltotal" Text="Total: 1628" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Start" Margin="900,50,0,0" />
                         <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
                             <Button x:Name="btnAceptarCompra" FontSize="Subtitle" Text="Aceptar Pedido" Clicked="btnAceptarCompra_Clicked"   BackgroundColor="#414BB2" TextColor="White" Grid.Column="4" />
                             <Button x:Name="btncambiosCompra" FontSize="Subtitle" Text="Aplicar Cambios" Clicked="btncambiosCompra_Clicked"  BackgroundColor="#414BB2" TextColor="White" Grid.Column="4" />
