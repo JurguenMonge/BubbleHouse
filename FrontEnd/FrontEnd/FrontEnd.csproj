@@ -93,9 +93,6 @@
 	  <MauiXaml Update="AceptarFacturas.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Carrito.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="CompletarFacturas.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
