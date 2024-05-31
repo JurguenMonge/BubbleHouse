@@ -33,11 +33,17 @@ public partial class PrincipalAdministrativa : TabbedPage
         usuarioAdminPage.IconImageSource = "usuario.svg";
         NavigationPage.SetHasNavigationBar(usuarioAdminPage, true);
 
+        var carritoPage = new NavigationPage(new Carrito());
+        carritoPage.Title = "Carrito";
+        carritoPage.IconImageSource = "carrito.svg";
+        NavigationPage.SetHasNavigationBar(carritoPage, true);
+
         Children.Add(aceptarFacturasPage);
         Children.Add(productoPage);
         Children.Add(ingredientePage);
         Children.Add(recetaPage);
         Children.Add(usuarioAdminPage);
+        Children.Add(carritoPage);
     }
 
     //private void btnCategorias_Clicked(object sender, EventArgs e)
