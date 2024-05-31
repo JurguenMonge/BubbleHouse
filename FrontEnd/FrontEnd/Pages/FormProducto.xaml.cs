@@ -31,20 +31,10 @@ public partial class FormProducto : ContentPage
         bool answer = await DisplayAlert("Confirmación", "¿Estás seguro de eliminar este Producto?", "Aceptar", "Cancelar");
         if (answer)
         {
-            //IngredienteController controller = new IngredienteController();
+            
             try
             {
-                //ResIngrediente res = new ResIngrediente();
-                //res = await controller.EliminarIngrediente(int.Parse(txtId.Text));
-                //if (res.Resultado)
-                //{
-                //    await DisplayAlert("Eliminación Exitosa", "Ingrediente eliminado con éxito", "Aceptar");
-                //    await Navigation.PopAsync();
-                //}
-                //else
-                //{
-                //    await DisplayAlert("Error en eliminación", "Sucedió un error al eliminar: " + res.ListaDeErrores.First(), "Aceptar");
-                //}
+                
             }
             catch (Exception ex)
             {
