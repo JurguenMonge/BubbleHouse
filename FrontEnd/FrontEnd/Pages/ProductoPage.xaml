@@ -4,10 +4,128 @@
              x:Class="FrontEnd.Pages.ProductoPage"
              NavigationPage.HasBackButton="False"
              NavigationPage.HasNavigationBar="False">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Productos!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <Grid BackgroundColor="#A9DFF0" RowSpacing="15" Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Frame Margin="12"
+           BorderColor="Azure"
+           CornerRadius="5"
+           HasShadow="True"
+           HorizontalOptions="FillAndExpand"
+           VerticalOptions="FillAndExpand">
+                <Frame.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Offset="0" Color="#BDC0F7"/>
+                        <GradientStop Offset="1" Color="#BDC0F7"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapAgregarIngrediente"/>
+                </Frame.GestureRecognizers>
+                <VerticalStackLayout>
+                    <Image Source="cruz.png" 
+               WidthRequest="50"
+               HeightRequest="50"
+               />
+                    <Label 
+                    Text="Nuevo Producto"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Padding="10"
+                    Margin="10"
+                    HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <CollectionView Grid.Row="1"
+        ItemsSource="{Binding listaProducto}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame Margin="12"
+                           BorderColor="Azure"
+                           CornerRadius="5"
+                           HasShadow="True">
+                                <Frame.Background>
+                                    <LinearGradientBrush EndPoint="1,0">
+                                        <GradientStop Offset="0" Color="#BDC0F7"/>
+                                        <GradientStop Offset="1" Color="#BDC0F7"/>
+                                    </LinearGradientBrush>
+                                </Frame.Background>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapModificarIngrediente"/>
+                                </Frame.GestureRecognizers>
+                                <Grid ColumnDefinitions="0.25*,0.5*,0.25*">
+                                    <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                        <Image Source="dotnet_bot.png"
+                                       WidthRequest="100"
+                                       HeightRequest="100"/>
+                                    </StackLayout>
+                                    <StackLayout VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1">
+                                        <Label x:Name="txtid"
+                                       Text="{Binding idProducto}"
+                                       IsVisible="False"/>
+                                        <Label x:Name="lblsubcategoria"
+                                        FontSize="15"
+                                        HorizontalTextAlignment="Start"
+                                        Text="{Binding subcategoriaProducto.dscNombreSubCategoria}"
+                                        VerticalOptions="Center"
+                                        TextColor="white"/>
+                                        <Label x:Name="lblcategoria"
+                                        FontSize="15"
+                                        HorizontalTextAlignment="Start"
+                                        Text="{Binding categoriaProducto.dscNombreCategoria}"
+                                        VerticalOptions="Center"
+                                        TextColor="white"/>
+                                        <Label x:Name="lblreceta"
+                                        FontSize="15"
+                                        HorizontalTextAlignment="Start"
+                                        Text="{Binding receta.dscNombre}"
+                                        VerticalOptions="Center"
+                                        TextColor="white"/>
+                                        <Label x:Name="lblNombreProducto"
+                                        FontSize="15"
+                                        HorizontalTextAlignment="Start"
+                                        Text="{Binding nombreProducto}"
+                                        VerticalOptions="Center"
+                                        TextColor="white"/>
+                                        <Label x:Name="lblDescripcion"
+                                        FontSize="15"
+                                        HorizontalTextAlignment="Start"
+                                        Text="{Binding descripcion}"
+                                        VerticalOptions="Center"
+                                        TextColor="white"/>
+                                        <Label x:Name="lblPrecio"
+                                        FontSize="15"
+                                        HorizontalTextAlignment="Start"
+                                        Text="{Binding precio}"
+                                        VerticalOptions="Center"
+                                        TextColor="white"/>
+
+                                    </StackLayout>
+
+                                    <HorizontalStackLayout Grid.Column="2" >
+                                        <Label Text="Activa"
+                                       FontSize="16"
+                                       TextColor="white"
+                                       Padding="5"
+                                       VerticalOptions="Center"/>
+                                        <Switch x:Name="estado"
+                                        IsToggled="True"
+                                        HorizontalOptions="End"
+                                        IsEnabled="False"
+                                        OnColor="White"/>
+                                    </HorizontalStackLayout>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ScrollView>
 </ContentPage>

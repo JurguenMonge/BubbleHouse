@@ -10,6 +10,7 @@ namespace FrontEnd.Entidades.Entidad
     {
         public int idProducto { get; set; }
         public SubcategoriaProducto subcategoriaProducto { get; set; }
+        public CategoriaProducto categoriaProducto { get; set; }
         public string nombreProducto { get; set; }
         public string descripcion { get; set; }
         public string urlImgen { get; set; }
