@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrontEnd.Carrito"
+             Title="Carrito">
+    <Grid Margin="10" x:Name="contenedor" BackgroundColor="#a9dff0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Frame with a Card -->
+        <Frame  Grid.Row="2" Grid.ColumnSpan="2" Margin="0" VerticalOptions="Start" BackgroundColor="White" BorderColor="Black" CornerRadius="10" MaximumWidthRequest="1200">
+            <ScrollView>
+                <VerticalStackLayout Padding="10">
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                    <Label Text="Pedido" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Start" />
+                    <!-- Encabezados -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.Column="0" BackgroundColor="#a9dff0" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
+                            <Label Text="Nombre" FontSize="Subtitle" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                        </Frame>
+                        <Frame Grid.Column="1" BackgroundColor="#a9dff0" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
+                            <Label Text="Cantidad" FontSize="Subtitle" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                        </Frame>
+                        <Frame Grid.Column="2" BackgroundColor="#a9dff0" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
+                            <Label Text="Precio" FontSize="Subtitle" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                        </Frame>
+                        <Frame Grid.Column="3" BackgroundColor="#a9dff0" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
+                            <Label Text="Acciones" FontSize="Subtitle" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                        </Frame>
+                    </Grid>
+
+                    <!-- Tabla de datos -->
+
+                    <CollectionView ItemsSource="{Binding listaProducto}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Frame Grid.Column="0" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
+                                        <Label Text="{Binding nombreProducto}" TextColor="Black" />
+                                    </Frame>
+                                    <Frame Grid.Column="1" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
+                                        <Entry Keyboard="Numeric" Text="{Binding Cantidad }" TextColor="Black" />
+                                    </Frame>
+                                    <Frame Grid.Column="2" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
+                                        <Label Text="{Binding precio}" TextColor="Black" />
+                                    </Frame>
+                                    <Frame Grid.Column="3" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
+                                        <Button x:Name="btnEliminarCompra" FontSize="14" Text="Eliminar" Clicked="btnEliminarCompra_Clicked"  BackgroundColor="#F76887" TextColor="White" Grid.Column="5" />
+                                    </Frame>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <VerticalStackLayout Spacing="20">
+                        <Label x:Name="lbltotal" Text="Total: 1628 " TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Start" Margin="900,50,0,0" />
+                        <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
+                            <Button x:Name="btnAceptarCompra" FontSize="Subtitle" Text="Aceptar Pedido" Clicked="btnAceptarCompra_Clicked"   BackgroundColor="#414BB2" TextColor="White" Grid.Column="4" />
+                            <Button x:Name="btncambiosCompra" FontSize="Subtitle" Text="Aplicar Cambios" Clicked="btncambiosCompra_Clicked"  BackgroundColor="#414BB2" TextColor="White" Grid.Column="4" />
+                            <Button x:Name="btnCancelarCompra" FontSize="Subtitle" Text="Cancelar Pedido" Clicked="btnCancelarCompra_Clicked" BackgroundColor="#F76887" TextColor="White" Grid.Column="4" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </ScrollView>
+        </Frame>
+    </Grid>
+</ContentPage>

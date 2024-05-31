@@ -14,6 +14,9 @@
     <MauiXaml Update="AceptarFacturas.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Carrito.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="CompletarFacturas.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
