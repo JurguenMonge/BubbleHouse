@@ -85,7 +85,7 @@
                                         <Entry Keyboard="Numeric" Text="{Binding descuento}" TextColor="Black" />
                                     </Frame>
                                     <Frame Grid.Column="4" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
-                                        <Entry Keyboard="Numeric" Text="{Binding numSubtotal}" TextColor="Black" />
+                                        <Label Text="{Binding numSubtotal}" TextColor="Black" />
                                     </Frame> 
                                     <Frame Grid.Column="5" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
                                         <Button x:Name="btnEliminar" FontSize="14" Text="Eliminar" Clicked="btnEliminar_Clicked"  BackgroundColor="#F76887" TextColor="White" Grid.Column="5" />
