@@ -32,26 +32,17 @@
                              SelectedIndexChanged="pickCategoria_SelectedIndexChanged"
                              Focused="pickCategoria_Focused"
                          />
-                        <Label FontAttributes="Bold" TextColor="White" Text="Categoría del Producto"></Label>
-                        <Picker x:Name="pickCategoria"
-                            FontAttributes="Bold"
-                            Background="White"
-                            TextColor="Gray"
-                            FontSize="12"
-                            VerticalTextAlignment="Center"
-                            SelectedIndexChanged="pickCategoria_SelectedIndexChanged"
-                            Focused="pickCategoria_Focused"
-                        />
                         <Label FontAttributes="Bold" TextColor="White" Text="Descripción"/>
                         <Editor x:Name="txtDescripcion" Background="White" HeightRequest="200" Placeholder="Ingrese una descripción"/>
                         <Label FontAttributes="Bold" TextColor="White" Text="Precio"/>
                         <Entry x:Name="txtPrecio" Keyboard="Numeric" Background="White" TextColor="Black" Placeholder="Ingrese el precio"/>
                         <Label FontAttributes="Bold" TextColor="White" Text="Imagen"/>
                         <Grid ColumnDefinitions="0.4*,0.6*">
-                            <Image Source="dotnet_bot.png" HeightRequest="80"/>
-                            <StackLayout HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1">
-                                <Button  Text="Seleccionar Imagen" WidthRequest="160"/>
+                            <Image HorizontalOptions="Start" x:Name="selectedImage" Source="fondo.png" HeightRequest="100" WidthRequest="100"/>
+                            <StackLayout  HorizontalOptions="End" VerticalOptions="Center" Grid.Column="1">
+                                <Button x:Name="btnSeleccionar" Clicked="btnSeleccionar_Clicked" Text="Seleccionar Imagen" TextColor="White" BackgroundColor="DodgerBlue" WidthRequest="160"/>
                             </StackLayout>
+
                         </Grid>
                         <Button x:Name="btnIngresar" Text="Agregar" Clicked="btnIngresar_Clicked" BackgroundColor="#414BB2"></Button>
                         <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" BackgroundColor="#F76887" IsVisible="False"></Button>
