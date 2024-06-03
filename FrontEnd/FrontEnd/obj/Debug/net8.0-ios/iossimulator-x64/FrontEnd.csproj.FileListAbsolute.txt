@@ -1019,3 +1019,11 @@ D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\menu@2x.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\menu.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\home.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\azucar.jpg
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\usuarios@3x.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\usuarios@2x.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\usuarios.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\vainilla.jpg
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\chocolate.jpg
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\fondo.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\seleccionar.png

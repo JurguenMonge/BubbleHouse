@@ -29,7 +29,7 @@ public partial class PrincipalAdministrativa : TabbedPage
         NavigationPage.SetHasNavigationBar(recetaPage, true);
 
         var usuarioAdminPage = new NavigationPage(new UsuarioAdminPage());
-        usuarioAdminPage.Title = "Usuarios";
+        usuarioAdminPage.Title = "Usuario";
         usuarioAdminPage.IconImageSource = "usuario.svg";
         NavigationPage.SetHasNavigationBar(usuarioAdminPage, true);
 
@@ -38,12 +38,18 @@ public partial class PrincipalAdministrativa : TabbedPage
         carritoPage.IconImageSource = "carrito.svg";
         NavigationPage.SetHasNavigationBar(carritoPage, true);
 
+        var usuarioSuperAdminPage = new NavigationPage(new UsuariosSuperAdminPage());
+        usuarioSuperAdminPage.Title = "Usuarios";
+        usuarioSuperAdminPage.IconImageSource = "usuarios.svg";
+        NavigationPage.SetHasNavigationBar(usuarioSuperAdminPage, true);
+
         Children.Add(aceptarFacturasPage);
         Children.Add(productoPage);
         Children.Add(ingredientePage);
         Children.Add(recetaPage);
         Children.Add(usuarioAdminPage);
         Children.Add(carritoPage);
+        Children.Add(usuarioSuperAdminPage);
     }
 
     //private void btnCategorias_Clicked(object sender, EventArgs e)

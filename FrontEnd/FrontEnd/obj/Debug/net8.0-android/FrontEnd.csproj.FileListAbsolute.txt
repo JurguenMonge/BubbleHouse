@@ -3338,3 +3338,13 @@ D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetiz
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\receta.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\usuario.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\home.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\usuarios.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\usuarios.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\usuarios.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\usuarios.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\usuarios.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\azucar.jpg
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\chocolate.jpg
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\fondo.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\seleccionar.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\vainilla.jpg

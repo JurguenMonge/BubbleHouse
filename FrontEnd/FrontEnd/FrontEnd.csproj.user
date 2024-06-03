@@ -50,6 +50,9 @@
     <MauiXaml Update="Pages\FormSubCategoriaProducto.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Pages\FormUsuario.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Pages\IngredientePage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
@@ -63,6 +66,9 @@
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Pages\UsuarioAdminPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Pages\UsuariosSuperAdminPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="PrincipalAdministrativa.xaml">
