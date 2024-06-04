@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrontEnd.Pages.FormUsuario"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
+    <ScrollView>
+        <Grid x:Name="Contenedor" BackgroundColor="#a9dff0" >
+            <VerticalStackLayout Spacing="1" Margin="40,40,40,0" Padding="10">
+                <Frame Margin="10,0,10,0" VerticalOptions="Center" BackgroundColor="#bdc0f7" BorderColor="Azure" CornerRadius="50">
+                    <VerticalStackLayout Margin="10,0,10,0" Spacing="10">
+                        <Label x:Name="lblTitulo" FontAttributes="Bold" FontSize="Title" HorizontalTextAlignment="Center" TextColor="White" Text="Crear Ingrediente"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Nombre del Ingrediente" />
+                        <Entry x:Name="txtNombreIngrediente" Keyboard="Text" Background="White" TextColor="Black" Placeholder="Ingrese el nombre"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Categoría del Ingrediente"></Label>
+                        <Picker x:Name="pickCategoria"
+                            FontAttributes="Bold"
+                            TextColor="Gray"
+                            BackgroundColor="White"
+                            FontSize="12"
+                            VerticalTextAlignment="Center"
+                            SelectedIndexChanged="pickCategoria_SelectedIndexChanged"
+                            Focused="pickCategoria_Focused"
+                        />
+                        <Label FontAttributes="Bold" TextColor="White" Text="Descripción"/>
+                        <Editor x:Name="txtDescripcion" Background="White" HeightRequest="200" Placeholder="Ingrese una descripción"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Precio"/>
+                        <Entry x:Name="txtPrecio" Keyboard="Numeric" Background="White" TextColor="Black" Placeholder="Ingrese el precio"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Imagen"/>
+                        
+
+                        <Button x:Name="btnIngresar" Text="Agregar" Clicked="btnIngresar_Clicked" BackgroundColor="#414BB2"></Button>
+                        <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" BackgroundColor="#F76887" IsVisible="False"></Button>
+                        <Button x:Name="btnCancelar" Text="Cancelar" Clicked="btnCancelar_Clicked" BackgroundColor="Gray"></Button>
+                        <Entry x:Name="txtId"  Keyboard="Numeric" Background="White" IsReadOnly="true" IsVisible="False" Text="0"></Entry>
+                    </VerticalStackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

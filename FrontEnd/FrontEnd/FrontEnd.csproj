@@ -77,6 +77,7 @@
 	  <None Remove="Resources\Images\cruz.png" />
 	  <None Remove="Resources\Images\fondo.png" />
 	  <None Remove="Resources\Images\logo_celeste.png" />
+	  <None Remove="Resources\Images\usuarios.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -132,6 +133,9 @@
 	  <MauiXaml Update="Pages\FormSubCategoriaProducto.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\FormUsuario.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\IngredientePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -145,6 +149,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\UsuarioAdminPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\UsuariosSuperAdminPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PrincipalAdministrativa.xaml">

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrontEnd.Pages.UsuariosSuperAdminPage"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
+    <ScrollView>
+        <Grid BackgroundColor="#A9DFF0" RowSpacing="15" Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Frame Margin="12"
+               BorderColor="Azure"
+               CornerRadius="5"
+               HasShadow="True"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand">
+                <Frame.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Offset="0" Color="#BDC0F7"/>
+                        <GradientStop Offset="1" Color="#BDC0F7"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapCrearUsuario"/>
+                </Frame.GestureRecognizers>
+                <VerticalStackLayout>
+                    <Image Source="cruz.png" 
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   />
+                    <Label 
+                        Text="Nuevo Usuario"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        Padding="10"
+                        Margin="10"
+                        HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <CollectionView Grid.Row="1"
+            ItemsSource="{Binding listaUsuario}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame Margin="12"
+                               BorderColor="Azure"
+                               CornerRadius="5"
+                               HasShadow="True">
+                                <Frame.Background>
+                                    <LinearGradientBrush EndPoint="1,0">
+                                        <GradientStop Offset="0" Color="#BDC0F7"/>
+                                        <GradientStop Offset="1" Color="#BDC0F7"/>
+                                    </LinearGradientBrush>
+                                </Frame.Background>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapModificarUsuario"/>
+                                </Frame.GestureRecognizers>
+                                <Grid ColumnDefinitions="0.25*,0.5*,0.25*">
+
+                                    <StackLayout VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1">
+                                        <Label x:Name="txtid"
+                                           Text="{Binding IdUsuario}"
+                                           IsVisible="False"/>
+
+                                        <Label x:Name="lblNombre"
+                                           FontSize="Large"
+                                           HorizontalTextAlignment="Start"
+                                           Text="{Binding Nombre}"
+                                           VerticalOptions="Center"
+                                           TextColor="white"/>
+                                        <Label x:Name="lblRol"
+                                           FontSize="15"
+                                           HorizontalTextAlignment="Start"
+                                           Text="{Binding rol.tipoRol}"
+                                           VerticalOptions="Center"
+                                           TextColor="white"/>
+                                        <Label x:Name="lblCorreo"
+                                           FontSize="15"
+                                           HorizontalTextAlignment="Start"
+                                           Text="{Binding CorreoElectronico}"
+                                           VerticalOptions="Center"
+                                           TextColor="white"/>
+
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+        </ScrollView>
+</ContentPage>

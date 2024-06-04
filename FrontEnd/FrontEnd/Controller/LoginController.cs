@@ -43,6 +43,7 @@ namespace FrontEnd.Controller
                         Preferences.Set("UsuarioId", res.Sesion.Usuario.IdUsuario);
                         Preferences.Set("UsuarioNombre", res.Sesion.Usuario.Nombre);
                         Preferences.Set("UsuarioPrimerApellido", res.Sesion.Usuario.PrimerApellido);
+                        Preferences.Set("Rol", res.Sesion.Usuario.rol.idRol);
                     }
                     else
                     {

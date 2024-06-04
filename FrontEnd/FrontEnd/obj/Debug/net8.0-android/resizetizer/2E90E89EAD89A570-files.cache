@@ -1,5 +1,4 @@
-﻿obj\Debug\net8.0-android\resizetizer\r\drawable\avatar.png
-obj\Debug\net8.0-android\resizetizer\r\drawable\azucar.jpg
+﻿obj\Debug\net8.0-android\resizetizer\r\drawable\azucar.jpg
 obj\Debug\net8.0-android\resizetizer\r\drawable\chocolate.jpg
 obj\Debug\net8.0-android\resizetizer\r\drawable\cruz.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\fondo.png
@@ -16,6 +15,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\pedido.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\producto.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\receta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\usuario.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\usuarios.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\bubble.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\carrito.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\dotnet_bot.png
@@ -25,6 +25,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\pedido.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\producto.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\receta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\usuario.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\usuarios.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\bubble.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\carrito.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\dotnet_bot.png
@@ -34,6 +35,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\pedido.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\producto.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\receta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\usuario.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\usuarios.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\bubble.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\carrito.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\dotnet_bot.png
@@ -43,6 +45,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\pedido.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\producto.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\receta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\usuario.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\usuarios.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\bubble.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\carrito.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\dotnet_bot.png
@@ -52,6 +55,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\pedido.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\producto.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\receta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\usuario.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\usuarios.png
 obj\Debug\net8.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
 obj\Debug\net8.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
 obj\Debug\net8.0-android\resizetizer\r\mipmap-hdpi\appicon.png

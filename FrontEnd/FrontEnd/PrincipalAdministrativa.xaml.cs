@@ -29,19 +29,19 @@ public partial class PrincipalAdministrativa : TabbedPage
         NavigationPage.SetHasNavigationBar(recetaPage, true);
 
         var usuarioAdminPage = new NavigationPage(new UsuarioAdminPage());
-        usuarioAdminPage.Title = "Usuarios";
+        usuarioAdminPage.Title = "Usuario";
         usuarioAdminPage.IconImageSource = "usuario.svg";
         NavigationPage.SetHasNavigationBar(usuarioAdminPage, true);
 
-        var carritoPage = new NavigationPage(new CreacionBubble());
+        var carritoPage = new NavigationPage(new Carrito());
         carritoPage.Title = "Carrito";
         carritoPage.IconImageSource = "carrito.svg";
         NavigationPage.SetHasNavigationBar(carritoPage, true);
 
-        var creacionBubble = new NavigationPage(new CreacionBubble());
-        carritoPage.Title = "Bubble";
-        carritoPage.IconImageSource = "carrito.svg";
-        NavigationPage.SetHasNavigationBar(creacionBubble, true);
+        var usuarioSuperAdminPage = new NavigationPage(new UsuariosSuperAdminPage());
+        usuarioSuperAdminPage.Title = "Usuarios";
+        usuarioSuperAdminPage.IconImageSource = "usuarios.svg";
+        NavigationPage.SetHasNavigationBar(usuarioSuperAdminPage, true);
 
         Children.Add(aceptarFacturasPage);
         Children.Add(productoPage);
@@ -49,7 +49,7 @@ public partial class PrincipalAdministrativa : TabbedPage
         Children.Add(recetaPage);
         Children.Add(usuarioAdminPage);
         Children.Add(carritoPage);
-        Children.Add(creacionBubble);
+        Children.Add(usuarioSuperAdminPage);
     }
 
     //private void btnCategorias_Clicked(object sender, EventArgs e)
