@@ -43,6 +43,11 @@ public partial class PrincipalAdministrativa : TabbedPage
         usuarioSuperAdminPage.IconImageSource = "usuarios.svg";
         NavigationPage.SetHasNavigationBar(usuarioSuperAdminPage, true);
 
+        var crearBubble = new NavigationPage(new SeleccionarTamanio());
+        crearBubble.Title = "Crear Bubble";
+        crearBubble.IconImageSource = "usuarios.svg";
+        NavigationPage.SetHasNavigationBar(crearBubble, true);
+
         Children.Add(aceptarFacturasPage);
         Children.Add(productoPage);
         Children.Add(ingredientePage);
@@ -50,6 +55,7 @@ public partial class PrincipalAdministrativa : TabbedPage
         Children.Add(usuarioAdminPage);
         Children.Add(carritoPage);
         Children.Add(usuarioSuperAdminPage);
+        Children.Add(crearBubble);
     }
 
     //private void btnCategorias_Clicked(object sender, EventArgs e)
