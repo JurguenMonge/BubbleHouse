@@ -1,3 +1,4 @@
+using FrontEnd.Controller;
 using FrontEnd.Entidades;
 using FrontEnd.Entidades.Response;
 using Newtonsoft.Json;
@@ -112,14 +113,80 @@ public partial class FormUsuario : ContentPage
         return retornarRolApi;
     }
 
-    private void btnIngresar_Clicked(object sender, EventArgs e)
+    private async void btnIngresar_Clicked(object sender, EventArgs e)
     {
+        UsuarioController controller = new UsuarioController();
+        try
+        {
+            Rol rol = (Rol)pickRol.SelectedItem;
+            if (rol != null)
+            {
+                ResUsuario res = new ResUsuario();
+                if (int.Parse(txtId.Text) == 0)
+                {
+                    res = await controller.IngresarUsuario(txtNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text, txtCorreo.Text, txtPassword.Text, txtTelefono.Text, rol);
+                    if (res.Resultado)
+                    {
+                        await DisplayAlert("Inserción Exitosa", "Usuario guardado con éxito", "Aceptar");
+                        await Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error en inserción", "Sucedió un error al guardar: " + res.ListaDeErrores.First(), "Aceptar");
+                    }
+                }
+                else
+                {
+                    res = await controller.ActualizarUsuarioSuperAdmin(int.Parse(txtId.Text), txtNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text, txtCorreo.Text, txtTelefono.Text, rol);
+                    if (res.Resultado)
+                    {
+                        await DisplayAlert("Actualiación Exitosa", "Usuario actualizado con éxito", "Aceptar");
+                        await Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error en actualiación", "Sucedió un error al actualizar: " + res.ListaDeErrores.First(), "Aceptar");
+                    }
+                }
+            }
+            else
+            {
+                await DisplayAlert("Error!", "Debe Seleccionar un rol", "Aceptar");
+            }
 
+
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error interno", "Por favor, reinstale la aplicacion", "Aceptar");
+        }
     }
 
-    private void btnEliminar_Clicked(object sender, EventArgs e)
+    private async void btnEliminar_Clicked(object sender, EventArgs e)
     {
-
+        bool answer = await DisplayAlert("Confirmación", "¿Estás seguro de eliminar este usuario?", "Aceptar", "Cancelar");
+        if (answer)
+        {
+            UsuarioController controller = new UsuarioController();
+            try
+            {
+                ResUsuario res = new ResUsuario();
+                res = await controller.EliminarUsuario(int.Parse(txtId.Text));
+                if (res.Resultado)
+                {
+                    await DisplayAlert("Eliminación Exitosa", "Usuario eliminado con éxito", "Aceptar");
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+                    await DisplayAlert("Error en eliminación", "Sucedió un error al eliminar: " + res.ListaDeErrores.First(), "Aceptar");
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error interno", "Por favor, reinstale la aplicación", "Aceptar");
+            }
+        }
     }
 
     private void btnCancelar_Clicked(object sender, EventArgs e)

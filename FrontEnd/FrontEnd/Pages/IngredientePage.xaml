@@ -75,7 +75,8 @@
                                                Text="{Binding idCategoriaIngrediente}"
                                                IsVisible="False"/>
                                         <Label x:Name="lblNombreCategoria"
-                                               FontSize="15"
+                                               FontSize="Subtitle"
+                                               FontAttributes="Bold"
                                                HorizontalTextAlignment="Start"
                                                Text="{Binding dscNombreCategoriaIngrediente}"
                                                VerticalOptions="Center"
@@ -94,19 +95,6 @@
                                                TextColor="white"/>
 
                                     </StackLayout>
-
-                                    <HorizontalStackLayout Grid.Column="2" >
-                                        <Label Text="Activa"
-                                               FontSize="16"
-                                               TextColor="white"
-                                               Padding="5"
-                                               VerticalOptions="Center"/>
-                                        <Switch x:Name="estado"
-                                                IsToggled="True"
-                                                HorizontalOptions="End"
-                                                IsEnabled="False"
-                                                OnColor="White"/>
-                                    </HorizontalStackLayout>
                                 </Grid>
                             </Frame>
                         </StackLayout>

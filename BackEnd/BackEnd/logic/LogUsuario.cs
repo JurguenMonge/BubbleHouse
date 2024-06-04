@@ -193,8 +193,6 @@ namespace BackEnd.logic
                     Validaciones.ValidarNombre(req.Usuario, res, ref tipoRegistro);
                     Validaciones.ValidarPrimerApellido(req.Usuario, res, ref tipoRegistro);
                     Validaciones.ValidarSegundoApellido(req.Usuario, res, ref tipoRegistro);
-                    Validaciones.ValidarPassword(req.Usuario, res, ref tipoRegistro);
-                    req.Usuario.Password = EncriptarPassword(req.Usuario.Password);
                     Validaciones.ValidarTelefono(req.Usuario, res, ref tipoRegistro);
                     Validaciones.ValidarCorreo(req.Usuario, res, ref tipoRegistro);
                     Validaciones.ValidarRol(req.Usuario, res, ref tipoRegistro);
