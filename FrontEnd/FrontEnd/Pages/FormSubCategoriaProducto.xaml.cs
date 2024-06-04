@@ -128,12 +128,12 @@ public partial class FormSubCategoriaProducto : ContentPage
                     res = await controller.IngresarSubCategoriaProducto(txtNombre.Text, cate.idCategoriaProducto);
                     if (res.Resultado)
                     {
-                        await DisplayAlert("Insercion Exitosa", "Categoria de producto guardada con éxito", "Aceptar");
+                        await DisplayAlert("Insercion Exitosa", "Subcategoría de producto guardada con éxito", "Aceptar");
                         Navigation.PushAsync(new SubCategoriaProductoPage());
                     }
                     else
                     {
-                        await DisplayAlert("Error en insercion", "Sucedio un error al guardar: " + res.ListaDeErrores.First(), "Aceptar");
+                        await DisplayAlert("Error en inserción", "Sucedió un error al guardar: " + res.ListaDeErrores.First(), "Aceptar");
                     }
                 }
                 else
@@ -159,7 +159,7 @@ public partial class FormSubCategoriaProducto : ContentPage
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Error interno", "Porfavor reinstale la aplicacion", "Aceptar");
+            await DisplayAlert("Error interno", "Por favor, reinstale la aplicación", "Aceptar");
         }
     }
 
