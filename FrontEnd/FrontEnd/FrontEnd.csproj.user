@@ -20,6 +20,9 @@
     <MauiXaml Update="CompletarFacturas.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="CreacionBubble.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="DespliegueFactura.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

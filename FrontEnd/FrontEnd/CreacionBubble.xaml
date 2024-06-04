@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrontEnd.CreacionBubble"
+             Title="CreacionBubble">
+    <VerticalStackLayout>
+        <ScrollView>
+            <Grid BackgroundColor="#A9DFF0" RowSpacing="15" Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Frame for selected ingredient image -->
+                <Frame Grid.Row="0"
+               Margin="12"
+               BorderColor="Azure"
+               CornerRadius="5"
+               HasShadow="True"
+               HorizontalOptions="Center"
+               VerticalOptions="Start">
+                    <Frame.Background>
+                        <LinearGradientBrush EndPoint="1,0">
+                            <GradientStop Offset="0" Color="#BDC0F7"/>
+                            <GradientStop Offset="1" Color="#BDC0F7"/>
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                    <Image Source="{Binding SelectedIngredientImageUrl}"
+                   WidthRequest="150"
+                   HeightRequest="150"/>
+                </Frame>
+
+                <!-- CollectionView for ingredient list -->
+                <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding listaIngrediente}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedIngredient}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame Margin="12"
+                               BorderColor="Azure"
+                               CornerRadius="5"
+                               HasShadow="True">
+                                    <Frame.Background>
+                                        <LinearGradientBrush EndPoint="1,0">
+                                            <GradientStop Offset="0" Color="#BDC0F7"/>
+                                            <GradientStop Offset="1" Color="#BDC0F7"/>
+                                        </LinearGradientBrush>
+                                    </Frame.Background>
+                                    <Grid ColumnDefinitions="0.9*,0.1*">
+                                        <StackLayout VerticalOptions="Center" HorizontalOptions="Start">
+                                            <Label x:Name="lblNombreIngrediente"
+                                           FontSize="15"
+                                           HorizontalTextAlignment="Start"
+                                           Text="{Binding dscNombre}"
+                                           VerticalOptions="Center"
+                                           TextColor="white"/>
+                                            <Label x:Name="lblDescripcion"
+                                           FontSize="15"
+                                           HorizontalTextAlignment="Start"
+                                           Text="{Binding dscDescripcion}"
+                                           VerticalOptions="Center"
+                                           TextColor="white"/>
+                                        </StackLayout>
+
+                                        <StackLayout VerticalOptions="Center" HorizontalOptions="End" Grid.Column="1">
+                                            <RadioButton GroupName="IngredientSelection"
+                                                 IsChecked="{Binding IsSelected}"
+                                                 CheckedChanged="OnCheckedChanged"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>

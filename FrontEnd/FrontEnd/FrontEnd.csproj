@@ -100,6 +100,9 @@
 	  <MauiXaml Update="CompletarFacturas.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="CreacionBubble.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="DespliegueFactura.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
