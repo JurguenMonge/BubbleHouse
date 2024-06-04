@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\creacionbubble.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:creacionbubble.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\creacionbubble.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:creacionbubble.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\creacionbubble.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:creacionbubble.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\usuario\\documents\\universidad\\begreat\\bubblehouse\\frontend\\frontend\\entidades\\entidad\\ingrediente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 583,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -94,28 +94,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CreacionBubble.xaml.cs",
               "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\CreacionBubble.xaml.cs",
               "RelativeDocumentMoniker": "CreacionBubble.xaml.cs",
               "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\CreacionBubble.xaml.cs",
               "RelativeToolTip": "CreacionBubble.xaml.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAcwEQAAAAmAAAA",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAmwGoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-03T19:32:33.651Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "CreacionBubble.xaml",
               "DocumentMoniker": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\CreacionBubble.xaml",
               "RelativeDocumentMoniker": "CreacionBubble.xaml",
               "ToolTip": "D:\\Usuario\\Documents\\Universidad\\BeGreat\\BubbleHouse\\FrontEnd\\FrontEnd\\CreacionBubble.xaml",
               "RelativeToolTip": "CreacionBubble.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAyAAAA",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAABwAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-06-03T19:32:30.483Z"
+              "WhenOpened": "2024-06-03T19:32:30.483Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
