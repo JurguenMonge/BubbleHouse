@@ -239,6 +239,7 @@ namespace BackEnd.logic
         private RecetaCompleta factoryArmarReceta(Obtener_RecetaResult recetaLinq)
         {
             RecetaCompleta receta = new RecetaCompleta();
+            receta.recetaId = recetaLinq.ID_RECETA;
             receta.nombreReceta = recetaLinq.DSC_NOMBRE;
             receta.fecha = (DateTime)recetaLinq.FECHA;
             if (!string.IsNullOrEmpty(recetaLinq.Ingredientes))

@@ -1,6 +1,12 @@
-﻿obj\Debug\net8.0-android\resizetizer\r\drawable\cruz.png
+﻿obj\Debug\net8.0-android\resizetizer\r\drawable\avatar.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\azucar.jpg
+obj\Debug\net8.0-android\resizetizer\r\drawable\chocolate.jpg
+obj\Debug\net8.0-android\resizetizer\r\drawable\cruz.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\fondo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\home.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\logo_celeste.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\seleccionar.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\vainilla.jpg
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\bubble.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\carrito.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\dotnet_bot.png
