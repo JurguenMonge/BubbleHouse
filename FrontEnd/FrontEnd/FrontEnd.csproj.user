@@ -77,6 +77,12 @@
     <MauiXaml Update="PrincipalAdministrativa.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="SeleccionarLacteo.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="SeleccionarTamanio.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
   </ItemGroup>
   <ItemGroup>
     <None Update="App.xaml">
