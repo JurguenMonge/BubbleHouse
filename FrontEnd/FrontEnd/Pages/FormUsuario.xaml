@@ -9,27 +9,33 @@
             <VerticalStackLayout Spacing="1" Margin="40,40,40,0" Padding="10">
                 <Frame Margin="10,0,10,0" VerticalOptions="Center" BackgroundColor="#bdc0f7" BorderColor="Azure" CornerRadius="50">
                     <VerticalStackLayout Margin="10,0,10,0" Spacing="10">
-                        <Label x:Name="lblTitulo" FontAttributes="Bold" FontSize="Title" HorizontalTextAlignment="Center" TextColor="White" Text="Crear Ingrediente"/>
-                        <Label FontAttributes="Bold" TextColor="White" Text="Nombre del Ingrediente" />
-                        <Entry x:Name="txtNombreIngrediente" Keyboard="Text" Background="White" TextColor="Black" Placeholder="Ingrese el nombre"/>
-                        <Label FontAttributes="Bold" TextColor="White" Text="Categoría del Ingrediente"></Label>
-                        <Picker x:Name="pickCategoria"
+                        <Label x:Name="lblTitulo" FontAttributes="Bold" FontSize="Title" HorizontalTextAlignment="Center" TextColor="White" Text="Crear Usuario"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Nombre" />
+                        <Entry x:Name="txtNombre" Keyboard="Text" Background="White" TextColor="Black" Placeholder="Ingrese el nombre"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Primer Apellido"></Label>
+                        <Entry x:Name="txtPrimerApellido" Keyboard="Text" Background="White" TextColor="Black" Placeholder="Ingrese el primer apellido"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Segundo Apellido"></Label>
+                        <Entry x:Name="txtSegundoApellido" Keyboard="Text" Background="White" TextColor="Black" Placeholder="Ingrese el segundo apellido"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Correo"></Label>
+                        <Entry x:Name="txtCorreo" Keyboard="Email" Background="White" TextColor="Black" Placeholder="Ingrese el correo electrónico"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Teléfono"></Label>
+                        <Entry x:Name="txtTelefono" Keyboard="Numeric" Background="White" TextColor="Black" Placeholder="Ingrese el número de teléfono"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Rol"/>
+                        <Picker x:Name="pickRol"
                             FontAttributes="Bold"
                             TextColor="Gray"
                             BackgroundColor="White"
                             FontSize="12"
                             VerticalTextAlignment="Center"
-                            SelectedIndexChanged="pickCategoria_SelectedIndexChanged"
-                            Focused="pickCategoria_Focused"
+                            SelectedIndexChanged="pickRol_SelectedIndexChanged"
+                            Focused="pickRol_Focused"
                         />
-                        <Label FontAttributes="Bold" TextColor="White" Text="Descripción"/>
-                        <Editor x:Name="txtDescripcion" Background="White" HeightRequest="200" Placeholder="Ingrese una descripción"/>
-                        <Label FontAttributes="Bold" TextColor="White" Text="Precio"/>
-                        <Entry x:Name="txtPrecio" Keyboard="Numeric" Background="White" TextColor="Black" Placeholder="Ingrese el precio"/>
-                        <Label FontAttributes="Bold" TextColor="White" Text="Imagen"/>
-                        
+                        <Label x:Name="lblPassword" FontAttributes="Bold" TextColor="White" Text="Contraseña"/>
+                        <Entry x:Name="txtPassword" Keyboard="Plain" Background="White" Placeholder="Ingrese una contraseña"/>
+                        <Label x:Name="lblRepeatPassword" FontAttributes="Bold" TextColor="White" Text="Repita Contraseña"/>
+                        <Entry x:Name="txtRepeatPassword" Keyboard="Plain" Background="White" TextColor="Black" Placeholder="Repita la contraseña"/>
 
-                        <Button x:Name="btnIngresar" Text="Agregar" Clicked="btnIngresar_Clicked" BackgroundColor="#414BB2"></Button>
+                        <Button x:Name="btnIngresar" Text="Crear" Clicked="btnIngresar_Clicked" BackgroundColor="#414BB2"></Button>
                         <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" BackgroundColor="#F76887" IsVisible="False"></Button>
                         <Button x:Name="btnCancelar" Text="Cancelar" Clicked="btnCancelar_Clicked" BackgroundColor="Gray"></Button>
                         <Entry x:Name="txtId"  Keyboard="Numeric" Background="White" IsReadOnly="true" IsVisible="False" Text="0"></Entry>

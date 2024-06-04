@@ -1,6 +1,7 @@
 using FrontEnd.Entidades;
 using FrontEnd.Entidades.Response;
 using Newtonsoft.Json;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace FrontEnd.Pages;
@@ -14,10 +15,10 @@ public partial class UsuariosSuperAdminPage : ContentPage
 
     }
 
-    private List<Usuario> _listaUsuario = new List<Usuario>();
+    private ObservableCollection<Usuario> _listaUsuario = new ObservableCollection<Usuario>();
 
     #region refrezcarCompomentes
-    public List<Usuario> listaUsuario
+    public ObservableCollection<Usuario> listaUsuario
     {
         get { return _listaUsuario; }
         set
@@ -39,7 +40,13 @@ public partial class UsuariosSuperAdminPage : ContentPage
 
     private async void CargarUsuarios()
     {
-        listaUsuario = await UsuariosDesdeApi();
+        
+        listaUsuario.Clear();
+        var usuarios = await UsuariosDesdeApi();
+        foreach (var usuario in usuarios)
+        {
+            listaUsuario.Add(usuario);
+        }
         BindingContext = this;
     }
 
@@ -96,5 +103,11 @@ public partial class UsuariosSuperAdminPage : ContentPage
             formularioUsuario.BindingContext = item;
             Navigation.PushAsync(formularioUsuario);
         }
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        CargarUsuarios();
     }
 }

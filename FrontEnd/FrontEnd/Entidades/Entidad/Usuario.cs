@@ -14,7 +14,7 @@ namespace FrontEnd.Entidades
         public string CorreoElectronico { get; set; }
         public string Password { get; set; }
         public string NumeroTelefono { get; set; }
-        public Rol rol = new Rol();
+        public Rol rol { get; set; }
         public bool estado { get; set; }
     }
 }

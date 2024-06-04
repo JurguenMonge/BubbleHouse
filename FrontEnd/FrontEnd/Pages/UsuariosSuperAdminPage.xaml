@@ -59,15 +59,16 @@
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="TapModificarUsuario"/>
                                 </Frame.GestureRecognizers>
-                                <Grid ColumnDefinitions="0.25*,0.5*,0.25*">
+                                <Grid >
 
-                                    <StackLayout VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1">
+                                    <StackLayout VerticalOptions="Center" HorizontalOptions="Start" >
                                         <Label x:Name="txtid"
                                            Text="{Binding IdUsuario}"
                                            IsVisible="False"/>
 
                                         <Label x:Name="lblNombre"
-                                           FontSize="Large"
+                                               FontSize="Subtitle"
+                                           FontAttributes="Bold"
                                            HorizontalTextAlignment="Start"
                                            Text="{Binding Nombre}"
                                            VerticalOptions="Center"
@@ -75,7 +76,7 @@
                                         <Label x:Name="lblRol"
                                            FontSize="15"
                                            HorizontalTextAlignment="Start"
-                                           Text="{Binding rol.tipoRol}"
+                                           Text="{Binding rol.tipoRol,StringFormat='Rol: {0}'}"
                                            VerticalOptions="Center"
                                            TextColor="white"/>
                                         <Label x:Name="lblCorreo"
