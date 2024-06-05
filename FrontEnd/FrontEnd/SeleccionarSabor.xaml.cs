@@ -1,23 +1,45 @@
 using FrontEnd.Entidades.Entidad;
 using FrontEnd.Entidades.Response;
-using Microsoft.Maui.Controls;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace FrontEnd;
 
-public partial class SeleccionarTamanio : ContentPage
+public partial class SeleccionarSabor : ContentPage
 {
-    public SeleccionarTamanio()
-    {
-        InitializeComponent();
-        CargarIngredientes();
+	public SeleccionarSabor()
+	{
+		InitializeComponent();
     }
 
     private ObservableCollection<Ingrediente> _listaIngrediente = new ObservableCollection<Ingrediente>();
     private Ingrediente ingredienteSeleccionado = new Ingrediente();
+    List<Ingrediente> ingredientesSeleccionados = new List<Ingrediente>();
     private bool selecionado = false;
+    private bool isFirstLoad = true;
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        if (BindingContext is List<Ingrediente> ingredientes)
+        {
+            foreach (Ingrediente ing in ingredientes)
+            {
+                if (ing.idCategoriaIngrediente == 7)
+                {
+                    imgVaso.Source = ing.dscURLImagen;
+                }
+            }
+            ingredientesSeleccionados = ingredientes;
+            if (isFirstLoad)
+            {
+                isFirstLoad = false;
+                await CargarIngredientes();
+            }
+        }
+    }
 
     #region refrezcarCompomentes
     public ObservableCollection<Ingrediente> listaIngrediente
@@ -39,7 +61,7 @@ public partial class SeleccionarTamanio : ContentPage
     }
     #endregion
 
-    private async void CargarIngredientes()
+    private async Task CargarIngredientes()
     {
         listaIngrediente.Clear();
         var ingredientes = await IngredientesDesdeApi();
@@ -72,7 +94,7 @@ public partial class SeleccionarTamanio : ContentPage
                         List<Ingrediente> listaFiltrada = new List<Ingrediente>();
                         foreach (Ingrediente ingre in res.listaIngredientes)
                         {
-                            if (ingre.idCategoriaIngrediente == 7)
+                            if (ingre.idCategoriaIngrediente == 2)
                             {
                                 listaFiltrada.Add(ingre);
                             }
@@ -99,7 +121,7 @@ public partial class SeleccionarTamanio : ContentPage
         var selectedIngredient = button?.BindingContext as Ingrediente;
         if (selectedIngredient != null)
         {
-            imgVaso.Source = selectedIngredient.dscURLImagen;
+            imgSabor.Source = selectedIngredient.dscURLImagen;
             ingredienteSeleccionado = selectedIngredient;
             if (selecionado == false)
             {

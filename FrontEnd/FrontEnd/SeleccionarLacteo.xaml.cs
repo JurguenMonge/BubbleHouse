@@ -15,7 +15,7 @@ public partial class SeleccionarLacteo : ContentPage
 
     private ObservableCollection<Ingrediente> _listaIngrediente = new ObservableCollection<Ingrediente>();
     private Ingrediente ingredienteSeleccionado = new Ingrediente();
-    List<Ingrediente> ingredientesSeleccionados = new List<Ingrediente>();
+    private List<Ingrediente> ingredientesSeleccionados = new List<Ingrediente>();
     private bool selecionado = false;
     private bool isFirstLoad = true;
 
@@ -25,6 +25,13 @@ public partial class SeleccionarLacteo : ContentPage
 
         if (BindingContext is List<Ingrediente> ingredientes)
         {
+            foreach(Ingrediente ing in ingredientes)
+            {
+                if(ing.idCategoriaIngrediente == 7)
+                {
+                    imgVaso.Source = ing.dscURLImagen;
+                }
+            }
             ingredientesSeleccionados = ingredientes;
             if (isFirstLoad)
             {
@@ -110,7 +117,8 @@ public partial class SeleccionarLacteo : ContentPage
 
     private void RadioButton_CheckedChanged(object sender, CheckedChangedEventArgs e)
     {
-        var selectedIngredient = BindingContext as Ingrediente;
+        var button = sender as RadioButton;
+        var selectedIngredient = button?.BindingContext as Ingrediente;
         if (selectedIngredient != null)
         {
             ingredienteSeleccionado = selectedIngredient;
@@ -124,9 +132,8 @@ public partial class SeleccionarLacteo : ContentPage
 
     private void Button_Clicked(object sender, EventArgs e)
     {
-        List<Ingrediente> ingredientesSeleccionados = new List<Ingrediente>();
         ingredientesSeleccionados.Add(ingredienteSeleccionado);
-        var siguiente = new SeleccionarLacteo();
+        var siguiente = new SeleccionarSabor();
         siguiente.BindingContext = ingredientesSeleccionados;
         Navigation.PushAsync(siguiente);
     }

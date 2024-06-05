@@ -80,6 +80,9 @@
     <MauiXaml Update="SeleccionarLacteo.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="SeleccionarSabor.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="SeleccionarTamanio.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

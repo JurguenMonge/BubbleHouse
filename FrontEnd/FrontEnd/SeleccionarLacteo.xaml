@@ -4,9 +4,17 @@
              x:Class="FrontEnd.SeleccionarLacteo"
              Title="SeleccionarLacteo">
     <VerticalStackLayout BackgroundColor="#A9DFF0">
-        <Frame Margin="10" BackgroundColor="#E0E0E0" HasShadow="True" CornerRadius="5">
-            <Image Source="your_image_source" Aspect="AspectFit" />
-        </Frame>
+        <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+            <Frame Margin="10" BackgroundColor="#E0E0E0" HasShadow="True" CornerRadius="5" HeightRequest="350" WidthRequest="350">
+                <Grid>
+                    <Image x:Name="imgVaso" Source="image1_source.png" Aspect="AspectFit" />
+                    <Image x:Name="imgSabor" Source="image2_source.png" Aspect="AspectFit" />
+                    <Image x:Name="imgTopping" Source="image3_source.png" Aspect="AspectFit" />
+                    <Image x:Name="imgBordeado" Source="image3_source.png" Aspect="AspectFit" />
+                    <Image x:Name="imgBubbles" Source="image3_source.png" Aspect="AspectFit" />
+                </Grid>
+            </Frame>
+        </Grid>
 
         <Label TextColor="White" FontSize="Title" Text="Seleccione el Lacteo" Margin="10,10,10,10" HorizontalOptions="Center"></Label>
         <ScrollView BackgroundColor="#BDC0F7">
@@ -36,23 +44,23 @@
                                     <Grid ColumnDefinitions="0.9*,0.1*">
                                         <StackLayout VerticalOptions="Center" HorizontalOptions="Start">
                                             <Label x:Name="lblNombreIngrediente"
-                          FontSize="15"
-                          HorizontalTextAlignment="Start"
-                          Text="{Binding dscNombre}"
-                          VerticalOptions="Center"
-                          TextColor="white" />
-                                            <Label x:Name="lblDescripcion"
-                          FontSize="15"
-                          HorizontalTextAlignment="Start"
-                          Text="{Binding dscDescripcion}"
-                          VerticalOptions="Center"
-                          TextColor="white" />
-                                            <Label x:Name="lblPrecio"
-                          FontSize="15"
-                          HorizontalTextAlignment="Start"
-                          Text="{Binding numPrecio}"
-                          VerticalOptions="Center"
-                          TextColor="white" />
+                                              FontSize="15"
+                                              HorizontalTextAlignment="Start"
+                                              Text="{Binding dscNombre}"
+                                              VerticalOptions="Center"
+                                              TextColor="white" />
+                                                                <Label x:Name="lblDescripcion"
+                                              FontSize="15"
+                                              HorizontalTextAlignment="Start"
+                                              Text="{Binding dscDescripcion}"
+                                              VerticalOptions="Center"
+                                              TextColor="white" />
+                                                                <Label x:Name="lblPrecio"
+                                              FontSize="15"
+                                              HorizontalTextAlignment="Start"
+                                              Text="{Binding numPrecio}"
+                                              VerticalOptions="Center"
+                                              TextColor="white" />
                                         </StackLayout>
 
                                         <StackLayout VerticalOptions="Center" HorizontalOptions="End" Grid.Column="1">
