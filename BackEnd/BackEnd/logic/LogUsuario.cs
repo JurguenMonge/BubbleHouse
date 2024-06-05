@@ -136,14 +136,16 @@ namespace BackEnd.logic
                     Validaciones.ValidarSegundoApellido(req.Usuario, res, ref tipoRegistro);
                     Validaciones.ValidarPassword(req.Usuario, res, ref tipoRegistro);
                     req.Usuario.Password = EncriptarPassword(req.Usuario.Password);
-                    Validaciones.ValidarTelefono(req.Usuario, res, ref tipoRegistro);
                     Validaciones.ValidarCorreo(req.Usuario, res, ref tipoRegistro);
+                    Validaciones.ValidarTelefono(req.Usuario, res, ref tipoRegistro);
+                    
                     if (!res.ListaDeErrores.Any())
                     {
                         ConexionDataContext linq = new ConexionDataContext();
                         int? idReturn = 0;
                         int? idError = 0;
                         String errorBD = "";
+                        
                         linq.Modificar_Usuario(req.Usuario.IdUsuario,req.Usuario.Nombre, req.Usuario.PrimerApellido,
                             req.Usuario.SegundoApellido, req.Usuario.CorreoElectronico, req.Usuario.Password,
                             req.Usuario.NumeroTelefono, ref idReturn, ref idError, ref errorBD);

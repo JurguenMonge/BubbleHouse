@@ -42,6 +42,70 @@ namespace BackEnd.logic
             return hexId;
         }
 
+        public ResComprobarPassword ComprobarPassword(ReqComprobarPassword req)
+        {
+            ResComprobarPassword res =  new ResComprobarPassword();
+            short tipoRegistro = 0;
+
+            try
+            {
+                if (String.IsNullOrEmpty(req.correo))
+                {
+                    res.Resultado = false;
+                    res.ListaDeErrores.Add("Correo electronico faltante");
+                    tipoRegistro = 2;
+                }
+                if (String.IsNullOrEmpty(req.password))
+                {
+                    res.Resultado = false;
+                    res.ListaDeErrores.Add("Contraseña faltante");
+                    tipoRegistro = 2;
+                }
+
+                if(!res.ListaDeErrores.Any())
+                {
+                    ConexionDataContext linq = new ConexionDataContext();
+                    String actualPassword;
+                    int? idReturn = 0;
+                    int? idError = 0;
+                    String errorBD = "";
+                    var linqUsuario = linq.Solicitar_Login(req.correo, ref idReturn, ref idError, ref errorBD);
+                    if (idError == 0)
+                    {
+                        Usuario usuario = new Usuario();
+                        foreach (var item in linqUsuario)
+                        {
+                            usuario = factoryArmarUsuario(item); ;
+                        }
+                        actualPassword = usuario.Password;
+                        if (VerificarPassword(req.password, actualPassword))
+                        {
+                            res.Resultado = true;
+                            tipoRegistro = 1;
+                        }
+                    }
+                }
+                else
+                {
+                    res.Resultado = false;
+                    res.ListaDeErrores.Add("Usuario no encontrado");
+                    tipoRegistro = 2;
+                }
+            }
+            catch
+            {
+                res.Resultado = false;
+                res.ListaDeErrores.Add("Ocurrió un error al crear la sesion");
+                tipoRegistro = 3;
+            }
+            finally
+            {
+                utils.Utils.crearBitacora(res.ListaDeErrores, tipoRegistro, System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, MethodBase.GetCurrentMethod().Name, JsonConvert.SerializeObject(req), JsonConvert.SerializeObject(res));
+            }
+            return res;
+            
+        }
+
         public ResIngresarSesion Login(ReqIngresarSesion req)
         {
             ResIngresarSesion res = new ResIngresarSesion();
@@ -309,6 +373,7 @@ namespace BackEnd.logic
             usuario.Nombre = usuarioLinq.DSC_NOMBRE;
             usuario.PrimerApellido = usuarioLinq.DSC_PRIMER_APELLIDO;
             usuario.SegundoApellido = usuarioLinq.DSC_SEGUNDO_APELLIDO;
+            usuario.CorreoElectronico = usuarioLinq.DSC_CORREO;
             usuario.Password = usuarioLinq.DSC_PASSWORD;
             usuario.NumeroTelefono = usuarioLinq.DSC_TELEFONO;
             return usuario;

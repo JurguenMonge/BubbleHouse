@@ -67,6 +67,7 @@ dotnet_bot.scale-150.png
 dotnet_bot.scale-200.png
 dotnet_bot.scale-400.png
 fondo.scale-100.png
+hide.scale-100.png
 home.scale-100.png
 ingrediente.scale-100.png
 ingrediente.scale-125.png
@@ -95,6 +96,7 @@ receta.scale-150.png
 receta.scale-200.png
 receta.scale-400.png
 seleccionar.scale-100.png
+show.scale-100.png
 usuario.scale-100.png
 usuario.scale-125.png
 usuario.scale-150.png

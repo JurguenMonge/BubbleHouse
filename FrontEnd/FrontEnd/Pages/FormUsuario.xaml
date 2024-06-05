@@ -31,9 +31,15 @@
                             Focused="pickRol_Focused"
                         />
                         <Label x:Name="lblPassword" FontAttributes="Bold" TextColor="White" Text="Contraseña"/>
-                        <Entry x:Name="txtPassword" Keyboard="Plain" Background="White" Placeholder="Ingrese una contraseña"/>
+                        <Grid x:Name="gridPassword" HeightRequest="50">
+                            <Entry x:Name="txtPassword" IsPassword="True" Keyboard="Plain" Background="White" Placeholder="Ingrese una contraseña"/>
+                            <ImageButton Source="show.png" WidthRequest="20" HeightRequest="20" Clicked="TogglePasswordVisibility" HorizontalOptions="End" VerticalOptions="Center"/>
+                        </Grid>
                         <Label x:Name="lblRepeatPassword" FontAttributes="Bold" TextColor="White" Text="Repita Contraseña"/>
-                        <Entry x:Name="txtRepeatPassword" Keyboard="Plain" Background="White" TextColor="Black" Placeholder="Repita la contraseña"/>
+                        <Grid x:Name="gridRepeatPassword" HeightRequest="50">
+                            <Entry x:Name="txtRepeatPassword" IsPassword="True" Keyboard="Plain" Background="White" TextColor="Black" Placeholder="Repita la contraseña" />
+                            <ImageButton Source="show.png" WidthRequest="20" HeightRequest="20" Clicked="ToggleRepeatPasswordVisibility" HorizontalOptions="End" VerticalOptions="Center"/>
+                        </Grid>
 
                         <Button x:Name="btnIngresar" Text="Crear" Clicked="btnIngresar_Clicked" BackgroundColor="#414BB2"></Button>
                         <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" BackgroundColor="#F76887" IsVisible="False"></Button>

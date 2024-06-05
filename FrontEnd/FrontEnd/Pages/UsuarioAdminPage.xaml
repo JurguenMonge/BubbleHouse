@@ -4,10 +4,45 @@
              x:Class="FrontEnd.Pages.UsuarioAdminPage"
              NavigationPage.HasBackButton="False"
              NavigationPage.HasNavigationBar="False">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Usuarios"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <Grid x:Name="Contenedor" BackgroundColor="#a9dff0" >
+            <VerticalStackLayout Spacing="1" Margin="40,40,40,0" Padding="10">
+                <Frame Margin="10,0,10,0" VerticalOptions="Center" BackgroundColor="#bdc0f7" BorderColor="Azure" CornerRadius="50">
+                    <VerticalStackLayout Margin="10,0,10,0" Spacing="10">
+                        <Label x:Name="lblTitulo" FontAttributes="Bold" FontSize="Title" HorizontalTextAlignment="Center" TextColor="White" Text="Modificar Usuario"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Nombre" />
+                        <Entry x:Name="txtNombre" Keyboard="Text" Background="White" TextColor="Black" Placeholder="Ingrese el nombre"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Primer Apellido"></Label>
+                        <Entry x:Name="txtPrimerApellido" Keyboard="Text" Background="White" TextColor="Black" Placeholder="Ingrese el primer apellido"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Segundo Apellido"></Label>
+                        <Entry x:Name="txtSegundoApellido" Keyboard="Text" Background="White" TextColor="Black" Placeholder="Ingrese el segundo apellido"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Correo"></Label>
+                        <Entry x:Name="txtCorreo" Keyboard="Email" Background="White" TextColor="Black" Placeholder="Ingrese el correo electrónico"/>
+                        <Label FontAttributes="Bold" TextColor="White" Text="Teléfono"></Label>
+                        <Entry x:Name="txtTelefono" Keyboard="Numeric" Background="White" TextColor="Black" Placeholder="Ingrese el número de teléfono"/>
+                        
+                        <Label x:Name="lblPassword" FontAttributes="Bold" TextColor="White" Text="Contraseña Actual"/>
+                        <Grid HeightRequest="50">
+                            <Entry x:Name="txtPassword" IsPassword="True" Keyboard="Plain" Background="White" Placeholder="Ingrese la contraseña actual"/>
+                            <ImageButton Source="show.png" WidthRequest="20" HeightRequest="20" Clicked="TogglePasswordVisibility" HorizontalOptions="End" VerticalOptions="Center"/>
+                        </Grid>
+                        <Label x:Name="lblNewPassword" FontAttributes="Bold" TextColor="White" Text="Nueva Contraseña"/>
+                        <Grid HeightRequest="50">
+                            <Entry x:Name="txtNewPassword" IsPassword="True" Keyboard="Plain" Background="White" Placeholder="Ingrese la nueva contraseña"/>
+                            <ImageButton Source="show.png" WidthRequest="20" HeightRequest="20" Clicked="ToggleNewPasswordVisibility" HorizontalOptions="End" VerticalOptions="Center"/>
+                        </Grid>
+                        <Label x:Name="lblRepeatPassword" FontAttributes="Bold" TextColor="White" Text="Repita Contraseña"/>
+                        <Grid HeightRequest="50">
+                            <Entry x:Name="txtRepeatPassword" IsPassword="True" Keyboard="Plain" Background="White" TextColor="Black" Placeholder="Repita la contraseña" />
+                            <ImageButton Source="show.png" WidthRequest="20" HeightRequest="20" Clicked="ToggleRepeatPasswordVisibility" HorizontalOptions="End" VerticalOptions="Center"/>
+                        </Grid>
+
+                        <Button x:Name="btnModificar" Text="Guardar Cambios" Clicked="btnModificar_Clicked" BackgroundColor="#414BB2"></Button>
+                        <Entry x:Name="txtId"  Keyboard="Numeric" Background="White" IsReadOnly="true" IsVisible="False" Text="0"></Entry>
+                    </VerticalStackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
 </ContentPage>

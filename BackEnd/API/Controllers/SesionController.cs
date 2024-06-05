@@ -38,5 +38,12 @@ namespace API.Controllers
         {
             return new LogSesion().changePassword(req);
         }
+
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.Route("api/comprobarPassword")]
+        public ResComprobarPassword ComprobarPassword(ReqComprobarPassword req)
+        {
+            return new LogSesion().ComprobarPassword(req);
+        }
     }
 }

@@ -14,6 +14,8 @@ public partial class FormUsuario : ContentPage
     private Rol selectedRol;
     public int RolId;
     private bool isPickerOpen = false;
+    private bool isPasswordVisible = false;
+    private bool isRepeatPasswordVisible = false;
 
     public FormUsuario()
 	{
@@ -124,16 +126,24 @@ public partial class FormUsuario : ContentPage
                 ResUsuario res = new ResUsuario();
                 if (int.Parse(txtId.Text) == 0)
                 {
-                    res = await controller.IngresarUsuario(txtNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text, txtCorreo.Text, txtPassword.Text, txtTelefono.Text, rol);
-                    if (res.Resultado)
+                    if (txtPassword.Text.Equals(txtRepeatPassword.Text))
                     {
-                        await DisplayAlert("Inserción Exitosa", "Usuario guardado con éxito", "Aceptar");
-                        await Navigation.PopAsync();
+                        res = await controller.IngresarUsuario(txtNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text, txtCorreo.Text, txtPassword.Text, txtTelefono.Text, rol);
+                        if (res.Resultado)
+                        {
+                            await DisplayAlert("Inserción Exitosa", "Usuario guardado con éxito", "Aceptar");
+                            await Navigation.PopAsync();
+                        }
+                        else
+                        {
+                            await DisplayAlert("Error en inserción", "Sucedió un error al guardar: " + res.ListaDeErrores.First(), "Aceptar");
+                        }
                     }
                     else
                     {
-                        await DisplayAlert("Error en inserción", "Sucedió un error al guardar: " + res.ListaDeErrores.First(), "Aceptar");
+                        await DisplayAlert("Error!", "Las contraseñas no coinciden", "Aceptar");
                     }
+                    
                 }
                 else
                 {
@@ -227,8 +237,8 @@ public partial class FormUsuario : ContentPage
 
             if (!string.IsNullOrEmpty(txtId.Text) && txtId.Text != "0")
             {
-                lblPassword.IsVisible = false;
-                txtPassword.IsVisible = false;
+                gridPassword.IsVisible = false;
+                gridRepeatPassword.IsVisible = false;
                 lblRepeatPassword.IsVisible = false;
                 txtRepeatPassword.IsVisible = false;
                 lblTitulo.Text = "Modificar Usuario";
@@ -258,5 +268,19 @@ public partial class FormUsuario : ContentPage
     private void pickRol_Focused(object sender, FocusEventArgs e)
     {
         isPickerOpen = true;
+    }
+
+    private void TogglePasswordVisibility(object sender, EventArgs e)
+    {
+        isPasswordVisible = !isPasswordVisible;
+        txtPassword.IsPassword = !isPasswordVisible;
+        ((ImageButton)sender).Source = isPasswordVisible ? "hide.png" : "show.png";
+    }
+
+    private void ToggleRepeatPasswordVisibility(object sender, EventArgs e)
+    {
+        isRepeatPasswordVisible = !isRepeatPasswordVisible;
+        txtRepeatPassword.IsPassword = !isRepeatPasswordVisible;
+        ((ImageButton)sender).Source = isRepeatPasswordVisible ? "hide.png" : "show.png";
     }
 }

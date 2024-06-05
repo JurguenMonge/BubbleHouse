@@ -43,6 +43,9 @@ namespace FrontEnd.Controller
                         Preferences.Set("UsuarioId", res.Sesion.Usuario.IdUsuario);
                         Preferences.Set("UsuarioNombre", res.Sesion.Usuario.Nombre);
                         Preferences.Set("UsuarioPrimerApellido", res.Sesion.Usuario.PrimerApellido);
+                        Preferences.Set("UsuarioSegundoApellido", res.Sesion.Usuario.SegundoApellido);
+                        Preferences.Set("UsuarioCorreo", res.Sesion.Usuario.CorreoElectronico);
+                        Preferences.Set("UsuarioTelefono", res.Sesion.Usuario.NumeroTelefono);
                         Preferences.Set("Rol", res.Sesion.Usuario.rol.idRol);
                     }
                     else
@@ -52,7 +55,7 @@ namespace FrontEnd.Controller
                 }
                 else
                 {
-                    throw new HttpRequestException("Intente mas tarde");
+                    throw new HttpRequestException("Intente más tarde");
                 }
             }
             catch (Exception ex)
