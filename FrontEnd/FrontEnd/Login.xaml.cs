@@ -32,4 +32,9 @@ public partial class Login : ContentPage
             DisplayAlert("Usuario o Contraseña incorrecto", ex.Message, "Aceptar");
         }
     }
+
+    private void btnVistaPrincipal_Clicked(object sender, EventArgs e)
+    {
+        ((App)Application.Current).NavigateToMainPagePublic();
+    }
 }

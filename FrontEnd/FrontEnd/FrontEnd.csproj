@@ -156,6 +156,9 @@
 	  <MauiXaml Update="Pages\UsuariosSuperAdminPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\VistaPrincipalPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="PrincipalAdministrativa.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

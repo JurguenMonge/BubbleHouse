@@ -160,6 +160,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.Pages.UsuariosSup
 build_metadata.AdditionalFiles.TargetPath = Pages\UsuariosSuperAdminPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\UsuariosSuperAdminPage.xaml
 
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/Pages/VistaPrincipalPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.Pages.VistaPrincipalPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\VistaPrincipalPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\VistaPrincipalPage.xaml
+
 [D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/PrincipalAdministrativa.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.PrincipalAdministrativa.xaml
@@ -183,6 +189,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.SeleccionarLacteo.xaml
 build_metadata.AdditionalFiles.TargetPath = SeleccionarLacteo.xaml
 build_metadata.AdditionalFiles.RelativePath = SeleccionarLacteo.xaml
+
+[D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/SeleccionarSabor.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.SeleccionarSabor.xaml
+build_metadata.AdditionalFiles.TargetPath = SeleccionarSabor.xaml
+build_metadata.AdditionalFiles.RelativePath = SeleccionarSabor.xaml
 
 [D:/JB/Documents/BubbleHouse/FrontEnd/FrontEnd/SeleccionarTamanio.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
