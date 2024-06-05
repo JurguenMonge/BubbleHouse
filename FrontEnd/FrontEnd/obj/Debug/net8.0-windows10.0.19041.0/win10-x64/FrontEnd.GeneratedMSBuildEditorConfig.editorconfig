@@ -180,6 +180,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.SeleccionarLacteo
 build_metadata.AdditionalFiles.TargetPath = SeleccionarLacteo.xaml
 build_metadata.AdditionalFiles.RelativePath = SeleccionarLacteo.xaml
 
+[C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/SeleccionarSabor.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.SeleccionarSabor.xaml
+build_metadata.AdditionalFiles.TargetPath = SeleccionarSabor.xaml
+build_metadata.AdditionalFiles.RelativePath = SeleccionarSabor.xaml
+
 [C:/Proyectos/Moviles/BubbleHouse/FrontEnd/FrontEnd/SeleccionarTamanio.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FrontEnd.SeleccionarTamanio.xaml
