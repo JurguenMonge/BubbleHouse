@@ -160,6 +160,9 @@
 	  <MauiXaml Update="SeleccionarLacteo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="SeleccionarSabor.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="SeleccionarTamanio.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
