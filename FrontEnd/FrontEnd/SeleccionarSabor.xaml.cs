@@ -25,14 +25,19 @@ public partial class SeleccionarSabor : ContentPage
 
         if (BindingContext is List<Ingrediente> ingredientes)
         {
+            List<Ingrediente> filtrada = new List<Ingrediente>();
             foreach (Ingrediente ing in ingredientes)
             {
                 if (ing.idCategoriaIngrediente == 7)
                 {
                     imgVaso.Source = ing.dscURLImagen;
                 }
+                if(ing.idCategoriaIngrediente != 2)
+                {
+                    filtrada.Add(ing);
+                }
             }
-            ingredientesSeleccionados = ingredientes;
+            ingredientesSeleccionados = filtrada;
             if (isFirstLoad)
             {
                 isFirstLoad = false;
@@ -137,5 +142,14 @@ public partial class SeleccionarSabor : ContentPage
         var siguiente = new SeleccionarAzucar();
         siguiente.BindingContext = ingredientesSeleccionados;
         Navigation.PushAsync(siguiente);
+        Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+    }
+
+    private void btnVolver_Clicked(object sender, EventArgs e)
+    {
+        var siguiente = new SeleccionarLacteo();
+        siguiente.BindingContext = ingredientesSeleccionados;
+        Navigation.PushAsync(siguiente);
+        Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
     }
 }

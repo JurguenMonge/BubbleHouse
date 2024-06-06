@@ -5,109 +5,77 @@
              Title="SeleccionarTopping">
     <AbsoluteLayout BackgroundColor="#A9DFF0">
         <!-- Background Images for Tiling -->
-        <AbsoluteLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
-            <VerticalStackLayout Spacing="15">
-                <HorizontalStackLayout Spacing="15">
-                    <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
-                    <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
-                    <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
-                    <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
-                    <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout Spacing="15">
-                    <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
-                    <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
-                    <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
-                    <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
-                    <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout Spacing="15">
-                    <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
-                    <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
-                    <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
-                    <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
-                    <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
-                </HorizontalStackLayout>
-            </VerticalStackLayout>
-        </AbsoluteLayout>
+        <VerticalStackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Spacing="15">
+            <HorizontalStackLayout Spacing="15">
+                <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
+                <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
+                <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
+                <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
+                <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="15">
+                <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
+                <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
+                <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
+                <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
+                <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="15">
+                <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
+                <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
+                <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
+                <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
+                <Image Source="fondobubbles.png" Aspect="AspectFit" Opacity="0.5"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
 
         <!-- Main Content -->
-        <VerticalStackLayout  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
-            <ScrollView>
-                <VerticalStackLayout>
-                    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
-                        <Frame Margin="10" BackgroundColor="#E0E0E0" HasShadow="True" CornerRadius="5" HeightRequest="350" WidthRequest="350">
-                            <Grid>
-                                <Image x:Name="imgVaso" Source="image1_source.png" Aspect="AspectFit" />
-                                <Image x:Name="imgSabor" Source="image2_source.png" Aspect="AspectFit" />
-                                <Image x:Name="imgTopping" Source="image3_source.png" Aspect="AspectFit" />
-                                <Image x:Name="imgBordeado" Source="image3_source.png" Aspect="AspectFit" />
-                                <Image x:Name="imgBubbles" Source="image3_source.png" Aspect="AspectFit" />
-                            </Grid>
-                        </Frame>
-                    </Grid>
+        <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <VerticalStackLayout Padding="10" Spacing="10">
+                <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                    <Frame Margin="10" BackgroundColor="#E0E0E0" HasShadow="True" CornerRadius="5" HeightRequest="350" WidthRequest="350">
+                        <Grid>
+                            <Image x:Name="imgVaso" Source="image1_source.png" Aspect="AspectFit" />
+                            <Image x:Name="imgSabor" Source="image2_source.png" Aspect="AspectFit" />
+                            <Image x:Name="imgTopping" Source="image3_source.png" Aspect="AspectFit" />
+                            <Image x:Name="imgBordeado" Source="image3_source.png" Aspect="AspectFit" />
+                            <Image x:Name="imgBubbles" Source="image3_source.png" Aspect="AspectFit" />
+                        </Grid>
+                    </Frame>
+                </Grid>
 
-                    <Label TextColor="White" FontSize="Title" Text="Seleccione el Topping" Margin="10,10,10,10" HorizontalOptions="Center"></Label>
+                <Label TextColor="White" FontSize="Title" Text="Seleccione el Topping" Margin="10,10,10,10" HorizontalOptions="Center"/>
 
-                    <Grid BackgroundColor="#A9DFF0" RowSpacing="15" Padding="10">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
+                <CollectionView ItemsSource="{Binding listaIngrediente}" SelectionMode="Single">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame Margin="12" BorderColor="Azure" CornerRadius="5" HasShadow="True">
+                                    <Frame.Background>
+                                        <LinearGradientBrush EndPoint="1,0">
+                                            <GradientStop Offset="0" Color="#BDC0F7"/>
+                                            <GradientStop Offset="1" Color="#BDC0F7"/>
+                                        </LinearGradientBrush>
+                                    </Frame.Background>
+                                    <Grid ColumnDefinitions="0.9*,0.1*">
+                                        <StackLayout VerticalOptions="Center" HorizontalOptions="Start">
+                                            <Label x:Name="lblNombreIngrediente" FontSize="15" HorizontalTextAlignment="Start" Text="{Binding dscNombre}" VerticalOptions="Center" TextColor="white"/>
+                                            <Label x:Name="lblDescripcion" FontSize="15" HorizontalTextAlignment="Start" Text="{Binding dscDescripcion}" VerticalOptions="Center" TextColor="white"/>
+                                            <Label x:Name="lblPrecio" FontSize="15" HorizontalTextAlignment="Start" Text="{Binding numPrecio}" VerticalOptions="Center" TextColor="white"/>
+                                        </StackLayout>
+                                        <StackLayout VerticalOptions="Center" HorizontalOptions="End" Grid.Column="1">
+                                            <RadioButton GroupName="IngredientSelection" CheckedChanged="RadioButton_CheckedChanged"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
-                        <CollectionView Grid.Row="2"
-                          ItemsSource="{Binding listaIngrediente}"
-                          SelectionMode="Single">
-                            <CollectionView.ItemTemplate>
-                                <DataTemplate>
-                                    <StackLayout>
-                                        <Frame Margin="12"
-                                        BorderColor="Azure"
-                                        CornerRadius="5"
-                                        HasShadow="True">
-                                            <Frame.Background>
-                                                <LinearGradientBrush EndPoint="1,0">
-                                                    <GradientStop Offset="0" Color="#BDC0F7" />
-                                                    <GradientStop Offset="1" Color="#BDC0F7" />
-                                                </LinearGradientBrush>
-                                            </Frame.Background>
-                                            <Grid ColumnDefinitions="0.9*,0.1*">
-                                                <StackLayout VerticalOptions="Center" HorizontalOptions="Start">
-                                                    <Label x:Name="lblNombreIngrediente"
-                                          FontSize="15"
-                                          HorizontalTextAlignment="Start"
-                                          Text="{Binding dscNombre}"
-                                          VerticalOptions="Center"
-                                          TextColor="white" />
-                                                    <Label x:Name="lblDescripcion"
-                                          FontSize="15"
-                                          HorizontalTextAlignment="Start"
-                                          Text="{Binding dscDescripcion}"
-                                          VerticalOptions="Center"
-                                          TextColor="white" />
-                                                    <Label x:Name="lblPrecio"
-                                          FontSize="15"
-                                          HorizontalTextAlignment="Start"
-                                          Text="{Binding numPrecio}"
-                                          VerticalOptions="Center"
-                                          TextColor="white" />
-                                                </StackLayout>
-
-                                                <StackLayout VerticalOptions="Center" HorizontalOptions="End" Grid.Column="1">
-                                                    <RadioButton GroupName="IngredientSelection"
-                             CheckedChanged="RadioButton_CheckedChanged" />
-                                                </StackLayout>
-                                            </Grid>
-                                        </Frame>
-                                    </StackLayout>
-                                </DataTemplate>
-                            </CollectionView.ItemTemplate>
-                        </CollectionView>
-                    </Grid>
-                    <Button x:Name="btnSiguiente" TextColor="White" BackgroundColor="#BDC0F7" IsEnabled="True" Clicked="Button_Clicked" Text="Siguiente" Margin="40,10,10,10"></Button>
-                </VerticalStackLayout>
-            </ScrollView>
-        </VerticalStackLayout>
+                <Button x:Name="btnSiguiente" TextColor="White" BackgroundColor="#BDC0F7" IsEnabled="True" Clicked="Button_Clicked" Text="Siguiente" Margin="40,10,10,10"/>
+                <Button x:Name="btnVolver" TextColor="White" BackgroundColor="Gray" IsEnabled="True" Clicked="btnVolver_Clicked" Text="Volver" Margin="40,10,10,10"/>
+            </VerticalStackLayout>
+        </ScrollView>
     </AbsoluteLayout>
 </ContentPage>

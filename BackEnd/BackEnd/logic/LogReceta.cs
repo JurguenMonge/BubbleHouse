@@ -19,7 +19,7 @@ namespace BackEnd.logic
             ResReceta res = new ResReceta();
             
             ValidacionesGenericas validacionesGenericas = new ValidacionesGenericas();
-            var result = validacionesGenericas.validarString(req.Receta.dscNombre);
+            var result = validacionesGenericas.validarString(req.Producto.receta.dscNombre);
             if (result == 1)
             {
                 res.Resultado = false;
@@ -47,16 +47,7 @@ namespace BackEnd.logic
                     int? idReturn = 0;
                     int? idError = 0;
                     String errorBD = "";
-                    var linqSesion = linq.Obtener_Sesion(req.id_Sesion);
-                    var permisos = false;
-                    foreach (var item in linqSesion)
-                    {
-                        Rol rol = factoryArmarRol(item);
-                        if (rol != null && (rol.tipoRol == "Super Administrador" || rol.tipoRol == "Administrador")) 
-                        {
-                            permisos = true;
-                        }
-                    }
+                    var permisos = true;
                     if(permisos)
                     {
                         res = validaciones(req);
@@ -65,14 +56,14 @@ namespace BackEnd.logic
                             idReturn = 0;
                             idError = 0;
                             errorBD = "";
-                            linq.Insertar_Receta(req.Receta.dscNombre,ref idReturn, ref idError, ref errorBD);
+                            linq.Insertar_Receta(req.Producto.receta.dscNombre,ref idReturn, ref idError, ref errorBD);
                             if (idError == 0)
                             {
                                 int? idReturnIng = 0;
                                 int? idErrorIng = 0;
                                 String errorBDIng = "";
                                 ResIngrediente resInge = new ResIngrediente();
-                                foreach (Ingrediente ing in req.Receta.listaIngrediente)
+                                foreach (Ingrediente ing in req.Producto.receta.listaIngrediente)
                                 {
                                     ValidacionesIngrediente.ValidarCategoria(ing,resInge,ref tipoRegistro);
                                     ValidacionesIngrediente.ValidarNombre(ing, resInge, ref tipoRegistro);
@@ -94,7 +85,19 @@ namespace BackEnd.logic
                                 }
                                 if (idErrorIng == 0)
                                 {
-                                    res.Resultado = true;
+                                    ReqIngresarProducto reqPro = new ReqIngresarProducto();
+                                    reqPro.Producto = req.Producto;
+                                    reqPro.Producto.receta.idReceta = (int)idReturn;
+                                    ResProducto resPro = new LogProducto().ingresarProducto(reqPro);
+                                    if(resPro.Resultado == true)
+                                    {
+                                        res.Resultado = true;
+                                    }
+                                    else
+                                    {
+                                        res.Resultado = false;
+                                        res.ListaDeErrores.Add("Sucedio un error al crear el producto");
+                                    }
                                 }
                             }
                             else

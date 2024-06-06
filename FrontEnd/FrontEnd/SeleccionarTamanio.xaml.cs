@@ -117,4 +117,5 @@ public partial class SeleccionarTamanio : ContentPage
         siguiente.BindingContext = ingredientesSeleccionados;
         Navigation.PushAsync(siguiente);
     }
+
 }
