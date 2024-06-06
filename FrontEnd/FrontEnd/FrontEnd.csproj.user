@@ -80,6 +80,15 @@
     <MauiXaml Update="PrincipalAdministrativa.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="SeleccionarAzucar.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="SeleccionarBordeado.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="SeleccionarBubbles.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="SeleccionarLacteo.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
@@ -87,6 +96,9 @@
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="SeleccionarTamanio.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="SeleccionarTopping.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>

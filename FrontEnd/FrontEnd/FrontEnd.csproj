@@ -74,8 +74,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\bubbles.png" />
+	  <None Remove="Resources\Images\colorsup.png" />
 	  <None Remove="Resources\Images\cruz.png" />
 	  <None Remove="Resources\Images\fondo.png" />
+	  <None Remove="Resources\Images\fondoBubbles.png" />
 	  <None Remove="Resources\Images\hide.svg" />
 	  <None Remove="Resources\Images\logo_celeste.png" />
 	  <None Remove="Resources\Images\show.svg" />
@@ -162,6 +165,15 @@
 	  <MauiXaml Update="PrincipalAdministrativa.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="SeleccionarAzucar.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SeleccionarBordeado.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SeleccionarBubbles.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="SeleccionarLacteo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -169,6 +181,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="SeleccionarTamanio.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SeleccionarTopping.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

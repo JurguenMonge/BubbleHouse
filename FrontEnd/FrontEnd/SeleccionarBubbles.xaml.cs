@@ -6,16 +6,15 @@ using System.ComponentModel;
 
 namespace FrontEnd;
 
-public partial class SeleccionarSabor : ContentPage
+public partial class SeleccionarBubbles : ContentPage
 {
-	public SeleccionarSabor()
+	public SeleccionarBubbles()
 	{
 		InitializeComponent();
-    }
-
+	}
     private ObservableCollection<Ingrediente> _listaIngrediente = new ObservableCollection<Ingrediente>();
     private Ingrediente ingredienteSeleccionado = new Ingrediente();
-    List<Ingrediente> ingredientesSeleccionados = new List<Ingrediente>();
+    private List<Ingrediente> ingredientesSeleccionados = new List<Ingrediente>();
     private bool selecionado = false;
     private bool isFirstLoad = true;
 
@@ -30,6 +29,18 @@ public partial class SeleccionarSabor : ContentPage
                 if (ing.idCategoriaIngrediente == 7)
                 {
                     imgVaso.Source = ing.dscURLImagen;
+                }
+                if (ing.idCategoriaIngrediente == 2)
+                {
+                    imgSabor.Source = ing.dscURLImagen;
+                }
+                if (ing.idCategoriaIngrediente == 4)
+                {
+                    imgTopping.Source = ing.dscURLImagen;
+                }
+                if (ing.idCategoriaIngrediente == 5)
+                {
+                    imgBordeado.Source = ing.dscURLImagen;
                 }
             }
             ingredientesSeleccionados = ingredientes;
@@ -94,7 +105,7 @@ public partial class SeleccionarSabor : ContentPage
                         List<Ingrediente> listaFiltrada = new List<Ingrediente>();
                         foreach (Ingrediente ingre in res.listaIngredientes)
                         {
-                            if (ingre.idCategoriaIngrediente == 2)
+                            if (ingre.idCategoriaIngrediente == 6)
                             {
                                 listaFiltrada.Add(ingre);
                             }
@@ -121,7 +132,7 @@ public partial class SeleccionarSabor : ContentPage
         var selectedIngredient = button?.BindingContext as Ingrediente;
         if (selectedIngredient != null)
         {
-            imgSabor.Source = selectedIngredient.dscURLImagen;
+            imgBubbles.Source = selectedIngredient.dscURLImagen;
             ingredienteSeleccionado = selectedIngredient;
             if (selecionado == false)
             {
@@ -134,7 +145,7 @@ public partial class SeleccionarSabor : ContentPage
     private void Button_Clicked(object sender, EventArgs e)
     {
         ingredientesSeleccionados.Add(ingredienteSeleccionado);
-        var siguiente = new SeleccionarAzucar();
+        var siguiente = new SeleccionarSabor();
         siguiente.BindingContext = ingredientesSeleccionados;
         Navigation.PushAsync(siguiente);
     }
