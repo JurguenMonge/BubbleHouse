@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FrontEnd.Pages.FormProducto"
-             Title="FormProducto">
+             Title="FormProducto"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False">
 
     <ScrollView>
         <Grid x:Name="Contenedor" BackgroundColor="#a9dff0" >
@@ -19,8 +21,8 @@
                               TextColor="Gray"
                               FontSize="12"
                               VerticalTextAlignment="Center"
-                              SelectedIndexChanged="pickCategoria_SelectedIndexChanged"
-                              Focused="pickCategoria_Focused"
+                              SelectedIndexChanged="pickReceta_SelectedIndexChanged"
+                              Focused="pickReceta_Focused"
                           />
                         <Label FontAttributes="Bold" TextColor="White" Text="SubCategoría del Producto"></Label>
                         <Picker x:Name="pickSubCategoria"
@@ -29,8 +31,8 @@
                              TextColor="Gray"
                              FontSize="12"
                              VerticalTextAlignment="Center"
-                             SelectedIndexChanged="pickCategoria_SelectedIndexChanged"
-                             Focused="pickCategoria_Focused"
+                             SelectedIndexChanged="pickSubCategoria_SelectedIndexChanged"
+                             Focused="pickSubCategoria_Focused"
                          />
                         <Label FontAttributes="Bold" TextColor="White" Text="Descripción"/>
                         <Editor x:Name="txtDescripcion" Background="White" HeightRequest="200" Placeholder="Ingrese una descripción"/>

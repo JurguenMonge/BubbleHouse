@@ -206,12 +206,22 @@ public partial class FormProducto : ContentPage
         }
     }
 
-    private void pickCategoria_SelectedIndexChanged(object sender, EventArgs e)
+    private void pickSubCategoria_SelectedIndexChanged(object sender, EventArgs e)
     {
 
     }
 
-    private void pickCategoria_Focused(object sender, FocusEventArgs e)
+    private void pickSubCategoria_Focused(object sender, FocusEventArgs e)
+    {
+
+    }
+
+    private void pickReceta_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void pickReceta_Focused(object sender, FocusEventArgs e)
     {
 
     }
@@ -254,17 +264,17 @@ public partial class FormProducto : ContentPage
 
                     }
 
-                    //res = await productoController.ActualizarIngrediente(int.Parse(txtId.Text), cate.idCateIngrediente, txtNombreIngrediente.Text, txtDescripcion.Text, selectedImagePath, decimal.Parse(txtPrecio.Text));
-                    //if (res.Resultado)
-                    //{
-                    //    await DisplayAlert("Actualiación Exitosa", "Ingrediente actualizado con éxito", "Aceptar");
-                    //    await Navigation.PopAsync();
+                    res = await productoController.modificarProducto(int.Parse(txtId.Text), subCate.idSubcategoriaProducto, rece.recetaId, txtNombreProducto.Text, txtDescripcion.Text, selectedImagePath, decimal.Parse(txtPrecio.Text));
+                    if (res.Resultado)
+                    {
+                        await DisplayAlert("Actualiación Exitosa", "Producto actualizado con éxito", "Aceptar");
+                        await Navigation.PopAsync();
 
-                    //}
-                    //else
-                    //{
-                    //    await DisplayAlert("Error en actualiación", "Sucedió un error al actualizar: " + res.ListaDeErrores.First(), "Aceptar");
-                    //}
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error en actualiación", "Sucedió un error al actualizar: " + res.ListaDeErrores.First(), "Aceptar");
+                    }
                 }
             }
             else
@@ -280,11 +290,32 @@ public partial class FormProducto : ContentPage
         }
     }
 
-    private void btnEliminar_Clicked(object sender, EventArgs e)
+    private async void btnEliminar_Clicked(object sender, EventArgs e)
     {
-
+        bool answer = await DisplayAlert("Confirmación", "¿Estás seguro de eliminar este producto?", "Aceptar", "Cancelar");
+        if (answer)
+        {
+            ProductoController controller = new ProductoController();
+            try
+            {
+                ResProducto res = new ResProducto();
+                res = await controller.EliminarProducto(int.Parse(txtId.Text));
+                if (res.Resultado)
+                {
+                    await DisplayAlert("Eliminación Exitosa", "Producto eliminado con éxito", "Aceptar");
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+                    await DisplayAlert("Error en eliminación", "Sucedió un error al eliminar: " + res.ListaDeErrores.First(), "Aceptar");
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error interno", "Por favor, reinstale la aplicación", "Aceptar");
+            }
+        }
     }
-
     private async void btnSeleccionar_Clicked(object sender, EventArgs e)
     {
         try
@@ -331,5 +362,32 @@ public partial class FormProducto : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
+        if (BindingContext is Producto producto)
+        {
+            txtId.Text = producto.idProducto.ToString();
+            txtNombreProducto.Text = producto.nombreProducto.ToString();
+            txtDescripcion.Text = producto.descripcion;
+            txtPrecio.Text = producto.precio.ToString();
+            selectedImage.Source = producto.urlImgen;
+            recetaId = producto.receta.idReceta;
+            subCategoriaProductoId = producto.subcategoriaProducto.idSubcategoriaProducto;
+
+            SetSelectedRecetaId(recetaId);
+            SetSelectedSubCategoriaById(subCategoriaProductoId);
+
+
+            if (!string.IsNullOrEmpty(txtId.Text) && txtId.Text != "0")
+            {
+
+                lblTitulo.Text = "Modificar Producto";
+                btnIngresar.Text = "Modificar";
+                btnEliminar.IsVisible = true;
+            }
+            else
+            {
+                btnIngresar.Text = "Ingresar";
+                btnEliminar.IsVisible = false;
+            }
+        }
     }
 }

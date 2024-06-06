@@ -57,7 +57,7 @@
                                     </LinearGradientBrush>
                                 </Frame.Background>
                                 <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="TapModificarIngrediente"/>
+                                    <TapGestureRecognizer Tapped="TapModificarProducto"/>
                                 </Frame.GestureRecognizers>
                                 <Grid ColumnDefinitions="0.25*,0.5*,0.25*">
                                     <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
@@ -69,7 +69,13 @@
                                         <Label x:Name="txtid"
                                        Text="{Binding idProducto}"
                                        IsVisible="False"/>
-                                        <Label x:Name="lblsubcategoria"
+                                        <Label x:Name="lblIdCategoria"
+                                           Text="{Binding subcategoriaProducto.idSubcategoriaProducto}"
+                                           IsVisible="False"/>
+                                        <Label x:Name="lblIdSubCategoria"
+                                           Text="{Binding receta.idReceta}"
+                                           IsVisible="False"/>
+                                        <Label x:Name="lblIdReceta"
                                         FontSize="15"
                                         HorizontalTextAlignment="Start"
                                         Text="{Binding subcategoriaProducto.dscNombreSubCategoria}"

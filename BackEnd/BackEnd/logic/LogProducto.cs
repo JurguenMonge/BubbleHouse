@@ -217,6 +217,10 @@ namespace BackEnd.logic
             producto.receta = new Receta();
             producto.subcategoriaProducto = new SubcategoriaProducto();
             producto.categoriaProducto = new CategoriaProducto();
+            producto.idProducto = linqProducto.ID_PRODUCTO;
+            producto.receta.idReceta = linqProducto.ID_RECETA;
+            producto.subcategoriaProducto.idSubcategoriaProducto = linqProducto.ID_SUBCATE_PRODUCTO;
+            producto.categoriaProducto.idCategoriaProducto = linqProducto.ID_CATE_PRODUCTO;
             producto.nombreProducto = linqProducto.DSC_NOMBRE_PRODUCTO;
             producto.descripcion = linqProducto.DSC_DESCRIPCION;
             producto.urlImgen = linqProducto.DSC_URL_IMAGEN;

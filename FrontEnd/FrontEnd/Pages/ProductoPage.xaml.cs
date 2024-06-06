@@ -84,16 +84,16 @@ public partial class ProductoPage : ContentPage
         return retornarProductosApi;
     }
 
-    private void TapModificarIngrediente(object sender, TappedEventArgs e)
+    private void TapModificarProducto(object sender, TappedEventArgs e)
     {
         var button = sender as Frame;
-        var item = button?.BindingContext as Ingrediente;
+        var item = button?.BindingContext as Producto;
 
         if (item != null)
         {
-            var formularioIngrediente = new FormIngrediente();
-            formularioIngrediente.BindingContext = item;
-            Navigation.PushAsync(formularioIngrediente);
+            var formularioProducto = new FormProducto();
+            formularioProducto.BindingContext = item;
+            Navigation.PushAsync(formularioProducto);
         }
     }
 
