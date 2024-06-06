@@ -7,7 +7,7 @@
     <ScrollView>
         <Grid x:Name="Contenedor" BackgroundColor="#a9dff0" >
             <VerticalStackLayout Spacing="1" Margin="40,40,40,0" Padding="10">
-                <Frame Margin="10,0,10,0" VerticalOptions="Center" BackgroundColor="#bdc0f7" BorderColor="Azure" CornerRadius="50">
+                <Frame WidthRequest="350" VerticalOptions="Center" BackgroundColor="#bdc0f7" BorderColor="Azure" CornerRadius="50">
                     <VerticalStackLayout Margin="10,0,10,0" Spacing="10">
                         <Label x:Name="lblTitulo" FontAttributes="Bold" FontSize="Title" HorizontalTextAlignment="Center" TextColor="White" Text="Crear Usuario"/>
                         <Label FontAttributes="Bold" TextColor="White" Text="Nombre" />
@@ -33,12 +33,12 @@
                         <Label x:Name="lblPassword" FontAttributes="Bold" TextColor="White" Text="Contraseña"/>
                         <Grid x:Name="gridPassword" HeightRequest="50">
                             <Entry x:Name="txtPassword" IsPassword="True" Keyboard="Plain" Background="White" Placeholder="Ingrese una contraseña"/>
-                            <ImageButton Source="show.png" WidthRequest="20" HeightRequest="20" Clicked="TogglePasswordVisibility" HorizontalOptions="End" VerticalOptions="Center"/>
+                            <ImageButton Source="show.svg" WidthRequest="50" HeightRequest="40" Clicked="TogglePasswordVisibility" HorizontalOptions="End" VerticalOptions="Center"/>
                         </Grid>
                         <Label x:Name="lblRepeatPassword" FontAttributes="Bold" TextColor="White" Text="Repita Contraseña"/>
                         <Grid x:Name="gridRepeatPassword" HeightRequest="50">
                             <Entry x:Name="txtRepeatPassword" IsPassword="True" Keyboard="Plain" Background="White" TextColor="Black" Placeholder="Repita la contraseña" />
-                            <ImageButton Source="show.png" WidthRequest="20" HeightRequest="20" Clicked="ToggleRepeatPasswordVisibility" HorizontalOptions="End" VerticalOptions="Center"/>
+                            <ImageButton Source="show.svg" WidthRequest="50" HeightRequest="40" Clicked="ToggleRepeatPasswordVisibility" HorizontalOptions="End" VerticalOptions="Center"/>
                         </Grid>
 
                         <Button x:Name="btnIngresar" Text="Crear" Clicked="btnIngresar_Clicked" BackgroundColor="#414BB2"></Button>

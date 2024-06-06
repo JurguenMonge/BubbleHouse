@@ -76,9 +76,9 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\cruz.png" />
 	  <None Remove="Resources\Images\fondo.png" />
-	  <None Remove="Resources\Images\hide.png" />
+	  <None Remove="Resources\Images\hide.svg" />
 	  <None Remove="Resources\Images\logo_celeste.png" />
-	  <None Remove="Resources\Images\show.png" />
+	  <None Remove="Resources\Images\show.svg" />
 	  <None Remove="Resources\Images\usuarios.svg" />
 	</ItemGroup>
 

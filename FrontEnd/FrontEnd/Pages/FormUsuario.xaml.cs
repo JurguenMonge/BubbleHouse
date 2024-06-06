@@ -274,13 +274,13 @@ public partial class FormUsuario : ContentPage
     {
         isPasswordVisible = !isPasswordVisible;
         txtPassword.IsPassword = !isPasswordVisible;
-        ((ImageButton)sender).Source = isPasswordVisible ? "hide.png" : "show.png";
+        ((ImageButton)sender).Source = isPasswordVisible ? "hide.svg" : "show.svg";
     }
 
     private void ToggleRepeatPasswordVisibility(object sender, EventArgs e)
     {
         isRepeatPasswordVisible = !isRepeatPasswordVisible;
         txtRepeatPassword.IsPassword = !isRepeatPasswordVisible;
-        ((ImageButton)sender).Source = isRepeatPasswordVisible ? "hide.png" : "show.png";
+        ((ImageButton)sender).Source = isRepeatPasswordVisible ? "hide.svg" : "show.svg";
     }
 }

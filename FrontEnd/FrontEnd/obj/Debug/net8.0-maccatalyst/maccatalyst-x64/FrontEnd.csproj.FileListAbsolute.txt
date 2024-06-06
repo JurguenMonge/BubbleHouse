@@ -1019,3 +1019,11 @@ C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\
 C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\ingrediente@3x.png
 C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\ingrediente@2x.png
 C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\ingrediente.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\borde.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\hide@3x.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\hide@2x.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\hide.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\avatar.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\show@3x.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\show@2x.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\show.png

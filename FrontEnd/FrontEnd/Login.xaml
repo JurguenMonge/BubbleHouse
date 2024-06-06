@@ -13,7 +13,7 @@
                     IsVisible="True"
                     IsEnabled="True"/>
                 
-                <Frame Margin="10,0,10,0" VerticalOptions="Center" BackgroundColor="#bdc0f7" BorderColor="#bdc0f7">
+                <Frame Margin="10,0,10,0"  VerticalOptions="Center" BackgroundColor="#bdc0f7" BorderColor="#bdc0f7">
                     <VerticalStackLayout>
                         <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="White" Text="Correo" ></Label>
                         <Entry x:Name="txtCorreo" TextColor="Black" Keyboard="Email" Background="White" Text="gmail@gmail.com" ></Entry>

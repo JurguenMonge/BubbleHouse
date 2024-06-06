@@ -61,20 +61,20 @@ public partial class UsuarioAdminPage : ContentPage
     {
         isPasswordVisible = !isPasswordVisible;
         txtPassword.IsPassword = !isPasswordVisible;
-        ((ImageButton)sender).Source = isPasswordVisible ? "hide.png" : "show.png";
+        ((ImageButton)sender).Source = isPasswordVisible ? "hide.svg" : "show.svg";
     }
 
     private void ToggleNewPasswordVisibility(object sender, EventArgs e)
     {
         isNewPasswordVisible = !isNewPasswordVisible;
         txtNewPassword.IsPassword = !isNewPasswordVisible;
-        ((ImageButton)sender).Source = isNewPasswordVisible ? "hide.png" : "show.png";
+        ((ImageButton)sender).Source = isNewPasswordVisible ? "hide.svg" : "show.svg";
     }
 
     private void ToggleRepeatPasswordVisibility(object sender, EventArgs e)
     {
         isRepeatPasswordVisible = !isRepeatPasswordVisible;
         txtRepeatPassword.IsPassword = !isRepeatPasswordVisible;
-        ((ImageButton)sender).Source = isRepeatPasswordVisible ? "hide.png" : "show.png";
+        ((ImageButton)sender).Source = isRepeatPasswordVisible ? "hide.svg" : "show.svg";
     }
 }
