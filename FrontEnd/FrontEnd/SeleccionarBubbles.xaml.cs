@@ -1,5 +1,8 @@
+using FrontEnd.Controller;
 using FrontEnd.Entidades.Entidad;
+using FrontEnd.Entidades.Request;
 using FrontEnd.Entidades.Response;
+using FrontEnd.Pages;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -44,6 +47,11 @@ public partial class SeleccionarBubbles : ContentPage
                 }
             }
             ingredientesSeleccionados = ingredientes;
+            ingredienteSeleccionado.idIngrediente = 14;
+            ingredienteSeleccionado.dscNombre = "No agregado";
+            ingredienteSeleccionado.dscDescripcion = "No agregado";
+            ingredienteSeleccionado.dscURLImagen = "No agregado";
+            ingredienteSeleccionado.numPrecio = 0;
             if (isFirstLoad)
             {
                 isFirstLoad = false;
@@ -142,11 +150,36 @@ public partial class SeleccionarBubbles : ContentPage
         }
     }
 
-    private void Button_Clicked(object sender, EventArgs e)
+    private async void Button_Clicked(object sender, EventArgs e)
     {
-        ingredientesSeleccionados.Add(ingredienteSeleccionado);
-        var siguiente = new SeleccionarSabor();
+        try
+        {
+            ingredientesSeleccionados.Add(ingredienteSeleccionado);
+            ResReceta res = new ResReceta();
+            RecetaController controller = new RecetaController();
+            res = await controller.IngresarReceta(ingredientesSeleccionados);
+            if (res.Resultado)
+            {
+                await DisplayAlert("Bubble Aceptado", "Producto Agregado al Carrito", "Aceptar");
+                await Navigation.PushAsync(new Carrito());
+                Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+            }
+            else
+            {
+                DisplayAlert("Error en Bubble", "Sucedio un error al Agregar el Bubble" + res.ListaDeErrores.First(), "Aceptar");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error interno");
+        }
+    }
+
+    private void btnVolver_Clicked(object sender, EventArgs e)
+    {
+        var siguiente = new SeleccionarBordeado();
         siguiente.BindingContext = ingredientesSeleccionados;
         Navigation.PushAsync(siguiente);
+        Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
     }
 }
