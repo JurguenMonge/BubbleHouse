@@ -33,5 +33,12 @@ namespace API.Controllers
         {
             return new LogProducto().eliminarProducto(id);
         }
+
+        [System.Web.Http.HttpPut]
+        [System.Web.Http.Route("api/producto/modificar")]
+        public ResProducto modificarUsuario(ReqIngresarProducto req)
+        {
+            return new LogProducto().modificarProducto(req);
+        }
     }
 }
