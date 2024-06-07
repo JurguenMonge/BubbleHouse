@@ -126,6 +126,7 @@ public partial class SeleccionarLacteo : ContentPage
         var selectedIngredient = button?.BindingContext as Ingrediente;
         if (selectedIngredient != null)
         {
+            imgLacteo.Source = selectedIngredient.dscURLImagen;
             ingredienteSeleccionado = selectedIngredient;
             if (selecionado == false)
             {

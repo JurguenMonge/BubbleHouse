@@ -208,6 +208,9 @@
     <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\borde.scale-100.png">
       <PackagePath>borde.scale-100.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\bordeado.scale-100.png">
+      <PackagePath>bordeado.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\bubble.scale-100.png">
       <PackagePath>bubble.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -304,6 +307,9 @@
     <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\ingrediente.scale-400.png">
       <PackagePath>ingrediente.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lecheentera.scale-100.png">
+      <PackagePath>lecheentera.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo_celeste.scale-100.png">
       <PackagePath>logo_celeste.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -367,6 +373,12 @@
     <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\receta.scale-400.png">
       <PackagePath>receta.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\reflejodeluz.scale-100.png">
+      <PackagePath>reflejodeluz.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\saborchicle.scale-100.png">
+      <PackagePath>saborchicle.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\seleccionar.scale-100.png">
       <PackagePath>seleccionar.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -384,6 +396,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\show.scale-400.png">
       <PackagePath>show.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\tapioca.scale-100.png">
+      <PackagePath>tapioca.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\topping.scale-100.png">
+      <PackagePath>topping.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\usuario.scale-100.png">
       <PackagePath>usuario.scale-100.png</PackagePath>
@@ -417,6 +435,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\vainilla.scale-100.jpg">
       <PackagePath>vainilla.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\vaso.scale-100.png">
+      <PackagePath>vaso.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\FrontEnd.deps.json">
       <PackagePath>FrontEnd.deps.json</PackagePath>

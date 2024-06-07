@@ -32,7 +32,11 @@ public partial class SeleccionarSabor : ContentPage
                 {
                     imgVaso.Source = ing.dscURLImagen;
                 }
-                if(ing.idCategoriaIngrediente != 2)
+                if (ing.idCategoriaIngrediente == 1)
+                {
+                    imgLacteo.Source = ing.dscURLImagen;
+                }
+                if (ing.idCategoriaIngrediente != 2)
                 {
                     filtrada.Add(ing);
                 }
