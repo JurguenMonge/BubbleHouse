@@ -85,5 +85,36 @@ namespace FrontEnd.Controller
             }
             return res;
         }
+
+        public async Task<ResReceta> EliminarReceta(int id)
+        {
+            ResReceta res = new ResReceta();
+            try
+            {
+                if (id != 0)
+                {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        // Crear la solicitud HttpRequestMessage
+                        var response = await client.DeleteAsync("https://localhost:44311/api/receta/eliminar/" + id);
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var responseContent = await response.Content.ReadAsStringAsync();
+                            res = JsonConvert.DeserializeObject<ResReceta>(responseContent);
+                        }
+                        else
+                        {
+                            res.ListaDeErrores.Add("Error al intentar eliminar la receta");
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                res.ListaDeErrores.Add("Error interno");
+            }
+            return res;
+        }
     }
 }

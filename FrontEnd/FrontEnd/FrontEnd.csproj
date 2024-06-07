@@ -135,6 +135,9 @@
 	  <MauiXaml Update="Pages\FormProducto.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\FormReceta.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\FormSubCategoriaProducto.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

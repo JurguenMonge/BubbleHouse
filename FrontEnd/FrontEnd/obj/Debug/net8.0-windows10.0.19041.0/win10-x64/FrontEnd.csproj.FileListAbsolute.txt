@@ -1370,3 +1370,6 @@ C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.
 C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\bubbles.scale-100.png
 C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\colorsup.scale-100.png
 C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\fondobubbles.scale-100.png
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\bubbles.scale-100.png
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\colorsup.scale-100.png
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\fondobubbles.scale-100.png
