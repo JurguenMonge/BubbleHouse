@@ -359,6 +359,15 @@ public partial class FormProducto : ContentPage
             await DisplayAlert("Error", $"Ocurrió un error: {ex.Message}", "OK");
         }
     }
+
+    private void btnCancelar_Clicked(object sender, EventArgs e)
+    {
+        if (!string.IsNullOrEmpty(selectedImagePath) && File.Exists(path + selectedImagePath))
+        {
+            File.Delete(path + selectedImagePath);
+        }
+        Navigation.PopAsync();
+    }
     protected override void OnAppearing()
     {
         base.OnAppearing();

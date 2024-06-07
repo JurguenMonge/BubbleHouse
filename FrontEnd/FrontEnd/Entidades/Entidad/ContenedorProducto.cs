@@ -14,5 +14,6 @@ namespace FrontEnd.Entidades.Entidad
         public decimal descuento { get; set; }
         public int numCantidad { get; set; }
         public String informacionReceta { get; set; }
+        public string InformacionCompleta => $"{informacionReceta} - {nombreProducto}";
     }
 }

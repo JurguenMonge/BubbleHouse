@@ -48,6 +48,7 @@
                         </Grid>
                         <Button x:Name="btnIngresar" Text="Agregar" Clicked="btnIngresar_Clicked" BackgroundColor="#414BB2"></Button>
                         <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" BackgroundColor="#F76887" IsVisible="False"></Button>
+                        <Button x:Name="btnCancelar" Text="Cancelar" Clicked="btnCancelar_Clicked" BackgroundColor="Gray"></Button>
                         <Entry x:Name="txtId"  Keyboard="Numeric" Background="White" IsReadOnly="true" IsVisible="False" Text="0"></Entry>
                     </VerticalStackLayout>
                 </Frame>

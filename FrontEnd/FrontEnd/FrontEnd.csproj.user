@@ -50,6 +50,9 @@
     <MauiXaml Update="Pages\FormProducto.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Pages\FormReceta.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Pages\FormSubCategoriaProducto.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
