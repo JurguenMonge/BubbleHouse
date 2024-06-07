@@ -49,7 +49,7 @@
 
                     <!-- Tabla de datos -->
 
-                    <CollectionView ItemsSource="{Binding listaProducto}">
+                    <CollectionView ItemsSource="{Binding ListaCarrito}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -60,13 +60,13 @@
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
                                     <Frame Grid.Column="0" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
-                                        <Label Text="{Binding nombreProducto}" TextColor="Black" />
+                                        <Label Text="{Binding ContenedorProducto.InformacionCompleta}" TextColor="Black" />
                                     </Frame>
                                     <Frame Grid.Column="1" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
-                                        <Entry Keyboard="Numeric" Text="{Binding Cantidad }" TextColor="Black" />
+                                        <Entry Keyboard="Numeric" Text="{Binding ContenedorProducto.Cantidad }" TextColor="Black" />
                                     </Frame>
                                     <Frame Grid.Column="2" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
-                                        <Label Text="{Binding precio}" TextColor="Black" />
+                                        <Label Text="{Binding ContenedorProducto.precio}" TextColor="Black" />
                                     </Frame>
                                     <Frame Grid.Column="3" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
                                         <Button x:Name="btnEliminarCompra" FontSize="14" Text="Eliminar" Clicked="btnEliminarCompra_Clicked"  BackgroundColor="#F76887" TextColor="White" Grid.Column="5" />
@@ -78,7 +78,7 @@
                     <VerticalStackLayout Spacing="20">
                         <Label x:Name="lbltotal" Text="Total: 1628 " TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Start" Margin="900,50,0,0" />
                         <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
-                            <Button x:Name="btnAceptarCompra" FontSize="Subtitle" Text="Aceptar Pedido" Clicked="btnAceptarCompra_Clicked"   BackgroundColor="#414BB2" TextColor="White" Grid.Column="4" />
+                            <Button x:Name="btnAceptarCompra" FontSize="Subtitle" Text="Completar Pedido" Clicked="btnAceptarCompra_Clicked"   BackgroundColor="#414BB2" TextColor="White" Grid.Column="4" />
                             <Button x:Name="btncambiosCompra" FontSize="Subtitle" Text="Aplicar Cambios" Clicked="btncambiosCompra_Clicked"  BackgroundColor="#414BB2" TextColor="White" Grid.Column="4" />
                             <Button x:Name="btnCancelarCompra" FontSize="Subtitle" Text="Cancelar Pedido" Clicked="btnCancelarCompra_Clicked" BackgroundColor="#F76887" TextColor="White" Grid.Column="4" />
                         </HorizontalStackLayout>

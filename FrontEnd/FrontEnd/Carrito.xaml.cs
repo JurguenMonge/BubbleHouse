@@ -11,19 +11,20 @@ public partial class Carrito : ContentPage
         InitializeComponent();
         CargarProductos();
     }
-
-    private List<Producto> _listaProducto = new List<Producto>();
+    public List<ContenedorProducto> ListaCarrito => Entidades.Entidad.Carrito.listaContenedorProducto;
+    private List<Carrito> _listaCarrito = new List<Carrito>();
 
     #region refrezcarCompomentes
-    public List<Producto> listaProducto
+    public List<Carrito> listaCarrito
     {
-        get { return _listaProducto; }
+        get { return _listaCarrito; }
         set
         {
-            _listaProducto = value;
-            OnPropertyChanged(nameof(listaProducto));
+            _listaCarrito = value;
+            OnPropertyChanged(nameof(listaCarrito));
         }
     }
+    #endregion
 
     private async void btnAceptarCompra_Clicked(object sender, EventArgs e)
     {
@@ -47,45 +48,25 @@ public partial class Carrito : ContentPage
 
     private async void CargarProductos()
     {
-        listaProducto = await ProductosDesdeApi();
+        Entidades.Entidad.Carrito.listaContenedorProducto.Add(new ContenedorProducto
+        {
+            IdRFacturaProducto = 1,
+            idFactura = 12345,
+            numSubtotal = 100,
+            descuento = 10,
+            numCantidad = 2,
+            informacionReceta = "Instrucciones de preparación",
+            nombreProducto = "Producto de ejemplo",
+            precio = 50,
+            subcategoriaProducto = new SubcategoriaProducto(),
+            categoriaProducto = new CategoriaProducto(),
+            descripcion = "Descripción del producto",
+            urlImgen = "http://example.com/image.png",
+            estado = true,
+            receta = new Receta()
+        });
         BindingContext = this;
     }
 
-    private async Task<List<Producto>> ProductosDesdeApi()
-    {
-        List<Producto> retornarProductosApi = new List<Producto>();
-        String laURL = "https://localhost:44311/api/producto/obtener";
 
-        try
-        {
-
-            using (HttpClient httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(laURL);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    var responseContent = await response.Content.ReadAsStringAsync();
-                    ResObtenerProducto res = JsonConvert.DeserializeObject<ResObtenerProducto>(responseContent);
-
-                    if (res.Resultado)
-                    {
-                        retornarProductosApi = res.listaProductos;
-                    }
-                    else
-                    {
-                        Console.WriteLine("No se encontró el backend");
-                    }
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Error interno");
-        }
-
-        return retornarProductosApi;
-    }
-
-    #endregion
 }

@@ -3,40 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\jurguen monge\\documents\\github\\bubblehouse\\frontend\\frontend\\pages\\formproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\formproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\jurguen monge\\documents\\github\\bubblehouse\\frontend\\frontend\\carrito.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:carrito.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\jurguen monge\\documents\\github\\bubblehouse\\frontend\\frontend\\pages\\formproducto.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\formproducto.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\jurguen monge\\documents\\github\\bubblehouse\\frontend\\frontend\\carrito.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:carrito.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\jurguen monge\\documents\\github\\bubblehouse\\frontend\\frontend\\pages\\formingrediente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\formingrediente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\jurguen monge\\documents\\github\\bubblehouse\\frontend\\frontend\\entidades\\entidad\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:entidades\\entidad\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\jurguen monge\\documents\\github\\bubblehouse\\frontend\\frontend\\pages\\formingrediente.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\formingrediente.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\jurguen monge\\documents\\github\\bubblehouse\\frontend\\frontend\\pages\\recetapage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\recetapage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\jurguen monge\\documents\\github\\bubblehouse\\frontend\\frontend\\pages\\recetapage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\recetapage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\jurguen monge\\documents\\github\\bubblehouse\\frontend\\frontend\\controller\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:controller\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\jurguen monge\\documents\\github\\bubblehouse\\frontend\\frontend\\controller\\recetacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:controller\\recetacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\jurguen monge\\documents\\github\\bubblehouse\\frontend\\frontend\\entidades\\entidad\\recetacompleta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:entidades\\entidad\\recetacompleta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\jurguen monge\\documents\\github\\bubblehouse\\frontend\\frontend\\entidades\\entidad\\contenedorproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:entidades\\entidad\\contenedorproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 596,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,119 +54,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormProducto.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormProducto.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\FormProducto.xaml.cs",
-              "ToolTip": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormProducto.xaml.cs",
-              "RelativeToolTip": "Pages\\FormProducto.xaml.cs",
-              "ViewState": "AQIAAFcBAAAAAAAAAAAqwGsBAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T00:02:32.836Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "FormIngrediente.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormIngrediente.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\FormIngrediente.xaml.cs",
-              "ToolTip": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormIngrediente.xaml.cs",
-              "RelativeToolTip": "Pages\\FormIngrediente.xaml.cs",
-              "ViewState": "AQIAAAsBAAAAAAAAAAAIwBcBAAAFAAAA",
+              "Title": "ContenedorProducto.cs",
+              "DocumentMoniker": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\ContenedorProducto.cs",
+              "RelativeDocumentMoniker": "Entidades\\Entidad\\ContenedorProducto.cs",
+              "ToolTip": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\ContenedorProducto.cs",
+              "RelativeToolTip": "Entidades\\Entidad\\ContenedorProducto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T00:02:19.655Z",
+              "WhenOpened": "2024-06-07T00:12:33.625Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "FormIngrediente.xaml",
-              "DocumentMoniker": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormIngrediente.xaml",
-              "RelativeDocumentMoniker": "Pages\\FormIngrediente.xaml",
-              "ToolTip": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormIngrediente.xaml",
-              "RelativeToolTip": "Pages\\FormIngrediente.xaml",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACcAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-06-07T00:02:02.956Z",
+              "Title": "Carrito.cs",
+              "DocumentMoniker": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\Carrito.cs",
+              "RelativeDocumentMoniker": "Entidades\\Entidad\\Carrito.cs",
+              "ToolTip": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\Carrito.cs",
+              "RelativeToolTip": "Entidades\\Entidad\\Carrito.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T00:12:31.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Carrito.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Carrito.xaml.cs",
+              "RelativeDocumentMoniker": "Carrito.xaml.cs",
+              "ToolTip": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Carrito.xaml.cs",
+              "RelativeToolTip": "Carrito.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T00:11:32.773Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormProducto.xaml",
-              "DocumentMoniker": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormProducto.xaml",
-              "RelativeDocumentMoniker": "Pages\\FormProducto.xaml",
-              "ToolTip": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormProducto.xaml",
-              "RelativeToolTip": "Pages\\FormProducto.xaml",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAADYAAAAAAAAA",
+              "Title": "Carrito.xaml",
+              "DocumentMoniker": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Carrito.xaml",
+              "RelativeDocumentMoniker": "Carrito.xaml",
+              "ToolTip": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Carrito.xaml",
+              "RelativeToolTip": "Carrito.xaml",
+              "ViewState": "AQIAACkAAAAAAAAAAAAYwDMAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-06-07T00:00:57.436Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "RecetaCompleta.cs",
-              "DocumentMoniker": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\RecetaCompleta.cs",
-              "RelativeDocumentMoniker": "Entidades\\Entidad\\RecetaCompleta.cs",
-              "ToolTip": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Entidades\\Entidad\\RecetaCompleta.cs",
-              "RelativeToolTip": "Entidades\\Entidad\\RecetaCompleta.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T23:54:28.268Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RecetaController.cs",
-              "DocumentMoniker": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\RecetaController.cs",
-              "RelativeDocumentMoniker": "Controller\\RecetaController.cs",
-              "ToolTip": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\RecetaController.cs",
-              "RelativeToolTip": "Controller\\RecetaController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T23:54:21.031Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProductoController.cs",
-              "DocumentMoniker": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\ProductoController.cs",
-              "RelativeDocumentMoniker": "Controller\\ProductoController.cs",
-              "ToolTip": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Controller\\ProductoController.cs",
-              "RelativeToolTip": "Controller\\ProductoController.cs",
-              "ViewState": "AQIAAJ8AAAAAAAAAAAAYwMIAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T23:39:37.048Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RecetaPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\RecetaPage.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\RecetaPage.xaml.cs",
-              "ToolTip": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\RecetaPage.xaml.cs",
-              "RelativeToolTip": "Pages\\RecetaPage.xaml.cs",
-              "ViewState": "AQIAAF4AAAAAAAAAAAAAAH0AAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T23:17:41.966Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RecetaPage.xaml",
-              "DocumentMoniker": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\RecetaPage.xaml",
-              "RelativeDocumentMoniker": "Pages\\RecetaPage.xaml",
-              "ToolTip": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\RecetaPage.xaml",
-              "RelativeToolTip": "Pages\\RecetaPage.xaml",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAAADoAAABxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-06-06T23:09:17.021Z",
+              "WhenOpened": "2024-06-07T00:11:30.144Z",
               "EditorCaption": ""
             }
           ]
