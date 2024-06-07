@@ -34,13 +34,15 @@
         <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
             <VerticalStackLayout Padding="10" Spacing="10">
                 <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
-                    <Frame Margin="10" BackgroundColor="#E0E0E0" HasShadow="True" CornerRadius="5" HeightRequest="350" WidthRequest="350">
+                    <Frame Margin="10" BackgroundColor="#9895c9" HasShadow="True" CornerRadius="5" HeightRequest="350" WidthRequest="350">
                         <Grid>
-                            <Image x:Name="imgVaso" Source="image1_source.png" Aspect="AspectFit" />
-                            <Image x:Name="imgSabor" Source="image2_source.png" Aspect="AspectFit" />
                             <Image x:Name="imgTopping" Source="image3_source.png" Aspect="AspectFit" />
+                            <Image x:Name="imgVaso" Source="image1_source.png" Aspect="AspectFit" />
+                            <Image x:Name="imgLacteo" Source="image1_source.png" Aspect="AspectFit" />
+                            <Image x:Name="imgSabor" Source="image2_source.png" Aspect="AspectFit" />
                             <Image x:Name="imgBordeado" Source="image3_source.png" Aspect="AspectFit" />
                             <Image x:Name="imgBubbles" Source="image3_source.png" Aspect="AspectFit" />
+                            <Image x:Name="imgluz" Source="reflejodeluz.png" Aspect="AspectFit" />
                         </Grid>
                     </Frame>
                 </Grid>
