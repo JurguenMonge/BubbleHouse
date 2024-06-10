@@ -21,10 +21,14 @@ public partial class VistaPrincipalPage : TabbedPage
         carritoPage.IconImageSource = "carrito.svg";
         NavigationPage.SetHasNavigationBar(carritoPage, true);
 
-        
+        var MenuPage = new NavigationPage(new Menu());
+        MenuPage.Title = "Menú Principal";
+        MenuPage.IconImageSource = "menuOpcion.svg";
+        NavigationPage.SetHasNavigationBar(MenuPage, true);
 
         Children.Add(aceptarFacturasPage);
         Children.Add(crearBubble);
         Children.Add(carritoPage);
+        Children.Add(MenuPage);
     }
 }
