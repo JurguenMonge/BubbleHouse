@@ -6,10 +6,10 @@ public partial class VistaPrincipalPage : TabbedPage
 	{
 		InitializeComponent();
 
-        var aceptarFacturasPage = new NavigationPage(new AceptarFacturas());
-        aceptarFacturasPage.Title = "Menú";
-        aceptarFacturasPage.IconImageSource = "menu.svg";
-        NavigationPage.SetHasNavigationBar(aceptarFacturasPage, true);
+        var MenuPage = new NavigationPage(new Menu());
+        MenuPage.Title = "Menú";
+        MenuPage.IconImageSource = "menuOpcion.svg";
+        NavigationPage.SetHasNavigationBar(MenuPage, true);
 
         var crearBubble = new NavigationPage(new SeleccionarTamanio());
         crearBubble.Title = "Crear Bubble";
@@ -21,14 +21,10 @@ public partial class VistaPrincipalPage : TabbedPage
         carritoPage.IconImageSource = "carrito.svg";
         NavigationPage.SetHasNavigationBar(carritoPage, true);
 
-        var MenuPage = new NavigationPage(new Menu());
-        MenuPage.Title = "Menú Principal";
-        MenuPage.IconImageSource = "menuOpcion.svg";
-        NavigationPage.SetHasNavigationBar(MenuPage, true);
 
-        Children.Add(aceptarFacturasPage);
+        Children.Add(MenuPage);
         Children.Add(crearBubble);
         Children.Add(carritoPage);
-        Children.Add(MenuPage);
+       
     }
 }
