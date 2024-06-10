@@ -3,6 +3,7 @@ using FrontEnd.Entidades.Entidad;
 using System.ComponentModel;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
+using FrontEnd.Controller;
 
 namespace FrontEnd.Pages;
 
@@ -106,5 +107,10 @@ public partial class ProductoPage : ContentPage
     {
         base.OnAppearing();
         CargarProductos();
+    }
+
+    private void estado_Toggled(object sender, ToggledEventArgs e)
+    {
+        
     }
 }
