@@ -50,6 +50,7 @@ public partial class SeleccionarBordeado : ContentPage
             ingredienteSeleccionado.dscNombre = "No agregado";
             ingredienteSeleccionado.dscDescripcion = "No agregado";
             ingredienteSeleccionado.dscURLImagen = "No agregado";
+            ingredienteSeleccionado.dscNombreCategoriaIngrediente = "Bordeado";
             ingredienteSeleccionado.numPrecio = 0;
             if (isFirstLoad)
             {

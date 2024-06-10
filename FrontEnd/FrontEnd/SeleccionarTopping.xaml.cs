@@ -45,6 +45,7 @@ public partial class SeleccionarTopping : ContentPage
             ingredienteSeleccionado.dscNombre = "No agregado";
             ingredienteSeleccionado.dscDescripcion = "No agregado";
             ingredienteSeleccionado.dscURLImagen = "No agregado";
+            ingredienteSeleccionado.dscNombreCategoriaIngrediente = "Topping";
             ingredienteSeleccionado.numPrecio = 0;
             if (isFirstLoad)
             {
