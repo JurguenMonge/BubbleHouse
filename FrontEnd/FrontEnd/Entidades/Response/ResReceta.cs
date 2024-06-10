@@ -8,7 +8,7 @@ namespace FrontEnd.Entidades.Response
 {
     public class ResReceta : ResBase
     {
-
+        public int idProducto { get; set; }
     }
 }
 

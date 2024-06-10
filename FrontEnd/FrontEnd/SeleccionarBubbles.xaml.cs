@@ -160,6 +160,20 @@ public partial class SeleccionarBubbles : ContentPage
             res = await controller.IngresarReceta(ingredientesSeleccionados);
             if (res.Resultado)
             {
+                decimal total = 0;
+                ContenedorProducto cont = new ContenedorProducto();
+                foreach (Ingrediente ing in ingredientesSeleccionados)
+                {
+                    cont.informacionReceta = cont.informacionReceta + ing.dscNombreCategoriaIngrediente + ": " + ing.dscNombre;
+                    total = total + ing.numPrecio;
+                }
+                cont.numSubtotal = total;
+                cont.descuento = 0;
+                cont.numCantidad = 1;
+                cont.nombreProducto = "Bubble Te Personalizado";
+                cont.idProducto = res.idProducto;
+                cont.precio = (float)total;
+                Entidades.Entidad.Carrito.listaContenedorProducto.Add(cont);
                 await DisplayAlert("Bubble Aceptado", "Producto Agregado al Carrito", "Aceptar");
                 await Navigation.PushAsync(new Carrito());
                 Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);

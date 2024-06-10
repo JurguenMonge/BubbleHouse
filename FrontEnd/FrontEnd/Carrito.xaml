@@ -49,7 +49,7 @@
 
                     <!-- Tabla de datos -->
 
-                    <CollectionView ItemsSource="{Binding ListaCarrito}">
+                    <CollectionView ItemsSource="{Binding listaCarrito}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -60,13 +60,13 @@
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
                                     <Frame Grid.Column="0" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
-                                        <Label Text="{Binding ContenedorProducto.InformacionCompleta}" TextColor="Black" />
+                                        <Label Text="{Binding nombreProducto}" TextColor="Black" />
                                     </Frame>
                                     <Frame Grid.Column="1" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
-                                        <Entry Keyboard="Numeric" Text="{Binding ContenedorProducto.Cantidad }" TextColor="Black" />
+                                        <Entry Keyboard="Numeric" Text="{Binding numCantidad}" TextColor="Black" />
                                     </Frame>
                                     <Frame Grid.Column="2" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
-                                        <Label Text="{Binding ContenedorProducto.precio}" TextColor="Black" />
+                                        <Label Text="{Binding precio}" TextColor="Black" />
                                     </Frame>
                                     <Frame Grid.Column="3" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
                                         <Button x:Name="btnEliminarCompra" FontSize="14" Text="Eliminar" Clicked="btnEliminarCompra_Clicked"  BackgroundColor="#F76887" TextColor="White" Grid.Column="5" />

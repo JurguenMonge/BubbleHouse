@@ -8,5 +8,6 @@ namespace FrontEnd.Entidades.Response
 {
     public class ResProducto :ResBase
     {
+        public int idProducto { get; set; }
     }
 }

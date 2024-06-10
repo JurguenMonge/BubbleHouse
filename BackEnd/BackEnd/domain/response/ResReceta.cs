@@ -8,6 +8,6 @@ namespace BackEnd.domain.response
 {
     public class ResReceta : ResBase
     {
-
+        public int idProducto { get; set; }
     }
 }
