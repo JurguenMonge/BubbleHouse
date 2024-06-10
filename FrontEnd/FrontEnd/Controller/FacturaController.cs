@@ -16,7 +16,7 @@ namespace FrontEnd.Controller
             ResFactura res = new ResFactura();
             try
             {
-                if (req.Factura.productosList.Any())
+                if (!req.Factura.productosList.Any())
                 {
                     res.ListaDeErrores.Add("No hay productos en la factura");
                 }

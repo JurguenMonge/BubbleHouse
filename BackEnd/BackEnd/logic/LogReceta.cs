@@ -91,6 +91,7 @@ namespace BackEnd.logic
                                     ResProducto resPro = new LogProducto().ingresarProducto(reqPro);
                                     if(resPro.Resultado == true)
                                     {
+                                        res.idProducto = resPro.idProducto;
                                         res.Resultado = true;
                                     }
                                     else

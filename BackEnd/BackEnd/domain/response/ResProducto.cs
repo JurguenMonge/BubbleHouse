@@ -8,5 +8,6 @@ namespace BackEnd.domain
 {
     public class ResProducto : ResBase
     {
+        public int idProducto { get; set; } 
     }
 }

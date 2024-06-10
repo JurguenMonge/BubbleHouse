@@ -38,6 +38,7 @@ namespace BackEnd.logic
                         if (idError == 0)
                         {
                             res.Resultado = true;
+                            res.idProducto = (int)idReturn;
                             tipoRegistro = 1;
                         }
                         else
