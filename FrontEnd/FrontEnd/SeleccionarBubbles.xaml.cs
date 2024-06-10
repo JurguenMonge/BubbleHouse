@@ -51,6 +51,7 @@ public partial class SeleccionarBubbles : ContentPage
             ingredienteSeleccionado.dscNombre = "No agregado";
             ingredienteSeleccionado.dscDescripcion = "No agregado";
             ingredienteSeleccionado.dscURLImagen = "No agregado";
+            ingredienteSeleccionado.dscNombreCategoriaIngrediente = "Bubbles";
             ingredienteSeleccionado.numPrecio = 0;
             if (isFirstLoad)
             {
@@ -162,9 +163,10 @@ public partial class SeleccionarBubbles : ContentPage
             {
                 decimal total = 0;
                 ContenedorProducto cont = new ContenedorProducto();
+                cont.informacionReceta = "\n";
                 foreach (Ingrediente ing in ingredientesSeleccionados)
                 {
-                    cont.informacionReceta = cont.informacionReceta + ing.dscNombreCategoriaIngrediente + ": " + ing.dscNombre;
+                    cont.informacionReceta = cont.informacionReceta + ing.dscNombreCategoriaIngrediente + ": " + ing.dscNombre + "\n";
                     total = total + ing.numPrecio;
                 }
                 cont.numSubtotal = total;

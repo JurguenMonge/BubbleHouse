@@ -46,6 +46,7 @@ public partial class SeleccionarAzucar : ContentPage
             ingredienteSeleccionado.dscNombre = "No agregado";
             ingredienteSeleccionado.dscDescripcion = "No agregado";
             ingredienteSeleccionado.dscURLImagen = "No agregado";
+            ingredienteSeleccionado.dscNombreCategoriaIngrediente = "Azúcar";
             ingredienteSeleccionado.numPrecio = 0;
 
             if (isFirstLoad)

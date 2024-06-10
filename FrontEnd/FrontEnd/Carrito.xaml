@@ -60,7 +60,14 @@
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
                                     <Frame Grid.Column="0" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
-                                        <Label Text="{Binding nombreProducto}" TextColor="Black" />
+                                        <Label>
+                                            <Label.Text>
+                                                <MultiBinding StringFormat="{}{0} {1}">
+                                                    <Binding Path="nombreProducto" />
+                                                    <Binding Path="informacionReceta" />
+                                                </MultiBinding>
+                                            </Label.Text>
+                                        </Label>
                                     </Frame>
                                     <Frame Grid.Column="1" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
                                         <Entry Keyboard="Numeric" Text="{Binding numCantidad}" TextColor="Black" />
