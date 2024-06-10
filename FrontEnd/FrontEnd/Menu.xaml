@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrontEnd.Menu"
+             Title="Menu">
+
+    <ContentPage.Resources>
+        <Style x:Key="SquaredFrameStyle" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="#bdc0f7" />
+            <Setter Property="BorderColor" Value="Black" />
+            <Setter Property="CornerRadius" Value="0" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="MaximumWidthRequest" Value="550" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid Margin="10,10,10,10" x:Name="contenedor" BackgroundColor="#a9dff0">
+        <!-- Grid for the background image -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Source="logo_celeste.png" Aspect="AspectFill" Opacity="0.3"
+                   HorizontalOptions="Center" VerticalOptions="Center"
+                   WidthRequest="200" HeightRequest="200"/>
+        </Grid>
+
+        <!-- Main content Grid -->
+        <Grid Margin="0" BackgroundColor="Transparent">
+            <!-- Row and Column Definitions -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Buttons -->
+            <Button Grid.Row="0" Grid.Column="0" x:Name="btnBubbles" WidthRequest="130" HeightRequest="30" BackgroundColor="Black" Text="Bubbles" FontSize="Subtitle" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20,20,10,10"/>
+            <Button Grid.Row="0" Grid.Column="1" x:Name="btnSushis" WidthRequest="130" HeightRequest="30" BackgroundColor="White" Text="Sushi" FontSize="Subtitle" TextColor="Black" Clicked="btnSushis_Clicked" HorizontalOptions="Start" VerticalOptions="Start" Margin="-55,20,10,10"/>
+            <Button Grid.Row="0" Grid.Column="2" x:Name="btnCombos" WidthRequest="130" HeightRequest="30" BackgroundColor="White" Text="Combos" FontSize="Subtitle" TextColor="Black" Clicked="btnCombos_Clicked" HorizontalOptions="Start" VerticalOptions="Start" Margin="-130,20,10,10"/>
+            <Button Grid.Row="0" Grid.Column="3" x:Name="btnRamen" WidthRequest="130" HeightRequest="30" BackgroundColor="White" Text="Ramen" FontSize="Subtitle" TextColor="Black" Clicked="btnRamen_Clicked" HorizontalOptions="Start" VerticalOptions="Start" Margin="-200,20,20,10"/>
+            <Button Grid.Row="0" Grid.Column="4" x:Name="btnCornDog" WidthRequest="130" HeightRequest="30" BackgroundColor="White" Text="CornDog" FontSize="Subtitle" TextColor="Black" Clicked="btnCornDog_Clicked" HorizontalOptions="Start" VerticalOptions="Start" Margin="-270,20,10,10"/>
+
+
+
+            <ScrollView Grid.Row="1" Grid.ColumnSpan="5">
+                <Grid BackgroundColor="#A9DFF0" RowSpacing="10" Padding="10" Margin="30">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <CollectionView Grid.Row="1"
+                Grid.ColumnSpan="5"
+                ItemsSource="{Binding listaProducto}">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" Span="4" VerticalItemSpacing="20" />
+                            <!-- Cada fila tendrá dos elementos -->
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                  <Frame Margin="12"
+                   BorderColor="Azure"
+                   CornerRadius="1"
+                   HasShadow="True"
+                   WidthRequest="200"
+                   HeightRequest="325">
+
+                                    <Frame.Background>
+                                        <LinearGradientBrush EndPoint="1,0">
+                                            <GradientStop Offset="0" Color="White"/>
+                                            <GradientStop Offset="1" Color="White"/>
+                                        </LinearGradientBrush>
+                                    </Frame.Background>
+
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="Start" VerticalOptions="Center" Margin="15">
+                                        <!-- Coloca la imagen arriba -->
+                                        <Image Source="{Binding urlImgen}"
+                           WidthRequest="190"
+                           HeightRequest="130"/>
+
+                                        <!-- Coloca la información del producto debajo de la imagen -->
+                                        <!-- Etiquetas de Label -->
+                                        <Label x:Name="txtid"
+                           Text="{Binding idProducto}"
+                           IsVisible="False"/>
+                                        <Label x:Name="lblIdCategoria"
+                           Text="{Binding subcategoriaProducto.idSubcategoriaProducto}"
+                           IsVisible="False"/>
+                                        <Label x:Name="lblIdSubCategoria"
+                           Text="{Binding receta.idReceta}"
+                           IsVisible="False"/>
+                                        <Label x:Name="lblIdReceta"
+                           FontSize="15"
+                           HorizontalTextAlignment="Start"
+                           Text="{Binding subcategoriaProducto.dscNombreSubCategoria}"
+                           VerticalOptions="Center"
+                           TextColor="Black"/>
+                                        <Label x:Name="lblcategoria"
+                           FontSize="15"
+                           HorizontalTextAlignment="Start"
+                           Text="{Binding categoriaProducto.dscNombreCategoria}"
+                           VerticalOptions="Center"
+                           TextColor="Black"/>
+                                        <Label x:Name="lblreceta"
+                           FontSize="15"
+                           HorizontalTextAlignment="Start"
+                           Text="{Binding receta.dscNombre}"
+                           VerticalOptions="Center"
+                           TextColor="Black"/>
+                                        <Label x:Name="lblNombreProducto"
+                           FontSize="15"
+                           HorizontalTextAlignment="Start"
+                           Text="{Binding nombreProducto}"
+                           VerticalOptions="Center"
+                           TextColor="Black"/>
+                                        <Label x:Name="lblDescripcion"
+                           FontSize="15"
+                           HorizontalTextAlignment="Start"
+                           Text="{Binding descripcion}"
+                           VerticalOptions="Center"
+                           TextColor="Black"/>
+                                        <Label x:Name="lblPrecio"
+                           FontSize="15"
+                           HorizontalTextAlignment="Start"
+                           Text="{Binding precio}"
+                           VerticalOptions="Center"
+                           TextColor="Black"/>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                </Grid>
+            </ScrollView>
+
+
+
+
+
+        </Grid>
+    </Grid>
+</ContentPage>
