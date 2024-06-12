@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FrontEnd.SeleccionarBubbles"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False"
              Title="SeleccionarBubbles">
     <AbsoluteLayout BackgroundColor="#A9DFF0">
         <!-- Background Images for Tiling -->
@@ -34,7 +36,7 @@
         <!-- Main Content -->
         <VerticalStackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
             <ScrollView>
-                <VerticalStackLayout>
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
                     <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
                         <Frame Margin="10" BackgroundColor="#9895c9" HasShadow="True" CornerRadius="5" HeightRequest="350" WidthRequest="350">
                             <Grid>
@@ -48,7 +50,7 @@
                         </Frame>
                     </Grid>
 
-                    <Label TextColor="White" FontSize="Title" Text="Seleccione el Bordeado" Margin="10,10,10,10" HorizontalOptions="Center" />
+                    <Label TextColor="White" FontSize="Title" Text="Seleccione los Bubbles" Margin="10,10,10,10" HorizontalOptions="Center" />
 
                     <CollectionView ItemsSource="{Binding listaIngrediente}" SelectionMode="Single" Margin="10">
                         <CollectionView.ItemTemplate>
@@ -76,8 +78,8 @@
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-                    <Button x:Name="btnSiguiente" TextColor="White" BackgroundColor="#BDC0F7" IsEnabled="True" Clicked="Button_Clicked" Text="Completar" Margin="40,10,10,10" />
-                    <Button x:Name="btnVolver" TextColor="White" BackgroundColor="Gray" IsEnabled="True" Clicked="btnVolver_Clicked" Text="Volver" Margin="40,10,10,10"/>
+                    <Button x:Name="btnSiguiente" TextColor="White" BackgroundColor="#BDC0F7" IsEnabled="True" Clicked="Button_Clicked" Text="Completar" Margin="10,0,10,0" />
+                    <Button x:Name="btnVolver" TextColor="White" BackgroundColor="Gray" IsEnabled="True" Clicked="btnVolver_Clicked" Text="Volver" Margin="10,0,10,0"/>
                 </VerticalStackLayout>
             </ScrollView>
         </VerticalStackLayout>

@@ -177,7 +177,7 @@ public partial class SeleccionarBubbles : ContentPage
                 cont.precio = (float)total;
                 Entidades.Entidad.Carrito.listaContenedorProducto.Add(cont);
                 await DisplayAlert("Bubble Aceptado", "Producto Agregado al Carrito", "Aceptar");
-                await Navigation.PushAsync(new Carrito());
+                await Navigation.PushAsync(new SeleccionarTamanio());
                 Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
             }
             else

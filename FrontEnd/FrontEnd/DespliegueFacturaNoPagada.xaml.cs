@@ -215,7 +215,7 @@ public partial class DespliegueFacturaNoPagada : ContentPage
             {
                 DisplayAlert("Efectivo", "El efectivo no a sido ingresado", "Aceptar");
             }
-            else if(float.Parse(txtefectivo.Text) < fact.numTotal)
+            else if(float.Parse(txtefectivo.Text) < fact.numTotal && selecionado == 1)
             {
                 DisplayAlert("Efectivo", "El efectivo ingresado es menor al total a cobrar", "Aceptar");
             }

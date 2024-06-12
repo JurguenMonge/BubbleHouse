@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FrontEnd.FacturasCompletadas"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False"
              Title="FacturasCompletadas">
     <ContentPage.Resources>
         <Style x:Key="SquaredFrameStyle" TargetType="Frame">
@@ -12,60 +14,62 @@
             <Setter Property="MaximumWidthRequest" Value="550" />
         </Style>
     </ContentPage.Resources>
-    <Grid Margin="10,10,10,10" x:Name="contenedor" BackgroundColor="#a9dff0">
-        <!-- Grid for the background image -->
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Image Source="logo_celeste.png" Aspect="AspectFill" Opacity="0.3"
-                HorizontalOptions="Center" VerticalOptions="Center"
-                WidthRequest="200" HeightRequest="200"/>
+    <ScrollView>
+        <Grid Margin="10,10,10,10" x:Name="contenedor" BackgroundColor="#a9dff0">
+            <!-- Grid for the background image -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="logo_celeste.png" Aspect="AspectFill" Opacity="0.3"
+                    HorizontalOptions="Center" VerticalOptions="Center"
+                    WidthRequest="200" HeightRequest="200"/>
+            </Grid>
+
+            <!-- Main content Grid -->
+            <Grid Margin="0" BackgroundColor="Transparent">
+                <!-- Row and Column Definitions -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Header Label -->
+                <Label Grid.Row="0" Grid.ColumnSpan="3" TextColor="White" FontAttributes="Bold" FontSize="Title" Text="Registro de Facturas" HorizontalOptions="Center" VerticalOptions="Center" />
+
+                <!-- Buttons -->
+                <Button Grid.Row="1" Grid.Column="0" x:Name="btnPorCobrar" WidthRequest="250" HeightRequest="30" BackgroundColor="White" Text="Cobrar" FontSize="Subtitle" TextColor="Black" Clicked="btnPorCobrar_Clicked" HorizontalOptions="End" VerticalOptions="Start" Margin="10,10,10,10" />
+                <Button Grid.Row="1" Grid.Column="1" x:Name="btnPorPreparar" WidthRequest="250" HeightRequest="30" BackgroundColor="White" Text="Preparar" FontSize="Subtitle" TextColor="Black" HorizontalOptions="Center" Clicked="btnPorPreparar_Clicked" VerticalOptions="Start" Margin="10,10,10,10"/>
+                <Button Grid.Row="1" Grid.Column="2" x:Name="btnCompletas" WidthRequest="250" HeightRequest="30" BackgroundColor="Black" Text="Completadas" FontSize="Subtitle" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="10,10,10,10"/>
+
+                <!-- CollectionView with Frame template -->
+                <CollectionView Grid.Row="2" Grid.ColumnSpan="3" ItemsSource="{Binding listaDeFacturas}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Style="{StaticResource SquaredFrameStyle}">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                </Frame.GestureRecognizers>
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding idFactura, StringFormat='Numero de Factura: {0}'}" FontSize="20" TextColor="White" />
+                                    <Label Text="{Binding fecha, StringFormat='Fecha: {0}'}" FontSize="20" TextColor="White" />
+                                    <Label Text="{Binding numTotal, StringFormat='Total: {0}'}" FontSize="20" TextColor="White" />
+                                </VerticalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
         </Grid>
-
-        <!-- Main content Grid -->
-        <Grid Margin="0" BackgroundColor="Transparent">
-            <!-- Row and Column Definitions -->
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <!-- Header Label -->
-            <Label Grid.Row="0" Grid.ColumnSpan="3" TextColor="White" FontAttributes="Bold" FontSize="Title" Text="Registro de Facturas" HorizontalOptions="Center" VerticalOptions="Center" />
-
-            <!-- Buttons -->
-            <Button Grid.Row="1" Grid.Column="0" x:Name="btnPorCobrar" WidthRequest="250" HeightRequest="30" BackgroundColor="White" Text="Cobrar" FontSize="Subtitle" TextColor="Black" Clicked="btnPorCobrar_Clicked" HorizontalOptions="End" VerticalOptions="Start" Margin="10,10,10,10" />
-            <Button Grid.Row="1" Grid.Column="1" x:Name="btnPorPreparar" WidthRequest="250" HeightRequest="30" BackgroundColor="White" Text="Preparar" FontSize="Subtitle" TextColor="Black" HorizontalOptions="Center" Clicked="btnPorPreparar_Clicked" VerticalOptions="Start" Margin="10,10,10,10"/>
-            <Button Grid.Row="1" Grid.Column="2" x:Name="btnCompletas" WidthRequest="250" HeightRequest="30" BackgroundColor="Black" Text="Completadas" FontSize="Subtitle" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="10,10,10,10"/>
-
-            <!-- CollectionView with Frame template -->
-            <CollectionView Grid.Row="2" Grid.ColumnSpan="3" ItemsSource="{Binding listaDeFacturas}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame Style="{StaticResource SquaredFrameStyle}">
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-                            </Frame.GestureRecognizers>
-                            <VerticalStackLayout>
-                                <Label Text="{Binding idFactura, StringFormat='Numero de Factura: {0}'}" FontSize="20" TextColor="White" />
-                                <Label Text="{Binding fecha, StringFormat='Fecha: {0}'}" FontSize="20" TextColor="White" />
-                                <Label Text="{Binding numTotal, StringFormat='Total: {0}'}" FontSize="20" TextColor="White" />
-                            </VerticalStackLayout>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </Grid>
-    </Grid>
+    </ScrollView>
 </ContentPage>
