@@ -15,7 +15,7 @@ namespace BackEnd.domain
         public string descripcion {  get; set; }
         public string urlImgen {  get; set; }
         public float precio { get; set; }
-        public bool estado {  get; set; }
+        public int estado {  get; set; }
         public Receta receta { get; set; }
     }
 }

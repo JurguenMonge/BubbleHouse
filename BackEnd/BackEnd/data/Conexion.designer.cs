@@ -540,14 +540,13 @@ namespace BackEnd.data
 			return ((ISingleResult<Obtener_RecetaResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Modificar_Producto")]
-		public int Modificar_Producto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Producto", DbType="Int")] System.Nullable<int> id_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_SubCategoria_Producto", DbType="Int")] System.Nullable<int> id_SubCategoria_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Nombre_Producto", DbType="NVarChar(100)")] string dsc_Nombre_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Descripcion", DbType="NVarChar(MAX)")] string dsc_Descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Url_Imagen", DbType="NVarChar(MAX)")] string dsc_Url_Imagen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Num_Precio", DbType="Float")] System.Nullable<double> num_Precio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_RECETA", DbType="Int")] System.Nullable<int> iD_RECETA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Receta_ById")]
+		public ISingleResult<Obtener_Receta_ByIdResult> Obtener_Receta_ById([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_Receta, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Producto, id_SubCategoria_Producto, dsc_Nombre_Producto, dsc_Descripcion, dsc_Url_Imagen, num_Precio, iD_RECETA, iDRETURN, eRRORID, eRRORDESCRIPCION);
-			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(7)));
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(8)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(9)));
-			return ((int)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Receta, eRRORID, eRRORDESCRIPCION);
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(2)));
+			return ((ISingleResult<Obtener_Receta_ByIdResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Productos_Activos")]
@@ -559,13 +558,14 @@ namespace BackEnd.data
 			return ((ISingleResult<Obtener_Productos_ActivosResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Receta_ById")]
-		public ISingleResult<Obtener_Receta_ByIdResult> Obtener_Receta_ById([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_Receta, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Modificar_Producto")]
+		public int Modificar_Producto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_Producto", DbType="Int")] System.Nullable<int> id_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_SubCategoria_Producto", DbType="Int")] System.Nullable<int> id_SubCategoria_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Nombre_Producto", DbType="NVarChar(100)")] string dsc_Nombre_Producto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Descripcion", DbType="NVarChar(MAX)")] string dsc_Descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dsc_Url_Imagen", DbType="NVarChar(MAX)")] string dsc_Url_Imagen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Num_Precio", DbType="Float")] System.Nullable<double> num_Precio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_RECETA", DbType="Int")] System.Nullable<int> iD_RECETA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="Int")] System.Nullable<int> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Receta, eRRORID, eRRORDESCRIPCION);
-			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(1)));
-			eRRORDESCRIPCION = ((string)(result.GetParameterValue(2)));
-			return ((ISingleResult<Obtener_Receta_ByIdResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Producto, id_SubCategoria_Producto, dsc_Nombre_Producto, dsc_Descripcion, dsc_Url_Imagen, num_Precio, iD_RECETA, estado, iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(9)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(10)));
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -2659,6 +2659,86 @@ namespace BackEnd.data
 		}
 	}
 	
+	public partial class Obtener_Receta_ByIdResult
+	{
+		
+		private int _ID_RECETA;
+		
+		private string _DSC_NOMBRE;
+		
+		private System.Nullable<System.DateTime> _FECHA;
+		
+		private string _Ingredientes;
+		
+		public Obtener_Receta_ByIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_RECETA", DbType="Int NOT NULL")]
+		public int ID_RECETA
+		{
+			get
+			{
+				return this._ID_RECETA;
+			}
+			set
+			{
+				if ((this._ID_RECETA != value))
+				{
+					this._ID_RECETA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE", DbType="NVarChar(MAX)")]
+		public string DSC_NOMBRE
+		{
+			get
+			{
+				return this._DSC_NOMBRE;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE != value))
+				{
+					this._DSC_NOMBRE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FECHA
+		{
+			get
+			{
+				return this._FECHA;
+			}
+			set
+			{
+				if ((this._FECHA != value))
+				{
+					this._FECHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ingredientes", DbType="NVarChar(MAX)")]
+		public string Ingredientes
+		{
+			get
+			{
+				return this._Ingredientes;
+			}
+			set
+			{
+				if ((this._Ingredientes != value))
+				{
+					this._Ingredientes = value;
+				}
+			}
+		}
+	}
+	
 	public partial class Obtener_Productos_ActivosResult
 	{
 		
@@ -2671,6 +2751,8 @@ namespace BackEnd.data
 		private string _DSC_URL_IMAGEN;
 		
 		private System.Nullable<decimal> _NUM_PRECIO;
+		
+		private System.Nullable<int> _ESTADO;
 		
 		private int _ID_RECETA;
 		
@@ -2768,6 +2850,22 @@ namespace BackEnd.data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="Int")]
+		public System.Nullable<int> ESTADO
+		{
+			get
+			{
+				return this._ESTADO;
+			}
+			set
+			{
+				if ((this._ESTADO != value))
+				{
+					this._ESTADO = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_RECETA", DbType="Int NOT NULL")]
 		public int ID_RECETA
 		{
@@ -2860,86 +2958,6 @@ namespace BackEnd.data
 				if ((this._DSC_NOMBRE_CATEGORIA != value))
 				{
 					this._DSC_NOMBRE_CATEGORIA = value;
-				}
-			}
-		}
-	}
-	
-	public partial class Obtener_Receta_ByIdResult
-	{
-		
-		private int _ID_RECETA;
-		
-		private string _DSC_NOMBRE;
-		
-		private System.Nullable<System.DateTime> _FECHA;
-		
-		private string _Ingredientes;
-		
-		public Obtener_Receta_ByIdResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_RECETA", DbType="Int NOT NULL")]
-		public int ID_RECETA
-		{
-			get
-			{
-				return this._ID_RECETA;
-			}
-			set
-			{
-				if ((this._ID_RECETA != value))
-				{
-					this._ID_RECETA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE", DbType="NVarChar(MAX)")]
-		public string DSC_NOMBRE
-		{
-			get
-			{
-				return this._DSC_NOMBRE;
-			}
-			set
-			{
-				if ((this._DSC_NOMBRE != value))
-				{
-					this._DSC_NOMBRE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FECHA
-		{
-			get
-			{
-				return this._FECHA;
-			}
-			set
-			{
-				if ((this._FECHA != value))
-				{
-					this._FECHA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ingredientes", DbType="NVarChar(MAX)")]
-		public string Ingredientes
-		{
-			get
-			{
-				return this._Ingredientes;
-			}
-			set
-			{
-				if ((this._Ingredientes != value))
-				{
-					this._Ingredientes = value;
 				}
 			}
 		}

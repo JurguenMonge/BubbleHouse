@@ -56,7 +56,7 @@ namespace FrontEnd.Controller
                     producto.descripcion = "Producto Generico Generado a la hora de crear un bubble te personalizado";
                     producto.urlImgen = "Sin imagen";
                     producto.precio = total;
-                    producto.estado = true;
+                    producto.estado = 1;
                     req.Producto = producto;
                     //req.idSesion = Preferences.Get("IdSesion", string.Empty);
 

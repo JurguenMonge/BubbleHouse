@@ -177,7 +177,7 @@ namespace BackEnd.logic
                         int? idError = 0;
                         String errorBD = "";
                         linq.Modificar_Producto(req.Producto.idProducto, req.Producto.subcategoriaProducto.idSubcategoriaProducto, req.Producto.nombreProducto,
-                            req.Producto.descripcion, req.Producto.urlImgen, req.Producto.precio, req.Producto.receta.idReceta, ref idReturn, ref idError, ref errorBD);
+                            req.Producto.descripcion, req.Producto.urlImgen, req.Producto.precio, req.Producto.receta.idReceta, req.Producto.estado ,ref idReturn, ref idError, ref errorBD);
                         if (idError == 0)
                         {
                             res.Resultado = true;
@@ -229,6 +229,7 @@ namespace BackEnd.logic
             producto.receta.dscNombre = linqProducto.DSC_NOMBRE;
             producto.subcategoriaProducto.dscNombreSubCategoria = linqProducto.DSC_NOMBRE_SUBCATEGORIA;
             producto.categoriaProducto.dscNombreCategoria = linqProducto.DSC_NOMBRE_CATEGORIA;
+            producto.estado = (int)linqProducto.ESTADO;
             return producto;
         }
         

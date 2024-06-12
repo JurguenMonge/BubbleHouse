@@ -10,7 +10,6 @@ namespace FrontEnd.Pages;
 public partial class FormProducto : ContentPage
 {
     private List<SubcategoriaProducto> _listaDeSubCategoriaProducto = new List<SubcategoriaProducto>();
-    private List<RecetaCompleta> _listaDeReceta = new List<RecetaCompleta>();
     private Producto selectedProducto;
     public int subCategoriaProductoId;
     public int recetaId;
@@ -22,7 +21,6 @@ public partial class FormProducto : ContentPage
     {
         InitializeComponent();
         CargarSubCategoriaProducto();
-        CargarRecetas();
     }
 
     #region refrezcarCompomentes
@@ -36,15 +34,6 @@ public partial class FormProducto : ContentPage
         }
     }
 
-    public List<RecetaCompleta> listaDeReceta
-    {
-        get { return _listaDeReceta; }
-        set
-        {
-            _listaDeReceta = value;
-            OnPropertyChanged(nameof(listaDeReceta));
-        }
-    }
 
     public Producto SelectedProducto
     {
@@ -88,27 +77,6 @@ public partial class FormProducto : ContentPage
         BindingContext = this;
     }
 
-    private async void CargarRecetas()
-    {
-        listaDeReceta = await RecetasDesdeApi();
-
-        // Agregar el elemento de placeholder al principio de la lista
-        listaDeReceta.Insert(0, new RecetaCompleta { recetaId = -1, nombreReceta = "Seleccionar una Receta" });
-
-        pickReceta.ItemsSource = listaDeReceta;
-        pickReceta.ItemDisplayBinding = new Binding("nombreReceta");
-
-
-        if (recetaId != 0)
-        {
-            SetSelectedRecetaId(recetaId);
-        }
-        else
-        {
-            SetSelectedRecetaId(-1);
-        }
-        BindingContext = this;
-    }
 
     private async Task<List<SubcategoriaProducto>> SubCategoriaProductoDesdeApi()
     {
@@ -158,54 +126,6 @@ public partial class FormProducto : ContentPage
         }
     }
 
-    private async Task<List<RecetaCompleta>> RecetasDesdeApi()
-    {
-        List<RecetaCompleta> recetasDesdeApi = new List<RecetaCompleta>();
-        String laURL = "https://localhost:44311/api/receta/obtener";
-
-        try
-        {
-
-            using (HttpClient httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(laURL);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    var responseContent = await response.Content.ReadAsStringAsync();
-                    ResObtenerRecetas res = JsonConvert.DeserializeObject<ResObtenerRecetas>(responseContent);
-
-                    if (res.Resultado)
-                    {
-                        recetasDesdeApi = res.listaRecetas;
-                    }
-                    else
-                    {
-                        Console.WriteLine("No se encontró el backend");
-                    }
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Error interno");
-        }
-
-        return recetasDesdeApi;
-    }
-
-    private void SetSelectedRecetaId(int recetaId)
-    {
-        foreach (var receta in listaDeReceta)
-        {
-            if (receta.recetaId == recetaId)
-            {
-                pickReceta.SelectedItem = receta;
-                break;
-            }
-        }
-    }
-
     private void pickSubCategoria_SelectedIndexChanged(object sender, EventArgs e)
     {
 
@@ -231,15 +151,14 @@ public partial class FormProducto : ContentPage
         ProductoController productoController = new ProductoController();
         try
         {
-            SubcategoriaProducto subCate = (SubcategoriaProducto)pickSubCategoria.SelectedItem;
-            RecetaCompleta rece = (RecetaCompleta)pickReceta.SelectedItem;
-            if (subCate != null && rece != null)
+            SubcategoriaProducto subCate = (SubcategoriaProducto)pickSubCategoria.SelectedItem;          
+            if (subCate != null)
             {
 
                 ResProducto res = new ResProducto();
                 if (int.Parse(txtId.Text) == 0)
                 {
-                    res = await productoController.IngresarProducto(subCate.idSubcategoriaProducto, rece.recetaId, txtNombreProducto.Text, txtDescripcion.Text, selectedImagePath, decimal.Parse(txtPrecio.Text));
+                    res = await productoController.IngresarProducto(subCate.idSubcategoriaProducto, 1, txtNombreProducto.Text, txtDescripcion.Text, selectedImagePath, decimal.Parse(txtPrecio.Text));
                     if (res.Resultado)
                     {
                         await DisplayAlert("Insercion Exitosa", "Producto guardado con éxito", "Aceptar");
@@ -264,7 +183,7 @@ public partial class FormProducto : ContentPage
 
                     }
 
-                    res = await productoController.modificarProducto(int.Parse(txtId.Text), subCate.idSubcategoriaProducto, rece.recetaId, txtNombreProducto.Text, txtDescripcion.Text, selectedImagePath, decimal.Parse(txtPrecio.Text));
+                    res = await productoController.modificarProducto(int.Parse(txtId.Text), subCate.idSubcategoriaProducto, 1, txtNombreProducto.Text, txtDescripcion.Text, selectedImagePath, decimal.Parse(txtPrecio.Text),1);
                     if (res.Resultado)
                     {
                         await DisplayAlert("Actualiación Exitosa", "Producto actualizado con éxito", "Aceptar");
@@ -381,7 +300,6 @@ public partial class FormProducto : ContentPage
             recetaId = producto.receta.idReceta;
             subCategoriaProductoId = producto.subcategoriaProducto.idSubcategoriaProducto;
 
-            SetSelectedRecetaId(recetaId);
             SetSelectedSubCategoriaById(subCategoriaProductoId);
 
 

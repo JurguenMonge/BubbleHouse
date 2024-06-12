@@ -14,16 +14,6 @@
                         <Label x:Name="lblTitulo" FontAttributes="Bold" FontSize="Title" HorizontalTextAlignment="Center" TextColor="White" Text="Crear Producto"/>
                         <Label FontAttributes="Bold" TextColor="White" Text="Nombre del Producto" />
                         <Entry x:Name="txtNombreProducto" Keyboard="Text" Background="White" TextColor="Black" Placeholder="Ingrese el nombre"/>
-                        <Label FontAttributes="Bold" TextColor="White" Text="Receta del Producto"></Label>
-                        <Picker x:Name="pickReceta"
-                              FontAttributes="Bold"
-                              Background="White"
-                              TextColor="Gray"
-                              FontSize="12"
-                              VerticalTextAlignment="Center"
-                              SelectedIndexChanged="pickReceta_SelectedIndexChanged"
-                              Focused="pickReceta_Focused"
-                          />
                         <Label FontAttributes="Bold" TextColor="White" Text="SubCategoría del Producto"></Label>
                         <Picker x:Name="pickSubCategoria"
                              FontAttributes="Bold"

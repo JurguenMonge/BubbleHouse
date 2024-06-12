@@ -479,7 +479,7 @@ namespace BackEnd.logic
             contenedor.descripcion = facturasLinq.DSC_DESCRIPCION;
             contenedor.urlImgen = facturasLinq.DSC_URL_IMAGEN;
             contenedor.precio = (float)facturasLinq.NUM_PRECIO;
-            contenedor.estado = true;
+            contenedor.estado = 1;
             if(facturasLinq.ID_RECETA != 0)
             {///////Codigo de receta faltante
                 try

@@ -116,9 +116,10 @@
 
                                     <HorizontalStackLayout Grid.Column="2" >
                                         <Switch x:Name="estado"
-                                        IsToggled="True"
-                                        HorizontalOptions="End"                                   
-                                        Toggled="estado_Toggled"        />
+                                        HorizontalOptions="End"
+                                        IsToggled="{Binding estado, Converter={StaticResource IntToBoolConverter}}"
+                                        Toggled="estado_Toggled"
+                                       />
                                     </HorizontalStackLayout>
                                 </Grid>
                             </Frame>

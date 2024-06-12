@@ -32,7 +32,7 @@ namespace FrontEnd.Entidades.Entidad
                 categoriaProducto = new CategoriaProducto(),
                 descripcion = "Descripción del producto",
                 urlImgen = "http://example.com/image.png",
-                estado = true,
+                estado = 1,
                 receta = new Receta()
             }) ;
         }

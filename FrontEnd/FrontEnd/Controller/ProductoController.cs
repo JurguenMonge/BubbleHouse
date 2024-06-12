@@ -55,7 +55,7 @@ namespace FrontEnd.Controller
                     producto.descripcion = descripcion;
                     producto.urlImgen = urlImagen;
                     producto.precio = (float)precio;
-                    producto.estado = true;
+                    producto.estado = 1;
                     req.Producto = producto;
                     //req.idSesion = Preferences.Get("IdSesion", string.Empty);
 
@@ -85,7 +85,7 @@ namespace FrontEnd.Controller
             return res;
         }
 
-        public async Task<ResProducto> modificarProducto(int idProducto, int idSubCategoriaProducto, int idReceta, string nombreProducto, string descripcion, string urlImagen, decimal precio)
+        public async Task<ResProducto> modificarProducto(int idProducto, int idSubCategoriaProducto, int idReceta, string nombreProducto, string descripcion, string urlImagen, decimal precio, int estado)
         {
             ResProducto res = new ResProducto();
             try
@@ -132,7 +132,7 @@ namespace FrontEnd.Controller
                     producto.descripcion = descripcion;
                     producto.urlImgen = urlImagen;
                     producto.precio = (float)precio;
-                    producto.estado = true;
+                    producto.estado = estado;
                     req.Producto = producto;
                     //req.idSesion = Preferences.Get("IdSesion", string.Empty);
 
