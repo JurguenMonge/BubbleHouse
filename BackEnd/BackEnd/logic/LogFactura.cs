@@ -6,11 +6,13 @@ using BackEnd.domain.response;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace BackEnd.logic
 {
@@ -457,10 +459,13 @@ namespace BackEnd.logic
 
         private Factura factoryArmarFactura(Obtener_FacturasResult facturasLinq)
         {
+            TimeZoneInfo zonaHorariaServidor = TimeZoneInfo.FindSystemTimeZoneById("Central America Standard Time");
             Factura factura = new Factura();
            
             factura.idFactura = facturasLinq.ID_FACTURA;
             factura.fecha = (DateTime)facturasLinq.FECHA;
+            DateTime fechaServidor = TimeZoneInfo.ConvertTimeFromUtc(factura.fecha, zonaHorariaServidor);
+            factura.fecha = fechaServidor;
             factura.numTotal = (float)facturasLinq.NUM_TOTAL;
             factura.estado = (byte)facturasLinq.ESTADO;
             return factura;
@@ -477,8 +482,28 @@ namespace BackEnd.logic
             contenedor.estado = true;
             if(facturasLinq.ID_RECETA != 0)
             {///////Codigo de receta faltante
-                Receta receta = new Receta();
-                contenedor.informacionReceta = "Informacion de Receta";
+                try
+                {
+                    ConexionDataContext linq = new ConexionDataContext();
+                    int? idErrorRece = 0;
+                    String errorBDRece = "";
+                    var linqReceta = linq.Obtener_Receta_ById(facturasLinq.ID_RECETA, ref idErrorRece, ref errorBDRece);
+                    if (idErrorRece == 0)
+                    {
+                        foreach (var item in linqReceta)
+                        {
+                            Receta receta = factoryArmarRecetaByid(item);
+                            if (receta != null)
+                            {
+                                contenedor.informacionReceta = receta.dscNombre;
+                            }
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+
+                }
             }
             contenedor.IdRFacturaProducto = facturasLinq.ID_R_FACTURA_PRODUCTO;
             contenedor.idFactura = facturasLinq.ID_FACTURA;
@@ -486,6 +511,14 @@ namespace BackEnd.logic
             contenedor.descuento = (decimal)facturasLinq.NUM_DESCUENTO;
             contenedor.numCantidad = (int)facturasLinq.NUM_CANTIDAD;
             return contenedor;
+        }
+        private Receta factoryArmarRecetaByid(Obtener_Receta_ByIdResult recetaLinq)
+        {
+            Receta receta = new Receta();
+            receta.idReceta = recetaLinq.ID_RECETA;
+            receta.dscNombre = recetaLinq.Ingredientes;
+            receta.dscNombre = receta.dscNombre.Replace(", ", Environment.NewLine);
+            return receta;
         }
     }
 }

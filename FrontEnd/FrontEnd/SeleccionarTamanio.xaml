@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FrontEnd.SeleccionarTamanio"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False"
              Title="SeleccionarTamanio">
 
     <AbsoluteLayout BackgroundColor="#A9DFF0">
@@ -32,7 +34,7 @@
 
         <!-- Main Content -->
         <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
-            <VerticalStackLayout Padding="10">
+            <VerticalStackLayout Padding="10" HorizontalOptions="Center">
                 <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                     <Frame Margin="10" BackgroundColor="#9895c9" HasShadow="True" CornerRadius="5" HeightRequest="350" WidthRequest="350">
                         <Grid>
@@ -41,7 +43,6 @@
                             <Image x:Name="imgSabor" Source="image2_source.png" Aspect="AspectFit" />
                             <Image x:Name="imgBordeado" Source="image3_source.png" Aspect="AspectFit" />
                             <Image x:Name="imgBubbles" Source="image3_source.png" Aspect="AspectFit" />
-                            <Image x:Name="imgluz" Source="reflejodeluz.png" Aspect="AspectFit" />
                         </Grid>
                     </Frame>
                 </Grid>
@@ -72,7 +73,7 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-                <Button x:Name="btnSiguiente" TextColor="White" BackgroundColor="#BDC0F7" IsEnabled="False" Clicked="Button_Clicked" Text="Siguiente" Margin="40,10,10,10" />
+                <Button x:Name="btnSiguiente" TextColor="White" BackgroundColor="#BDC0F7" IsEnabled="False" Clicked="Button_Clicked" Text="Siguiente" Margin="10,0,10,0" />
             </VerticalStackLayout>
         </ScrollView>
     </AbsoluteLayout>

@@ -558,6 +558,15 @@ namespace BackEnd.data
 			eRRORDESCRIPCION = ((string)(result.GetParameterValue(1)));
 			return ((ISingleResult<Obtener_Productos_ActivosResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Obtener_Receta_ById")]
+		public ISingleResult<Obtener_Receta_ByIdResult> Obtener_Receta_ById([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_Receta, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Receta, eRRORID, eRRORDESCRIPCION);
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(2)));
+			return ((ISingleResult<Obtener_Receta_ByIdResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class Obtener_Cate_Ingredientes_ActivosResult
@@ -2851,6 +2860,86 @@ namespace BackEnd.data
 				if ((this._DSC_NOMBRE_CATEGORIA != value))
 				{
 					this._DSC_NOMBRE_CATEGORIA = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Obtener_Receta_ByIdResult
+	{
+		
+		private int _ID_RECETA;
+		
+		private string _DSC_NOMBRE;
+		
+		private System.Nullable<System.DateTime> _FECHA;
+		
+		private string _Ingredientes;
+		
+		public Obtener_Receta_ByIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_RECETA", DbType="Int NOT NULL")]
+		public int ID_RECETA
+		{
+			get
+			{
+				return this._ID_RECETA;
+			}
+			set
+			{
+				if ((this._ID_RECETA != value))
+				{
+					this._ID_RECETA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_NOMBRE", DbType="NVarChar(MAX)")]
+		public string DSC_NOMBRE
+		{
+			get
+			{
+				return this._DSC_NOMBRE;
+			}
+			set
+			{
+				if ((this._DSC_NOMBRE != value))
+				{
+					this._DSC_NOMBRE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FECHA
+		{
+			get
+			{
+				return this._FECHA;
+			}
+			set
+			{
+				if ((this._FECHA != value))
+				{
+					this._FECHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ingredientes", DbType="NVarChar(MAX)")]
+		public string Ingredientes
+		{
+			get
+			{
+				return this._Ingredientes;
+			}
+			set
+			{
+				if ((this._Ingredientes != value))
+				{
+					this._Ingredientes = value;
 				}
 			}
 		}
