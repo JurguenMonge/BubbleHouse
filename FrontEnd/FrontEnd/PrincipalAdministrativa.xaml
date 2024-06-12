@@ -4,23 +4,5 @@
              x:Class="FrontEnd.PrincipalAdministrativa"
              xmlns:local="clr-namespace:FrontEnd"
              xmlns:local1="clr-namespace:FrontEnd.Pages">
-    <!--<Grid BackgroundColor="#a9dff0">
-        <VerticalStackLayout>
-            <HorizontalStackLayout Margin="10,10,10,10" Spacing="10">
-                <Button x:Name="btnCategorias" BackgroundColor="#414BB2" Text="Categorias" Clicked="btnCategorias_Clicked"></Button>
-                <Button x:Name="btnSubCategorias" BackgroundColor="#414BB2" Text="SubCategorias" Clicked="btnSubCategorias_Clicked"></Button>
-                <Button x:Name="btnProductos" BackgroundColor="#414BB2" Text="Productos" Clicked="btnProductos_Clicked"></Button>
-                <Button x:Name="btnIngredientes" BackgroundColor="#414BB2" Text="Ingredientes" Clicked="btnIngredientes_Clicked"></Button>
-                <Button x:Name="btnAceptarPedidos" BackgroundColor="#414BB2" Text="Aceptar Pedidos" Clicked="btnAceptarPedidos_Clicked"></Button>
-            </HorizontalStackLayout>
-        </VerticalStackLayout>
-        
-    </Grid>-->
-
-    <!--<local:AceptarFacturas Title="Pedidos" IconImageSource="pedido.svg" />
-    <local1:ProductoPage Title="Productos" IconImageSource="producto.svg" />
-    <local1:IngredientePage Title="Ingredientes" IconImageSource="ingrediente.svg" />
-    <local1:RecetaPage Title="Recetas" IconImageSource="receta.svg" />
-    <local1:UsuarioAdminPage Title="Usuarios" IconImageSource="usuario.svg" />-->
-
+    
 </TabbedPage>

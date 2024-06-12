@@ -4523,3 +4523,21 @@ C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\
 C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\stamp\_ResolveLibraryProjectImports.stamp
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\bordeado.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\bubbles.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\bubblete.jpeg
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\coca.jpg
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\colorsup.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\fondobubbles.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\helado.jpg
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\lecheentera.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\pan.jpg
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\quque.jpg
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\ramen.jpg
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\reflejodeluz.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\saborchicle.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\tapioca.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\te.jpg
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\techai.jpg
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\topping.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable\vaso.png

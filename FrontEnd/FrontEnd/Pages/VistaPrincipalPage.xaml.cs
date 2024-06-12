@@ -1,30 +1,39 @@
-namespace FrontEnd.Pages;
+using FrontEnd.Pages;
+using Microsoft.Maui.Controls;
 
-public partial class VistaPrincipalPage : TabbedPage
+namespace FrontEnd.Pages
 {
-	public VistaPrincipalPage()
-	{
-		InitializeComponent();
+    public partial class VistaPrincipalPage : TabbedPage
+    {
+        public VistaPrincipalPage()
+        {
+            InitializeComponent();
 
-        var MenuPage = new NavigationPage(new Menu());
-        MenuPage.Title = "Menú";
-        MenuPage.IconImageSource = "menuOpcion.svg";
-        NavigationPage.SetHasNavigationBar(MenuPage, true);
+            // Método auxiliar para configurar una página con navegación
+            NavigationPage CreateNavigationPage(Page page, string title, string icon)
+            {
+                var navigationPage = new NavigationPage(page);
+#if WINDOWS
+                navigationPage.Title = title;
+                navigationPage.IconImageSource = null; // No mostrar el ícono en Windows
+                NavigationPage.SetHasNavigationBar(navigationPage, true);
+#else
+                navigationPage.Title = null; // No mostrar el título en otras plataformas
+                navigationPage.IconImageSource = icon;
+                NavigationPage.SetHasNavigationBar(navigationPage, true);
+#endif
+                return navigationPage;
+            }
 
-        var crearBubble = new NavigationPage(new SeleccionarTamanio());
-        crearBubble.Title = "Crear Bubble";
-        crearBubble.IconImageSource = "bubble.svg";
-        NavigationPage.SetHasNavigationBar(crearBubble, true);
+            // Crear las páginas con navegación
+            var menuPage = CreateNavigationPage(new Menu(), "Menú", "menu.svg");
+            var crearBubble = CreateNavigationPage(new SeleccionarTamanio(), "Crear Bubble", "bubble.svg");
+            var carritoPage = CreateNavigationPage(new Carrito(), "Carrito", "carrito.svg");
 
-        var carritoPage = new NavigationPage(new Carrito());
-        carritoPage.Title = "Carrito";
-        carritoPage.IconImageSource = "carrito.svg";
-        NavigationPage.SetHasNavigationBar(carritoPage, true);
-
-
-        Children.Add(MenuPage);
-        Children.Add(crearBubble);
-        Children.Add(carritoPage);
-       
+            // Agregar las páginas como hijos de TabbedPage
+            Children.Add(menuPage);
+            Children.Add(crearBubble);
+            Children.Add(carritoPage);
+        }
     }
 }

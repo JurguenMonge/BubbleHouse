@@ -1,53 +1,41 @@
 using FrontEnd.Pages;
+using Microsoft.Maui.Controls;
 
 namespace FrontEnd;
 
 public partial class PrincipalAdministrativa : TabbedPage
 {
-	public PrincipalAdministrativa()
-	{
-		InitializeComponent();
+    public PrincipalAdministrativa()
+    {
+        InitializeComponent();
 
-        var aceptarFacturasPage = new NavigationPage(new AceptarFacturas());
-        aceptarFacturasPage.Title = "Pedidos";
-        aceptarFacturasPage.IconImageSource = "pedido.svg";
-        NavigationPage.SetHasNavigationBar(aceptarFacturasPage, true);
+        // Método auxiliar para configurar una página con navegación
+        NavigationPage CreateNavigationPage(Page page, string title, string icon)
+        {
+            var navigationPage = new NavigationPage(page);
+#if WINDOWS
+            navigationPage.Title = title;
+            navigationPage.IconImageSource = null; // No mostrar el ícono en Windows
+            NavigationPage.SetHasNavigationBar(navigationPage, true);
+#else
+            navigationPage.Title = null; // No mostrar el título en otras plataformas
+            navigationPage.IconImageSource = icon;
+            NavigationPage.SetHasNavigationBar(navigationPage, true);
+#endif
+            return navigationPage;
+        }
 
-        var productoPage = new NavigationPage(new ProductoPage());
-        productoPage.Title = "Productos";
-        productoPage.IconImageSource = "producto.svg";
-        NavigationPage.SetHasNavigationBar(productoPage, true);
+        // Crear las páginas con navegación
+        var aceptarFacturasPage = CreateNavigationPage(new AceptarFacturas(), "Pedidos", "pedido.svg");
+        var productoPage = CreateNavigationPage(new ProductoPage(), "Productos", "producto.svg");
+        var ingredientePage = CreateNavigationPage(new IngredientePage(), "Ingredientes", "ingrediente.svg");
+        var recetaPage = CreateNavigationPage(new RecetaPage(), "Recetas", "receta.svg");
+        var usuarioAdminPage = CreateNavigationPage(new UsuarioAdminPage(), "Usuario", "usuario.svg");
+        var carritoPage = CreateNavigationPage(new Carrito(), "Carrito", "carrito.svg");
+        var usuarioSuperAdminPage = CreateNavigationPage(new UsuariosSuperAdminPage(), "Usuarios", "usuarios.svg");
+        var crearBubble = CreateNavigationPage(new SeleccionarTamanio(), "Crear Bubble", "usuarios.svg");
 
-        var ingredientePage = new NavigationPage(new IngredientePage());
-        ingredientePage.Title = "Ingredientes";
-        ingredientePage.IconImageSource = "ingrediente.svg";
-        NavigationPage.SetHasNavigationBar(ingredientePage, true);
-
-        var recetaPage = new NavigationPage(new RecetaPage());
-        recetaPage.Title = "Recetas";
-        recetaPage.IconImageSource = "receta.svg";
-        NavigationPage.SetHasNavigationBar(recetaPage, true);
-
-        var usuarioAdminPage = new NavigationPage(new UsuarioAdminPage());
-        usuarioAdminPage.Title = "Usuario";
-        usuarioAdminPage.IconImageSource = "usuario.svg";
-        NavigationPage.SetHasNavigationBar(usuarioAdminPage, true);
-
-        var carritoPage = new NavigationPage(new Carrito());
-        carritoPage.Title = "Carrito";
-        carritoPage.IconImageSource = "carrito.svg";
-        NavigationPage.SetHasNavigationBar(carritoPage, true);
-
-        var usuarioSuperAdminPage = new NavigationPage(new UsuariosSuperAdminPage());
-        usuarioSuperAdminPage.Title = "Usuarios";
-        usuarioSuperAdminPage.IconImageSource = "usuarios.svg";
-        NavigationPage.SetHasNavigationBar(usuarioSuperAdminPage, true);
-
-        var crearBubble = new NavigationPage(new SeleccionarTamanio());
-        crearBubble.Title = "Crear Bubble";
-        crearBubble.IconImageSource = "usuarios.svg";
-        NavigationPage.SetHasNavigationBar(crearBubble, true);
-
+        // Agregar las páginas como hijos de TabbedPage
         Children.Add(aceptarFacturasPage);
         Children.Add(productoPage);
         Children.Add(ingredientePage);
@@ -57,29 +45,4 @@ public partial class PrincipalAdministrativa : TabbedPage
         Children.Add(usuarioSuperAdminPage);
         Children.Add(crearBubble);
     }
-
-    //private void btnCategorias_Clicked(object sender, EventArgs e)
-    //{
-    //    Navigation.PushAsync(new ListadoCategoriaProducto());
-    //}
-
-    //private void btnSubCategorias_Clicked(object sender, EventArgs e)
-    //{
-    //    Navigation.PushAsync(new SubCategoriaProductoPage());
-    //}
-
-    //private void btnProductos_Clicked(object sender, EventArgs e)
-    //{
-
-    //}
-
-    //private void btnAceptarPedidos_Clicked(object sender, EventArgs e)
-    //{
-    //    Navigation.PushAsync(new AceptarFacturas());
-    //}
-
-    //private void btnIngredientes_Clicked(object sender, EventArgs e)
-    //{
-    //    Navigation.PushAsync(new IngredientePage());
-    //}
 }
