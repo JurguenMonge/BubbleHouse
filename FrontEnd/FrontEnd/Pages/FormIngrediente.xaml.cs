@@ -1,3 +1,4 @@
+using Firebase.Storage;
 using FrontEnd.Controller;
 using FrontEnd.Entidades.Entidad;
 using FrontEnd.Entidades.Response;
@@ -16,6 +17,7 @@ public partial class FormIngrediente : ContentPage
     private bool isPickerOpen = false;
     string path = "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Resources\\Images\\";
     public string selectedImagePath;
+    private string urlImage {  get; set; }
 
     public FormIngrediente()
 	{
@@ -146,7 +148,7 @@ public partial class FormIngrediente : ContentPage
                 ResIngrediente res = new ResIngrediente();
                 if (int.Parse(txtId.Text) == 0)
                 {
-                    res = await controller.IngresarIngrediente(cate.idCateIngrediente, txtNombreIngrediente.Text, txtDescripcion.Text, selectedImagePath, decimal.Parse(txtPrecio.Text));
+                    res = await controller.IngresarIngrediente(cate.idCateIngrediente, txtNombreIngrediente.Text, txtDescripcion.Text, urlImage, decimal.Parse(txtPrecio.Text));
                     if (res.Resultado)
                     {
                         await DisplayAlert("Insercion Exitosa", "Ingrediente guardado con éxito", "Aceptar");
@@ -171,7 +173,7 @@ public partial class FormIngrediente : ContentPage
                         
                     }
 
-                    res = await controller.ActualizarIngrediente(int.Parse(txtId.Text), cate.idCateIngrediente, txtNombreIngrediente.Text, txtDescripcion.Text, selectedImagePath, decimal.Parse(txtPrecio.Text));
+                    res = await controller.ActualizarIngrediente(int.Parse(txtId.Text), cate.idCateIngrediente, txtNombreIngrediente.Text, txtDescripcion.Text, urlImage, decimal.Parse(txtPrecio.Text));
                     if (res.Resultado)
                     {
                         await DisplayAlert("Actualiación Exitosa", "Ingrediente actualizado con éxito", "Aceptar");
@@ -282,46 +284,57 @@ public partial class FormIngrediente : ContentPage
     private async void btnSeleccionar_Clicked(object sender, EventArgs e)
     {
 
-        try
-        {
-            var result = await FilePicker.PickAsync(new PickOptions
-            {
-                FileTypes = FilePickerFileType.Images,
-                PickerTitle = "Seleccione una imagen"
-            });
+        var foto = await MediaPicker.PickPhotoAsync();
 
-            if (result != null)
-            {
-                
-                var stream = await result.OpenReadAsync();
-
-                
-                var fileName = Path.GetFileName(result.FullPath);
-
-                
-                var imagePath = Path.Combine(path, fileName);
-
-                
-                Directory.CreateDirectory(Path.GetDirectoryName(imagePath));
-
-                
-                using (var fileStream = new FileStream(imagePath, FileMode.Create, FileAccess.Write))
-                {
-                    await stream.CopyToAsync(fileStream);
-                }
-
-                
-                selectedImage.Source = ImageSource.FromStream(() => new FileStream(imagePath, FileMode.Open, FileAccess.Read));
-
-                
-                selectedImagePath = fileName;
-
-            }
+        if (foto != null) {
+            var stream = await foto.OpenReadAsync();
+            urlImage = await new FirebaseStorage("bubblehouse-30c28.appspot.com")
+                                    .Child("Fotos")
+                                    .Child(foto.FileName)
+                                    .PutAsync(stream);
+            selectedImage.Source = urlImage;
         }
-        catch (Exception ex)
-        {
-            await DisplayAlert("Error", $"Ocurrió un error: {ex.Message}", "OK");
-        }
+
+        //try
+        //{
+        //    var result = await FilePicker.PickAsync(new PickOptions
+        //    {
+        //        FileTypes = FilePickerFileType.Images,
+        //        PickerTitle = "Seleccione una imagen"
+        //    });
+
+        //    if (result != null)
+        //    {
+                
+        //        var stream = await result.OpenReadAsync();
+
+                
+        //        var fileName = Path.GetFileName(result.FullPath);
+
+                
+        //        var imagePath = Path.Combine(path, fileName);
+
+                
+        //        Directory.CreateDirectory(Path.GetDirectoryName(imagePath));
+
+                
+        //        using (var fileStream = new FileStream(imagePath, FileMode.Create, FileAccess.Write))
+        //        {
+        //            await stream.CopyToAsync(fileStream);
+        //        }
+
+                
+        //        selectedImage.Source = ImageSource.FromStream(() => new FileStream(imagePath, FileMode.Open, FileAccess.Read));
+
+                
+        //        selectedImagePath = fileName;
+
+        //    }
+        //}
+        //catch (Exception ex)
+        //{
+        //    await DisplayAlert("Error", $"Ocurrió un error: {ex.Message}", "OK");
+        //}
     }
 
 }

@@ -61,7 +61,7 @@
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="TapModificarIngrediente"/>
                                 </Frame.GestureRecognizers>
-                                <Grid ColumnDefinitions="0.25*,0.5*,0.25*">
+                                <Grid ColumnDefinitions="0.4*,0.6*">
                                     <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
                                         <Image Source="{Binding dscURLImagen}"
                                                WidthRequest="100"
@@ -77,19 +77,16 @@
                                         <Label x:Name="lblNombreCategoria"
                                                FontSize="Subtitle"
                                                FontAttributes="Bold"
-                                               HorizontalTextAlignment="Start"
                                                Text="{Binding dscNombreCategoriaIngrediente}"
                                                VerticalOptions="Center"
                                                TextColor="white"/>
                                         <Label x:Name="lblNombreIngrediente"
                                                FontSize="15"
-                                               HorizontalTextAlignment="Start"
                                                Text="{Binding dscNombre}"
                                                VerticalOptions="Center"
                                                TextColor="white"/>
                                         <Label x:Name="lblDescripcion"
                                                FontSize="15"
-                                               HorizontalTextAlignment="Start"
                                                Text="{Binding dscDescripcion}"
                                                VerticalOptions="Center"
                                                TextColor="white"/>

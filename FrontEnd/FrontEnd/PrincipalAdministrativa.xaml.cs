@@ -33,7 +33,7 @@ public partial class PrincipalAdministrativa : TabbedPage
         var usuarioAdminPage = CreateNavigationPage(new UsuarioAdminPage(), "Usuario", "usuario.svg");
         var carritoPage = CreateNavigationPage(new Carrito(), "Carrito", "carrito.svg");
         var usuarioSuperAdminPage = CreateNavigationPage(new UsuariosSuperAdminPage(), "Usuarios", "usuarios.svg");
-        var crearBubble = CreateNavigationPage(new SeleccionarTamanio(), "Crear Bubble", "usuarios.svg");
+        var logout = CreateNavigationPage(new LogoutPage(), "Cerrar Sesión", "salida.svg");
 
         // Agregar las páginas como hijos de TabbedPage
         Children.Add(aceptarFacturasPage);
@@ -41,8 +41,7 @@ public partial class PrincipalAdministrativa : TabbedPage
         Children.Add(ingredientePage);
         Children.Add(recetaPage);
         Children.Add(usuarioAdminPage);
-        Children.Add(carritoPage);
         Children.Add(usuarioSuperAdminPage);
-        Children.Add(crearBubble);
+        Children.Add(logout);
     }
 }

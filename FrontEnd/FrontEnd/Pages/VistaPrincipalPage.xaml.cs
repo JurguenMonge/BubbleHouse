@@ -29,11 +29,13 @@ namespace FrontEnd.Pages
             var menuPage = CreateNavigationPage(new Menu(), "Menú", "menu.svg");
             var crearBubble = CreateNavigationPage(new SeleccionarTamanio(), "Crear Bubble", "bubble.svg");
             var carritoPage = CreateNavigationPage(new Carrito(), "Carrito", "carrito.svg");
+            var login = CreateNavigationPage(new GoLoginPage(), "Login", "usuario.svg");
 
             // Agregar las páginas como hijos de TabbedPage
             Children.Add(menuPage);
             Children.Add(crearBubble);
             Children.Add(carritoPage);
+            Children.Add(login);
         }
     }
 }

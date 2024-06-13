@@ -5530,3 +5530,14 @@ C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\stam
 C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\stamp\_ResolveLibraryProjectImports.stamp
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\sp\drawable-hdpi\logo.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\sp\drawable-mdpi\logo.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\sp\drawable-xhdpi\logo.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\sp\drawable-xxhdpi\logo.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\sp\drawable-xxxhdpi\logo.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\salida.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\salida.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\salida.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\salida.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\salida.png
+D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-android\android\assets\Firebase.Storage.dll

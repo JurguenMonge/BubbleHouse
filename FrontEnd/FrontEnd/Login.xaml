@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FrontEnd.Login"
-             Title="Login">
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False">
     <ScrollView>
         <Grid x:Name="Contenedor" BackgroundColor="#a9dff0">
-            <VerticalStackLayout Spacing="15" Margin="40,40,40,0" Padding="10">
+            <VerticalStackLayout Spacing="15" Margin="10,40,10,0" Padding="10">
                 <Image
                     Source="logo_celeste.png"
                     HeightRequest="185"
@@ -13,7 +14,7 @@
                     IsVisible="True"
                     IsEnabled="True"/>
                 
-                <Frame Margin="10,0,10,0"  VerticalOptions="Center" BackgroundColor="#bdc0f7" BorderColor="#bdc0f7">
+                <Frame VerticalOptions="Center" BackgroundColor="#bdc0f7" BorderColor="#bdc0f7">
                     <VerticalStackLayout>
                         <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="White" Text="Correo" ></Label>
                         <Entry x:Name="txtCorreo" TextColor="Black" Keyboard="Email" Background="White" Text="gmail@gmail.com" ></Entry>
