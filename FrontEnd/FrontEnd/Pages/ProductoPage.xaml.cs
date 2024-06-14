@@ -10,7 +10,6 @@ namespace FrontEnd.Pages;
 
 public partial class ProductoPage : ContentPage
 {
-    private bool isFirstLoad = true;
     public ProductoPage()
     {
         InitializeComponent();
@@ -47,7 +46,6 @@ public partial class ProductoPage : ContentPage
             listaProducto.Add(product);
         }
         BindingContext = this;
-        isFirstLoad = false;
     }
 
     private async Task<List<Producto>> ProductosDesdeApi()
@@ -108,5 +106,15 @@ public partial class ProductoPage : ContentPage
     {
         base.OnAppearing();
         CargarProductos();
+    }
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new SubCategoriaProductoPage());
+    }
+
+    private void Button_Clicked_1(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new ListadoCategoriaProducto());
     }
 }

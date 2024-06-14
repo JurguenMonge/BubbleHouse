@@ -11,7 +11,6 @@ public partial class SubCategoriaProductoPage : ContentPage
 	public SubCategoriaProductoPage()
 	{
 		InitializeComponent();
-        CargarSubCategorias();
     }
 
     private List<SubcategoriaProducto> _listaSubCategoriasProducto = new List<SubcategoriaProducto>();
@@ -97,4 +96,11 @@ public partial class SubCategoriaProductoPage : ContentPage
     {
         Navigation.PushAsync(new FormSubCategoriaProducto());
     }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        CargarSubCategorias();
+    }
+    
 }

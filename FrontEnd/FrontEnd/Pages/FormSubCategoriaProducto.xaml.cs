@@ -60,7 +60,7 @@ public partial class FormSubCategoriaProducto : ContentPage
         listaDeCategoriasProducto = await CategoriasDesdeApi();
 
         // Agregar el elemento de placeholder al principio de la lista
-        listaDeCategoriasProducto.Insert(0, new CategoriaProducto { idCategoriaProducto = -1, dscNombreCategoria = "Seleccionar una subcategoría" });
+        listaDeCategoriasProducto.Insert(0, new CategoriaProducto { idCategoriaProducto = -1, dscNombreCategoria = "Seleccionar una categoría" });
 
         pickCategoria.ItemsSource = listaDeCategoriasProducto;
         pickCategoria.ItemDisplayBinding = new Binding("dscNombreCategoria");
