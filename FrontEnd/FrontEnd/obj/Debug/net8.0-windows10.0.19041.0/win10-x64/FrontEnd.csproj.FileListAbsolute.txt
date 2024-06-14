@@ -1459,3 +1459,9 @@ D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-150.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-200.png
 D:\JB\Documents\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-400.png
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Firebase.Storage.dll
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-100.png
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-125.png
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-150.png
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-200.png
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-400.png

@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\",
+  "WorkspaceRootPath": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\principaladministrativa.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:principaladministrativa.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\jurguen monge\\documents\\github\\bubblehouse\\frontend\\frontend\\pages\\formproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\formproducto.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|d:\\jb\\documents\\bubblehouse\\frontend\\frontend\\pages\\vistaprincipalpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\vistaprincipalpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\jurguen monge\\documents\\github\\bubblehouse\\frontend\\frontend\\pages\\formproducto.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\formproducto.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\jurguen monge\\documents\\github\\bubblehouse\\frontend\\frontend\\pages\\productopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:pages\\productopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +22,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 610,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
@@ -30,11 +38,11 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
@@ -42,28 +50,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "VistaPrincipalPage.xaml.cs",
-              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\VistaPrincipalPage.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\VistaPrincipalPage.xaml.cs",
-              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\VistaPrincipalPage.xaml.cs",
-              "RelativeToolTip": "Pages\\VistaPrincipalPage.xaml.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "ProductoPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\ProductoPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\ProductoPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\ProductoPage.xaml.cs",
+              "RelativeToolTip": "Pages\\ProductoPage.xaml.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAAA5wG0AAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T03:16:34.655Z",
+              "WhenOpened": "2024-06-14T05:58:53.52Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PrincipalAdministrativa.xaml.cs",
-              "DocumentMoniker": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\PrincipalAdministrativa.xaml.cs",
-              "RelativeDocumentMoniker": "PrincipalAdministrativa.xaml.cs",
-              "ToolTip": "D:\\JB\\Documents\\BubbleHouse\\FrontEnd\\FrontEnd\\PrincipalAdministrativa.xaml.cs",
-              "RelativeToolTip": "PrincipalAdministrativa.xaml.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAQwCUAAAA3AAAA",
+              "Title": "FormProducto.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormProducto.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\FormProducto.xaml.cs",
+              "ToolTip": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormProducto.xaml.cs*",
+              "RelativeToolTip": "Pages\\FormProducto.xaml.cs*",
+              "ViewState": "AQIAADUBAAAAAAAAAAAUwFEBAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T03:16:18.748Z",
+              "WhenOpened": "2024-06-14T05:53:59.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormProducto.xaml",
+              "DocumentMoniker": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormProducto.xaml",
+              "RelativeDocumentMoniker": "Pages\\FormProducto.xaml",
+              "ToolTip": "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Pages\\FormProducto.xaml",
+              "RelativeToolTip": "Pages\\FormProducto.xaml",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAAwCcAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-14T05:52:06.654Z",
               "EditorCaption": ""
             }
           ]

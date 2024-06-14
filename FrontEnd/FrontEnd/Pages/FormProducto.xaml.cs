@@ -13,6 +13,7 @@ public partial class FormProducto : ContentPage
     private Producto selectedProducto;
     public int subCategoriaProductoId;
     public int recetaId;
+    public int estado;
     private bool isPickerOpen = false;
     string path = "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Resources\\Images";
     public string selectedImagePath;
@@ -126,6 +127,18 @@ public partial class FormProducto : ContentPage
         }
     }
 
+    private void SetSelectedEstadoById(int estado)
+    {
+        if (estado == 1)
+        {
+            pickEstado.SelectedIndex = 0; // "Disponible"
+        }
+        else if (estado == 2)
+        {
+            pickEstado.SelectedIndex = 1; // "Agotado"
+        }
+    }
+
     private void pickSubCategoria_SelectedIndexChanged(object sender, EventArgs e)
     {
 
@@ -151,7 +164,7 @@ public partial class FormProducto : ContentPage
         ProductoController productoController = new ProductoController();
         try
         {
-            SubcategoriaProducto subCate = (SubcategoriaProducto)pickSubCategoria.SelectedItem;          
+            SubcategoriaProducto subCate = (SubcategoriaProducto)pickSubCategoria.SelectedItem; 
             if (subCate != null)
             {
 
@@ -182,8 +195,16 @@ public partial class FormProducto : ContentPage
                         }
 
                     }
+                    if (pickEstado.SelectedIndex == 0)
+                    {
+                        res = await productoController.modificarProducto(int.Parse(txtId.Text), subCate.idSubcategoriaProducto, 1, txtNombreProducto.Text, txtDescripcion.Text, selectedImagePath, decimal.Parse(txtPrecio.Text), 1);
+                    }
+                    else
+                    {
+                        res = await productoController.modificarProducto(int.Parse(txtId.Text), subCate.idSubcategoriaProducto, 1, txtNombreProducto.Text, txtDescripcion.Text, selectedImagePath, decimal.Parse(txtPrecio.Text), 2);
+                    }
 
-                    res = await productoController.modificarProducto(int.Parse(txtId.Text), subCate.idSubcategoriaProducto, 1, txtNombreProducto.Text, txtDescripcion.Text, selectedImagePath, decimal.Parse(txtPrecio.Text),1);
+                   
                     if (res.Resultado)
                     {
                         await DisplayAlert("Actualiación Exitosa", "Producto actualizado con éxito", "Aceptar");
@@ -299,7 +320,8 @@ public partial class FormProducto : ContentPage
             selectedImage.Source = producto.urlImgen;
             recetaId = producto.receta.idReceta;
             subCategoriaProductoId = producto.subcategoriaProducto.idSubcategoriaProducto;
-
+            estado = producto.estado;
+            SetSelectedEstadoById(estado);
             SetSelectedSubCategoriaById(subCategoriaProductoId);
 
 
@@ -309,12 +331,24 @@ public partial class FormProducto : ContentPage
                 lblTitulo.Text = "Modificar Producto";
                 btnIngresar.Text = "Modificar";
                 btnEliminar.IsVisible = true;
+                pickEstado.IsVisible = true;
             }
             else
             {
+                pickEstado.IsVisible = false;
                 btnIngresar.Text = "Ingresar";
                 btnEliminar.IsVisible = false;
             }
         }
+    }
+
+    private void pickEstado_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void pickEstado_Focused(object sender, FocusEventArgs e)
+    {
+
     }
 }

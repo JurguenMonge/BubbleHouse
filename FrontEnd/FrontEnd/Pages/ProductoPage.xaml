@@ -111,16 +111,13 @@
                                         Text="{Binding precio}"
                                         VerticalOptions="Center"
                                         TextColor="white"/>
-
+                                        <Label x:Name="lblEstado"
+                                        FontSize="15"
+                                        HorizontalTextAlignment="Start"
+                                        Text="{Binding estado, Converter={StaticResource IntToBoolConverter}}"
+                                        VerticalOptions="Center"
+                                        TextColor="white"/>
                                     </StackLayout>
-
-                                    <HorizontalStackLayout Grid.Column="2" >
-                                        <Switch x:Name="estado"
-                                        HorizontalOptions="End"
-                                        IsToggled="{Binding estado, Converter={StaticResource IntToBoolConverter}}"
-                                        Toggled="estado_Toggled"
-                                       />
-                                    </HorizontalStackLayout>
                                 </Grid>
                             </Frame>
                         </StackLayout>

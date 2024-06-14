@@ -25,7 +25,7 @@
                              Focused="pickSubCategoria_Focused"
                          />
                         <Label FontAttributes="Bold" TextColor="White" Text="Descripción"/>
-                        <Editor x:Name="txtDescripcion" Background="White" HeightRequest="200" Placeholder="Ingrese una descripción"/>
+                        <Editor x:Name="txtDescripcion" Background="White" TextColor="Black" HeightRequest="200" Placeholder="Ingrese una descripción"/>
                         <Label FontAttributes="Bold" TextColor="White" Text="Precio"/>
                         <Entry x:Name="txtPrecio" Keyboard="Numeric" Background="White" TextColor="Black" Placeholder="Ingrese el precio"/>
                         <Label FontAttributes="Bold" TextColor="White" Text="Imagen"/>
@@ -36,6 +36,22 @@
                             </StackLayout>
 
                         </Grid>
+                        <Picker x:Name="pickEstado"
+                        IsVisible="False"
+                        FontAttributes="Bold"
+                        Background="White"
+                        TextColor="Gray"
+                        FontSize="12"
+                        VerticalTextAlignment="Center"
+                        SelectedIndexChanged="pickEstado_SelectedIndexChanged"
+                        Focused="pickEstado_Focused">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Disponible</x:String>
+                                    <x:String>Agotado</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
                         <Button x:Name="btnIngresar" Text="Agregar" Clicked="btnIngresar_Clicked" BackgroundColor="#414BB2"></Button>
                         <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" BackgroundColor="#F76887" IsVisible="False"></Button>
                         <Button x:Name="btnCancelar" Text="Cancelar" Clicked="btnCancelar_Clicked" BackgroundColor="Gray"></Button>
