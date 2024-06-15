@@ -13,9 +13,9 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button Text="Subcategorías" TextColor="White"  Margin="12" Clicked="Button_Clicked" Grid.Row="1" HorizontalOptions="Start"/>
+            <Button Text="Subcategorías" TextColor="White"  BackgroundColor="#BDC0F7"  Margin="12" Clicked="Button_Clicked" Grid.Row="1" HorizontalOptions="Start"/>
 
-            <Button Text="Categorías" TextColor="White" Margin="12" Clicked="Button_Clicked_1" Grid.Row="1" HorizontalOptions="End"/>
+            <Button Text="Categorías" TextColor="White" BackgroundColor="#BDC0F7" Margin="12" Clicked="Button_Clicked_1" Grid.Row="1" HorizontalOptions="End"/>
 
             <Frame Margin="12"
            BorderColor="Azure"
@@ -65,13 +65,13 @@
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="TapModificarProducto"/>
                                 </Frame.GestureRecognizers>
-                                <Grid ColumnDefinitions="0.25*,0.5*,0.25*">
+                                <Grid ColumnDefinitions="0.4*,0.6*">
                                     <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
                                         <Image Source="{Binding urlImgen}"
                                         WidthRequest="100"
                                         HeightRequest="100"/>
                                     </StackLayout>
-                                    <StackLayout VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1">
+                                    <StackLayout VerticalOptions="Center" HorizontalOptions="End" Grid.Column="1">
                                         <Label x:Name="txtid"
                                        Text="{Binding idProducto}"
                                        IsVisible="False"/>
