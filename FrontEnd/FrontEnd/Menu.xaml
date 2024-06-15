@@ -62,7 +62,7 @@
             </Grid.ColumnDefinitions>
 
             <!-- Buttons -->
-            <Button Grid.Row="0" Grid.Column="0" x:Name="btnMenu" Style="{StaticResource ButtonStyle}" Text="Inicio" Clicked="btnMenu_Clicked"/>
+            <Button Grid.Row="0" Grid.Column="0" x:Name="btnMenu" Style="{StaticResource ButtonStyle}" Text="Inicio"/>
             <Button Grid.Row="0" Grid.Column="1" x:Name="btnBubbles" Style="{StaticResource ButtonStyle}" Text="Bubbles" Clicked="btnBubbles_Clicked"/>
             <Button Grid.Row="0" Grid.Column="2" x:Name="btnSushis" Style="{StaticResource ButtonStyle}" Text="Sushi" Clicked="btnSushis_Clicked"/>
             <Button Grid.Row="0" Grid.Column="3" x:Name="btnCombos" Style="{StaticResource ButtonStyle}" Text="Combos" Clicked="btnCombos_Clicked"/>
@@ -83,15 +83,18 @@
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Frame Margin="12"
-                                       BorderColor="Azure"
-                                       CornerRadius="1"
-                                       HasShadow="True"
-                                       WidthRequest="200"
-                                       HeightRequest="445">
+                                   BorderColor="Azure"
+                                   CornerRadius="1"
+                                   HasShadow="True"
+                                   WidthRequest="200"
+                                   HeightRequest="535">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="ProductoFrameTapped"/>
+                                    </Frame.GestureRecognizers>
 
                                     <Frame.Background>
                                         <LinearGradientBrush EndPoint="1,0">
-                                            <GradientStop Offset="0" Color="White"/>
+                                            <GradientStop Offset="0" Color="CadetBlue"/>
                                             <GradientStop Offset="1" Color="White"/>
                                         </LinearGradientBrush>
                                     </Frame.Background>
@@ -102,7 +105,7 @@
                                                WidthRequest="190"
                                                HeightRequest="130"/>
 
-                                        <!-- Coloca la información del producto debajo de la imagen -->
+                                        
                                         <!-- Etiquetas de Label -->
                                         <Label x:Name="txtid" Text="{Binding idProducto}" IsVisible="False"/>
                                         <Label x:Name="lblIdCategoria" Text="{Binding subcategoriaProducto.idSubcategoriaProducto}" IsVisible="False"/>

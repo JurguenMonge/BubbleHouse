@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\macha\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\macha\\documents\\github\\bubblehouse\\frontend\\frontend\\menu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:menu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\macha\\documents\\github\\bubblehouse\\frontend\\frontend\\menu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:menu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\macha\\documents\\github\\bubblehouse\\frontend\\frontend\\menu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:menu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\macha\\documents\\github\\bubblehouse\\frontend\\frontend\\carrito.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:carrito.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|c:\\users\\macha\\documents\\github\\bubblehouse\\frontend\\frontend\\carrito.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7D6E9067-04B3-4B9C-93A7-18096C7B9038}|FrontEnd.csproj|solutionrelative:carrito.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 610,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,26 +34,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "Carrito.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\macha\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Carrito.xaml.cs",
+              "RelativeDocumentMoniker": "Carrito.xaml.cs",
+              "ToolTip": "C:\\Users\\macha\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Carrito.xaml.cs",
+              "RelativeToolTip": "Carrito.xaml.cs",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAowBcAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T05:45:14.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Carrito.xaml",
+              "DocumentMoniker": "C:\\Users\\macha\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Carrito.xaml",
+              "RelativeDocumentMoniker": "Carrito.xaml",
+              "ToolTip": "C:\\Users\\macha\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Carrito.xaml",
+              "RelativeToolTip": "Carrito.xaml",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAEUAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-15T05:44:55.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Menu.xaml.cs",
               "DocumentMoniker": "C:\\Users\\macha\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Menu.xaml.cs",
               "RelativeDocumentMoniker": "Menu.xaml.cs",
               "ToolTip": "C:\\Users\\macha\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Menu.xaml.cs",
               "RelativeToolTip": "Menu.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIIAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAABSAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-15T04:04:00.936Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Menu.xaml",
               "DocumentMoniker": "C:\\Users\\macha\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Menu.xaml",
               "RelativeDocumentMoniker": "Menu.xaml",
               "ToolTip": "C:\\Users\\macha\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Menu.xaml",
               "RelativeToolTip": "Menu.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAiAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGsAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-06-15T04:03:33.756Z",
               "EditorCaption": ""
