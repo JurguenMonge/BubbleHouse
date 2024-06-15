@@ -138,6 +138,8 @@ public partial class Menu : ContentPage
             // Crear un objeto ContenedorProducto 
             ContenedorProducto item = new ContenedorProducto();
             item.nombreProducto = producto.nombreProducto;
+            item.idProducto = producto.idProducto;
+            item.numCantidad = 1;
             item.precio = producto.precio;
 
             // Agregar al carrito

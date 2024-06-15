@@ -66,7 +66,15 @@ public partial class Carrito : ContentPage
             ContenedorProductoFactura contenedorFactura = new ContenedorProductoFactura();
             contenedorFactura.idFactura = contenedor.idFactura;
             contenedorFactura.IdRFacturaProducto = contenedor.IdRFacturaProducto;
-            contenedorFactura.numSubtotal = contenedor.numSubtotal;
+            
+            if(contenedor.numSubtotal == 0)
+            {
+                contenedorFactura.numSubtotal = (decimal)contenedor.numCantidad * (decimal)contenedor.precio;
+            }
+            else
+            {
+                contenedorFactura.numSubtotal = contenedor.numSubtotal;
+            }
             contenedorFactura.descuento = contenedor.descuento;
             contenedorFactura.numCantidad = contenedor.numCantidad;
             Producto producto = new Producto();

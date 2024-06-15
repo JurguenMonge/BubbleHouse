@@ -6,12 +6,36 @@
              NavigationPage.HasNavigationBar="False"
              Title="DespliegueFactura">
     <Grid Margin="10" x:Name="contenedor" BackgroundColor="#a9dff0">
-        <VerticalStackLayout>
-            <Button HorizontalOptions="Start" x:Name="btnVolver" FontSize="Subtitle" Text="Volver" Clicked="btnVolver_Clicked" MaximumWidthRequest="350"  BackgroundColor="#414BB2" TextColor="White"/>
-        <!-- Frame with a Card -->
-            <Frame Margin="0" VerticalOptions="Start" BackgroundColor="White" BorderColor="Black" CornerRadius="10" MaximumWidthRequest="1200">
+        <!-- Grid for background image or logo -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Source="logo_celeste.png" Aspect="AspectFill" Opacity="0.3"
+                   HorizontalOptions="Center" VerticalOptions="Center"
+                   WidthRequest="200" HeightRequest="200"/>
+        </Grid>
+
+        <!-- Main content Grid -->
+        <Grid Margin="0" BackgroundColor="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Header and back button -->
+            <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center">
+                <Button x:Name="btnVolver" FontSize="Subtitle" Text="Volver" Clicked="btnVolver_Clicked" BackgroundColor="#414BB2" TextColor="White"/>
+            </StackLayout>
+
+            <!-- Frame with ScrollView and content -->
+            <Frame Grid.Row="1" Margin="0" VerticalOptions="Start" BackgroundColor="White" BorderColor="Black" CornerRadius="10">
                 <ScrollView>
-                    <VerticalStackLayout Padding="10">
+                    <StackLayout Padding="10">
+                        <!-- Header Labels -->
                         <Grid HorizontalOptions="FillAndExpand">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
@@ -20,7 +44,7 @@
                             <Label x:Name="lblIdFactura" Text="ID de Factura: " TextColor="Black" FontSize="Subtitle" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
                             <Label x:Name="lblfecha" Text="Fecha: " TextColor="Black" FontSize="Subtitle" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Column="1" />
                         </Grid>
-                        <Label Text="Factura" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Start" />
+
                         <!-- Encabezados -->
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -62,7 +86,7 @@
                                             <ColumnDefinition Width="Auto" />
                                         </Grid.ColumnDefinitions>
                                         <Frame Grid.Column="0" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
-                                            <Label>
+                                            <Label TextColor="Black">
                                                 <Label.Text>
                                                     <MultiBinding StringFormat="{}{0} {1}">
                                                         <Binding Path="nombreProducto" />
@@ -87,19 +111,19 @@
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>
-                        <VerticalStackLayout Spacing="15">
-                            <Label x:Name="lbltotal" Text="Total:" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Start" />
-                            <HorizontalStackLayout HorizontalOptions="Start" Spacing="15">
-                                <Label x:Name="lblefectivo" Text="Efectivo:" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Start" IsVisible="False"/>
+
+                        <!-- Total y botones -->
+                        <StackLayout Spacing="15">
+                            <Label x:Name="lbltotal" Text="Total:" TextColor="Black" FontSize="Title" FontAttributes="Bold" />
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Spacing="15">
+                                <Label x:Name="lblefectivo" Text="Efectivo:" TextColor="Black" FontSize="Title" FontAttributes="Bold" IsVisible="False"/>
                                 <Entry x:Name="txtefectivo" Keyboard="Numeric" Text="0.00" TextColor="Black" MinimumWidthRequest="200" MaximumHeightRequest="500" IsVisible="False"/>
-                            </HorizontalStackLayout>
-                            <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
-                                <Button x:Name="btnCancelar" FontSize="Subtitle" Text="Eliminar Factura" Clicked="btnCancelar_Clicked" BackgroundColor="#F76887" TextColor="White" Grid.Column="4" />
-                            </HorizontalStackLayout>
-                        </VerticalStackLayout>
-                    </VerticalStackLayout>
+                            </StackLayout>
+                            <Button x:Name="btnCancelar" FontSize="Subtitle" Text="Eliminar Factura" Clicked="btnCancelar_Clicked" BackgroundColor="#F76887" TextColor="White" />
+                        </StackLayout>
+                    </StackLayout>
                 </ScrollView>
             </Frame>
-        </VerticalStackLayout>
+        </Grid>
     </Grid>
 </ContentPage>
