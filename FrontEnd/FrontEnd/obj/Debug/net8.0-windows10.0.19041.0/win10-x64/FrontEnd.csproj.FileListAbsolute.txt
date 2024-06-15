@@ -1465,3 +1465,17 @@ C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\
 C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-150.png
 C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-200.png
 C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-400.png
+C:\Users\macha\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Firebase.Storage.dll
+C:\Users\macha\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\bubblete.scale-100.jpeg
+C:\Users\macha\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\coca.scale-100.jpg
+C:\Users\macha\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\helado.scale-100.jpg
+C:\Users\macha\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pan.scale-100.jpg
+C:\Users\macha\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\quque.scale-100.jpg
+C:\Users\macha\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\ramen.scale-100.jpg
+C:\Users\macha\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-100.png
+C:\Users\macha\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-125.png
+C:\Users\macha\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-150.png
+C:\Users\macha\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-200.png
+C:\Users\macha\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-400.png
+C:\Users\macha\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\te.scale-100.jpg
+C:\Users\macha\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\techai.scale-100.jpg

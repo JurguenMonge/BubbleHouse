@@ -3,48 +3,49 @@ using FrontEnd.Entidades.Entidad;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 
+
 namespace FrontEnd;
 
 public partial class Menu : ContentPage
 {
+    private ObservableCollection<Producto> _listaProducto = new ObservableCollection<Producto>();
+    private ObservableCollection<Producto> _productosFiltrados = new ObservableCollection<Producto>();
+
     public Menu()
     {
         InitializeComponent();
         CargarProductos();
+
     }
 
-    private ObservableCollection<Producto> _listaProducto = new ObservableCollection<Producto>();
     public ObservableCollection<Producto> listaProducto
     {
-        get { return _listaProducto; }
+        get { return _productosFiltrados; }
         set
         {
-            _listaProducto = value;
+            _productosFiltrados = value;
             OnPropertyChanged(nameof(listaProducto));
         }
     }
 
-
     private async void CargarProductos()
     {
-        listaProducto.Clear();
         var productos = await ProductosDesdeApi();
         foreach (var product in productos)
         {
-            listaProducto.Add(product);
+            _listaProducto.Add(product);
         }
+        _productosFiltrados = new ObservableCollection<Producto>(_listaProducto); // Copia inicial
         BindingContext = this;
     }
 
     private async Task<List<Producto>> ProductosDesdeApi()
-
     {
         List<Producto> retornarProductosApi = new List<Producto>();
         String laURL = "https://localhost:44311/api/producto/obtener";
 
         try
         {
-
             using (HttpClient httpClient = new HttpClient())
             {
                 var response = await httpClient.GetAsync(laURL);
@@ -75,21 +76,55 @@ public partial class Menu : ContentPage
 
     private void btnCombos_Clicked(object sender, EventArgs e)
     {
+        var productosFiltrados = _listaProducto.Where(p =>
+            p.subcategoriaProducto.dscNombreSubCategoria.Contains("Combo 1") ||
+            p.subcategoriaProducto.dscNombreSubCategoria.Contains("Combo 2") ||
+            p.subcategoriaProducto.dscNombreSubCategoria.Contains("Combo 3")).ToList();
 
+        ActualizarListaFiltrada(productosFiltrados);
     }
 
     private void btnRamen_Clicked(object sender, EventArgs e)
     {
+        var productosFiltrados = _listaProducto.Where(p =>
+            p.categoriaProducto.dscNombreCategoria.Contains("Ramen")).ToList();
 
+        ActualizarListaFiltrada(productosFiltrados);
     }
 
     private void btnCornDog_Clicked(object sender, EventArgs e)
     {
+        var productosFiltrados = _listaProducto.Where(p =>
+            p.categoriaProducto.dscNombreCategoria.Contains("Corndog")).ToList();
 
+        ActualizarListaFiltrada(productosFiltrados);
     }
 
     private void btnSushis_Clicked(object sender, EventArgs e)
     {
+        var productosFiltrados = _listaProducto.Where(p =>
+            p.categoriaProducto.dscNombreCategoria.Contains("Sushi")).ToList();
 
+        ActualizarListaFiltrada(productosFiltrados);
+    }
+    private void btnBubbles_Clicked(object sender, EventArgs e)
+    {
+        var productosFiltrados = _listaProducto.Where(p =>
+          p.categoriaProducto.dscNombreCategoria.Contains("Bubble Te")).ToList();
+
+        ActualizarListaFiltrada(productosFiltrados);
+    }
+    private void ActualizarListaFiltrada(List<Producto> productosFiltrados)
+    {
+        _productosFiltrados.Clear();
+        foreach (var producto in productosFiltrados)
+        {
+            _productosFiltrados.Add(producto);
+        }
+    }
+
+    private void btnMenu_Clicked(object sender, EventArgs e)
+    {
+        CargarProductos();
     }
 }
