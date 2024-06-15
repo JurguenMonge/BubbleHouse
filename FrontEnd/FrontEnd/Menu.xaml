@@ -5,6 +5,23 @@
              Title="Menu">
 
     <ContentPage.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="WidthRequest" Value="130" />
+            <Setter Property="HeightRequest" Value="30" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="Subtitle" />
+            <Setter Property="HorizontalOptions" Value="Start" />
+            <Setter Property="VerticalOptions" Value="Start" />
+            <Setter Property="Margin" Value="20,20,10,10" />
+            <Style.Triggers>
+                <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                    <Setter Property="BackgroundColor" Value="#bdc0f7" />
+                    <Setter Property="TextColor" Value="White" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
         <Style x:Key="SquaredFrameStyle" TargetType="Frame">
             <Setter Property="BackgroundColor" Value="#bdc0f7" />
             <Setter Property="BorderColor" Value="Black" />
@@ -41,16 +58,16 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <!-- Buttons -->
-            <Button Grid.Row="0" Grid.Column="0" x:Name="btnBubbles" WidthRequest="130" HeightRequest="30" BackgroundColor="Black" Text="Bubbles" FontSize="Subtitle" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20,20,10,10"/>
-            <Button Grid.Row="0" Grid.Column="1" x:Name="btnSushis" WidthRequest="130" HeightRequest="30" BackgroundColor="White" Text="Sushi" FontSize="Subtitle" TextColor="Black" Clicked="btnSushis_Clicked" HorizontalOptions="Start" VerticalOptions="Start" Margin="-55,20,10,10"/>
-            <Button Grid.Row="0" Grid.Column="2" x:Name="btnCombos" WidthRequest="130" HeightRequest="30" BackgroundColor="White" Text="Combos" FontSize="Subtitle" TextColor="Black" Clicked="btnCombos_Clicked" HorizontalOptions="Start" VerticalOptions="Start" Margin="-130,20,10,10"/>
-            <Button Grid.Row="0" Grid.Column="3" x:Name="btnRamen" WidthRequest="130" HeightRequest="30" BackgroundColor="White" Text="Ramen" FontSize="Subtitle" TextColor="Black" Clicked="btnRamen_Clicked" HorizontalOptions="Start" VerticalOptions="Start" Margin="-200,20,20,10"/>
-            <Button Grid.Row="0" Grid.Column="4" x:Name="btnCornDog" WidthRequest="130" HeightRequest="30" BackgroundColor="White" Text="CornDog" FontSize="Subtitle" TextColor="Black" Clicked="btnCornDog_Clicked" HorizontalOptions="Start" VerticalOptions="Start" Margin="-270,20,10,10"/>
-
-
+            <Button Grid.Row="0" Grid.Column="0" x:Name="btnMenu" Style="{StaticResource ButtonStyle}" Text="Inicio" Clicked="btnMenu_Clicked"/>
+            <Button Grid.Row="0" Grid.Column="1" x:Name="btnBubbles" Style="{StaticResource ButtonStyle}" Text="Bubbles" Clicked="btnBubbles_Clicked"/>
+            <Button Grid.Row="0" Grid.Column="2" x:Name="btnSushis" Style="{StaticResource ButtonStyle}" Text="Sushi" Clicked="btnSushis_Clicked"/>
+            <Button Grid.Row="0" Grid.Column="3" x:Name="btnCombos" Style="{StaticResource ButtonStyle}" Text="Combos" Clicked="btnCombos_Clicked"/>
+            <Button Grid.Row="0" Grid.Column="4" x:Name="btnRamen" Style="{StaticResource ButtonStyle}" Text="Ramen" Clicked="btnRamen_Clicked"/>
+            <Button Grid.Row="0" Grid.Column="5" x:Name="btnCornDog" Style="{StaticResource ButtonStyle}" Text="CornDog" Clicked="btnCornDog_Clicked"/>
 
             <ScrollView Grid.Row="1" Grid.ColumnSpan="5">
                 <Grid BackgroundColor="#A9DFF0" RowSpacing="10" Padding="10" Margin="30">
@@ -59,21 +76,18 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <CollectionView Grid.Row="1"
-                Grid.ColumnSpan="5"
-                ItemsSource="{Binding listaProducto}">
+                    <CollectionView Grid.Row="1" Grid.ColumnSpan="5" ItemsSource="{Binding listaProducto}">
                         <CollectionView.ItemsLayout>
                             <GridItemsLayout Orientation="Vertical" Span="4" VerticalItemSpacing="20" />
-                            <!-- Cada fila tendrá dos elementos -->
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Frame Margin="12"
-                   BorderColor="Azure"
-                   CornerRadius="1"
-                   HasShadow="True"
-                   WidthRequest="200"
-                   HeightRequest="325">
+                                       BorderColor="Azure"
+                                       CornerRadius="1"
+                                       HasShadow="True"
+                                       WidthRequest="200"
+                                       HeightRequest="445">
 
                                     <Frame.Background>
                                         <LinearGradientBrush EndPoint="1,0">
@@ -85,56 +99,21 @@
                                     <StackLayout Orientation="Vertical" HorizontalOptions="Start" VerticalOptions="Center" Margin="15">
                                         <!-- Coloca la imagen arriba -->
                                         <Image Source="{Binding urlImgen}"
-                           WidthRequest="190"
-                           HeightRequest="130"/>
+                                               WidthRequest="190"
+                                               HeightRequest="130"/>
 
                                         <!-- Coloca la información del producto debajo de la imagen -->
                                         <!-- Etiquetas de Label -->
-                                        <Label x:Name="txtid"
-                           Text="{Binding idProducto}"
-                           IsVisible="False"/>
-                                        <Label x:Name="lblIdCategoria"
-                           Text="{Binding subcategoriaProducto.idSubcategoriaProducto}"
-                           IsVisible="False"/>
-                                        <Label x:Name="lblIdSubCategoria"
-                           Text="{Binding receta.idReceta}"
-                           IsVisible="False"/>
-                                        <Label x:Name="lblIdReceta"
-                           FontSize="15"
-                           HorizontalTextAlignment="Start"
-                           Text="{Binding subcategoriaProducto.dscNombreSubCategoria}"
-                           VerticalOptions="Center"
-                           TextColor="Black"/>
-                                        <Label x:Name="lblcategoria"
-                           FontSize="15"
-                           HorizontalTextAlignment="Start"
-                           Text="{Binding categoriaProducto.dscNombreCategoria}"
-                           VerticalOptions="Center"
-                           TextColor="Black"/>
-                                        <Label x:Name="lblreceta"
-                           FontSize="15"
-                           HorizontalTextAlignment="Start"
-                           Text="{Binding receta.dscNombre}"
-                           VerticalOptions="Center"
-                           TextColor="Black"/>
-                                        <Label x:Name="lblNombreProducto"
-                           FontSize="15"
-                           HorizontalTextAlignment="Start"
-                           Text="{Binding nombreProducto}"
-                           VerticalOptions="Center"
-                           TextColor="Black"/>
-                                        <Label x:Name="lblDescripcion"
-                           FontSize="15"
-                           HorizontalTextAlignment="Start"
-                           Text="{Binding descripcion}"
-                           VerticalOptions="Center"
-                           TextColor="Black"/>
-                                        <Label x:Name="lblPrecio"
-                           FontSize="15"
-                           HorizontalTextAlignment="Start"
-                           Text="{Binding precio}"
-                           VerticalOptions="Center"
-                           TextColor="Black"/>
+                                        <Label x:Name="txtid" Text="{Binding idProducto}" IsVisible="False"/>
+                                        <Label x:Name="lblIdCategoria" Text="{Binding subcategoriaProducto.idSubcategoriaProducto}" IsVisible="False"/>
+                                        <Label x:Name="lblIdSubCategoria" Text="{Binding receta.idReceta}" IsVisible="False"/>
+                                        <Label x:Name="lblIdReceta" FontSize="15" HorizontalTextAlignment="Start" Text="{Binding categoriaProducto.dscNombreCategoria}" VerticalOptions="Center" TextColor="Black"/>
+                                        <Label x:Name="lblcategoria" FontSize="15" HorizontalTextAlignment="Start" Text="{Binding subcategoriaProducto.dscNombreSubCategoria}" VerticalOptions="Center" TextColor="Black"/>
+                                        <Label x:Name="lblreceta" FontSize="15" HorizontalTextAlignment="Start" Text="{Binding receta.dscNombre}" VerticalOptions="Center" TextColor="Black"/>
+                                        <Label x:Name="lblNombreProducto" FontSize="15" HorizontalTextAlignment="Start" Text="{Binding nombreProducto}" VerticalOptions="Center" TextColor="Black"/>
+                                        <Label x:Name="lblDescripcion" FontSize="15" HorizontalTextAlignment="Start" Text="{Binding descripcion}" VerticalOptions="Center" TextColor="Black"/>
+                                        <Label x:Name="lblPrecio" FontSize="15" HorizontalTextAlignment="Start" Text="{Binding precio}" VerticalOptions="Center" TextColor="Black"/>
+                                        <Label x:Name="lblEstado" FontSize="15" HorizontalTextAlignment="Start" Text="{Binding estado, Converter={StaticResource IntToBoolConverter}}" VerticalOptions="Center" TextColor="Black"/>
                                     </StackLayout>
                                 </Frame>
                             </DataTemplate>
@@ -143,11 +122,6 @@
 
                 </Grid>
             </ScrollView>
-
-
-
-
-
         </Grid>
     </Grid>
 </ContentPage>

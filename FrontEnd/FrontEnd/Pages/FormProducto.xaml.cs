@@ -15,7 +15,7 @@ public partial class FormProducto : ContentPage
     public int recetaId;
     public int estado;
     private bool isPickerOpen = false;
-    string path = "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Resources\\Images";
+    string path = "C:\\Users\\macha\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Resources\\Images";
     public string selectedImagePath;
 
     public FormProducto()

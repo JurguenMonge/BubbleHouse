@@ -84,13 +84,14 @@
                                         <Label x:Name="lblIdReceta"
                                     FontSize="15"
                                     HorizontalTextAlignment="Start"
-                                    Text="{Binding subcategoriaProducto.dscNombreSubCategoria}"
+                                    Text="{Binding categoriaProducto.dscNombreCategoria}"
                                     VerticalOptions="Center"
                                     TextColor="white"/>
                                         <Label x:Name="lblcategoria"
                                     FontSize="15"
                                     HorizontalTextAlignment="Start"
-                                    Text="{Binding categoriaProducto.dscNombreCategoria}"
+                                    Text="{Binding subcategoriaProducto.dscNombreSubCategoria}"
+                                   
                                     VerticalOptions="Center"
                                     TextColor="white"/>
                                         <Label x:Name="lblreceta"
