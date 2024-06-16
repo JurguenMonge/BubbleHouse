@@ -24,9 +24,17 @@ androidgeneratejnimarshalmethods=false
 os=windows_nt
 androidincludedebugsymbols=true
 androidpackagenamingpolicy=lowercasecrc64
+<<<<<<< HEAD
 _nugetassetstimestamp=638539761583623603
 typemapkind=strings-asm
 androidsupportedabis=armeabi-v7a;arm64-v8a;x86;x86_64
 androidmanifestplaceholders=
 projectfullpath=c:\users\macha\documents\github\bubblehouse\frontend\frontend\frontend.csproj
+=======
+_nugetassetstimestamp=638540596095400272
+typemapkind=strings-asm
+androidsupportedabis=armeabi-v7a;arm64-v8a;x86;x86_64
+androidmanifestplaceholders=
+projectfullpath=d:\usuario\documents\universidad\begreat\bubblehouse\frontend\frontend\frontend.csproj
+>>>>>>> main
 androidusedesignerassembly=true

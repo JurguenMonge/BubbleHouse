@@ -60,7 +60,7 @@
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
                                     <Frame Grid.Column="0" BackgroundColor="White" BorderColor="Black" CornerRadius="5" Padding="5" Margin="1">
-                                        <Label>
+                                        <Label TextColor="Black">
                                             <Label.Text>
                                                 <MultiBinding StringFormat="{}{0} {1}">
                                                     <Binding Path="nombreProducto" />

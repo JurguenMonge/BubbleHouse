@@ -35,7 +35,11 @@ public partial class Menu : ContentPage
         {
             _listaProducto.Add(product);
         }
+<<<<<<< HEAD
         _productosFiltrados = new ObservableCollection<Producto>(_listaProducto); // Copia inicial
+=======
+        _productosFiltrados = new ObservableCollection<Producto>(_listaProducto); 
+>>>>>>> main
         BindingContext = this;
     }
 
@@ -109,8 +113,13 @@ public partial class Menu : ContentPage
     }
     private void btnBubbles_Clicked(object sender, EventArgs e)
     {
+<<<<<<< HEAD
      var productosFiltrados = _listaProducto.Where(p =>
        p.categoriaProducto.dscNombreCategoria.Contains("Bubble Te")).ToList();
+=======
+        var productosFiltrados = _listaProducto.Where(p =>
+          p.categoriaProducto.dscNombreCategoria.Contains("Bubble Te")).ToList();
+>>>>>>> main
 
         ActualizarListaFiltrada(productosFiltrados);
     }
@@ -123,8 +132,51 @@ public partial class Menu : ContentPage
         }
     }
 
+<<<<<<< HEAD
     private void btnMenu_Clicked(object sender, EventArgs e)
     {
         CargarProductos();
     }
+=======
+    private async Task btnMenu_ClickedAsync(object sender, EventArgs e)
+    {
+
+        await Navigation.PushAsync(new Menu());
+    }
+
+    private async Task<bool> MostrarModalAgregarCarrito(Producto producto)
+    {
+        bool agregar = await DisplayAlert("Agregar al carrito", $"¿Deseas agregar {producto.nombreProducto} al carrito?", "Sí", "Cancelar");
+
+        if (agregar)
+        {
+            // Crear un objeto ContenedorProducto 
+            ContenedorProducto item = new ContenedorProducto();
+            item.nombreProducto = producto.nombreProducto;
+            item.idProducto = producto.idProducto;
+            item.numCantidad = 1;
+            item.precio = producto.precio;
+
+            // Agregar al carrito
+            Entidades.Entidad.Carrito.listaContenedorProducto.Add(item);
+        }
+
+        return agregar;
+    }
+
+    private async void ProductoFrameTapped(object sender, EventArgs e)
+    {
+        var frame = sender as Frame;
+        var producto = frame.BindingContext as Producto;
+
+        bool resultado = await MostrarModalAgregarCarrito(producto);
+
+       
+        if (resultado)
+        {
+            await DisplayAlert("Éxito", "El producto se agregó al carrito.", "Aceptar");
+        }
+    }
+
+>>>>>>> main
 }

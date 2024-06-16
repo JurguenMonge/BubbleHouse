@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 C:\Users\macha\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\FrontEnd.csproj;x64
+=======
+D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\FrontEnd\FrontEnd\FrontEnd.csproj;x64
+>>>>>>> main
