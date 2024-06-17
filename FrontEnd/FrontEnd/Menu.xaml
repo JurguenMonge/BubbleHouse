@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FrontEnd.Menu"
-             Title="Menu">
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Resources>
         <Style x:Key="ButtonStyle" TargetType="Button">
@@ -12,8 +13,8 @@
             <Setter Property="TextColor" Value="Black" />
             <Setter Property="FontSize" Value="Subtitle" />
             <Setter Property="HorizontalOptions" Value="Center" />
-            <Setter Property="VerticalOptions" Value="Start" />
-            <Setter Property="Margin" Value="10" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="Margin" Value="5" />
             <Style.Triggers>
                 <Trigger TargetType="Button" Property="IsPressed" Value="True">
                     <Setter Property="BackgroundColor" Value="#bdc0f7" />
@@ -21,17 +22,9 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-
-        <Style x:Key="SquaredFrameStyle" TargetType="Frame">
-            <Setter Property="BackgroundColor" Value="#bdc0f7" />
-            <Setter Property="BorderColor" Value="Black" />
-            <Setter Property="CornerRadius" Value="0" />
-            <Setter Property="Padding" Value="10" />
-            <Setter Property="MaximumWidthRequest" Value="550" />
-        </Style>
     </ContentPage.Resources>
 
-    <Grid Margin="10,10,10,10" x:Name="contenedor" BackgroundColor="#a9dff0">
+    <Grid Margin="10" x:Name="contenedor" BackgroundColor="#a9dff0">
         <!-- Grid for the background image -->
         <Grid>
             <Grid.RowDefinitions>
@@ -50,21 +43,34 @@
             <!-- Row and Column Definitions -->
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <!-- StackLayout for Buttons -->
-            <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <Button x:Name="btnMenu" Style="{StaticResource ButtonStyle}" Text="Inicio" VerticalOptions="Center" Margin="20,-50,0,10"/>
-                <Button x:Name="btnBubbles" Style="{StaticResource ButtonStyle}" Text="Bubbles" Clicked="btnBubbles_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Margin="-131,85,0,10"/>
-                <Button x:Name="btnSushis" Style="{StaticResource ButtonStyle}" Text="Sushi" Clicked="btnSushis_Clicked" VerticalOptions="Center" Margin="80,85,0,10"/>
-                <Button x:Name="btnCombos" Style="{StaticResource ButtonStyle}" Text="Combos" Clicked="btnCombos_Clicked" VerticalOptions="Center" Margin="-140,-50,0,10"/>
-                <Button x:Name="btnRamen" Style="{StaticResource ButtonStyle}" Text="Ramen" Clicked="btnRamen_Clicked" VerticalOptions="Center" Margin="-325,85,0,10"/>
-                <Button x:Name="btnCornDog" Style="{StaticResource ButtonStyle}" Text="CornDog" Clicked="btnCornDog_Clicked" VerticalOptions="Center" Margin="-370,-50,0,10"/>
-            </StackLayout>
+            <!-- Grid for Buttons -->
+            <Grid Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" ColumnSpacing="-30" RowSpacing="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Top row of buttons -->
+                <Button x:Name="btnMenu" Style="{StaticResource ButtonStyle}" Text="Inicio" Clicked="btnMenu_Clicked" Grid.Row="0" Grid.Column="0" />
+                <Button x:Name="btnSushis" Style="{StaticResource ButtonStyle}" Text="Sushi" Clicked="btnSushis_Clicked" Grid.Row="0" Grid.Column="1" />
+                <Button x:Name="btnCombos" Style="{StaticResource ButtonStyle}" Text="Combos" Clicked="btnCombos_Clicked" Grid.Row="0" Grid.Column="2" />
+
+                <!-- Bottom row of buttons -->
+                <Button x:Name="btnRamen" Style="{StaticResource ButtonStyle}" Text="Ramen" Clicked="btnRamen_Clicked" Grid.Row="1" Grid.Column="0" />
+                <Button x:Name="btnCornDog" Style="{StaticResource ButtonStyle}" Text="CornDog" Clicked="btnCornDog_Clicked" Grid.Row="1" Grid.Column="1" />
+            </Grid>
 
             <!-- ScrollView for CollectionView -->
-            <ScrollView Grid.Row="1">
+            <ScrollView Grid.Row="2">
                 <CollectionView ItemsSource="{Binding listaProducto}">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="20" HorizontalItemSpacing="20"  />

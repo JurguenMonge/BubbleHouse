@@ -1,1 +1,1 @@
-C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\FrontEnd.csproj;x64
+C:\Users\macha\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\FrontEnd.csproj;x64

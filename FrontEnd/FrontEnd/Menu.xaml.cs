@@ -30,6 +30,7 @@ public partial class Menu : ContentPage
 
     private async void CargarProductos()
     {
+       
         var productos = await ProductosDesdeApi();
         foreach (var product in productos)
         {
@@ -123,11 +124,6 @@ public partial class Menu : ContentPage
         }
     }
 
-    private async Task btnMenu_ClickedAsync(object sender, EventArgs e)
-    {
-
-        await Navigation.PushAsync(new Menu());
-    }
 
     private async Task<bool> MostrarModalAgregarCarrito(Producto producto)
     {
@@ -163,4 +159,9 @@ public partial class Menu : ContentPage
         }
     }
 
+    private void btnMenu_Clicked(object sender, EventArgs e)
+    {
+
+        ActualizarListaFiltrada(_listaProducto.ToList());
+    }
 }
