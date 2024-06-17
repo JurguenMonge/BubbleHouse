@@ -42,7 +42,7 @@ public partial class Menu : ContentPage
     private async Task<List<Producto>> ProductosDesdeApi()
     {
         List<Producto> retornarProductosApi = new List<Producto>();
-        String laURL = "https://localhost:44311/api/producto/obtener";
+        String laURL = "https://apibubblehouse.azurewebsites.net/api/producto/obtener";
 
         try
         {

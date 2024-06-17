@@ -29,7 +29,7 @@ namespace FrontEnd.Controller
                 var jsonContent = new StringContent(JsonConvert.SerializeObject(req), Encoding.UTF8, "application/json");
 
                 HttpClient httpClient = new HttpClient();
-                var response = await httpClient.PostAsync("https://localhost:44311/api/login", jsonContent);
+                var response = await httpClient.PostAsync("https://apibubblehouse.azurewebsites.net/api/login", jsonContent);
 
                 if (response.IsSuccessStatusCode)
                 {
