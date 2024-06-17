@@ -1520,3 +1520,9 @@ D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\FrontEnd\FrontEnd\obj\Debug
 D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\usuarios.scale-200.png
 D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\usuarios.scale-400.png
 D:\Usuario\Documents\Universidad\BeGreat\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\vaso.scale-100.png
+C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Firebase.Storage.dll
+C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-100.png
+C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-125.png
+C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-150.png
+C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-200.png
+C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salida.scale-400.png
