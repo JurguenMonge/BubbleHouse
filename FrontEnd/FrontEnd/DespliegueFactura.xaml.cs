@@ -70,7 +70,7 @@ public partial class DespliegueFactura : ContentPage
     private async Task<List<ContenedorProducto>> productosDesdeApi()
     {
         List<ContenedorProducto> retornarProdutosApi = new List<ContenedorProducto>();
-        String laURL = "https://localhost:44311/api/factura/obtenerProductos";
+        String laURL = "https://apibubblehouse.azurewebsites.net/api/factura/obtenerProductos";
 
         try
         {

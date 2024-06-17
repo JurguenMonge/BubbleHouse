@@ -104,7 +104,7 @@ namespace FrontEnd.Controller
 
                     using (HttpClient httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PostAsync("https://localhost:44311/api/usuario/ingresar", jsonContent);
+                        var response = await httpClient.PostAsync("https://apibubblehouse.azurewebsites.net/api/usuario/ingresar", jsonContent);
                         if (response.IsSuccessStatusCode)
                         {
                             var responseContent = await response.Content.ReadAsStringAsync();
@@ -201,7 +201,7 @@ namespace FrontEnd.Controller
 
                     using (HttpClient httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PutAsync("https://localhost:44311/api/usuario/modificarSuperAdmin", jsonContent);
+                        var response = await httpClient.PutAsync("https://apibubblehouse.azurewebsites.net/api/usuario/modificarSuperAdmin", jsonContent);
                         if (response.IsSuccessStatusCode)
                         {
                             var responseContent = await response.Content.ReadAsStringAsync();
@@ -298,7 +298,7 @@ namespace FrontEnd.Controller
                     var jsonContent2 = new StringContent(JsonConvert.SerializeObject(req), Encoding.UTF8, "application/json");
                     using (HttpClient httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PostAsync("https://localhost:44311/api/comprobarPassword", jsonContent2);
+                        var response = await httpClient.PostAsync("https://apibubblehouse.azurewebsites.net/api/comprobarPassword", jsonContent2);
                         if (response.IsSuccessStatusCode)
                         {
                             var responseContent = await response.Content.ReadAsStringAsync();
@@ -332,7 +332,7 @@ namespace FrontEnd.Controller
 
                             using (HttpClient httpClient = new HttpClient())
                             {
-                                var response = await httpClient.PutAsync("https://localhost:44311/api/usuario/modificar", jsonContent);
+                                var response = await httpClient.PutAsync("https://apibubblehouse.azurewebsites.net/api/usuario/modificar", jsonContent);
                                 if (response.IsSuccessStatusCode)
                                 {
                                     var responseContent = await response.Content.ReadAsStringAsync();
@@ -391,7 +391,7 @@ namespace FrontEnd.Controller
                         var request = new HttpRequestMessage
                         {
                             Method = HttpMethod.Delete,
-                            RequestUri = new Uri("https://localhost:44311/api/usuario/eliminar"),
+                            RequestUri = new Uri("https://apibubblehouse.azurewebsites.net/api/usuario/eliminar"),
                             Content = jsonContent
                         };
 

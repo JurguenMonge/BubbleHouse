@@ -29,7 +29,7 @@ namespace FrontEnd.Controller
 
                     using (HttpClient httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PostAsync("https://localhost:44311/api/factura/ingresar", jsonContent);
+                        var response = await httpClient.PostAsync("https://apibubblehouse.azurewebsites.net/api/factura/ingresar", jsonContent);
                         if (response.IsSuccessStatusCode)
                         {
                             var responseContent = await response.Content.ReadAsStringAsync();
@@ -67,7 +67,7 @@ namespace FrontEnd.Controller
 
                     using (HttpClient httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PutAsync("https://localhost:44311/api/factura/modificar", jsonContent);
+                        var response = await httpClient.PutAsync("https://apibubblehouse.azurewebsites.net/api/factura/modificar", jsonContent);
                         if (response.IsSuccessStatusCode)
                         {
                             var responseContent = await response.Content.ReadAsStringAsync();
@@ -105,7 +105,7 @@ namespace FrontEnd.Controller
 
                     using (HttpClient httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PutAsync("https://localhost:44311/api/factura/modificarEstadoNoPreparado", jsonContent);
+                        var response = await httpClient.PutAsync("https://apibubblehouse.azurewebsites.net/api/factura/modificarEstadoNoPreparado", jsonContent);
                         if (response.IsSuccessStatusCode)
                         {
                             var responseContent = await response.Content.ReadAsStringAsync();
@@ -143,7 +143,7 @@ namespace FrontEnd.Controller
 
                     using (HttpClient httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PutAsync("https://localhost:44311/api/factura/modificarEstadoCompletado", jsonContent);
+                        var response = await httpClient.PutAsync("https://apibubblehouse.azurewebsites.net/api/factura/modificarEstadoCompletado", jsonContent);
                         if (response.IsSuccessStatusCode)
                         {
                             var responseContent = await response.Content.ReadAsStringAsync();
@@ -177,7 +177,7 @@ namespace FrontEnd.Controller
 
                     using (HttpClient httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PostAsync("https://localhost:44311/api/productofactura/eliminar", jsonContent);
+                        var response = await httpClient.PostAsync("https://apibubblehouse.azurewebsites.net/api/productofactura/eliminar", jsonContent);
                         if (response.IsSuccessStatusCode)
                         {
                             var responseContent = await response.Content.ReadAsStringAsync();
@@ -210,7 +210,7 @@ namespace FrontEnd.Controller
 
                     using (HttpClient httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PostAsync("https://localhost:44311/api/factura/eliminar", jsonContent);
+                        var response = await httpClient.PostAsync("https://apibubblehouse.azurewebsites.net/api/factura/eliminar", jsonContent);
                         if (response.IsSuccessStatusCode)
                         {
                             var responseContent = await response.Content.ReadAsStringAsync();

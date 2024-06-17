@@ -62,7 +62,7 @@ namespace FrontEnd.Controller
 
                     using (HttpClient httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PostAsync("https://localhost:44311/api/ingrediente/ingresar", jsonContent);
+                        var response = await httpClient.PostAsync("https://apibubblehouse.azurewebsites.net/api/ingrediente/ingresar", jsonContent);
                         if (response.IsSuccessStatusCode)
                         {
                             var responseContent = await response.Content.ReadAsStringAsync();
@@ -131,7 +131,7 @@ namespace FrontEnd.Controller
 
                     using (HttpClient httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PutAsync("https://localhost:44311/api/ingrediente/modificar", jsonContent);
+                        var response = await httpClient.PutAsync("https://apibubblehouse.azurewebsites.net/api/ingrediente/modificar", jsonContent);
                         if (response.IsSuccessStatusCode)
                         {
                             var responseContent = await response.Content.ReadAsStringAsync();
@@ -179,7 +179,7 @@ namespace FrontEnd.Controller
                         var request = new HttpRequestMessage
                         {
                             Method = HttpMethod.Delete,
-                            RequestUri = new Uri("https://localhost:44311/api/ingrediente/eliminar"),
+                            RequestUri = new Uri("https://apibubblehouse.azurewebsites.net/api/ingrediente/eliminar"),
                             Content = jsonContent
                         };
 

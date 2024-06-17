@@ -64,7 +64,7 @@ namespace FrontEnd.Controller
 
                     using (HttpClient httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PostAsync("https://localhost:44311/api/producto/ingresar", jsonContent);
+                        var response = await httpClient.PostAsync("https://apibubblehouse.azurewebsites.net/api/producto/ingresar", jsonContent);
                         if (response.IsSuccessStatusCode)
                         {
                             var responseContent = await response.Content.ReadAsStringAsync();
@@ -141,7 +141,7 @@ namespace FrontEnd.Controller
 
                     using (HttpClient httpClient = new HttpClient())
                     {
-                        var response = await httpClient.PutAsync("https://localhost:44311/api/producto/modificar", jsonContent);
+                        var response = await httpClient.PutAsync("https://apibubblehouse.azurewebsites.net/api/producto/modificar", jsonContent);
                         if (response.IsSuccessStatusCode)   
                         {
                             var responseContent = await response.Content.ReadAsStringAsync();
@@ -173,7 +173,7 @@ namespace FrontEnd.Controller
                     using (HttpClient client = new HttpClient())
                     {
                         // Crear la solicitud HttpRequestMessage
-                        var response = await client.DeleteAsync("https://localhost:44311/api/producto/eliminar/" + id);
+                        var response = await client.DeleteAsync("https://apibubblehouse.azurewebsites.net/api/producto/eliminar/" + id);
                         if (response.IsSuccessStatusCode)
                         {
                             var responseContent = await response.Content.ReadAsStringAsync();

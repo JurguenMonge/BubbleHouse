@@ -1,3 +1,5 @@
+
+using Firebase.Storage;
 using FrontEnd.Controller;
 using FrontEnd.Entidades;
 using FrontEnd.Entidades.Entidad;
@@ -17,6 +19,7 @@ public partial class FormProducto : ContentPage
     private bool isPickerOpen = false;
     string path = "C:\\Users\\Jurguen Monge\\Documents\\GitHub\\BubbleHouse\\FrontEnd\\FrontEnd\\Resources\\Images";
     public string selectedImagePath;
+    private string urlImage { get; set; }
 
     public FormProducto()
     {
@@ -82,7 +85,7 @@ public partial class FormProducto : ContentPage
     private async Task<List<SubcategoriaProducto>> SubCategoriaProductoDesdeApi()
     {
         List<SubcategoriaProducto> subcategoriaProductos = new List<SubcategoriaProducto>();
-        String laURL = "https://localhost:44311/api/subCategoriaProducto/obtener";
+        String laURL = "https://apibubblehouse.azurewebsites.net/api/subCategoriaProducto/obtener";
 
         try
         {
@@ -258,7 +261,18 @@ public partial class FormProducto : ContentPage
     }
     private async void btnSeleccionar_Clicked(object sender, EventArgs e)
     {
-        try
+        var foto = await MediaPicker.PickPhotoAsync();
+
+        if (foto != null)
+        {
+            var stream = await foto.OpenReadAsync();
+            urlImage = await new FirebaseStorage("bubblehouse-30c28.appspot.com")
+                                    .Child("Fotos")
+                                    .Child(foto.FileName)
+                                    .PutAsync(stream);
+            selectedImage.Source = urlImage;
+        }
+        /*try
         {
             var result = await FilePicker.PickAsync(new PickOptions
             {
@@ -297,7 +311,7 @@ public partial class FormProducto : ContentPage
         catch (Exception ex)
         {
             await DisplayAlert("Error", $"Ocurrió un error: {ex.Message}", "OK");
-        }
+        }*/
     }
 
     private void btnCancelar_Clicked(object sender, EventArgs e)

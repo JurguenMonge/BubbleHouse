@@ -24,7 +24,7 @@ namespace FrontEnd.Controller
                 var jsonContent = new StringContent(JsonConvert.SerializeObject(req), Encoding.UTF8, "application/json");
 
                 HttpClient httpClient = new HttpClient();
-                var response = await httpClient.PostAsync("https://localhost:44311/api/logout", jsonContent);
+                var response = await httpClient.PostAsync("https://apibubblehouse.azurewebsites.net/api/logout", jsonContent);
 
                 if (response.IsSuccessStatusCode)
                 {

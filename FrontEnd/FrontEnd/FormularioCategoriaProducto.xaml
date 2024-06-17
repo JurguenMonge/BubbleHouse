@@ -6,7 +6,7 @@
     <ScrollView>
         <Grid x:Name="Contenedor" BackgroundColor="#a9dff0" >
             <VerticalStackLayout Spacing="1" Margin="40,40,40,0" Padding="10">
-                <Frame Margin="10,0,10,0" VerticalOptions="Center" BackgroundColor="#bdc0f7" BorderColor="Azure" CornerRadius="50">
+                <Frame  WidthRequest="350" VerticalOptions="Center" BackgroundColor="#bdc0f7" BorderColor="Azure" CornerRadius="50">
                     <VerticalStackLayout Margin="10,0,10,0" Spacing="10">
                         <Label x:Name="lblTitulo" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" TextColor="White" Text="Crear Categoría de Producto"/>
                         <Label FontAttributes="Bold" TextColor="White" Text="Nombre de Categoría"></Label>

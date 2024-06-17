@@ -52,7 +52,7 @@ public partial class RecetaPage : ContentPage
     private async Task<List<RecetaCompleta>> RecetasDesdeApi()
     {
         List<RecetaCompleta> recetasApi = new List<RecetaCompleta>();
-        String laURL = "https://localhost:44311/api/receta/obtener";
+        String laURL = "https://apibubblehouse.azurewebsites.net/api/receta/obtener";
 
         try
         {

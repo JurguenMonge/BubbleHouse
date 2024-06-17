@@ -81,7 +81,7 @@ public partial class FormUsuario : ContentPage
     private async Task<List<Rol>> RolesDesdeApi()
     {
         List<Rol> retornarRolApi = new List<Rol>();
-        String laURL = "https://localhost:44311/api/rol/obtener";
+        String laURL = "https://apibubblehouse.azurewebsites.net/api/rol/obtener";
 
         try
         {

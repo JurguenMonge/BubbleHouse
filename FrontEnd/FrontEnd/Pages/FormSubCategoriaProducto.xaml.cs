@@ -80,7 +80,7 @@ public partial class FormSubCategoriaProducto : ContentPage
     private async Task<List<CategoriaProducto>> CategoriasDesdeApi()
     {
         List<CategoriaProducto> retornarPublicacionApi = new List<CategoriaProducto>();
-        String laURL = "https://localhost:44311/api/categoriaProducto/obtener";
+        String laURL = "https://apibubblehouse.azurewebsites.net/api/categoriaProducto/obtener";
 
         try
         {

@@ -45,7 +45,7 @@ public partial class SubCategoriaProductoPage : ContentPage
     private async Task<List<SubcategoriaProducto>> SubCategoriasDesdeApi()
     {
         List<SubcategoriaProducto> retornarSubCategoriasApi = new List<SubcategoriaProducto>();
-        String laURL = "https://localhost:44311/api/subCategoriaProducto/obtener";
+        String laURL = "https://apibubblehouse.azurewebsites.net/api/subCategoriaProducto/obtener";
 
         try
         {

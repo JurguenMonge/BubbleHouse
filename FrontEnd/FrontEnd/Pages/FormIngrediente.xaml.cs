@@ -85,7 +85,7 @@ public partial class FormIngrediente : ContentPage
     private async Task<List<CategoriaIngrediente>> CategoriasIngredienteDesdeApi()
     {
         List<CategoriaIngrediente> retornarCategoriasIngredienteApi = new List<CategoriaIngrediente>();
-        String laURL = "https://localhost:44311/api/categoriaIngrediente/obtener";
+        String laURL = "https://apibubblehouse.azurewebsites.net/api/categoriaIngrediente/obtener";
 
         try
         {

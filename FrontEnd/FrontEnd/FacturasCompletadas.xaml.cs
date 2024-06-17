@@ -44,7 +44,7 @@ public partial class FacturasCompletadas : ContentPage
     private async Task<List<Factura>> FacturasDesdeApi()
     {
         List<Factura> retornarPublicacionApi = new List<Factura>();
-        String laURL = "https://localhost:44311/api/factura/obtenerCompletadas";
+        String laURL = "https://apibubblehouse.azurewebsites.net/api/factura/obtenerCompletadas";
         try
         {
 

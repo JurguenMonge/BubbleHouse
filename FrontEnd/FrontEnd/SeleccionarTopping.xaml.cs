@@ -89,7 +89,7 @@ public partial class SeleccionarTopping : ContentPage
     private async Task<List<Ingrediente>> IngredientesDesdeApi()
     {
         List<Ingrediente> retornarIngredientesApi = new List<Ingrediente>();
-        String laURL = "https://localhost:44311/api/ingrediente/obtener";
+        String laURL = "https://apibubblehouse.azurewebsites.net/api/ingrediente/obtener";
 
         try
         {

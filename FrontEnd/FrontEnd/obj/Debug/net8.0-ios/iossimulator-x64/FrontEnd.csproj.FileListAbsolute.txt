@@ -1722,3 +1722,22 @@ C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimul
 C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\FrontEnd.csproj.Up2Date
 C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\FrontEnd.genruntimeconfig.cache
 C:\Proyectos\Moviles\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\ref\FrontEnd.dll
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\bin\Debug\net8.0-ios\iossimulator-x64\Firebase.Storage.dll
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\tapioca.png
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\te.jpg
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\bordeado.png
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\techai.jpg
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\topping.png
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\bubblete.jpeg
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\vaso.png
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\quque.jpg
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\saborchicle.png
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\lecheentera.png
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\reflejodeluz.png
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\coca.jpg
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\ramen.jpg
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\pan.jpg
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\helado.jpg
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\salida@3x.png
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\salida@2x.png
+C:\Users\Jurguen Monge\Documents\GitHub\BubbleHouse\FrontEnd\FrontEnd\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\salida.png

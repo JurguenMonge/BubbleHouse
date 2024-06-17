@@ -53,7 +53,7 @@ public partial class UsuariosSuperAdminPage : ContentPage
     private async Task<List<Usuario>> UsuariosDesdeApi()
     {
         List<Usuario> retornarUsuariosApi = new List<Usuario>();
-        String laURL = "https://localhost:44311/api/usuario/obtener";
+        String laURL = "https://apibubblehouse.azurewebsites.net/api/usuario/obtener";
 
         try
         {
