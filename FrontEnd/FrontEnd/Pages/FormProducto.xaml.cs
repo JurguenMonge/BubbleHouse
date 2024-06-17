@@ -174,7 +174,7 @@ public partial class FormProducto : ContentPage
                 ResProducto res = new ResProducto();
                 if (int.Parse(txtId.Text) == 0)
                 {
-                    res = await productoController.IngresarProducto(subCate.idSubcategoriaProducto, 1, txtNombreProducto.Text, txtDescripcion.Text, selectedImagePath, decimal.Parse(txtPrecio.Text));
+                    res = await productoController.IngresarProducto(subCate.idSubcategoriaProducto, 1, txtNombreProducto.Text, txtDescripcion.Text, urlImage, decimal.Parse(txtPrecio.Text));
                     if (res.Resultado)
                     {
                         await DisplayAlert("Insercion Exitosa", "Producto guardado con éxito", "Aceptar");
@@ -200,11 +200,11 @@ public partial class FormProducto : ContentPage
                     }
                     if (pickEstado.SelectedIndex == 0)
                     {
-                        res = await productoController.modificarProducto(int.Parse(txtId.Text), subCate.idSubcategoriaProducto, 1, txtNombreProducto.Text, txtDescripcion.Text, selectedImagePath, decimal.Parse(txtPrecio.Text), 1);
+                        res = await productoController.modificarProducto(int.Parse(txtId.Text), subCate.idSubcategoriaProducto, 1, txtNombreProducto.Text, txtDescripcion.Text, urlImage, decimal.Parse(txtPrecio.Text), 1);
                     }
                     else
                     {
-                        res = await productoController.modificarProducto(int.Parse(txtId.Text), subCate.idSubcategoriaProducto, 1, txtNombreProducto.Text, txtDescripcion.Text, selectedImagePath, decimal.Parse(txtPrecio.Text), 2);
+                        res = await productoController.modificarProducto(int.Parse(txtId.Text), subCate.idSubcategoriaProducto, 1, txtNombreProducto.Text, txtDescripcion.Text, urlImage, decimal.Parse(txtPrecio.Text), 2);
                     }
 
                    
