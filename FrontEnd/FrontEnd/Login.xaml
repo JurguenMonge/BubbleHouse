@@ -25,7 +25,6 @@
                 <Button x:Name="btnIngresar" Text="Ingresar" Clicked="btnIngresar_Clicked" BackgroundColor="#bdc0f7" ></Button>
                 <Button x:Name="btnVistaPrincipal" Text="Ir a la Página Principal" Clicked="btnVistaPrincipal_Clicked" BackgroundColor="Gray"></Button>
                 <ActivityIndicator x:Name="spinner" IsRunning="False" IsVisible="False" Color="White"/>
-                <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Start" TextColor="White" Text="¿Olvidaste tu contraseña?"></Label>
             </VerticalStackLayout>
         </Grid>
     </ScrollView>
